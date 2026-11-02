@@ -4,39 +4,68 @@ import { useEffect, useRef } from "react";
 
 type Props = { state: "idle" | "ready" | "busy"; paused: boolean };
 
-// Read the atlas from left to right. Each keyframe holds one complete sphere.
-const columns = 8;
-const rows = 8;
-const frames: Keyframe[] = Array.from({ length: columns * rows }, (_, index) => ({
-  backgroundPosition: `${(index % columns) * 100 / (columns - 1)}% ${Math.floor(index / columns) * 100 / (rows - 1)}%`,
-  offset: index / (columns * rows),
-  easing: "steps(1, end)",
-}));
-frames.push({ ...frames[0], offset: 1 });
+const columns = 24;
+const rows = 15;
+const frameCount = columns * rows;
+const loopMs = 6000;
+
+function sheetPosition(frame: number): string {
+  const x = -(frame % columns) * 100 / columns;
+  const y = -Math.floor(frame / columns) * 100 / rows;
+  return `translate3d(${x}%, ${y}%, 0)`;
+}
+
+// The upper layer fades between neighbours. Each sheet changes tile only
+// while concealed, so the surface also moves between samples on 120 Hz screens.
+function sheetFrames(upper: boolean): Keyframe[] {
+  const frames: Keyframe[] = [];
+  const add = (at: number, tile: number) => frames.push({
+    offset: at / frameCount, transform: sheetPosition(tile % frameCount), easing: "steps(1, end)",
+  });
+  add(0, upper ? 1 : 0);
+  for (let at = upper ? 2 : 1; at < frameCount; at += 2) add(at, at + 1);
+  add(frameCount, upper ? 1 : 0);
+  return frames;
+}
+
+const lowerFrames = sheetFrames(false);
+const upperFrames = sheetFrames(true);
+const sheetSize = { width: `${columns * 100}%`, height: `${rows * 100}%` };
 
 export function Orb({ state, paused }: Props) {
-  const material = useRef<HTMLSpanElement>(null);
-  const motion = useRef<Animation | null>(null);
+  const lower = useRef<HTMLSpanElement>(null);
+  const upper = useRef<HTMLSpanElement>(null);
+  const motion = useRef<Animation[]>([]);
 
   useEffect(() => {
-    if (!material.current?.animate) return;
-    const animation = material.current.animate(frames, { duration: 4000, iterations: Infinity });
-    animation.pause();
-    motion.current = animation;
+    if (!lower.current?.animate || !upper.current) return;
+    const loop = { duration: loopMs, iterations: Infinity };
+    const animations = [
+      lower.current.animate(lowerFrames, loop),
+      upper.current.animate(upperFrames, loop),
+      upper.current.animate([{ opacity: 0 }, { opacity: 1 }, { opacity: 0 }], {
+        duration: 2 * loopMs / frameCount, iterations: Infinity,
+      }),
+    ];
+    for (const animation of animations) animation.pause();
+    motion.current = animations;
     return () => {
-      animation.cancel();
-      motion.current = null;
+      for (const animation of animations) animation.cancel();
+      motion.current = [];
     };
   }, []);
 
   useEffect(() => {
-    const animation = motion.current;
-    if (!animation) return;
-    animation.updatePlaybackRate(state === "busy" ? 2 : state === "ready" ? 1.25 : 1);
+    const animations = motion.current;
+    if (!animations.length) return;
+    const rate = state === "busy" ? 1.5 : state === "ready" ? 1.15 : 1;
+    for (const animation of animations) animation.updatePlaybackRate(rate);
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)");
     const sync = () => {
-      if (paused || reduced.matches || document.hidden) animation.pause();
-      else animation.play();
+      for (const animation of animations) {
+        if (paused || reduced.matches || document.hidden) animation.pause();
+        else animation.play();
+      }
     };
     sync();
     reduced.addEventListener("change", sync);
@@ -49,7 +78,10 @@ export function Orb({ state, paused }: Props) {
 
   return (
     <span className="search-orb" data-state={state} aria-hidden="true">
-      <span className="orb-material" ref={material} style={{ backgroundSize: `${columns * 100}% ${rows * 100}%` }} />
+      <span className="orb-material">
+        <span className="orb-sheet" ref={lower} style={sheetSize} />
+        <span className="orb-sheet orb-blend" ref={upper} style={sheetSize} />
+      </span>
       <svg className="orb-progress" viewBox="0 0 44 44" fill="none" focusable="false">
         <circle cx="22" cy="22" r="20.5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeDasharray="29 100" />
       </svg>

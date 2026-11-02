@@ -4,12 +4,17 @@
 import sharp from "sharp";
 import { fileURLToPath } from "node:url";
 
-const tiles = 8;
-const tile = 96;
+// Six seconds of motion at 60 distinct samples per second. At 84 pixels each
+// frame stays sharp at double the button size, and the sheet fits in 2048 px.
+const columns = 24;
+const rows = 15;
+const frameCount = columns * rows;
+const tile = 84;
 const scale = 2;
 const side = tile * scale;
-const atlasSide = side * tiles;
-const pixels = Buffer.alloc(atlasSide * atlasSide * 4);
+const atlasWidth = side * columns;
+const atlasHeight = side * rows;
+const pixels = Buffer.alloc(atlasWidth * atlasHeight * 4);
 const tau = Math.PI * 2;
 const mix = (a, b, t) => a + (b - a) * t;
 const clamp = x => Math.max(0, Math.min(1, x));
@@ -44,12 +49,12 @@ const spectrum = [
 ];
 
 function renderFrame(frame) {
-  const phase = tau * frame / (tiles * tiles);
+  const phase = tau * frame / frameCount;
   const spin = phase + 0.43, cosSpin = Math.cos(spin), sinSpin = Math.sin(spin);
   const tilt = 0.18 + 0.26 * Math.sin(phase + 0.4);
   const cosTilt = Math.cos(tilt), sinTilt = Math.sin(tilt);
   const driftX = 0.58 * Math.cos(phase), driftY = 0.58 * Math.sin(phase);
-  const tileX = (frame % tiles) * side, tileY = Math.floor(frame / tiles) * side;
+  const tileX = (frame % columns) * side, tileY = Math.floor(frame / columns) * side;
   const radius = side * 0.485;
   for (let y = 0; y < side; y++) {
     for (let x = 0; x < side; x++) {
@@ -86,7 +91,7 @@ function renderFrame(frame) {
       const diffuse = 0.64 + 0.27 * nz + 0.16 * (-0.6 * nx + 0.8 * ny);
       const key = Math.max(0, -0.37 * nx + 0.60 * ny + 0.71 * nz) ** 64;
       const rim = fresnel * (0.45 + 0.55 * Math.max(0, -nx * 0.75 + ny * 0.67));
-      const offset = ((tileY + y) * atlasSide + tileX + x) * 4;
+      const offset = ((tileY + y) * atlasWidth + tileX + x) * 4;
       for (let channel = 0; channel < 3; channel++) {
         const metal = mix(ca[channel], cb[channel], tint) * diffuse;
         pixels[offset + channel] = Math.round(Math.min(255, metal + 106 * key + 102 * rim));
@@ -96,8 +101,8 @@ function renderFrame(frame) {
   }
 }
 
-for (let frame = 0; frame < tiles * tiles; frame++) renderFrame(frame);
-await sharp(pixels, { raw: { width: atlasSide, height: atlasSide, channels: 4 } })
-  .resize(tile * tiles, tile * tiles)
-  .webp({ quality: 93, alphaQuality: 100, smartSubsample: true, effort: 6 })
+for (let frame = 0; frame < frameCount; frame++) renderFrame(frame);
+await sharp(pixels, { raw: { width: atlasWidth, height: atlasHeight, channels: 4 } })
+  .resize(tile * columns, tile * rows)
+  .webp({ quality: 88, alphaQuality: 100, smartSubsample: true, effort: 6 })
   .toFile(fileURLToPath(new URL("../public/orb/hydrogen.webp", import.meta.url)));
