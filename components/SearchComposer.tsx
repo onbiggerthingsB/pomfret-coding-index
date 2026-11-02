@@ -78,7 +78,7 @@ export function SearchComposer({ value, onChange, onSubmit, onClear, busy, pause
         {!busy && (ready ? <kbd className="search-enter">Enter</kbd> : !value && <kbd className="search-slash">/</kbd>)}
       </span>
       <button type="submit" disabled={busy || !ready} aria-label={busy ? "Searching" : "Search"} aria-busy={busy} className="search-submit">
-        <Orb state={busy ? "busy" : ready ? "ready" : "idle"} />
+        <Orb state={busy ? "busy" : ready ? "ready" : "idle"} paused={paused} />
       </button>
     </form>
   );

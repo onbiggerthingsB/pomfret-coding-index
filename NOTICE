@@ -7,6 +7,12 @@ Copyright 2026 The Geist Project Authors (https://github.com/vercel/geist-font.g
 The original WOFF2 and license are in app/fonts/geist-serif/. The font comes from
 https://github.com/vercel/geist-font/tree/v1.9.0/fonts/GeistSerif/webfonts.
 
+The search orb material is adapted from Hydrogen (SHDR-11) in Orbkit by
+zzzzshawn, copyright 2026, under the MIT License in public/orb/LICENSE.txt.
+The renderer in scripts/render-hydrogen.mjs bakes the surface into
+public/orb/hydrogen.webp. Upstream source:
+https://github.com/zzzzshawn/orbkit/blob/5dbd641ee0d08a9135a2c13b75c4685c36b02150/orbs/orbs/shdr-11.tsx
+
 Resource names, website icons, and linked content belong to their respective
 owners. The index links to third-party resources and preserves their source URLs.
 Listing a resource does not relicense its code or content.

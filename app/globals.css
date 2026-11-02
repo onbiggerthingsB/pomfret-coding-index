@@ -38,35 +38,52 @@
   position: relative;
   display: grid;
   place-items: center;
-  width: 33px;
-  height: 33px;
-  border-radius: 50%;
-  color: #142a33;
-  background:
-    radial-gradient(ellipse at 32% 17%, #fffcee 0%, #edf7efb0 8%, transparent 25%),
-    radial-gradient(ellipse at 77% 81%, #e6b79b 1%, transparent 39%),
-    radial-gradient(ellipse at 17% 69%, #7cb5b4 5%, transparent 51%),
-    radial-gradient(circle at 43% 35%, #e5e8df 0%, #b6c9cd 38%, #697e91 64%, #354351 88%);
-  box-shadow: inset 0 0 0 1px #eef8ee70, inset -2px -3px 5px #202c3947, 0 3px 7px #0006;
+  width: 44px;
+  height: 44px;
+  pointer-events: none;
 }
-.search-orb[data-state="idle"] { filter: saturate(.55) brightness(.83); }
-.search-orb::after {
-  content: "";
+.orb-material {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background-image: url("/orb/hydrogen.webp");
+  background-repeat: no-repeat;
+  background-position: 0% 0%;
+}
+.orb-action, .orb-progress {
   position: absolute;
-  inset: -4px;
-  border-radius: 50%;
-  border: 1px solid #cbd6db25;
+  inset: 0;
+  margin: auto;
+  opacity: 0;
 }
-.search-orb[data-state="busy"]::after { border-top-color: #dce9e4; border-left-color: #a2c9bf; }
-@keyframes orb-read { to { transform: rotate(360deg); } }
+.orb-action {
+  width: 19px;
+  height: 19px;
+  color: white;
+  filter: drop-shadow(0 1px 2px #0b0b18);
+}
+.orb-progress { width: 44px; height: 44px; color: #eee3d8; transform: rotate(-92deg); }
+.search-orb[data-state="busy"] .orb-progress { opacity: 1; }
+.search-submit:focus-visible .orb-action { opacity: 1; }
+@media (hover: hover) {
+  .search-submit:enabled:hover .orb-action { opacity: 1; }
+}
+@media (hover: none) {
+  .search-orb[data-state="ready"] .orb-action { opacity: 1; }
+}
+@keyframes orb-progress { to { transform: rotate(268deg); } }
 @media (prefers-reduced-motion: no-preference) {
-  .search-composer[data-paused="false"] .search-orb { transition: transform 160ms ease-out, filter 160ms ease-out; }
-  .search-composer[data-paused="false"] .search-submit:enabled:hover .search-orb { transform: translateY(-1px); }
-  .search-composer[data-paused="false"] .search-submit:enabled:active .search-orb { transform: scale(.93); }
-  .search-composer[data-paused="false"] .search-orb[data-state="busy"]::after { animation: orb-read 1.2s linear infinite; }
+  .search-composer[data-paused="false"] .orb-action { transition: opacity 140ms ease-out; }
+  .search-composer[data-paused="false"] .orb-material { transition: transform 150ms ease-out; }
+  .search-composer[data-paused="false"] .search-submit:enabled:active .orb-material { transform: scale(.92); }
+  .search-orb[data-state="busy"] .orb-progress { animation: orb-progress 1.35s linear infinite; }
+  .search-composer[data-paused="true"] .orb-progress { animation-play-state: paused; }
 }
 @media (forced-colors: active) {
-  .search-orb { background: ButtonFace; color: ButtonText; border: 1px solid ButtonText; }
+  .orb-material { background-image: none; border: 1px solid ButtonText; }
+  .orb-action { color: ButtonText; opacity: 1; filter: none; }
+  .orb-progress { color: Highlight; }
+  .search-orb[data-state="busy"] .orb-action { opacity: 0; }
 }
 @media (max-width: 420px) {
   .search-composer { padding-inline: 14px 9px; gap: 6px; }
