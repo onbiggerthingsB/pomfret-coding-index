@@ -54,6 +54,7 @@
     "category": "components",
     "tags": ["ui", "react", "components", "headless", "accessibility", "forms"],
     "kind": "library",
+    "agentUrl": "https://base-ui.com/llms.txt",
     "sourceUrl": "https://base-ui.com/",
     "guidance": {
       "bestFor": "Building a custom React design system with unstyled controls.",
@@ -76,6 +77,7 @@
     "category": "components",
     "tags": ["ui", "react", "components", "accessibility", "keyboard", "internationalization"],
     "kind": "library",
+    "agentUrl": "https://react-aria.adobe.com/llms.txt",
     "sourceUrl": "https://react-aria.adobe.com/"
   },
   {
@@ -109,6 +111,7 @@
     "category": "components",
     "tags": ["ui", "react", "components", "material design", "forms", "dashboard"],
     "kind": "library",
+    "agentUrl": "https://mui.com/material-ui/llms.txt",
     "sourceUrl": "https://mui.com/",
     "guidance": {
       "bestFor": "React dashboards, forms and application screens using Material Design components.",
@@ -165,6 +168,7 @@
     "category": "components",
     "tags": ["ui", "react", "components", "tables", "forms", "admin", "dashboard"],
     "kind": "library",
+    "agentUrl": "https://ant.design/llms.txt",
     "sourceUrl": "https://ant.design/"
   },
   {
@@ -185,6 +189,7 @@
     "category": "components",
     "tags": ["ui", "components", "design system", "ibm", "data", "enterprise"],
     "kind": "library",
+    "agentUrl": "https://www.carbondesignsystem.com/llms.txt",
     "sourceUrl": "https://www.carbondesignsystem.com/"
   },
   {
@@ -215,6 +220,7 @@
     "category": "components",
     "tags": ["ui", "components", "css", "responsive", "html", "layout"],
     "kind": "library",
+    "agentUrl": "https://getbootstrap.com/llms.txt",
     "sourceUrl": "https://getbootstrap.com/"
   },
   {
@@ -246,6 +252,7 @@
     "category": "components",
     "tags": ["ui", "components", "tailwind", "html", "dropdown", "modal", "forms"],
     "kind": "library",
+    "agentUrl": "https://raw.githubusercontent.com/themesberg/flowbite/main/README.md",
     "sourceUrl": "https://github.com/themesberg/flowbite"
   },
   {
@@ -286,6 +293,7 @@
     "category": "components",
     "tags": ["ui", "components", "headless", "react", "vue", "svelte", "solid"],
     "kind": "library",
+    "agentUrl": "https://ark-ui.com/llms.txt",
     "sourceUrl": "https://ark-ui.com/"
   },
   {
@@ -296,6 +304,7 @@
     "category": "components",
     "tags": ["ui", "components", "react", "tailwind", "accessibility", "nextui"],
     "kind": "library",
+    "agentUrl": "https://heroui.com/llms.txt",
     "sourceUrl": "https://heroui.com/"
   },
   {
@@ -306,6 +315,7 @@
     "category": "components",
     "tags": ["ui", "components", "react", "tailwind", "animation", "background", "landing page"],
     "kind": "library",
+    "agentUrl": "https://ui.aceternity.com/llms.txt",
     "sourceUrl": "https://ui.aceternity.com/"
   },
   {
@@ -316,16 +326,18 @@
     "category": "components",
     "tags": ["ui", "components", "react", "tailwind", "animation", "landing page", "effects"],
     "kind": "library",
+    "agentUrl": "https://magicui.design/llms.txt",
     "sourceUrl": "https://magicui.design/"
   },
   {
     "id": "react-bits",
     "name": "React Bits",
     "url": "https://reactbits.dev/",
-    "description": "Customizable animated React components, text treatments, backgrounds and small interactive effects.",
+    "description": "Preview animated text, backgrounds and interactive cards. Copy the React source for the individual effect you want.",
     "category": "components",
     "tags": ["ui", "components", "react", "animation", "background", "typography", "creative coding"],
     "kind": "library",
+    "agentUrl": "https://reactbits.dev/llms.txt",
     "sourceUrl": "https://reactbits.dev/"
   },
   {
@@ -342,7 +354,7 @@
     "id": "tremor",
     "name": "Tremor",
     "url": "https://www.tremor.so/",
-    "description": "React components for charts, filters, metrics and data dashboards using Tailwind CSS.",
+    "description": "Copy React and Tailwind components for dashboard charts, date filters and metric cards. The component source is open and the premium blocks are separate.",
     "category": "components",
     "tags": ["ui", "components", "react", "tailwind", "charts", "dashboard", "data visualization"],
     "kind": "library",
@@ -356,6 +368,7 @@
     "category": "components",
     "tags": ["ui", "components", "web components", "html", "forms", "shoelace"],
     "kind": "library",
+    "agentUrl": "https://webawesome.com/llms.txt",
     "sourceUrl": "https://webawesome.com/"
   },
   {
@@ -376,6 +389,7 @@
     "category": "components",
     "tags": ["ui", "components", "react", "forms", "tables", "theming"],
     "kind": "library",
+    "agentUrl": "https://primereact.dev/llms.txt",
     "sourceUrl": "https://primereact.dev/"
   },
   {
@@ -396,6 +410,7 @@
     "category": "components",
     "tags": ["ui", "components", "vue", "material design", "responsive", "layout"],
     "kind": "library",
+    "agentUrl": "https://vuetifyjs.com/llms.txt",
     "sourceUrl": "https://github.com/vuetifyjs/vuetify"
   },
   {
@@ -406,6 +421,7 @@
     "category": "components",
     "tags": ["ui", "components", "vue", "typescript", "themes", "forms"],
     "kind": "library",
+    "agentUrl": "https://www.naiveui.com/llms.txt",
     "sourceUrl": "https://github.com/tusen-ai/naive-ui"
   },
   {
@@ -416,6 +432,7 @@
     "category": "components",
     "tags": ["ui", "components", "vue", "forms", "tables", "admin"],
     "kind": "library",
+    "agentUrl": "https://element-plus.org/llms.txt",
     "sourceUrl": "https://element-plus.org/"
   },
   {
@@ -426,6 +443,7 @@
     "category": "components",
     "tags": ["ui", "components", "vue", "pwa", "mobile", "desktop", "cross platform"],
     "kind": "library",
+    "agentUrl": "https://quasar.dev/llms.txt",
     "sourceUrl": "https://quasar.dev/"
   },
   {
@@ -436,6 +454,7 @@
     "category": "components",
     "tags": ["ui", "components", "tailwind", "svelte", "themes", "design system"],
     "kind": "library",
+    "agentUrl": "https://www.skeleton.dev/llms.txt",
     "sourceUrl": "https://www.skeleton.dev/"
   },
   {
@@ -446,17 +465,18 @@
     "category": "components",
     "tags": ["ui", "components", "svelte", "headless", "accessibility", "forms"],
     "kind": "library",
-    "agentUrl": "https://www.bits-ui.com/docs/llms",
+    "agentUrl": "https://www.bits-ui.com/llms.txt",
     "sourceUrl": "https://www.bits-ui.com/"
   },
   {
     "id": "melt-ui",
     "name": "Melt UI",
     "url": "https://melt-ui.com/",
-    "description": "Unstyled Svelte component builders for custom design systems and accessible web applications.",
+    "description": "Build unstyled Svelte controls such as dialogs, tabs and toggles. The Svelte 5 edition uses the melt package and has its own installation guide.",
     "category": "components",
     "tags": ["ui", "components", "svelte", "headless", "accessibility", "design system"],
     "kind": "library",
+    "agentUrl": "https://next.melt-ui.com/guides/installation/",
     "sourceUrl": "https://melt-ui.com/"
   },
   {
@@ -467,6 +487,7 @@
     "category": "icons",
     "tags": ["icons", "svg", "react", "line icons", "navigation", "assets"],
     "kind": "library",
+    "agentUrl": "https://lucide.dev/llms.txt",
     "sourceUrl": "https://lucide.dev/",
     "guidance": {
       "bestFor": "Consistent interface icons with adjustable size, color and stroke.",
@@ -582,6 +603,7 @@
     "category": "motion",
     "tags": ["animation", "react", "javascript", "gestures", "transitions", "framer motion"],
     "kind": "library",
+    "agentUrl": "https://motion.dev/llms.txt",
     "sourceUrl": "https://motion.dev/",
     "guidance": {
       "bestFor": "React entrance, exit, layout and gesture animations.",
@@ -604,6 +626,7 @@
     "category": "motion",
     "tags": ["animation", "javascript", "timeline", "scroll", "svg", "creative coding"],
     "kind": "library",
+    "agentUrl": "https://gsap.com/llms.txt",
     "sourceUrl": "https://gsap.com/"
   },
   {
@@ -634,6 +657,7 @@
     "category": "motion",
     "tags": ["3d", "webgl", "javascript", "animation", "graphics", "creative coding"],
     "kind": "library",
+    "agentUrl": "https://threejs.org/llms.txt",
     "sourceUrl": "https://threejs.org/",
     "guidance": {
       "bestFor": "Interactive 3D scenes and graphics in the browser.",
@@ -663,7 +687,7 @@
     "id": "codrops",
     "name": "Codrops",
     "url": "https://tympanus.net/codrops/",
-    "description": "Creative frontend tutorials, interaction demos and website case studies for exploring new visual ideas.",
+    "description": "Read frontend case studies and follow interaction tutorials with runnable demos for typography, transitions and creative coding.",
     "category": "inspiration",
     "tags": ["inspiration", "tutorials", "creative coding", "webgl", "animation", "web design", "ideas"],
     "kind": "article",
@@ -673,7 +697,7 @@
     "id": "siteinspire",
     "name": "Siteinspire",
     "url": "https://www.siteinspire.com/",
-    "description": "A curated website gallery organized by design style, subject and type of site.",
+    "description": "Filter real websites by style, layout, sector or platform, then follow a reference to its designer or agency.",
     "category": "inspiration",
     "tags": ["inspiration", "web design", "portfolio", "typography", "layout", "gallery", "ideas"],
     "kind": "gallery",
@@ -683,7 +707,7 @@
     "id": "landbook",
     "name": "Landbook",
     "url": "https://land-book.com/",
-    "description": "A curated website design gallery for researching landing pages, layouts and visual directions.",
+    "description": "Browse examples of how real sites handle landing pages, type and editorial layout. The full gallery requires a subscription.",
     "category": "inspiration",
     "tags": ["inspiration", "web design", "landing page", "layout", "gallery", "ideas"],
     "kind": "gallery",
@@ -713,7 +737,7 @@
     "id": "mobbin",
     "name": "Mobbin",
     "url": "https://mobbin.com/",
-    "description": "A reference library of real app and website screens for studying interface patterns and user flows.",
+    "description": "Study real onboarding, navigation and checkout screens across apps and websites. Full library access and the agent connector require a paid plan.",
     "category": "inspiration",
     "tags": ["inspiration", "ui", "ux", "mobile", "user flows", "onboarding", "screens"],
     "kind": "gallery",
@@ -808,6 +832,7 @@
     "category": "skills",
     "tags": ["agents", "claude", "prompting", "context", "verification", "workflow"],
     "kind": "documentation",
+    "agentUrl": "https://code.claude.com/docs/en/best-practices.md",
     "sourceUrl": "https://code.claude.com/docs/en/best-practices"
   },
   {
@@ -815,7 +840,7 @@
     "name": "ARIA Authoring Practices",
     "url": "https://www.w3.org/WAI/ARIA/apg/",
     "description": "W3C patterns and examples for implementing accessible widgets, keyboard interactions and interface semantics.",
-    "category": "skills",
+    "category": "learning",
     "tags": ["accessibility", "aria", "keyboard", "components", "patterns", "screen reader"],
     "kind": "documentation",
     "sourceUrl": "https://www.w3.org/WAI/ARIA/apg/",
@@ -890,9 +915,9 @@
     "id": "javascript-info",
     "name": "JavaScript.info",
     "url": "https://javascript.info/",
-    "description": "A structured JavaScript tutorial covering language fundamentals, browser APIs and asynchronous programming.",
+    "description": "Learn JavaScript through short lessons and exercises, from writing a constructor for a calculator to handling browser events and asynchronous code.",
     "category": "learning",
-    "tags": ["learning", "javascript", "browser", "async", "beginner", "tutorial"],
+    "tags": ["learning", "javascript", "browser", "async", "constructor", "objects", "beginner", "tutorial"],
     "kind": "documentation",
     "sourceUrl": "https://javascript.info/"
   },
@@ -940,7 +965,7 @@
     "id": "coding-train-physics",
     "name": "The Coding Train Physics",
     "url": "https://thecodingtrain.com/tracks/physics-libraries",
-    "description": "Video lessons and code examples for Matter.js bodies, constraints, dragging and physics-based projects.",
+    "description": "Follow Matter.js video experiments with bodies, collisions, constraints and dragging. The lesson notes flag older Engine.run examples.",
     "category": "learning",
     "tags": ["learning", "video", "matter.js", "physics", "p5.js", "javascript", "creative coding"],
     "kind": "video",
@@ -948,9 +973,9 @@
   },
   {
     "id": "frontend-bootcamp",
-    "name": "Frontend Bootcamp",
+    "name": "Master.dev Front-End Bootcamp",
     "url": "https://master.dev/bootcamp/",
-    "description": "Project-based introductory lessons in HTML, CSS and JavaScript for building web pages.",
+    "description": "Video lessons on HTML, CSS and JavaScript lead to a calculator and a browser game. The free course requires an account.",
     "category": "learning",
     "tags": ["learning", "video", "html", "css", "javascript", "beginner", "projects"],
     "kind": "video",
@@ -974,6 +999,7 @@
     "category": "tools",
     "tags": ["tools", "components", "testing", "documentation", "design system", "frontend"],
     "kind": "tool",
+    "agentUrl": "https://storybook.js.org/llms.txt",
     "sourceUrl": "https://storybook.js.org/"
   },
   {
@@ -1007,6 +1033,7 @@
     "category": "tools",
     "tags": ["tools", "testing", "unit tests", "javascript", "typescript", "vite", "verification"],
     "kind": "tool",
+    "agentUrl": "https://vitest.dev/llms.txt",
     "sourceUrl": "https://vitest.dev/",
     "guidance": {
       "bestFor": "Fast unit tests for JavaScript and TypeScript logic.",
@@ -1081,6 +1108,584 @@
     "category": "tools",
     "tags": ["tools", "design", "prototyping", "components", "mockups", "handoff", "svg"],
     "kind": "tool",
+    "agentUrl": "https://penpot.app/llms.txt",
     "sourceUrl": "https://penpot.app/"
+  },
+  {
+    "id": "designeer",
+    "name": "Designeer",
+    "url": "https://designeer.xyz/",
+    "description": "A gallery of interface and motion experiments with creator credits, clips and extracted color palettes.",
+    "category": "inspiration",
+    "tags": [
+      "design references",
+      "motion",
+      "microinteractions",
+      "gallery",
+      "keyboard shortcuts",
+      "palette"
+    ],
+    "kind": "gallery",
+    "sourceUrl": "https://designeer.xyz/",
+    "guidance": {
+      "bestFor": "Pick a short interaction, follow it to its creator and describe the specific behavior you want to build.",
+      "frameworks": [
+        "Visual reference"
+      ],
+      "setup": "low",
+      "caveat": "Clips show the result. Follow the creator link for implementation details and reuse terms.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://designeer.xyz/",
+        "https://designeer.xyz/finds/shiv-visual-2115566065388597351"
+      ]
+    }
+  },
+  {
+    "id": "detail-design",
+    "name": "Detail",
+    "url": "https://detail.design/",
+    "description": "Small product design decisions explained through real examples, including keyboard hints, interface copy and accessible controls.",
+    "category": "inspiration",
+    "tags": [
+      "design details",
+      "microinteractions",
+      "keyboard shortcuts",
+      "copywriting",
+      "accessibility",
+      "product design"
+    ],
+    "kind": "gallery",
+    "sourceUrl": "https://detail.design/",
+    "guidance": {
+      "bestFor": "Give an agent one interaction to reproduce, such as revealing a shortcut beside the control it operates.",
+      "frameworks": [
+        "Visual reference",
+        "Interaction design"
+      ],
+      "setup": "low",
+      "caveat": "Some entries show a video or a product observation. Use an example as a behavior spec and test your own implementation.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://detail.design/",
+        "https://detail.design/detail/hold-to-reveal-shortcut-hint"
+      ]
+    }
+  },
+  {
+    "id": "motionimo-frames",
+    "name": "Motionimo Frames",
+    "url": "https://motionimo.xyz/frames",
+    "description": "Browse individual motion-design frames by color, mood, style and composition, then follow the creator credit.",
+    "category": "inspiration",
+    "tags": [
+      "frames",
+      "motion design",
+      "gallery",
+      "color",
+      "palette",
+      "composition",
+      "moodboard"
+    ],
+    "kind": "gallery",
+    "sourceUrl": "https://motionimo.xyz/frames",
+    "guidance": {
+      "bestFor": "Find a still that demonstrates the lighting or composition you want, then compare similar frames.",
+      "frameworks": [
+        "Visual reference"
+      ],
+      "setup": "low",
+      "caveat": "A still establishes a visual direction. It does not tell your agent the animation timing or grant permission to reuse the image.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://motionimo.xyz/frames"
+      ]
+    }
+  },
+  {
+    "id": "amicro",
+    "name": "Amicro",
+    "url": "https://amicro.dev/",
+    "description": "React microinteractions with live previews and source, including a search button that swaps its icon on hover.",
+    "category": "motion",
+    "tags": [
+      "microinteractions",
+      "react",
+      "motion",
+      "animation",
+      "buttons",
+      "search",
+      "components",
+      "agent skills"
+    ],
+    "kind": "library",
+    "agentUrl": "https://amicro.dev/skills",
+    "sourceUrl": "https://amicro.dev/",
+    "guidance": {
+      "bestFor": "Choose a single state change, inspect its preview, then give your agent that specific component and its setup.",
+      "frameworks": [
+        "React",
+        "Motion"
+      ],
+      "setup": "moderate",
+      "caveat": "Check each example's imports, icon dependency and attribution. Test the interaction with a keyboard as well as a pointer.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://amicro.dev/buttons/btn-11",
+        "https://amicro.dev/skills"
+      ]
+    }
+  },
+  {
+    "id": "paaages",
+    "name": "Paaages",
+    "url": "https://paaages.com/",
+    "description": "Full-page website references grouped by screen type, including sign-in, pricing, landing and 404 pages.",
+    "category": "inspiration",
+    "tags": [
+      "design inspiration",
+      "gallery",
+      "landing page",
+      "pricing",
+      "sign in",
+      "login",
+      "404",
+      "layout"
+    ],
+    "kind": "gallery",
+    "sourceUrl": "https://paaages.com/",
+    "guidance": {
+      "bestFor": "Compare layouts for the exact screen your project needs before asking an agent to build it.",
+      "frameworks": [
+        "Visual reference",
+        "Web design"
+      ],
+      "setup": "low",
+      "caveat": "Screenshots capture one state. Visit the original site to check responsive behavior and interactions.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://paaages.com/pages/landing",
+        "https://paaages.com/pages/not-found"
+      ]
+    }
+  },
+  {
+    "id": "gradientora",
+    "name": "Gradientora",
+    "url": "https://gradientora.com/",
+    "description": "Explore ready-made gradients or open the shader playground to change an orb’s lighting, surface noise and motion.",
+    "category": "tools",
+    "tags": [
+      "gradient",
+      "gradients",
+      "color",
+      "orb",
+      "shader",
+      "sphere",
+      "lighting",
+      "motion",
+      "background"
+    ],
+    "kind": "tool",
+    "sourceUrl": "https://gradientora.com/",
+    "guidance": {
+      "bestFor": "Use the sphere editor to compare a rim highlight, surface noise and a slower animation before designing your own orb.",
+      "frameworks": [
+        "Browser shader editor",
+        "Visual reference"
+      ],
+      "setup": "low",
+      "caveat": "Many downloadable gradient packs are premium. The editor can serve as a visual reference with no asset download.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://gradientora.com/",
+        "https://shader.gradientora.com/3d-shaders"
+      ]
+    }
+  },
+  {
+    "id": "geist-serif",
+    "name": "Introducing Geist Serif",
+    "url": "https://vercel.com/blog/introducing-geist-serif",
+    "description": "Vercel's type specimen and design notes on pairing serif display titles with Geist Sans controls and body text.",
+    "category": "learning",
+    "tags": [
+      "typography",
+      "fonts",
+      "type pairing",
+      "serif",
+      "geist",
+      "title",
+      "headings",
+      "design"
+    ],
+    "kind": "article",
+    "sourceUrl": "https://vercel.com/blog/introducing-geist-serif",
+    "guidance": {
+      "bestFor": "Compare the same resource title in serif and sans, then use the specimen to judge size, contrast and hierarchy.",
+      "frameworks": [
+        "Web typography",
+        "WOFF2",
+        "CSS"
+      ],
+      "setup": "low",
+      "caveat": "Use the official font distribution and keep its license when self-hosting the files.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://vercel.com/blog/introducing-geist-serif",
+        "https://vercel.com/font?type=serif"
+      ]
+    }
+  },
+  {
+    "id": "designbookmark",
+    "name": "DesignBookmark",
+    "url": "https://designbookmark.com/",
+    "description": "A directory of design tools grouped by task, including typography, gradients, design systems and 3D motion.",
+    "category": "inspiration",
+    "tags": [
+      "design resources",
+      "directory",
+      "typography",
+      "color",
+      "design systems",
+      "motion"
+    ],
+    "kind": "gallery",
+    "sourceUrl": "https://designbookmark.com/",
+    "guidance": {
+      "bestFor": "Find a tool for a specific design job, such as checking a palette's contrast, and follow the listing to the original tool.",
+      "frameworks": [
+        "Design tools",
+        "Web design"
+      ],
+      "setup": "low",
+      "caveat": "Some listings are sponsored. Check the linked tool for current access and pricing.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://designbookmark.com/",
+        "https://designbookmark.com/design"
+      ]
+    }
+  },
+  {
+    "id": "insposite",
+    "name": "Insposite",
+    "url": "https://www.insposite.com/",
+    "description": "A screenshot gallery with distinct filters for portfolios, inspiration sites and working design tools.",
+    "category": "inspiration",
+    "tags": [
+      "design references",
+      "gallery",
+      "portfolio",
+      "tools",
+      "inspiration",
+      "creator"
+    ],
+    "kind": "gallery",
+    "sourceUrl": "https://www.insposite.com/",
+    "guidance": {
+      "bestFor": "Compare a portfolio to another portfolio, or switch to Tools to discover resources you can use in a build.",
+      "frameworks": [
+        "Visual reference"
+      ],
+      "setup": "low",
+      "caveat": "Gallery cards can lead to third-party products with different terms. Follow the original destination before choosing one.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://www.insposite.com/",
+        "https://www.insposite.com/tools"
+      ]
+    }
+  },
+  {
+    "id": "kinetics",
+    "name": "Kinetics",
+    "url": "https://kinetics.colorion.co/",
+    "description": "Preview interface animations and tune a spring's stiffness, damping and mass before copying a CSS or React example.",
+    "category": "motion",
+    "tags": [
+      "spring",
+      "animation",
+      "microinteractions",
+      "css",
+      "react",
+      "physics",
+      "button",
+      "agent prompts"
+    ],
+    "kind": "library",
+    "sourceUrl": "https://x.com/csaba_kissi/status/2116596745379385657",
+    "guidance": {
+      "bestFor": "Tune overshoot for a button or panel with the generator and hand the matching code to your agent.",
+      "frameworks": [
+        "CSS",
+        "React"
+      ],
+      "setup": "low",
+      "caveat": "CSS, React and prompt availability vary by example. Spring parameters here describe UI motion, not collisions in a Matter.js world.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://kinetics.colorion.co/",
+        "https://kinetics.colorion.co/tools/spring-animation-generator/"
+      ]
+    }
+  },
+  {
+    "id": "component-gallery",
+    "name": "The Component Gallery",
+    "url": "https://component.gallery/",
+    "description": "Compare how different design systems implement the same component, with filters for framework, accessibility notes and examples.",
+    "category": "components",
+    "tags": [
+      "ui",
+      "components",
+      "design system",
+      "popover",
+      "buttons",
+      "accessibility",
+      "patterns"
+    ],
+    "kind": "gallery",
+    "sourceUrl": "https://x.com/iamtanzil_/status/2108066324907962575",
+    "guidance": {
+      "bestFor": "Look up a popover or button and compare markup, usage and accessibility guidance before choosing an implementation.",
+      "frameworks": [
+        "Design systems",
+        "HTML",
+        "Multiple frameworks"
+      ],
+      "setup": "low",
+      "caveat": "Examples belong to different systems. Follow the example's own docs for API compatibility and license terms.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://component.gallery/components/popover/",
+        "https://component.gallery/components/button/"
+      ]
+    }
+  },
+  {
+    "id": "mapcn",
+    "name": "mapcn",
+    "url": "https://www.mapcn.dev/",
+    "description": "React map components for adding markers, popups and controls to a MapLibre map styled with Tailwind.",
+    "category": "components",
+    "tags": [
+      "map",
+      "maps",
+      "maplibre",
+      "react",
+      "tailwind",
+      "markers",
+      "geospatial",
+      "components"
+    ],
+    "kind": "library",
+    "sourceUrl": "https://x.com/iamtanzil_/status/2108066324907962575",
+    "guidance": {
+      "bestFor": "Build a campus map with a custom marker and a popup before layering in your own locations.",
+      "frameworks": [
+        "React",
+        "MapLibre GL",
+        "Tailwind CSS"
+      ],
+      "setup": "moderate",
+      "caveat": "Check the tile provider's terms and attribution when changing the basemap or publishing a project.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://www.mapcn.dev/"
+      ]
+    }
+  },
+  {
+    "id": "gustavo-craft",
+    "name": "Craft by Gustavo Fior",
+    "url": "https://craft.gustavofior.com/",
+    "description": "Short interaction design lessons with live examples of button presses, interruption and when a hover effect helps.",
+    "category": "learning",
+    "tags": [
+      "microinteractions",
+      "motion",
+      "button",
+      "interaction design",
+      "animation",
+      "typography"
+    ],
+    "kind": "article",
+    "sourceUrl": "https://x.com/AdhamDannaway/status/2114725737932435514",
+    "guidance": {
+      "bestFor": "Compare how a button feels across press states, then give the agent a precise description of the one you want.",
+      "frameworks": [
+        "Web interaction design",
+        "CSS"
+      ],
+      "setup": "low",
+      "caveat": "Start with a published lesson such as Button Press. Some topics in the index are still planned.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://craft.gustavofior.com/button-press"
+      ]
+    }
+  },
+  {
+    "id": "ui-skills",
+    "name": "UI Skills",
+    "url": "https://www.ui-skills.com/",
+    "description": "A directory of named skills for coding agents, including guides for improving interface motion and accessibility.",
+    "category": "skills",
+    "tags": [
+      "agents",
+      "skills",
+      "animation",
+      "ui",
+      "accessibility",
+      "motion",
+      "review"
+    ],
+    "kind": "skills",
+    "sourceUrl": "https://x.com/Abmankendrick/status/2101256670236025105",
+    "guidance": {
+      "bestFor": "Look up an individual skill and read its instructions before deciding whether it suits the project.",
+      "frameworks": [
+        "Agent instructions",
+        "Web interfaces"
+      ],
+      "setup": "low",
+      "caveat": "Skill authors and requirements vary. Follow the original source and inspect the instructions before running an installer.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://www.ui-skills.com/",
+        "https://www.ui-skills.com/skills/emilkowalski/improve-animations"
+      ]
+    }
+  },
+  {
+    "id": "graphical",
+    "name": "Graphical",
+    "url": "https://www.graphicalui.com/",
+    "description": "A visual theme builder that turns design choices into a GUI.md file and React components for a coding agent.",
+    "category": "tools",
+    "tags": [
+      "design tokens",
+      "theme",
+      "agents",
+      "ui",
+      "react",
+      "design system",
+      "typography"
+    ],
+    "kind": "tool",
+    "sourceUrl": "https://x.com/joshpuckett/status/2107175379903594714",
+    "guidance": {
+      "bestFor": "Translate a chosen type scale and theme into a specification an agent can follow consistently across screens.",
+      "frameworks": [
+        "React",
+        "Base UI",
+        "Markdown"
+      ],
+      "setup": "moderate",
+      "caveat": "The complete builder and exports are paid. Explore the public preview before choosing it for a class project.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://www.graphicalui.com/"
+      ]
+    }
+  },
+  {
+    "id": "canvas-ui",
+    "name": "Canvas UI",
+    "url": "https://canvasui.dev/",
+    "description": "Experimental shader effects for interface components, with live examples, framework-specific setup and plain HTML fallbacks.",
+    "category": "components",
+    "tags": [
+      "components",
+      "webgl",
+      "webgpu",
+      "shaders",
+      "experimental",
+      "effects",
+      "canvas"
+    ],
+    "kind": "library",
+    "sourceUrl": "https://x.com/davidhaz/status/2080224101432447094",
+    "guidance": {
+      "bestFor": "Prototype an optional material effect on a single control and compare it with the ordinary HTML fallback.",
+      "frameworks": [
+        "HTML",
+        "WebGL",
+        "WebGPU"
+      ],
+      "setup": "advanced",
+      "caveat": "Many effects depend on experimental HTML-in-canvas support. Verify the fallback and test on the actual classroom browser.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://canvasui.dev/",
+        "https://canvasui.dev/docs"
+      ]
+    }
+  },
+  {
+    "id": "transitions-dev",
+    "name": "Transitions.dev",
+    "url": "https://transitions.dev/",
+    "description": "A collection of interface transition recipes with copyable examples and a companion motion skill for agents.",
+    "category": "motion",
+    "tags": [
+      "animation",
+      "microinteractions",
+      "transitions",
+      "motion",
+      "agent skills",
+      "css"
+    ],
+    "kind": "library",
+    "agentUrl": "https://transitions.dev/skill.html",
+    "sourceUrl": "https://x.com/adrien_ninet/status/2116862984366809326",
+    "guidance": {
+      "bestFor": "Choose a transition for a real UI state change and use the companion skill to describe the timing to an agent.",
+      "frameworks": [
+        "Web motion",
+        "Agent instructions"
+      ],
+      "setup": "low",
+      "caveat": "The core collection is free and some additional recipes are paid. Check the specific transition before adopting it.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://transitions.dev/",
+        "https://transitions.dev/skill.html"
+      ]
+    }
+  },
+  {
+    "id": "paper-shaders",
+    "name": "Paper Shaders",
+    "url": "https://shaders.paper.design/",
+    "description": "Interactive shader examples with adjustable parameters, including a smoke ring with controls for its radius, thickness, noise and speed.",
+    "category": "motion",
+    "tags": [
+      "shader",
+      "gradients",
+      "orb",
+      "ring",
+      "motion",
+      "webgl",
+      "color",
+      "background"
+    ],
+    "kind": "library",
+    "sourceUrl": "https://x.com/stephenhaney/status/2072369858638233843",
+    "guidance": {
+      "bestFor": "Tune a luminous ring in the browser and compare a moving state with a static frame before using the effect in a project.",
+      "frameworks": [
+        "Web shaders"
+      ],
+      "setup": "moderate",
+      "caveat": "Continuous shader animation uses rendering time. Try speed zero for reduced motion and test on the intended device.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://shaders.paper.design/",
+        "https://shaders.paper.design/smoke-ring"
+      ]
+    }
   }
 ]

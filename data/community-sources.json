@@ -1,8 +1,27 @@
 {
   "importedAt": "2026-11-02T19:47:53.462Z",
-  "count": 28359,
-  "method": "Primary resource links from public, community-curated lists. Descriptions are generated from each resource title and list section, rather than copied editorial descriptions.",
-  "verification": "Source documents were retrieved successfully. Individual destination links, software behavior, security, and continued availability have not been independently verified.",
+  "count": 27237,
+  "method": "Primary resource links from public source lists, screened for duplicates, unusable destinations and classroom relevance. Descriptions summarize the title and source section.",
+  "verification": "Dated GitHub repository checks and confirmed destination failures are recorded in community-review.json. An included link does not certify availability, software behavior or security.",
+  "qualityReview": {
+    "checkedAt": "2026-11-02",
+    "candidates": 28359,
+    "removed": {
+      "source navigation or appendix": 96,
+      "missing GitHub document": 11,
+      "event listing, profile or chat invitation": 102,
+      "archived package repository": 413,
+      "confirmed missing destination": 205,
+      "unavailable GitHub repository": 77,
+      "outside classroom project scope": 26,
+      "duplicate destination": 164,
+      "owner-deprecated project": 21,
+      "invalid destination": 1,
+      "domain offered for sale": 3,
+      "retired or superseded resource": 2,
+      "account gate without a resource": 1
+    }
+  },
   "sources": [
     {
       "repo": "sindresorhus/awesome",

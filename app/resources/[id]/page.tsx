@@ -15,7 +15,7 @@ export default async function ResourcePage({ params }: { params: Promise<{ id: s
         <Link href="/" className="text-sm text-muted underline-offset-4 hover:text-text hover:underline">Back to the Coding Library</Link>
         <header className="mt-12">
           <p className="text-sm text-muted">{resourceCategories[resource.category]} · {resource.kind}</p>
-          <h1 className="mt-3 text-3xl font-medium tracking-tight sm:text-4xl">{resource.name}</h1>
+          <h1 className="mt-3 text-3xl font-normal tracking-tight sm:text-4xl" style={{ fontFamily: "var(--font-geist-serif), Georgia, serif" }}>{resource.name}</h1>
           <p className="mt-6 text-lg leading-8 text-muted">{resource.description}</p>
         </header>
         <div className="mt-8 flex flex-wrap gap-3">
@@ -26,7 +26,7 @@ export default async function ResourcePage({ params }: { params: Promise<{ id: s
         {resource.guidance && (
           <section className="mt-12 border-t border-line pt-6" aria-labelledby="reviewed-guidance">
             <h2 id="reviewed-guidance" className="text-base font-medium">Reviewed guidance</h2>
-            <p className="mt-2 text-sm text-muted">Documentation checked {resource.guidance.checkedAt}. Setup level is an editorial estimate, not a runtime compatibility test.</p>
+            <p className="mt-2 text-sm text-muted">Sources checked {resource.guidance.checkedAt}. Setup level is an editorial estimate, not a runtime compatibility test.</p>
             <dl className="mt-5 space-y-4 text-sm leading-6">
               <div><dt className="font-medium">Best for</dt><dd className="text-muted">{resource.guidance.bestFor}</dd></div>
               <div><dt className="font-medium">Frameworks and formats</dt><dd className="text-muted">{resource.guidance.frameworks.join(", ")}</dd></div>

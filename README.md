@@ -4,7 +4,7 @@ A searchable resource library for Science / Advanced Coding. Students explore a 
 
 See LICENSE and NOTICE for third-party licensing.
 
-[Open the live app](https://pomfret-coding-index.vercel.app) · [Laptop tilt setup](docs/LAPTOP_TILT.md) · [Original team project](https://github.com/onbiggerthingsB/Hackathon/tree/75400d7/projects/onbiggerthingsB/coding-library)
+[Open the live app](https://pomfret-coding-index.vercel.app) · [Catalog review and design sources](docs/CATALOG_REVIEW.md) · [Laptop tilt setup](docs/LAPTOP_TILT.md) · [Original team project](https://github.com/onbiggerthingsB/Hackathon/tree/75400d7/projects/onbiggerthingsB/coding-library)
 
 ## Run locally
 
@@ -28,18 +28,13 @@ npm start
 
 ## What is indexed
 
-The November 2, 2026 snapshot has 28,358 deduplicated records, including 90 featured resources. The import contains 28,359 community records before the server applies its additional normalization and merges the featured collection.
+The featured collection includes 108 starting points for components, icons, motion, design, agent workflows, learning and developer tools. Thirty-two have a dated guide with use cases, setup and caveats. Other records come from 36 public coding collections.
 
-- Featured resources include 38 component libraries, plus icons, animation, design references, agent workflows, learning and developer tools.
-- Community references were imported from 36 successfully retrieved public source documents.
-- Each record retains its source URL. Imported descriptions summarize resource names and source sections.
-- The source documents were checked. Individual imported destinations and software behavior have not all been verified.
-- The count measures resource references across these categories. A linked UI library can contain many additional components.
-- Fourteen featured resources include documentation-checked guidance: use cases, frameworks, setup estimates, caveats, source links and a checked date. This is not a runtime compatibility certification.
+The [November 2 catalog review](docs/CATALOG_REVIEW.md) covers all 28,359 original community entries. It records which links were removed or repaired, the limits of the checks, and how to trace the 18 featured additions to their sources. The [live API](https://pomfret-coding-index.vercel.app/api/resources?limit=1) returns the current deduplicated total in `indexed` and the featured count in `totalFeatured`.
 
 The large catalog stays on the server. The browser receives the featured collection and paginated search results. The physical pile displays a bounded sample, with repeated featured icons, independently of total index size.
 
-To rebuild the community data from its recorded public sources, run the following command. It makes network requests and updates the two community JSON files.
+To rebuild the community data from its recorded public sources, run the following command. It reads the recorded editorial decisions, fetches the public lists and updates the imported records and source manifest. Reviewed duplicate IDs remain usable through resource pages and the API.
 
 ```sh
 npm run import:resources
@@ -49,7 +44,7 @@ Rebuild the app after changing the catalog so the homepage's count matches the u
 
 ## Students and agents
 
-- Enter a phrase such as `accessible React components`, `icons`, or `I need components for a dashboard`.
+- Press `/` to focus search. Try `microinteractions`, `gradients` or `components for a dashboard`, then press Enter.
 - Up to 24 matching icons rise above the search bar with resource names. Click one to see its website, checked guidance when available, source and agent handoff. The text list keeps 60 results per page.
 - Use the results list for keyboard access, descriptions and pagination.
 - Saved resources stay in the current browser.
@@ -76,20 +71,6 @@ GitHub repository references use resource-specific monograms instead of repeatin
 
 ## Verification
 
-Completed on November 2, 2026.
+Run `npm test`, `npm run typecheck` and `npm run build` from the app directory. Tests cover catalog decisions, legacy resource links, search ranking, saved kits, icon handling and tilt calibration. The [classroom demo](docs/CLASSROOM_DEMO.md) includes a peer walkthrough.
 
-- All 29 Node tests and the TypeScript check passed, including tilt calibration, pause/resume, stale readings and connection cleanup.
-- Production Next.js webpack build passed, including the data files in server traces.
-- Search and API assertions covered natural-language queries, unknown queries, pagination, invalid filters, record lookup and sampling.
-- Ego Browser checks covered the falling pile, rising results, selecting a physics icon, resource details, saved resources, keyboard dismissal, agent guide and narrow-screen layout.
-- New checks covered desktop and emulated touch drag-to-project, button-based addition, project persistence, a downloaded Markdown brief, reduced-motion operation, and mobile header clearance. Real classmates, physical phones and school Wi-Fi still need hands-on testing.
-- Independent review found a browser-storage hydration issue; the fix and its regression tests were re-reviewed as resolved.
-- Next.js was patched to 16.4.4 within the existing dependency choice. A clean independent `npm ci` verified the portable lockfile; `npm audit` reported zero vulnerabilities. No new dependency choices were added.
-- The original project was merged through [PR #2](https://github.com/onbiggerthingsB/Hackathon/pull/2).
-- The Next.js production deployment passed. Earlier unauthenticated public checks verified the homepage, search over 28,358 references, checked resource API and page, icons, agent guide and invalid-input responses. The latest tilt deployment is `dpl_bsze8G3jnkhBq3TpmKPJTmTAYPhU`, app revision `cd69b4d`. Public HTTP checks confirmed the new controls and working resource search. Later documentation-only commits do not change that deployed app.
-- A live Ego Browser walkthrough confirmed search, checked guidance, collection, Markdown download and restoration of the goal, setup and resources after reload.
-- Shared team delivery documentation is tracked separately in [PR #4](https://github.com/onbiggerthingsB/Hackathon/pull/4).
-- Laptop tilt received live accelerometer data through the local browser. Calibration, pause/resume and switching tilt off were exercised. The helper's origin, method and path restrictions passed runtime checks. On November 2, 2026, the owner confirmed on the live site that icons fall toward the lowered side for both left and right tilt on this Mac.
-- Laptop tilt was merged in [team PR #6](https://github.com/onbiggerthingsB/Hackathon/pull/6). This standalone copy includes the search field fix from [team PR #8](https://github.com/onbiggerthingsB/Hackathon/pull/8), verified on the live site at team revision `75400d7`.
-
-No external hardware is required. Optional physical laptop tilt requires the foreground motion helper and a compatible MacBook sensor. Start it from this directory with `npm run motion`, then choose Laptop tilt on the page. Browser local-network permission may be requested.
+The November 2 browser checks covered the search orb, keyboard hints, reduced motion, narrow screens and opening a resource from the results. The owner also confirmed that physical tilt moves the icons toward the lowered side in both directions on their MacBook. Optional tilt uses the foreground helper started with `npm run motion`.

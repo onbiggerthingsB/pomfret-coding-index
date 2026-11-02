@@ -2,6 +2,11 @@ The Coding Index
 
 The copyright and permission notice for adapted code is retained in LICENSE.
 
+Geist Serif Regular is distributed under the SIL Open Font License, Version 1.1.
+Copyright 2026 The Geist Project Authors (https://github.com/vercel/geist-font.git)
+The original WOFF2 and license are in app/fonts/geist-serif/. The font comes from
+https://github.com/vercel/geist-font/tree/v1.9.0/fonts/GeistSerif/webfonts.
+
 Resource names, website icons, and linked content belong to their respective
 owners. The index links to third-party resources and preserves their source URLs.
 Listing a resource does not relicense its code or content.

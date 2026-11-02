@@ -68,7 +68,7 @@ type IndexedResource = {
   tags: Set<string>;
   description: string;
   words: Set<string>;
-  location: string;
+  urlWords: Set<string>;
 };
 
 type Catalog = {
@@ -188,7 +188,8 @@ function fileSignature(file: string): string {
 
 function loadCatalog(): Catalog {
   const files = ["coding-resources.json", "community-resources.json"].map(file => path.join(process.cwd(), "data", file));
-  const signature = files.map(fileSignature).join("|");
+  const aliasFile = path.join(process.cwd(), "data", "community-id-aliases.json");
+  const signature = [...files, aliasFile].map(fileSignature).join("|");
   if (catalog?.signature === signature) return catalog;
 
   const byId = new Map<string, Resource>();
@@ -231,6 +232,12 @@ function loadCatalog(): Catalog {
   });
 
   const resources = [...byId.values()];
+  // Historical links resolve to the same record without adding results to search.
+  const previousIds: Record<string, string> = JSON.parse(readFileSync(aliasFile, "utf8"));
+  for (const [oldId, currentId] of Object.entries(previousIds)) {
+    const current = byId.get(currentId);
+    if (current && !byId.has(oldId)) byId.set(oldId, current);
+  }
   const index = resources.map(resource => ({
     resource,
     name: normalize(resource.name),
@@ -238,7 +245,7 @@ function loadCatalog(): Catalog {
     tags: new Set(words([...resource.tags, resource.category, resource.kind].join(" "))),
     description: normalize(resource.description),
     words: new Set(words(resource.description)),
-    location: normalize(resource.url),
+    urlWords: new Set(words(resource.url)),
   }));
   catalog = { signature, resources, featured: resources.filter(item => item.featured), byId, index };
   return catalog;
@@ -262,14 +269,14 @@ function tokenScore(entry: IndexedResource, token: string, interfaceMotion: bool
   // catalog describes their general component support instead of each shape.
   const alternatives = interfaceMotion && interfaceObjects.has(token)
     ? [token, "element", "component", "ui"]
-    : aliases[token] ?? [token];
+    : Object.hasOwn(aliases, token) ? aliases[token] : [token];
   for (const [index, alternative] of alternatives.entries()) {
     let score = 0;
     if (entry.names.has(alternative)) score = 18;
     else if (entry.tags.has(alternative)) score = 12;
     else if (entry.words.has(alternative)) score = 4;
     else if (alternative.length >= 3 && [...entry.names, ...entry.tags].some(word => word.startsWith(alternative))) score = 3;
-    else if (alternative.length >= 3 && entry.location.includes(alternative)) score = 1;
+    else if (alternative.length >= 3 && entry.urlWords.has(alternative)) score = 1;
     best = Math.max(best, index === 0 ? score : score * 0.7);
   }
   return best;

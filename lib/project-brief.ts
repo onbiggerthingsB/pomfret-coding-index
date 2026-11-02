@@ -70,7 +70,7 @@ export function buildProjectBrief(project: Project): string {
     ...project.resources.flatMap((resource, index) => [
       `### ${index + 1}. ${resource.name}`, resource.description,
       `Website: ${resource.url}`, `Documentation: ${resource.agentUrl || resource.url}`, `Original source: ${resource.sourceUrl}`,
-      ...(resource.guidance ? [`Best for: ${resource.guidance.bestFor}`, `Frameworks: ${resource.guidance.frameworks.join(", ")}`, `Setup guidance: ${resource.guidance.setup}`, `Watch out: ${resource.guidance.caveat}`, `Documentation checked: ${resource.guidance.checkedAt}`, ...resource.guidance.sourceUrls.map(url => `Evidence: ${url}`)] : ["This reference has no checked compatibility guidance. Verify its current documentation."]), "",
+      ...(resource.guidance ? [`Best for: ${resource.guidance.bestFor}`, `Frameworks: ${resource.guidance.frameworks.join(", ")}`, `Setup guidance: ${resource.guidance.setup}`, `Watch out: ${resource.guidance.caveat}`, `Sources checked: ${resource.guidance.checkedAt}`, ...resource.guidance.sourceUrls.map(url => `Evidence: ${url}`)] : ["This reference has no checked compatibility guidance. Verify its current documentation."]), "",
     ]),
     "## What I need from you",
     "1. Read my existing project and the original documentation. Compare these candidates for my goal; do not combine competing UI systems unnecessarily.",

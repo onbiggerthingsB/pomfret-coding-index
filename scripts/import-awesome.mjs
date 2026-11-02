@@ -1,7 +1,8 @@
 import { createHash } from "node:crypto";
-import { mkdir, rename, writeFile } from "node:fs/promises";
+import { mkdir, readFile, rename, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { communityIdAliases, curateCommunity, importIdentity } from "./community-quality.mjs";
 
 // This importer records references to public resources. It does not download
 // packages, execute their instructions, or assert that listed software is safe.
@@ -104,9 +105,8 @@ function resourceUrl(raw, source) {
   if (/(?:^|\/)(?:license|licence|contributing|code_of_conduct)(?:\.|\/|$)/i.test(url.pathname)) return null;
   if (url.hostname === "github.com" && /\/(?:issues|pulls|actions|stargazers|network|graphs|sponsors)(?:\/|$)/.test(url.pathname)) return null;
   if (url.hostname === "github.com" && url.pathname.split("/").filter(Boolean).length < 2) return null;
-  url.hash = "";
   for (const key of [...url.searchParams.keys()]) if (/^(?:utm_|ref$|source$)/i.test(key)) url.searchParams.delete(key);
-  return url.href.replace(/\/$/, "");
+  return url.href;
 }
 
 function kindFor(url, topic, source, category) {
@@ -129,7 +129,7 @@ function categoryFor(topic, source) {
   return source.category;
 }
 
-function parseResources(markdown, source) {
+export function parseResources(markdown, source) {
   const entries = [];
   const headings = [];
   const references = new Map();
@@ -138,12 +138,14 @@ function parseResources(markdown, source) {
     if (reference) references.set(reference[1].toLowerCase(), reference[2]);
   }
   let inCode = false;
+  let tutorialSeries = null;
   for (let line of markdown.split(/\r?\n/)) {
     if (/^\s*```/.test(line)) { inCode = !inCode; continue; }
     if (inCode) continue;
     const markdownHeading = line.match(/^(#{1,6})\s+(.+?)(?:\s+#+)?$/);
     const htmlHeading = line.match(/<h([1-6])[^>]*>(.*?)<\/h\1>/i);
     if (markdownHeading || htmlHeading) {
+      tutorialSeries = null;
       const level = markdownHeading ? markdownHeading[1].length : Number(htmlHeading[1]);
       const title = markdownHeading ? markdownHeading[2] : htmlHeading[2];
       headings.length = level;
@@ -152,6 +154,10 @@ function parseResources(markdown, source) {
     }
     if (!/^\s*(?:[-*+]\s+|\d+[.)]\s+|\|)/.test(line)) continue;
     if (headings.some(value => value && skippedHeadings.test(value))) continue;
+    const topLevelBullet = /^[-*+]\s+(.+)/.exec(line);
+    if (topLevelBullet && source.repo === "Practical-Tutorials/project-based-learning") {
+      tutorialSeries = cleanText(topLevelBullet[1]);
+    }
     line = line.replace(/(?<!!)\[([^\]]+)\]\[([^\]]*)\]/g, (match, label, key) => {
       const url = references.get((key || label).toLowerCase());
       return url ? `[${label}](${url})` : match;
@@ -159,17 +165,20 @@ function parseResources(markdown, source) {
     const links = [...line.matchAll(/(?<!!)\[([^\]\n]+)\]\(((?:[^\s()]|\([^\s()]*\))+)(?:\s+"[^"]*")?\)/g)];
     for (const link of links) {
       let name = cleanText(link[1]).replace(/^[\p{Extended_Pictographic}\uFE0F\u200D\s:]+/u, "").trim();
+      if (tutorialSeries && !topLevelBullet && /^Part (?:\d+[A-Za-z]?|[IVX]+)\b/i.test(name)) {
+        name = `${tutorialSeries} — ${name}`;
+      }
       if (/^\.\.?\//.test(name)) name = source.repo.split("/")[0] + " " + name.replace(/^\.\.?\//, "").replace(/[-_\/]/g, " ");
       if (name.length < 2 || name.length > 180 || rejectedNames.test(name)) continue;
       const url = resourceUrl(link[2], source);
-      if (!url || url === source.sourceUrl.replace(/\/$/, "")) continue;
+      if (!url || importIdentity(url) === source.sourceUrl.replace(/\/$/, "")) continue;
       const topic = headings.slice(1).filter(value => value && !/^(table of )?contents$/i.test(value)).join(" / ") || source.tags.join(", ");
       const category = categoryFor(`${topic} ${name}`, source);
       const kind = kindFor(url, topic.toLowerCase(), source, category);
       const topicTags = topic.toLowerCase().split(/\s*\/\s*|\s*,\s*/).filter(tag => tag.length > 1 && tag.length < 45);
       const features = featureTerms.filter(([, pattern]) => pattern.test(cleanText(line))).map(([label]) => label);
       entries.push({
-        id: "community-" + createHash("sha256").update(url.toLowerCase()).digest("hex").slice(0, 16),
+        id: "community-" + createHash("sha256").update(importIdentity(url).toLowerCase()).digest("hex").slice(0, 16),
         name,
         url,
         description: `Explore ${name} in ${topic}. Listed by ${source.name}.`.slice(0, 200),
@@ -235,35 +244,48 @@ async function importSource(row) {
   return { meta: { ...source, status: "imported", extracted: entries.length, contentSha256:createHash("sha256").update(markdown).digest("hex"), license: await sourceLicense(repo, branch) }, entries };
 }
 
-const importedAt = new Date().toISOString();
-const results = [];
-for (let offset = 0; offset < sources.length; offset += 6) {
-  const batch = await Promise.all(sources.slice(offset, offset + 6).map(importSource));
-  results.push(...batch);
-  for (const result of batch) console.log(`${result.meta.status}: ${result.meta.repo}/${result.meta.file} (${result.entries.length})`);
-}
-const unique = new Map();
-for (const result of results) {
-  for (const entry of result.entries) {
-    const key = entry.url.toLowerCase();
-    const existing = unique.get(key);
-    if (existing) existing.tags = [...new Set([...existing.tags, ...entry.tags])].slice(0, 16);
-    else unique.set(key, entry);
+async function fetchSources() {
+  const results = [];
+  for (let offset = 0; offset < sources.length; offset += 6) {
+    const batch = await Promise.all(sources.slice(offset, offset + 6).map(importSource));
+    results.push(...batch);
+    for (const result of batch) console.log(`${result.meta.status}: ${result.meta.repo}/${result.meta.file} (${result.entries.length})`);
   }
+  if (results.some(result => result.meta.status === "failed")) throw new Error("A source could not be retrieved; preserving the previous catalog.");
+  return results;
 }
-const entries = [...unique.values()].sort((a, b) => a.name.localeCompare(b.name));
-if (entries.length < 1000) throw new Error(`Only ${entries.length} resources imported; existing catalogue preserved.`);
-const metadata = {
-  importedAt,
-  count: entries.length,
-  method: "Primary resource links from public, community-curated lists. Descriptions are generated from each resource title and list section, rather than copied editorial descriptions.",
-  verification: "Source documents were retrieved successfully. Individual destination links, software behavior, security, and continued availability have not been independently verified.",
-  sources: results.map(result => result.meta),
-};
-await mkdir(dataDirectory, { recursive: true });
-for (const [file, value] of [["community-resources.json", entries], ["community-sources.json", metadata]]) {
-  const destination = path.join(dataDirectory, file);
-  await writeFile(destination + ".tmp", JSON.stringify(value, null, 2) + "\n");
-  await rename(destination + ".tmp", destination);
+
+export async function saveCatalog(results, importedAt) {
+  const unique = new Map();
+  for (const result of results) {
+    for (const entry of result.entries) {
+      const key = importIdentity(entry.url).toLowerCase();
+      const existing = unique.get(key);
+      if (existing) existing.tags = [...new Set([...existing.tags, ...entry.tags])].slice(0, 16);
+      else unique.set(key, entry);
+    }
+  }
+  const [featured, review, previous, existingAliases] = await Promise.all(["coding-resources.json", "community-review.json", "community-resources.json", "community-id-aliases.json"].map(async file => JSON.parse(await readFile(path.join(dataDirectory, file), "utf8"))));
+  const { kept: entries, removed } = curateCommunity([...unique.values()].sort((a, b) => a.name.localeCompare(b.name)), featured, review);
+  if (entries.length < 1000) throw new Error(`Only ${entries.length} resources imported; existing catalogue preserved.`);
+  const idAliases = communityIdAliases(previous, [...featured, ...entries], review, existingAliases);
+  const metadata = {
+    importedAt,
+    count: entries.length,
+    method: "Primary resource links from public source lists, screened for duplicates, unusable destinations and classroom relevance. Descriptions summarize the title and source section.",
+    verification: "Dated GitHub repository checks and confirmed destination failures are recorded in community-review.json. An included link does not certify availability, software behavior or security.",
+    qualityReview: { checkedAt: review.checkedAt, candidates: unique.size, removed },
+    sources: results.map(result => result.meta),
+  };
+  await mkdir(dataDirectory, { recursive: true });
+  for (const [file, value] of [["community-resources.json", entries], ["community-sources.json", metadata], ["community-id-aliases.json", idAliases]]) {
+    const destination = path.join(dataDirectory, file);
+    await writeFile(destination + ".tmp", JSON.stringify(value, null, 2) + "\n");
+    await rename(destination + ".tmp", destination);
+  }
+  console.log(`Saved ${entries.length} unique resources from ${results.filter(result => result.meta.status === "imported").length} source documents.`);
 }
-console.log(`Saved ${entries.length} unique resources from ${results.filter(result => result.meta.status === "imported").length} source documents.`);
+
+if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
+  await saveCatalog(await fetchSources(), new Date().toISOString());
+}

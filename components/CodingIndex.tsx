@@ -12,6 +12,10 @@ import { addResource, buildProjectBrief, emptyProject, loadLibraryState, PROJECT
 type Result = { resources: Resource[]; total: number; offset: number };
 type Panel = "results" | "saved" | "agents" | "project" | null;
 
+function displayHost(url: string) {
+  return new URL(url).hostname.replace(/^www\./, "");
+}
+
 const categories = [
   ["components", "Components"], ["icons", "Icons"], ["motion", "Animation"],
   ["inspiration", "Design references"], ["skills", "Agent skills"], ["learning", "Learn"],
@@ -63,11 +67,14 @@ export function CodingIndex({ featured, indexed }: { featured: Resource[]; index
   };
 
   // A sampled visual pile stays small even when the searchable index is large.
-  const sources = useMemo(() => Array.from({ length: 4 }, () => featured.map(resource => resource.icon)).flat(), [featured]);
+  const sources = useMemo(() => Array.from(
+    { length: Math.min(360, featured.length * 4) },
+    (_, index) => featured[index % featured.length].icon,
+  ), [featured]);
   const cells = useMemo(() => sources.map(() => -1), [sources]);
   const matches = useMemo(() => (result?.resources || []).slice(0, 24).map((resource, index) => ({
     src: resource.icon, title: resource.name, tagline: resource.description,
-    detail: `${resource.category} · ${new URL(resource.url).hostname}`,
+    detail: `${resource.category} · ${displayHost(resource.url)}`,
     probability: 1, badge: `#${(result?.offset || 0) + index + 1}`,
   })), [result]);
 
@@ -238,14 +245,14 @@ export function CodingIndex({ featured, indexed }: { featured: Resource[]; index
 
     <main className="index-main">
       <div className="index-search" ref={bar}>
-        <SearchComposer value={text} onChange={onType} onSubmit={value => void search(value)} onClear={() => onType("")} busy={busy} />
+        <SearchComposer value={text} onChange={onType} onSubmit={value => void search(value)} onClear={() => onType("")} busy={busy} paused={paused} />
         <div className="index-underbar" aria-live="polite">
-          <span>{busy ? "Searching the index…" : error || (result ? `${result.total.toLocaleString()} resources found` : "Find the tools. Understand the choice. Build something.")}</span>
+          <span>{busy ? "Searching the index…" : error || (result ? `${result.total.toLocaleString()} resources found` : "Find a tool or reference for your project.")}</span>
           <button onClick={() => {setPanel("results"); void search("");}}>{indexed.toLocaleString()} indexed <span aria-hidden="true">↗</span></button>
         </div>
         <div className="index-categories" aria-label="Browse by category">{categories.map(([id, label]) => <button key={id} aria-pressed={category === id} onClick={() => { setText(label); void search("", id); }}>{label}</button>)}</div>
         {result && <div className="index-results-action"><button onClick={() => setPanel("results")}>Open results list <span aria-hidden="true">↗</span></button>{result.total === 0 && <button onClick={() => {setText(""); void search("");}}>Browse the library</button>}</div>}
-        {!result && !busy && !text && <div className="index-starters"><span>Try a project:</span>{["components for a dashboard", "animation", "testing"].map(example => <button key={example} onClick={() => {setText(example); void search(example);}}>{example} ↗</button>)}</div>}
+        {!result && !busy && !text && <div className="index-starters"><span>Try a search</span>{["microinteractions", "gradients", "testing"].map(example => <button key={example} onClick={() => {setText(example); void search(example);}}>{example}</button>)}</div>}
       </div>
     </main>
 
@@ -282,7 +289,7 @@ export function CodingIndex({ featured, indexed }: { featured: Resource[]; index
           <h2>Human-readable and machine-readable</h2><p>Every resource has an ordinary page with its description, tags and original sources. The API provides the same index as JSON.</p><p className="index-note">The index includes {featured.length} featured resources and references imported from community-maintained collections. Imported destination sites have not all been individually checked.</p><p className="index-note">During local preview, agents need access to this computer’s localhost. A public deployment makes these URLs available remotely.</p>
           <p aria-live="polite">{copyStatus}</p>{copyFallback && <textarea readOnly value={copyFallback} aria-label="Agent prompt to copy" />}
         </div> : <>
-          <div className="index-resource-list">{listed.map(resource => <button className="index-resource-row" key={resource.id} onClick={() => chooseResource(resource)}><img src={resource.icon} alt="" width="40" height="40" loading="lazy"/><span><strong>{resource.name}</strong><span>{resource.description}</span><small>{resource.category} · {resource.kind} · {resource.guidance ? "Guidance checked" : resource.featured ? "Featured" : "Community reference"}</small></span><span aria-hidden="true">↗</span></button>)}</div>
+          <div className="index-resource-list">{listed.map(resource => <button className="index-resource-row" key={resource.id} onClick={() => chooseResource(resource)}><img src={resource.icon} alt="" width="40" height="40" loading="lazy"/><span><strong>{resource.name}</strong><span>{resource.description}</span><small>{displayHost(resource.url)} · {resource.kind} · {resource.guidance ? "Guidance checked" : resource.featured ? "Featured" : "Community reference"}</small></span><span aria-hidden="true">›</span></button>)}</div>
           {listed.length === 0 && <p className="index-empty">{panel === "saved" ? "Open a resource and save it here for your next project." : busy ? "Searching…" : error || "No resources matched. Try a shorter phrase or a category."}</p>}
           {panel === "results" && result && <div className="index-pagination"><button disabled={busy || result.offset === 0} onClick={() => void search(query, category, Math.max(0, result.offset - 60))}>Previous</button><span>{result.total ? `${result.offset + 1}–${Math.min(result.offset + result.resources.length, result.total)} of ${result.total.toLocaleString()}` : "0 results"}</span><button disabled={busy || result.offset + result.resources.length >= result.total} onClick={() => void search(query, category, result.offset + 60)}>Next</button></div>}
         </>}
@@ -292,11 +299,11 @@ export function CodingIndex({ featured, indexed }: { featured: Resource[]; index
     <dialog ref={dialog} className="index-detail" onCancel={() => chooseResource(null)} onClose={() => chooseResource(null)} onClick={event => {if (event.target === event.currentTarget) chooseResource(null);}}>
       {selected && <article>
         <div className="index-detail-top"><img src={selected.icon} alt="" width="64" height="64"/><button className="index-close" aria-label="Close resource" onClick={() => chooseResource(null)}>×</button></div>
-        <p className="index-eyebrow">{selected.category} / {selected.kind}</p><h2>{selected.name}</h2><p className="index-description">{selected.description}</p>
+        <p className="index-eyebrow">{displayHost(selected.url)} · {selected.category} / {selected.kind}</p><h2>{selected.name}</h2><p className="index-description">{selected.description}</p>
         <div className="index-tags">{selected.tags.map(tag => <span key={tag}>{tag}</span>)}</div>
-        {selected.guidance ? <section className="resource-guidance"><p className="guidance-date">Documentation checked {selected.guidance.checkedAt}</p><dl><dt>Best for</dt><dd>{selected.guidance.bestFor}</dd><dt>Works with</dt><dd>{selected.guidance.frameworks.join(" · ")}</dd><dt>Setup effort</dt><dd>{selected.guidance.setup} <span>(our estimate)</span></dd><dt>Consider</dt><dd>{selected.guidance.caveat}</dd></dl><div>{selected.guidance.sourceUrls.map((url, index) => <a key={url} href={url} target="_blank" rel="noreferrer">Source {index + 1} ↗</a>)}</div></section> : <p className="index-note">{selected.featured ? "Featured in the class collection. Detailed compatibility guidance has not been checked yet." : "Imported community reference. Check its original documentation before using it."}</p>}
+        {selected.guidance ? <section className="resource-guidance"><p className="guidance-date">Sources checked {selected.guidance.checkedAt}</p><dl><dt>Best for</dt><dd>{selected.guidance.bestFor}</dd><dt>Works with</dt><dd>{selected.guidance.frameworks.join(" · ")}</dd><dt>Setup effort</dt><dd>{selected.guidance.setup} <span>(our estimate)</span></dd><dt>Consider</dt><dd>{selected.guidance.caveat}</dd></dl><div>{selected.guidance.sourceUrls.map((url, index) => <a key={url} href={url} target="_blank" rel="noreferrer">Source {index + 1} ↗</a>)}</div></section> : <p className="index-note">{selected.featured ? "Featured in the class collection. Detailed compatibility guidance has not been checked yet." : "Imported community reference. Check its original documentation before using it."}</p>}
         <div className="index-detail-actions"><button className="index-primary" onClick={() => {addToProject(selected); setCopyStatus(project.resources.some(item => item.id === selected.id) ? "Already in your project kit." : project.resources.length >= PROJECT_LIMIT ? "Your tray is full. Remove a resource first." : "Added to your project kit.");}}>{project.resources.some(item => item.id === selected.id) ? "In your project ✓" : "Add to project +"}</button><a href={selected.url} target="_blank" rel="noreferrer">Open website ↗</a><button onClick={() => toggleSave(selected)}>{saved.some(item => item.id === selected.id) ? "Saved ✓" : "Save resource"}</button><button onClick={() => void copy(resourceBrief(selected))}>Copy this reference</button></div>
-        <p className="index-note">Read the original resource for current setup, pricing and licensing.</p><div className="index-detail-links"><a href={selected.sourceUrl} target="_blank" rel="noreferrer">Original source ↗</a><a href={`/resources/${selected.id}`}>Resource page ↗</a>{selected.agentUrl && <a href={selected.agentUrl} target="_blank" rel="noreferrer">Agent-readable guide ↗</a>}</div>
+        <p className="index-note">Read the original resource for current setup, pricing and licensing.</p><div className="index-detail-links"><a href={selected.sourceUrl} target="_blank" rel="noreferrer">{displayHost(selected.sourceUrl) === "x.com" ? "Discovery post on X" : "Original source"} ↗</a><a href={`/resources/${selected.id}`}>Resource page ↗</a>{selected.agentUrl && <a href={selected.agentUrl} target="_blank" rel="noreferrer">Agent-readable guide ↗</a>}</div>
         <p className="index-copy-status" aria-live="polite">{copyStatus}</p>{copyFallback && <textarea readOnly value={copyFallback} aria-label="Resource brief to copy" />}
       </article>}
     </dialog>

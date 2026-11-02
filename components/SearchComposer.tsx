@@ -1,7 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import { VoiceBeam } from "voice-glow";
+import { useEffect, useRef } from "react";
 import { Orb } from "./fx/Orb";
 
 type Props = {
@@ -10,24 +9,12 @@ type Props = {
   onSubmit: (v: string) => void;
   onClear: () => void;
   busy: boolean;
+  paused: boolean;
 };
 
-export function SearchComposer({ value, onChange, onSubmit, onClear, busy }: Props) {
+export function SearchComposer({ value, onChange, onSubmit, onClear, busy, paused }: Props) {
   const input = useRef<HTMLInputElement>(null);
-  const energy = useRef(0);
-  const [ready, setReady] = useState(false);
-
-  // Typing drives the glow: each keystroke adds energy, and it decays every frame.
-  useEffect(() => {
-    setReady(true);
-    let raf = 0;
-    const tick = () => {
-      energy.current *= 0.91;
-      raf = requestAnimationFrame(tick);
-    };
-    raf = requestAnimationFrame(tick);
-    return () => cancelAnimationFrame(raf);
-  }, []);
+  const ready = value.trim().length >= 2;
 
   // Text typed before React finished loading lives only in the DOM, so adopt it once.
   useEffect(() => {
@@ -36,13 +23,15 @@ export function SearchComposer({ value, onChange, onSubmit, onClear, busy }: Pro
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const submit = () => onSubmit(input.current?.value ?? value);
+  const submit = () => {
+    if (!busy) onSubmit(input.current?.value ?? value);
+  };
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       const active = document.activeElement;
       const typing = active instanceof HTMLInputElement || active instanceof HTMLTextAreaElement || (active instanceof HTMLElement && active.isContentEditable);
-      if (e.key === "/" && !typing && !document.querySelector("dialog[open]")) {
+      if (e.key === "/" && !typing && !e.metaKey && !e.ctrlKey && !e.altKey && !document.querySelector("dialog[open]")) {
         e.preventDefault();
         input.current?.focus();
       }
@@ -51,18 +40,17 @@ export function SearchComposer({ value, onChange, onSubmit, onClear, busy }: Pro
     return () => window.removeEventListener("keydown", onKey);
   }, []);
 
-  const form = (
+  return (
     <form
       role="search"
+      data-paused={paused}
       onSubmit={(e) => {
         e.preventDefault();
         submit();
       }}
-      className="flex w-full items-center gap-3 rounded-[5px] border border-line bg-panel/95 py-3 pl-6 pr-3 backdrop-blur-2xl transition-colors duration-300 focus-within:border-line-strong"
+      className="search-composer flex w-full items-center gap-3 rounded-[5px] border border-line bg-panel/95 py-3 pl-6 pr-3 backdrop-blur-2xl focus-within:border-line-strong"
     >
-      <label htmlFor="q" className="sr-only">
-        Search coding resources
-      </label>
+      <label htmlFor="q" className="sr-only">Search coding resources</label>
       <input
         id="q"
         ref={input}
@@ -71,13 +59,11 @@ export function SearchComposer({ value, onChange, onSubmit, onClear, busy }: Pro
         spellCheck={false}
         maxLength={300}
         value={value}
-        onChange={(e) => {
-          energy.current = Math.min(1, energy.current + 0.5);
-          onChange(e.target.value);
-        }}
+        aria-keyshortcuts="/"
+        onChange={(e) => onChange(e.target.value)}
         onKeyDown={(e) => {
           if (e.key === "Enter" && !e.nativeEvent.isComposing) {
-            e.preventDefault(); // submit here so Enter works before any effect has mounted
+            e.preventDefault();
             submit();
           }
           if (e.key === "Escape") {
@@ -88,31 +74,12 @@ export function SearchComposer({ value, onChange, onSubmit, onClear, busy }: Pro
         placeholder="What do you want to build?"
         className="min-w-0 flex-1 bg-transparent py-2 text-[18px] leading-8 tracking-[-0.01em] text-text outline-none placeholder:text-faint"
       />
-      <button
-        type="submit"
-        disabled={busy || value.trim().length < 2}
-        aria-label={busy ? "Searching" : "Search"}
-        className="grid size-12 shrink-0 place-items-center rounded-[5px] border border-line transition-all duration-300 ease-out enabled:hover:border-line-strong enabled:hover:bg-white/[0.06] enabled:active:scale-95 disabled:opacity-45"
-      >
-        {/* The search orb breathes while idle and spins while a search is running. */}
-        <Orb state={busy ? "searching" : "breathing"} size={64} display={30} />
+      <span className="search-shortcuts" aria-hidden="true">
+        {!busy && (ready ? <kbd className="search-enter">Enter</kbd> : !value && <kbd className="search-slash">/</kbd>)}
+      </span>
+      <button type="submit" disabled={busy || !ready} aria-label={busy ? "Searching" : "Search"} aria-busy={busy} className="search-submit">
+        <Orb state={busy ? "busy" : ready ? "ready" : "idle"} />
       </button>
     </form>
-  );
-
-  if (!ready) return form; // server render and first paint stay plain, so the input is usable immediately
-
-  return (
-    <VoiceBeam
-      type="default"
-      theme="dark"
-      colorVariant="colorful"
-      level={() => energy.current}
-      processing={busy}
-      strength={0.9}
-      className="w-full"
-    >
-      {form}
-    </VoiceBeam>
   );
 }
