@@ -4,11 +4,11 @@ A searchable resource library for Science / Advanced Coding. Students explore a 
 
 See LICENSE and NOTICE for third-party licensing.
 
-[Open the live app](https://pomfret-coding-index.vercel.app) · [Laptop tilt PR #6](https://github.com/onbiggerthingsB/Hackathon/pull/6)
+[Open the live app](https://pomfret-coding-index.vercel.app) · [Laptop tilt setup](docs/LAPTOP_TILT.md) · [Original team project](https://github.com/onbiggerthingsB/Hackathon/tree/75400d7/projects/onbiggerthingsB/coding-library)
 
 ## Run locally
 
-Use Node 20.9 or newer from this directory.
+Run the commands below from the root of this repository with Node 20.9 or newer.
 
 The included test command requires Node 22.6 or newer for TypeScript stripping. Verification used Node 22.22.3.
 
@@ -90,6 +90,6 @@ Completed on November 2, 2026.
 - A live Ego Browser walkthrough confirmed search, checked guidance, collection, Markdown download and restoration of the goal, setup and resources after reload.
 - Shared team delivery documentation is tracked separately in [PR #4](https://github.com/onbiggerthingsB/Hackathon/pull/4).
 - Laptop tilt received live accelerometer data through the local browser. Calibration, pause/resume and switching tilt off were exercised. The helper's origin, method and path restrictions passed runtime checks. On November 2, 2026, the owner confirmed on the live site that icons fall toward the lowered side for both left and right tilt on this Mac.
-- Laptop tilt is tracked in PR #6, ready for review after the owner's physical check. Its diff is confined to this project folder, and GitHub reported no configured checks.
+- Laptop tilt was merged in [team PR #6](https://github.com/onbiggerthingsB/Hackathon/pull/6). This standalone copy includes the search field fix from [team PR #8](https://github.com/onbiggerthingsB/Hackathon/pull/8), verified on the live site at team revision `75400d7`.
 
 No external hardware is required. Optional physical laptop tilt requires the foreground motion helper and a compatible MacBook sensor. Start it from this directory with `npm run motion`, then choose Laptop tilt on the page. Browser local-network permission may be requested.
