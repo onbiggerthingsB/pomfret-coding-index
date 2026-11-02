@@ -1,0 +1,1086 @@
+[
+  {
+    "id": "shadcn-ui",
+    "name": "shadcn/ui",
+    "url": "https://ui.shadcn.com/",
+    "description": "Customizable React components and blocks whose source becomes part of your project.",
+    "category": "components",
+    "tags": ["ui", "react", "tailwind", "components", "forms", "dashboard", "copy paste"],
+    "kind": "library",
+    "agentUrl": "https://ui.shadcn.com/llms.txt",
+    "sourceUrl": "https://ui.shadcn.com/",
+    "guidance": {
+      "bestFor": "Customizable forms, dashboards and app controls whose component code you can edit.",
+      "frameworks": [
+        "React",
+        "Tailwind CSS"
+      ],
+      "setup": "moderate",
+      "caveat": "You own the copied code and its updates; follow the installation guide for your framework.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://ui.shadcn.com/docs/installation",
+        "https://ui.shadcn.com/docs"
+      ]
+    }
+  },
+  {
+    "id": "radix-ui",
+    "name": "Radix UI",
+    "url": "https://www.radix-ui.com/",
+    "description": "React primitives and themed components for dialogs, menus, controls and accessible interfaces.",
+    "category": "components",
+    "tags": ["ui", "react", "components", "accessibility", "dialog", "dropdown", "design system"],
+    "kind": "library",
+    "sourceUrl": "https://www.radix-ui.com/",
+    "guidance": {
+      "bestFor": "Custom-styled dialogs, menus and controls built from interaction primitives.",
+      "frameworks": [
+        "React"
+      ],
+      "setup": "moderate",
+      "caveat": "Primitives are unstyled; supply styling, clear labels and test your assembled keyboard flow.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://www.radix-ui.com/primitives/docs/overview/introduction"
+      ]
+    }
+  },
+  {
+    "id": "base-ui",
+    "name": "Base UI",
+    "url": "https://base-ui.com/",
+    "description": "Unstyled React components that supply interaction and accessibility behavior while you choose the appearance.",
+    "category": "components",
+    "tags": ["ui", "react", "components", "headless", "accessibility", "forms"],
+    "kind": "library",
+    "sourceUrl": "https://base-ui.com/",
+    "guidance": {
+      "bestFor": "Building a custom React design system with unstyled controls.",
+      "frameworks": [
+        "React"
+      ],
+      "setup": "moderate",
+      "caveat": "Compose and style the parts yourself; review portal stacking and backdrop setup.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://base-ui.com/react/overview/quick-start"
+      ]
+    }
+  },
+  {
+    "id": "react-aria",
+    "name": "React Aria",
+    "url": "https://react-aria.adobe.com/",
+    "description": "Adobe's customizable React components with keyboard interactions, accessibility and internationalization support.",
+    "category": "components",
+    "tags": ["ui", "react", "components", "accessibility", "keyboard", "internationalization"],
+    "kind": "library",
+    "sourceUrl": "https://react-aria.adobe.com/"
+  },
+  {
+    "id": "headless-ui",
+    "name": "Headless UI",
+    "url": "https://headlessui.com/",
+    "description": "Unstyled interactive components for React and Vue that pair with your own CSS or Tailwind styles.",
+    "category": "components",
+    "tags": ["ui", "react", "vue", "tailwind", "components", "headless", "menu"],
+    "kind": "library",
+    "sourceUrl": "https://headlessui.com/",
+    "guidance": {
+      "bestFor": "Keyboard-friendly menus and other controls with your own visual design.",
+      "frameworks": [
+        "React",
+        "Vue"
+      ],
+      "setup": "moderate",
+      "caveat": "Choose the docs for your framework; unstyled components still need styles and meaningful labels.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://headlessui.com/react/menu"
+      ]
+    }
+  },
+  {
+    "id": "material-ui",
+    "name": "Material UI",
+    "url": "https://mui.com/",
+    "description": "React components implementing Material Design, with examples for forms, navigation and application layouts.",
+    "category": "components",
+    "tags": ["ui", "react", "components", "material design", "forms", "dashboard"],
+    "kind": "library",
+    "sourceUrl": "https://mui.com/",
+    "guidance": {
+      "bestFor": "React dashboards, forms and application screens using Material Design components.",
+      "frameworks": [
+        "React"
+      ],
+      "setup": "moderate",
+      "caveat": "Default setup adds Emotion; check peer dependencies and framework integration before copying examples.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://mui.com/material-ui/getting-started/installation/"
+      ]
+    }
+  },
+  {
+    "id": "mantine",
+    "name": "Mantine",
+    "url": "https://mantine.dev/",
+    "description": "A React component and hooks library for forms, overlays, data display and themed applications.",
+    "category": "components",
+    "tags": ["ui", "react", "components", "hooks", "forms", "themes", "dashboard"],
+    "kind": "library",
+    "agentUrl": "https://mantine.dev/llms.txt",
+    "sourceUrl": "https://mantine.dev/",
+    "guidance": {
+      "bestFor": "React applications with ready-made controls, hooks and themes.",
+      "frameworks": [
+        "React"
+      ],
+      "setup": "moderate",
+      "caveat": "Follow your framework setup for styles and providers; optional packages require their own installation.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://mantine.dev/getting-started/"
+      ]
+    }
+  },
+  {
+    "id": "chakra-ui",
+    "name": "Chakra UI",
+    "url": "https://chakra-ui.com/",
+    "description": "Composable React components with accessible interactions and a styling system for consistent applications.",
+    "category": "components",
+    "tags": ["ui", "react", "components", "accessibility", "design system", "theming"],
+    "kind": "library",
+    "agentUrl": "https://chakra-ui.com/llms.txt",
+    "sourceUrl": "https://chakra-ui.com/"
+  },
+  {
+    "id": "ant-design",
+    "name": "Ant Design",
+    "url": "https://ant.design/",
+    "description": "A React UI system with application components for data-heavy screens, forms and navigation.",
+    "category": "components",
+    "tags": ["ui", "react", "components", "tables", "forms", "admin", "dashboard"],
+    "kind": "library",
+    "sourceUrl": "https://ant.design/"
+  },
+  {
+    "id": "fluent-ui",
+    "name": "Fluent UI",
+    "url": "https://fluent2.microsoft.design/",
+    "description": "Microsoft's design system with component guidance and implementation resources for product interfaces.",
+    "category": "components",
+    "tags": ["ui", "react", "components", "microsoft", "design system", "accessibility"],
+    "kind": "library",
+    "sourceUrl": "https://fluent2.microsoft.design/"
+  },
+  {
+    "id": "carbon-design",
+    "name": "Carbon Design System",
+    "url": "https://www.carbondesignsystem.com/",
+    "description": "IBM's open-source design system with components, patterns and guidance for complex applications.",
+    "category": "components",
+    "tags": ["ui", "components", "design system", "ibm", "data", "enterprise"],
+    "kind": "library",
+    "sourceUrl": "https://www.carbondesignsystem.com/"
+  },
+  {
+    "id": "primer",
+    "name": "Primer",
+    "url": "https://primer.style/",
+    "description": "GitHub's design system with interface components, foundations and product design patterns.",
+    "category": "components",
+    "tags": ["ui", "components", "github", "react", "design system", "developer tools"],
+    "kind": "library",
+    "sourceUrl": "https://primer.style/"
+  },
+  {
+    "id": "adobe-spectrum",
+    "name": "Adobe Spectrum",
+    "url": "https://spectrum.adobe.com/",
+    "description": "Adobe's design foundations, tokens and component resources for consistent cross-platform interfaces.",
+    "category": "components",
+    "tags": ["ui", "components", "adobe", "design tokens", "design system", "web components"],
+    "kind": "library",
+    "sourceUrl": "https://spectrum.adobe.com/"
+  },
+  {
+    "id": "bootstrap",
+    "name": "Bootstrap",
+    "url": "https://getbootstrap.com/",
+    "description": "A responsive interface toolkit with layout utilities, styled components and JavaScript interactions.",
+    "category": "components",
+    "tags": ["ui", "components", "css", "responsive", "html", "layout"],
+    "kind": "library",
+    "sourceUrl": "https://getbootstrap.com/"
+  },
+  {
+    "id": "bulma",
+    "name": "Bulma",
+    "url": "https://bulma.io/",
+    "description": "A CSS framework with responsive layouts and ready-made interface styles for HTML projects.",
+    "category": "components",
+    "tags": ["ui", "components", "css", "responsive", "flexbox", "html"],
+    "kind": "library",
+    "sourceUrl": "https://bulma.io/"
+  },
+  {
+    "id": "daisyui",
+    "name": "daisyUI",
+    "url": "https://daisyui.com/",
+    "description": "Tailwind CSS component classes and themes for building interfaces with concise HTML markup.",
+    "category": "components",
+    "tags": ["ui", "components", "tailwind", "css", "themes", "html"],
+    "kind": "library",
+    "agentUrl": "https://daisyui.com/llms.txt",
+    "sourceUrl": "https://daisyui.com/"
+  },
+  {
+    "id": "flowbite",
+    "name": "Flowbite",
+    "url": "https://flowbite.com/",
+    "description": "Tailwind CSS interface components and interactive patterns for building websites and applications.",
+    "category": "components",
+    "tags": ["ui", "components", "tailwind", "html", "dropdown", "modal", "forms"],
+    "kind": "library",
+    "sourceUrl": "https://github.com/themesberg/flowbite"
+  },
+  {
+    "id": "preline-ui",
+    "name": "Preline UI",
+    "url": "https://preline.co/",
+    "description": "Tailwind CSS components, blocks and templates with examples for marketing sites and applications.",
+    "category": "components",
+    "tags": ["ui", "components", "tailwind", "blocks", "templates", "landing page"],
+    "kind": "library",
+    "sourceUrl": "https://preline.co/"
+  },
+  {
+    "id": "hyperui",
+    "name": "HyperUI",
+    "url": "https://www.hyperui.dev/",
+    "description": "Copyable Tailwind CSS components for marketing pages, ecommerce screens and application interfaces.",
+    "category": "components",
+    "tags": ["ui", "components", "tailwind", "copy paste", "ecommerce", "marketing"],
+    "kind": "library",
+    "sourceUrl": "https://www.hyperui.dev/"
+  },
+  {
+    "id": "park-ui",
+    "name": "Park UI",
+    "url": "https://park-ui.com/",
+    "description": "Styled components built with Ark UI and Panda CSS for creating a custom design system.",
+    "category": "components",
+    "tags": ["ui", "components", "react", "solid", "panda css", "design system"],
+    "kind": "library",
+    "sourceUrl": "https://park-ui.com/"
+  },
+  {
+    "id": "ark-ui",
+    "name": "Ark UI",
+    "url": "https://ark-ui.com/",
+    "description": "Headless components for React, Vue, Solid and Svelte with shared interaction patterns.",
+    "category": "components",
+    "tags": ["ui", "components", "headless", "react", "vue", "svelte", "solid"],
+    "kind": "library",
+    "sourceUrl": "https://ark-ui.com/"
+  },
+  {
+    "id": "heroui",
+    "name": "HeroUI",
+    "url": "https://heroui.com/",
+    "description": "Customizable React interface components combining Tailwind styling with accessible interaction behavior.",
+    "category": "components",
+    "tags": ["ui", "components", "react", "tailwind", "accessibility", "nextui"],
+    "kind": "library",
+    "sourceUrl": "https://heroui.com/"
+  },
+  {
+    "id": "aceternity-ui",
+    "name": "Aceternity UI",
+    "url": "https://ui.aceternity.com/",
+    "description": "React and Tailwind components for animated landing pages, backgrounds and distinctive visual effects.",
+    "category": "components",
+    "tags": ["ui", "components", "react", "tailwind", "animation", "background", "landing page"],
+    "kind": "library",
+    "sourceUrl": "https://ui.aceternity.com/"
+  },
+  {
+    "id": "magic-ui",
+    "name": "Magic UI",
+    "url": "https://magicui.design/",
+    "description": "Animated React components and effects for landing pages, product demos and marketing interfaces.",
+    "category": "components",
+    "tags": ["ui", "components", "react", "tailwind", "animation", "landing page", "effects"],
+    "kind": "library",
+    "sourceUrl": "https://magicui.design/"
+  },
+  {
+    "id": "react-bits",
+    "name": "React Bits",
+    "url": "https://reactbits.dev/",
+    "description": "Customizable animated React components, text treatments, backgrounds and small interactive effects.",
+    "category": "components",
+    "tags": ["ui", "components", "react", "animation", "background", "typography", "creative coding"],
+    "kind": "library",
+    "sourceUrl": "https://reactbits.dev/"
+  },
+  {
+    "id": "motion-primitives",
+    "name": "Motion Primitives",
+    "url": "https://motion-primitives.com/",
+    "description": "Customizable animated interface components for building transitions and interactions in React.",
+    "category": "components",
+    "tags": ["ui", "components", "react", "animation", "transitions", "motion"],
+    "kind": "library",
+    "sourceUrl": "https://github.com/ibelick/motion-primitives"
+  },
+  {
+    "id": "tremor",
+    "name": "Tremor",
+    "url": "https://www.tremor.so/",
+    "description": "React components for charts, filters, metrics and data dashboards using Tailwind CSS.",
+    "category": "components",
+    "tags": ["ui", "components", "react", "tailwind", "charts", "dashboard", "data visualization"],
+    "kind": "library",
+    "sourceUrl": "https://www.tremor.so/"
+  },
+  {
+    "id": "web-awesome",
+    "name": "Web Awesome",
+    "url": "https://webawesome.com/",
+    "description": "Framework-independent web components for forms, navigation and application UI.",
+    "category": "components",
+    "tags": ["ui", "components", "web components", "html", "forms", "shoelace"],
+    "kind": "library",
+    "sourceUrl": "https://webawesome.com/"
+  },
+  {
+    "id": "patternfly",
+    "name": "PatternFly",
+    "url": "https://www.patternfly.org/",
+    "description": "Application components and design guidance for tables, dashboards, navigation and enterprise workflows.",
+    "category": "components",
+    "tags": ["ui", "components", "react", "tables", "dashboard", "design system"],
+    "kind": "library",
+    "sourceUrl": "https://www.patternfly.org/"
+  },
+  {
+    "id": "primereact",
+    "name": "PrimeReact",
+    "url": "https://primereact.dev/",
+    "description": "A React UI suite with configurable components for forms, data display and application layouts.",
+    "category": "components",
+    "tags": ["ui", "components", "react", "forms", "tables", "theming"],
+    "kind": "library",
+    "sourceUrl": "https://primereact.dev/"
+  },
+  {
+    "id": "primevue",
+    "name": "PrimeVue",
+    "url": "https://primevue.dev/",
+    "description": "A Vue UI suite with configurable components for forms, tables and application interfaces.",
+    "category": "components",
+    "tags": ["ui", "components", "vue", "forms", "tables", "theming"],
+    "kind": "library",
+    "sourceUrl": "https://primevue.dev/"
+  },
+  {
+    "id": "vuetify",
+    "name": "Vuetify",
+    "url": "https://vuetifyjs.com/",
+    "description": "A Vue component framework with Material Design styles and responsive application building blocks.",
+    "category": "components",
+    "tags": ["ui", "components", "vue", "material design", "responsive", "layout"],
+    "kind": "library",
+    "sourceUrl": "https://github.com/vuetifyjs/vuetify"
+  },
+  {
+    "id": "naive-ui",
+    "name": "Naive UI",
+    "url": "https://www.naiveui.com/",
+    "description": "A TypeScript-based Vue component library with configurable themes and application controls.",
+    "category": "components",
+    "tags": ["ui", "components", "vue", "typescript", "themes", "forms"],
+    "kind": "library",
+    "sourceUrl": "https://github.com/tusen-ai/naive-ui"
+  },
+  {
+    "id": "element-plus",
+    "name": "Element Plus",
+    "url": "https://element-plus.org/",
+    "description": "Vue interface components and design guidance for building desktop-oriented web applications.",
+    "category": "components",
+    "tags": ["ui", "components", "vue", "forms", "tables", "admin"],
+    "kind": "library",
+    "sourceUrl": "https://element-plus.org/"
+  },
+  {
+    "id": "quasar",
+    "name": "Quasar",
+    "url": "https://quasar.dev/",
+    "description": "A Vue framework with interface components and tooling for web, mobile and desktop applications.",
+    "category": "components",
+    "tags": ["ui", "components", "vue", "pwa", "mobile", "desktop", "cross platform"],
+    "kind": "library",
+    "sourceUrl": "https://quasar.dev/"
+  },
+  {
+    "id": "skeleton",
+    "name": "Skeleton",
+    "url": "https://www.skeleton.dev/",
+    "description": "A design system with Tailwind utilities, themes and interactive interface components.",
+    "category": "components",
+    "tags": ["ui", "components", "tailwind", "svelte", "themes", "design system"],
+    "kind": "library",
+    "sourceUrl": "https://www.skeleton.dev/"
+  },
+  {
+    "id": "bits-ui",
+    "name": "Bits UI",
+    "url": "https://www.bits-ui.com/",
+    "description": "Headless Svelte components for building custom controls with accessible interaction behavior.",
+    "category": "components",
+    "tags": ["ui", "components", "svelte", "headless", "accessibility", "forms"],
+    "kind": "library",
+    "agentUrl": "https://www.bits-ui.com/docs/llms",
+    "sourceUrl": "https://www.bits-ui.com/"
+  },
+  {
+    "id": "melt-ui",
+    "name": "Melt UI",
+    "url": "https://melt-ui.com/",
+    "description": "Unstyled Svelte component builders for custom design systems and accessible web applications.",
+    "category": "components",
+    "tags": ["ui", "components", "svelte", "headless", "accessibility", "design system"],
+    "kind": "library",
+    "sourceUrl": "https://melt-ui.com/"
+  },
+  {
+    "id": "lucide",
+    "name": "Lucide",
+    "url": "https://lucide.dev/",
+    "description": "Consistent line icons with adjustable size, color and stroke width for web interfaces.",
+    "category": "icons",
+    "tags": ["icons", "svg", "react", "line icons", "navigation", "assets"],
+    "kind": "library",
+    "sourceUrl": "https://lucide.dev/",
+    "guidance": {
+      "bestFor": "Consistent interface icons with adjustable size, color and stroke.",
+      "frameworks": [
+        "React",
+        "SVG"
+      ],
+      "setup": "low",
+      "caveat": "Import only the icons you use and provide text labels for icon-only actions.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://lucide.dev/guide/react"
+      ]
+    }
+  },
+  {
+    "id": "heroicons",
+    "name": "Heroicons",
+    "url": "https://heroicons.com/",
+    "description": "SVG interface icons from Tailwind's creators, available in outline and solid styles.",
+    "category": "icons",
+    "tags": ["icons", "svg", "tailwind", "outline", "solid", "assets"],
+    "kind": "library",
+    "sourceUrl": "https://heroicons.com/"
+  },
+  {
+    "id": "tabler-icons",
+    "name": "Tabler Icons",
+    "url": "https://tabler.io/icons",
+    "description": "A searchable collection of vector icons for apps, websites and design systems.",
+    "category": "icons",
+    "tags": ["icons", "svg", "outline", "interface", "assets", "figma"],
+    "kind": "library",
+    "sourceUrl": "https://tabler.io/icons"
+  },
+  {
+    "id": "phosphor-icons",
+    "name": "Phosphor Icons",
+    "url": "https://phosphoricons.com/",
+    "description": "A flexible icon family with multiple weights for interfaces, diagrams and presentations.",
+    "category": "icons",
+    "tags": ["icons", "svg", "weights", "interface", "assets", "react"],
+    "kind": "library",
+    "sourceUrl": "https://github.com/phosphor-icons/core"
+  },
+  {
+    "id": "iconify",
+    "name": "Iconify",
+    "url": "https://iconify.design/",
+    "description": "Search and use icons from many icon sets through shared tools and framework integrations.",
+    "category": "icons",
+    "tags": ["icons", "svg", "search", "collections", "assets", "frameworks"],
+    "kind": "library",
+    "sourceUrl": "https://iconify.design/"
+  },
+  {
+    "id": "simple-icons",
+    "name": "Simple Icons",
+    "url": "https://simpleicons.org/",
+    "description": "SVG brand icons for identifying services, developer tools and supported integrations.",
+    "category": "icons",
+    "tags": ["icons", "svg", "logos", "brands", "integrations", "assets"],
+    "kind": "library",
+    "sourceUrl": "https://github.com/simple-icons/simple-icons"
+  },
+  {
+    "id": "remix-icon",
+    "name": "Remix Icon",
+    "url": "https://remixicon.com/",
+    "description": "A neutral-style icon system with outlined and filled symbols for application interfaces.",
+    "category": "icons",
+    "tags": ["icons", "svg", "outline", "filled", "interface", "assets"],
+    "kind": "library",
+    "sourceUrl": "https://github.com/Remix-Design/RemixIcon"
+  },
+  {
+    "id": "material-symbols",
+    "name": "Material Symbols",
+    "url": "https://fonts.google.com/icons",
+    "description": "Google's configurable interface symbols, available as icon fonts and individual SVG assets.",
+    "category": "icons",
+    "tags": ["icons", "svg", "google", "material design", "fonts", "assets"],
+    "kind": "library",
+    "sourceUrl": "https://github.com/google/material-design-icons"
+  },
+  {
+    "id": "matter-js",
+    "name": "Matter.js",
+    "url": "https://brm.io/matter-js/",
+    "description": "A browser physics engine for 2D bodies, collisions, gravity, constraints and interactive simulations.",
+    "category": "motion",
+    "tags": ["matter.js", "physics", "simulation", "collision", "gravity", "javascript", "games"],
+    "kind": "library",
+    "sourceUrl": "https://brm.io/matter-js/",
+    "guidance": {
+      "bestFor": "Interactive 2D bodies, collisions and physics experiments.",
+      "frameworks": [
+        "JavaScript"
+      ],
+      "setup": "advanced",
+      "caveat": "You must integrate rendering and lifecycle cleanup and provide alternatives to pointer-only interaction.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://brm.io/matter-js/docs/"
+      ]
+    }
+  },
+  {
+    "id": "motion",
+    "name": "Motion",
+    "url": "https://motion.dev/",
+    "description": "Animation tools for React and JavaScript, including gestures, layout transitions and scroll effects.",
+    "category": "motion",
+    "tags": ["animation", "react", "javascript", "gestures", "transitions", "framer motion"],
+    "kind": "library",
+    "sourceUrl": "https://motion.dev/",
+    "guidance": {
+      "bestFor": "React entrance, exit, layout and gesture animations.",
+      "frameworks": [
+        "React"
+      ],
+      "setup": "moderate",
+      "caveat": "Plan reduced-motion behavior and keyboard equivalents for gesture interactions.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://motion.dev/docs/react"
+      ]
+    }
+  },
+  {
+    "id": "gsap",
+    "name": "GSAP",
+    "url": "https://gsap.com/",
+    "description": "JavaScript animation tools for sequencing motion, controlling timelines and building scroll-driven effects.",
+    "category": "motion",
+    "tags": ["animation", "javascript", "timeline", "scroll", "svg", "creative coding"],
+    "kind": "library",
+    "sourceUrl": "https://gsap.com/"
+  },
+  {
+    "id": "react-spring",
+    "name": "React Spring",
+    "url": "https://www.react-spring.dev/",
+    "description": "Spring-based animation primitives for fluid React interface movement and interactive transitions.",
+    "category": "motion",
+    "tags": ["animation", "react", "springs", "physics", "transitions", "gestures"],
+    "kind": "library",
+    "sourceUrl": "https://www.react-spring.dev/"
+  },
+  {
+    "id": "autoanimate",
+    "name": "AutoAnimate",
+    "url": "https://auto-animate.formkit.com/",
+    "description": "Automatically animates elements entering, leaving or moving within a container across JavaScript frameworks.",
+    "category": "motion",
+    "tags": ["animation", "transitions", "lists", "react", "vue", "svelte", "javascript"],
+    "kind": "library",
+    "sourceUrl": "https://auto-animate.formkit.com/"
+  },
+  {
+    "id": "three-js",
+    "name": "Three.js",
+    "url": "https://threejs.org/",
+    "description": "A JavaScript 3D library with examples for scenes, materials, lighting and interactive visual experiences.",
+    "category": "motion",
+    "tags": ["3d", "webgl", "javascript", "animation", "graphics", "creative coding"],
+    "kind": "library",
+    "sourceUrl": "https://threejs.org/",
+    "guidance": {
+      "bestFor": "Interactive 3D scenes and graphics in the browser.",
+      "frameworks": [
+        "JavaScript"
+      ],
+      "setup": "advanced",
+      "caveat": "Scene setup, rendering, asset loading and performance need deliberate work; keep essential content accessible outside the canvas.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://github.com/mrdoob/three.js",
+        "https://threejs.org/docs/"
+      ]
+    }
+  },
+  {
+    "id": "anime-js",
+    "name": "Anime.js",
+    "url": "https://animejs.com/",
+    "description": "A JavaScript animation engine for coordinated DOM, CSS and SVG motion.",
+    "category": "motion",
+    "tags": ["animation", "javascript", "svg", "css", "timeline", "effects"],
+    "kind": "library",
+    "sourceUrl": "https://animejs.com/"
+  },
+  {
+    "id": "codrops",
+    "name": "Codrops",
+    "url": "https://tympanus.net/codrops/",
+    "description": "Creative frontend tutorials, interaction demos and website case studies for exploring new visual ideas.",
+    "category": "inspiration",
+    "tags": ["inspiration", "tutorials", "creative coding", "webgl", "animation", "web design", "ideas"],
+    "kind": "article",
+    "sourceUrl": "https://tympanus.net/codrops/"
+  },
+  {
+    "id": "siteinspire",
+    "name": "Siteinspire",
+    "url": "https://www.siteinspire.com/",
+    "description": "A curated website gallery organized by design style, subject and type of site.",
+    "category": "inspiration",
+    "tags": ["inspiration", "web design", "portfolio", "typography", "layout", "gallery", "ideas"],
+    "kind": "gallery",
+    "sourceUrl": "https://www.siteinspire.com/"
+  },
+  {
+    "id": "landbook",
+    "name": "Landbook",
+    "url": "https://land-book.com/",
+    "description": "A curated website design gallery for researching landing pages, layouts and visual directions.",
+    "category": "inspiration",
+    "tags": ["inspiration", "web design", "landing page", "layout", "gallery", "ideas"],
+    "kind": "gallery",
+    "sourceUrl": "https://land-book.com/"
+  },
+  {
+    "id": "lapa-ninja",
+    "name": "Lapa Ninja",
+    "url": "https://www.lapa.ninja/",
+    "description": "Landing-page examples grouped by industry, visual style and page type.",
+    "category": "inspiration",
+    "tags": ["inspiration", "landing page", "saas", "portfolio", "gallery", "web design", "ideas"],
+    "kind": "gallery",
+    "sourceUrl": "https://www.lapa.ninja/"
+  },
+  {
+    "id": "one-page-love",
+    "name": "One Page Love",
+    "url": "https://onepagelove.com/",
+    "description": "One-page website examples and templates for portfolios, product launches and focused landing pages.",
+    "category": "inspiration",
+    "tags": ["inspiration", "one page", "landing page", "portfolio", "templates", "ideas"],
+    "kind": "gallery",
+    "sourceUrl": "https://onepagelove.com/"
+  },
+  {
+    "id": "mobbin",
+    "name": "Mobbin",
+    "url": "https://mobbin.com/",
+    "description": "A reference library of real app and website screens for studying interface patterns and user flows.",
+    "category": "inspiration",
+    "tags": ["inspiration", "ui", "ux", "mobile", "user flows", "onboarding", "screens"],
+    "kind": "gallery",
+    "sourceUrl": "https://mobbin.com/"
+  },
+  {
+    "id": "curated-design",
+    "name": "Curated Design",
+    "url": "https://curated.design/",
+    "description": "Website design references categorized by industry and style for exploring a project's visual direction.",
+    "category": "inspiration",
+    "tags": ["inspiration", "web design", "gallery", "portfolio", "landing page", "ideas"],
+    "kind": "gallery",
+    "sourceUrl": "https://curated.design/"
+  },
+  {
+    "id": "hoverstates",
+    "name": "Hoverstat.es",
+    "url": "https://www.hoverstat.es/",
+    "description": "An archive of experimental web design and unusual interactions for creative interface research.",
+    "category": "inspiration",
+    "tags": ["inspiration", "experimental", "interaction", "animation", "web design", "ideas"],
+    "kind": "gallery",
+    "sourceUrl": "https://www.hoverstat.es/"
+  },
+  {
+    "id": "agent-skills-format",
+    "name": "Agent Skills",
+    "url": "https://agentskills.io/home",
+    "description": "The Agent Skills format specification and guidance for packaging reusable instructions and resources for agents.",
+    "category": "skills",
+    "tags": ["agents", "skills", "skill.md", "instructions", "specification", "workflow"],
+    "kind": "documentation",
+    "agentUrl": "https://agentskills.io/llms.txt",
+    "sourceUrl": "https://agentskills.io/home"
+  },
+  {
+    "id": "anthropic-skills",
+    "name": "Anthropic Skills",
+    "url": "https://github.com/anthropics/skills",
+    "description": "Anthropic's published skill examples for studying reusable agent workflows and task-specific instructions.",
+    "category": "skills",
+    "tags": ["agents", "skills", "claude", "instructions", "workflow", "examples"],
+    "kind": "skills",
+    "sourceUrl": "https://github.com/anthropics/skills"
+  },
+  {
+    "id": "vercel-agent-skills",
+    "name": "Vercel Agent Skills",
+    "url": "https://github.com/vercel-labs/agent-skills",
+    "description": "Vercel's agent skill collection covering frontend practices, interface review and related development workflows.",
+    "category": "skills",
+    "tags": ["agents", "skills", "react", "next.js", "performance", "ui", "review"],
+    "kind": "skills",
+    "sourceUrl": "https://github.com/vercel-labs/agent-skills"
+  },
+  {
+    "id": "github-spec-kit",
+    "name": "GitHub Spec Kit",
+    "url": "https://github.com/github/spec-kit",
+    "description": "Templates and workflows for turning a product idea into explicit requirements and an implementation plan.",
+    "category": "skills",
+    "tags": ["agents", "planning", "requirements", "specification", "acceptance criteria", "workflow"],
+    "kind": "tool",
+    "sourceUrl": "https://github.com/github/spec-kit"
+  },
+  {
+    "id": "agents-md",
+    "name": "AGENTS.md",
+    "url": "https://agents.md/",
+    "description": "A documented format for giving coding agents project context, commands and working conventions.",
+    "category": "skills",
+    "tags": ["agents", "instructions", "context", "repository", "workflow", "agents.md"],
+    "kind": "documentation",
+    "sourceUrl": "https://agents.md/"
+  },
+  {
+    "id": "superpowers",
+    "name": "Superpowers",
+    "url": "https://github.com/obra/superpowers",
+    "description": "An agent skill framework with workflows for brainstorming, planning, debugging and verifying software changes.",
+    "category": "skills",
+    "tags": ["agents", "skills", "planning", "debugging", "testing", "review", "workflow"],
+    "kind": "skills",
+    "sourceUrl": "https://github.com/obra/superpowers"
+  },
+  {
+    "id": "claude-code-practices",
+    "name": "Claude Code Best Practices",
+    "url": "https://code.claude.com/docs/en/best-practices",
+    "description": "Official guidance for giving an agent useful context, structuring tasks and verifying its work.",
+    "category": "skills",
+    "tags": ["agents", "claude", "prompting", "context", "verification", "workflow"],
+    "kind": "documentation",
+    "sourceUrl": "https://code.claude.com/docs/en/best-practices"
+  },
+  {
+    "id": "aria-authoring-practices",
+    "name": "ARIA Authoring Practices",
+    "url": "https://www.w3.org/WAI/ARIA/apg/",
+    "description": "W3C patterns and examples for implementing accessible widgets, keyboard interactions and interface semantics.",
+    "category": "skills",
+    "tags": ["accessibility", "aria", "keyboard", "components", "patterns", "screen reader"],
+    "kind": "documentation",
+    "sourceUrl": "https://www.w3.org/WAI/ARIA/apg/",
+    "guidance": {
+      "bestFor": "Planning keyboard behavior and semantics for custom widgets.",
+      "frameworks": [
+        "HTML",
+        "JavaScript",
+        "Framework independent"
+      ],
+      "setup": "low",
+      "caveat": "Examples are guidance, not a certification of your app; test the implemented widget with keyboards and assistive technology.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://www.w3.org/WAI/ARIA/apg/"
+      ]
+    }
+  },
+  {
+    "id": "mdn-learn",
+    "name": "MDN Learn",
+    "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development",
+    "description": "Structured web-development lessons covering HTML, CSS, JavaScript and the foundations behind browser applications.",
+    "category": "learning",
+    "tags": ["learning", "html", "css", "javascript", "beginner", "web development", "documentation"],
+    "kind": "documentation",
+    "sourceUrl": "https://developer.mozilla.org/en-US/docs/Learn_web_development"
+  },
+  {
+    "id": "web-dev-learn",
+    "name": "web.dev Learn",
+    "url": "https://web.dev/learn",
+    "description": "Google's web courses on CSS, accessibility, performance, responsive design and browser fundamentals.",
+    "category": "learning",
+    "tags": ["learning", "css", "accessibility", "performance", "responsive", "testing", "web development"],
+    "kind": "documentation",
+    "sourceUrl": "https://web.dev/learn"
+  },
+  {
+    "id": "react-learn",
+    "name": "Learn React",
+    "url": "https://react.dev/learn",
+    "description": "The official React tutorial with interactive examples for components, state and sharing data.",
+    "category": "learning",
+    "tags": ["learning", "react", "components", "state", "hooks", "tutorial", "javascript"],
+    "kind": "documentation",
+    "sourceUrl": "https://react.dev/learn",
+    "guidance": {
+      "bestFor": "Learning components, props, state, events and shared data with examples.",
+      "frameworks": [
+        "React"
+      ],
+      "setup": "low",
+      "caveat": "Reading examples needs little setup; building your own app still requires a project environment and JavaScript foundations.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://react.dev/learn"
+      ]
+    }
+  },
+  {
+    "id": "typescript-handbook",
+    "name": "TypeScript Handbook",
+    "url": "https://www.typescriptlang.org/docs/handbook/intro.html",
+    "description": "TypeScript's official guide to types, narrowing, functions and the language's core concepts.",
+    "category": "learning",
+    "tags": ["learning", "typescript", "types", "javascript", "documentation", "debugging"],
+    "kind": "documentation",
+    "sourceUrl": "https://www.typescriptlang.org/docs/handbook/intro.html"
+  },
+  {
+    "id": "javascript-info",
+    "name": "JavaScript.info",
+    "url": "https://javascript.info/",
+    "description": "A structured JavaScript tutorial covering language fundamentals, browser APIs and asynchronous programming.",
+    "category": "learning",
+    "tags": ["learning", "javascript", "browser", "async", "beginner", "tutorial"],
+    "kind": "documentation",
+    "sourceUrl": "https://javascript.info/"
+  },
+  {
+    "id": "odin-project",
+    "name": "The Odin Project",
+    "url": "https://www.theodinproject.com/",
+    "description": "A project-based web-development curriculum that combines lessons with applications you build yourself.",
+    "category": "learning",
+    "tags": ["learning", "curriculum", "projects", "html", "css", "javascript", "full stack"],
+    "kind": "documentation",
+    "sourceUrl": "https://www.theodinproject.com/"
+  },
+  {
+    "id": "freecodecamp",
+    "name": "freeCodeCamp",
+    "url": "https://www.freecodecamp.org/learn",
+    "description": "A coding curriculum with exercises and projects across web development and computer science.",
+    "category": "learning",
+    "tags": ["learning", "curriculum", "exercises", "projects", "javascript", "python", "beginner"],
+    "kind": "documentation",
+    "sourceUrl": "https://github.com/freeCodeCamp/freeCodeCamp"
+  },
+  {
+    "id": "full-stack-open",
+    "name": "Full Stack Open",
+    "url": "https://fullstackopen.com/en/",
+    "description": "A university course on building modern web applications with React, Node.js, APIs and databases.",
+    "category": "learning",
+    "tags": ["learning", "full stack", "react", "node.js", "api", "database", "typescript"],
+    "kind": "documentation",
+    "sourceUrl": "https://fullstackopen.com/en/"
+  },
+  {
+    "id": "cs50x",
+    "name": "CS50x",
+    "url": "https://cs50.harvard.edu/x/",
+    "description": "Harvard's introductory computer science course with lectures, problem sets and a final project.",
+    "category": "learning",
+    "tags": ["learning", "computer science", "algorithms", "lectures", "beginner", "projects"],
+    "kind": "video",
+    "sourceUrl": "https://cs50.harvard.edu/x/"
+  },
+  {
+    "id": "coding-train-physics",
+    "name": "The Coding Train Physics",
+    "url": "https://thecodingtrain.com/tracks/physics-libraries",
+    "description": "Video lessons and code examples for Matter.js bodies, constraints, dragging and physics-based projects.",
+    "category": "learning",
+    "tags": ["learning", "video", "matter.js", "physics", "p5.js", "javascript", "creative coding"],
+    "kind": "video",
+    "sourceUrl": "https://thecodingtrain.com/tracks/physics-libraries"
+  },
+  {
+    "id": "frontend-bootcamp",
+    "name": "Frontend Bootcamp",
+    "url": "https://master.dev/bootcamp/",
+    "description": "Project-based introductory lessons in HTML, CSS and JavaScript for building web pages.",
+    "category": "learning",
+    "tags": ["learning", "video", "html", "css", "javascript", "beginner", "projects"],
+    "kind": "video",
+    "sourceUrl": "https://master.dev/bootcamp/"
+  },
+  {
+    "id": "interactive-flexbox-guide",
+    "name": "Interactive Flexbox Guide",
+    "url": "https://www.joshwcomeau.com/css/interactive-guide-to-flexbox/",
+    "description": "Josh Comeau's interactive explanation of alignment, sizing, wrapping and space distribution in CSS Flexbox.",
+    "category": "learning",
+    "tags": ["learning", "article", "css", "flexbox", "layout", "responsive", "interactive"],
+    "kind": "article",
+    "sourceUrl": "https://www.joshwcomeau.com/css/interactive-guide-to-flexbox/"
+  },
+  {
+    "id": "storybook",
+    "name": "Storybook",
+    "url": "https://storybook.js.org/",
+    "description": "Build, document and test interface components separately from the rest of an application.",
+    "category": "tools",
+    "tags": ["tools", "components", "testing", "documentation", "design system", "frontend"],
+    "kind": "tool",
+    "sourceUrl": "https://storybook.js.org/"
+  },
+  {
+    "id": "playwright",
+    "name": "Playwright",
+    "url": "https://playwright.dev/",
+    "description": "Browser automation and end-to-end testing for checking real user workflows across browser engines.",
+    "category": "tools",
+    "tags": ["tools", "testing", "browser", "automation", "end to end", "agents", "verification"],
+    "kind": "tool",
+    "sourceUrl": "https://playwright.dev/",
+    "guidance": {
+      "bestFor": "Checking complete user journeys in real browser engines.",
+      "frameworks": [
+        "JavaScript",
+        "TypeScript"
+      ],
+      "setup": "moderate",
+      "caveat": "Browser binaries and a running app are needed; assertions still depend on the scenarios you write.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://playwright.dev/docs/intro"
+      ]
+    }
+  },
+  {
+    "id": "vitest",
+    "name": "Vitest",
+    "url": "https://vitest.dev/",
+    "description": "A JavaScript and TypeScript testing framework for fast unit tests and component checks.",
+    "category": "tools",
+    "tags": ["tools", "testing", "unit tests", "javascript", "typescript", "vite", "verification"],
+    "kind": "tool",
+    "sourceUrl": "https://vitest.dev/",
+    "guidance": {
+      "bestFor": "Fast unit tests for JavaScript and TypeScript logic.",
+      "frameworks": [
+        "JavaScript",
+        "TypeScript",
+        "Vite"
+      ],
+      "setup": "moderate",
+      "caveat": "Check the current Node and Vite requirements; DOM and real-browser tests need additional environment setup.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://vitest.dev/guide/"
+      ]
+    }
+  },
+  {
+    "id": "testing-library",
+    "name": "Testing Library",
+    "url": "https://testing-library.com/",
+    "description": "Interface-testing utilities that locate and exercise elements in ways that resemble user behavior.",
+    "category": "tools",
+    "tags": ["tools", "testing", "components", "accessibility", "react", "user behavior", "verification"],
+    "kind": "library",
+    "sourceUrl": "https://testing-library.com/"
+  },
+  {
+    "id": "axe-core",
+    "name": "axe-core",
+    "url": "https://github.com/dequelabs/axe-core",
+    "description": "An accessibility testing engine for detecting supported categories of issues in web interfaces.",
+    "category": "tools",
+    "tags": ["tools", "testing", "accessibility", "audit", "automation", "verification"],
+    "kind": "library",
+    "sourceUrl": "https://github.com/dequelabs/axe-core"
+  },
+  {
+    "id": "chrome-devtools",
+    "name": "Chrome DevTools",
+    "url": "https://developer.chrome.com/docs/devtools",
+    "description": "Browser tools and guides for inspecting layouts, debugging JavaScript and measuring page performance.",
+    "category": "tools",
+    "tags": ["tools", "debugging", "browser", "performance", "css", "network", "javascript"],
+    "kind": "documentation",
+    "sourceUrl": "https://developer.chrome.com/docs/devtools"
+  },
+  {
+    "id": "codepen",
+    "name": "CodePen",
+    "url": "https://codepen.io/",
+    "description": "An online coding environment for experimenting with interfaces and sharing runnable web examples.",
+    "category": "tools",
+    "tags": ["tools", "playground", "html", "css", "javascript", "examples", "prototyping"],
+    "kind": "tool",
+    "sourceUrl": "https://codepen.io/"
+  },
+  {
+    "id": "excalidraw",
+    "name": "Excalidraw",
+    "url": "https://excalidraw.com/",
+    "description": "A hand-drawn-style whiteboard for sketching interface ideas, system diagrams and user flows.",
+    "category": "tools",
+    "tags": ["tools", "wireframe", "diagrams", "planning", "whiteboard", "user flows", "ideas"],
+    "kind": "tool",
+    "sourceUrl": "https://github.com/excalidraw/excalidraw"
+  },
+  {
+    "id": "penpot",
+    "name": "Penpot",
+    "url": "https://penpot.app/",
+    "description": "An open-source design platform for interface mockups, reusable components and developer handoff.",
+    "category": "tools",
+    "tags": ["tools", "design", "prototyping", "components", "mockups", "handoff", "svg"],
+    "kind": "tool",
+    "sourceUrl": "https://penpot.app/"
+  }
+]

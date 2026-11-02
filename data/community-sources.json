@@ -1,0 +1,709 @@
+{
+  "importedAt": "2026-11-02T19:47:53.462Z",
+  "count": 28359,
+  "method": "Primary resource links from public, community-curated lists. Descriptions are generated from each resource title and list section, rather than copied editorial descriptions.",
+  "verification": "Source documents were retrieved successfully. Individual destination links, software behavior, security, and continued availability have not been independently verified.",
+  "sources": [
+    {
+      "repo": "sindresorhus/awesome",
+      "branch": "main",
+      "file": "readme.md",
+      "category": "learning",
+      "tags": [
+        "directories",
+        "discovery"
+      ],
+      "name": "awesome",
+      "sourceUrl": "https://github.com/sindresorhus/awesome/blob/main/readme.md",
+      "status": "imported",
+      "extracted": 670,
+      "contentSha256": "465cd781335e44587d238f666800104b63d4fc8ba2395d6422974dcba421c616",
+      "license": {
+        "name": "CC0",
+        "url": "https://github.com/sindresorhus/awesome/blob/main/license"
+      }
+    },
+    {
+      "repo": "sindresorhus/awesome-nodejs",
+      "branch": "main",
+      "file": "readme.md",
+      "category": "tools",
+      "tags": [
+        "nodejs",
+        "javascript",
+        "backend"
+      ],
+      "name": "awesome-nodejs",
+      "sourceUrl": "https://github.com/sindresorhus/awesome-nodejs/blob/main/readme.md",
+      "status": "imported",
+      "extracted": 581,
+      "contentSha256": "431f6ffff73bdb17f9d90a731ada5494b40fe1444d3f2894e4fd2c839e11bb58",
+      "license": {
+        "name": "CC0",
+        "url": "https://github.com/sindresorhus/awesome-nodejs/blob/main/license"
+      }
+    },
+    {
+      "repo": "vinta/awesome-python",
+      "branch": "master",
+      "file": "README.md",
+      "category": "tools",
+      "tags": [
+        "python"
+      ],
+      "name": "awesome-python",
+      "sourceUrl": "https://github.com/vinta/awesome-python/blob/master/README.md",
+      "status": "imported",
+      "extracted": 550,
+      "contentSha256": "00fe7888203d972c55540e8a55f6057e47da32ec67dd40bbd0554a2b7043a824",
+      "license": {
+        "name": "CC-BY (see source for version)",
+        "url": "https://github.com/vinta/awesome-python/blob/master/LICENSE"
+      }
+    },
+    {
+      "repo": "avelino/awesome-go",
+      "branch": "main",
+      "file": "README.md",
+      "category": "tools",
+      "tags": [
+        "go",
+        "backend"
+      ],
+      "name": "awesome-go",
+      "sourceUrl": "https://github.com/avelino/awesome-go/blob/main/README.md",
+      "status": "imported",
+      "extracted": 3146,
+      "contentSha256": "28133356c881257c2c3aef1276b8cee95bfc0662e28e7687dd2365fb2e71c99d",
+      "license": {
+        "name": "MIT",
+        "url": "https://github.com/avelino/awesome-go/blob/main/LICENSE"
+      }
+    },
+    {
+      "repo": "sorrycc/awesome-javascript",
+      "branch": "master",
+      "file": "README.md",
+      "category": "tools",
+      "tags": [
+        "javascript",
+        "web"
+      ],
+      "name": "awesome-javascript",
+      "sourceUrl": "https://github.com/sorrycc/awesome-javascript/blob/master/README.md",
+      "status": "imported",
+      "extracted": 767,
+      "contentSha256": "2c4a59d7410826ce964d32535ed256861243588681974e33ed800931a6d1299d",
+      "license": {
+        "name": "Not detected",
+        "url": "https://github.com/sorrycc/awesome-javascript"
+      }
+    },
+    {
+      "repo": "enaqx/awesome-react",
+      "branch": "master",
+      "file": "README.md",
+      "category": "components",
+      "tags": [
+        "react",
+        "frontend",
+        "components"
+      ],
+      "name": "awesome-react",
+      "sourceUrl": "https://github.com/enaqx/awesome-react/blob/master/README.md",
+      "status": "imported",
+      "extracted": 148,
+      "contentSha256": "73d871e6b03b5384a6c4441f50539cb57bfcebd35258b67ef9e70987fe3fc9c8",
+      "license": {
+        "name": "Not detected",
+        "url": "https://github.com/enaqx/awesome-react"
+      }
+    },
+    {
+      "repo": "vuejs/awesome-vue",
+      "branch": "master",
+      "file": "README.md",
+      "category": "components",
+      "tags": [
+        "vue",
+        "frontend",
+        "components"
+      ],
+      "name": "awesome-vue",
+      "sourceUrl": "https://github.com/vuejs/awesome-vue/blob/master/README.md",
+      "status": "imported",
+      "extracted": 1037,
+      "contentSha256": "88a9952c83aa5461a0faee3ed20ba2f73d892b783db93800a5fbe280d8ffe3ae",
+      "license": {
+        "name": "MIT",
+        "url": "https://github.com/vuejs/awesome-vue/blob/master/LICENSE"
+      }
+    },
+    {
+      "repo": "jondot/awesome-react-native",
+      "branch": "master",
+      "file": "README.md",
+      "category": "components",
+      "tags": [
+        "react-native",
+        "mobile"
+      ],
+      "name": "awesome-react-native",
+      "sourceUrl": "https://github.com/jondot/awesome-react-native/blob/master/README.md",
+      "status": "imported",
+      "extracted": 195,
+      "contentSha256": "efb285361ce16daa2c50f3e2a919d5e7e347a4c76357882f134a73ba3ba4162c",
+      "license": {
+        "name": "Not detected",
+        "url": "https://github.com/jondot/awesome-react-native"
+      }
+    },
+    {
+      "repo": "dzharii/awesome-typescript",
+      "branch": "master",
+      "file": "README.md",
+      "category": "tools",
+      "tags": [
+        "typescript",
+        "javascript"
+      ],
+      "name": "awesome-typescript",
+      "sourceUrl": "https://github.com/dzharii/awesome-typescript/blob/master/README.md",
+      "status": "imported",
+      "extracted": 311,
+      "contentSha256": "b0844167d583c9029b2b9b19bca8e6c9064ebcc962f1cb37085c8ec41a2566a2",
+      "license": {
+        "name": "Unclassified; see source",
+        "url": "https://github.com/dzharii/awesome-typescript/blob/master/LICENSE"
+      }
+    },
+    {
+      "repo": "sindresorhus/awesome-electron",
+      "branch": "main",
+      "file": "readme.md",
+      "category": "tools",
+      "tags": [
+        "electron",
+        "desktop"
+      ],
+      "name": "awesome-electron",
+      "sourceUrl": "https://github.com/sindresorhus/awesome-electron/blob/main/readme.md",
+      "status": "imported",
+      "extracted": 236,
+      "contentSha256": "93e6b70dd4468b5e5fbd4260a331c99034f8d617e59d101a136ad8bc9354168f",
+      "license": {
+        "name": "CC0",
+        "url": "https://github.com/sindresorhus/awesome-electron/blob/main/license"
+      }
+    },
+    {
+      "repo": "bradtraversy/design-resources-for-developers",
+      "branch": "master",
+      "file": "readme.md",
+      "category": "inspiration",
+      "tags": [
+        "design",
+        "frontend",
+        "ui"
+      ],
+      "name": "design-resources-for-developers",
+      "sourceUrl": "https://github.com/bradtraversy/design-resources-for-developers/blob/master/readme.md",
+      "status": "imported",
+      "extracted": 1248,
+      "contentSha256": "74cae62f3d1834ecc65ced147b5b696ae9e45d9bab779678ce8f37e5ccce1645",
+      "license": {
+        "name": "MIT",
+        "url": "https://github.com/bradtraversy/design-resources-for-developers/blob/master/LICENSE"
+      }
+    },
+    {
+      "repo": "awesome-css-group/awesome-css",
+      "branch": "master",
+      "file": "README.md",
+      "category": "components",
+      "tags": [
+        "css",
+        "styling",
+        "frontend"
+      ],
+      "name": "awesome-css",
+      "sourceUrl": "https://github.com/awesome-css-group/awesome-css/blob/master/README.md",
+      "status": "imported",
+      "extracted": 161,
+      "contentSha256": "2c07a5a51de395acf8fcfa628730e15222499c8fb39058e25f45c014b76f8c2f",
+      "license": {
+        "name": "CC-BY-SA (see source for version)",
+        "url": "https://github.com/awesome-css-group/awesome-css/blob/master/LICENSE"
+      }
+    },
+    {
+      "repo": "brunopulis/awesome-a11y",
+      "branch": "main",
+      "file": "README.md",
+      "category": "learning",
+      "tags": [
+        "accessibility",
+        "a11y"
+      ],
+      "name": "awesome-a11y",
+      "sourceUrl": "https://github.com/brunopulis/awesome-a11y/blob/main/README.md",
+      "status": "imported",
+      "extracted": 18,
+      "contentSha256": "ac40af7e6ffbb459fd00fd23a2b56bedab286c0df6cefd01815035f1551f99b2",
+      "license": {
+        "name": "CC0",
+        "url": "https://github.com/brunopulis/awesome-a11y/blob/main/license"
+      }
+    },
+    {
+      "repo": "EbookFoundation/free-programming-books",
+      "branch": "main",
+      "file": "books/free-programming-books-langs.md",
+      "category": "learning",
+      "tags": [
+        "books",
+        "programming"
+      ],
+      "name": "free-programming-books",
+      "sourceUrl": "https://github.com/EbookFoundation/free-programming-books/blob/main/books/free-programming-books-langs.md",
+      "status": "imported",
+      "extracted": 1653,
+      "contentSha256": "2a6a251517d4fd5863fbbd03346754da24b215146989ff5eff9de261898be894",
+      "license": {
+        "name": "CC-BY (see source for version)",
+        "url": "https://github.com/EbookFoundation/free-programming-books/blob/main/LICENSE"
+      }
+    },
+    {
+      "repo": "EbookFoundation/free-programming-books",
+      "branch": "main",
+      "file": "books/free-programming-books-subjects.md",
+      "category": "learning",
+      "tags": [
+        "books",
+        "computer-science"
+      ],
+      "name": "free-programming-books",
+      "sourceUrl": "https://github.com/EbookFoundation/free-programming-books/blob/main/books/free-programming-books-subjects.md",
+      "status": "imported",
+      "extracted": 847,
+      "contentSha256": "d8ad83f103138795d8757d86a2349d9fc0f9e6a83559d79b330c6c1f8dceed69",
+      "license": {
+        "name": "CC-BY (see source for version)",
+        "url": "https://github.com/EbookFoundation/free-programming-books/blob/main/LICENSE"
+      }
+    },
+    {
+      "repo": "EbookFoundation/free-programming-books",
+      "branch": "main",
+      "file": "courses/free-courses-en.md",
+      "category": "learning",
+      "tags": [
+        "courses",
+        "programming"
+      ],
+      "name": "free-programming-books",
+      "sourceUrl": "https://github.com/EbookFoundation/free-programming-books/blob/main/courses/free-courses-en.md",
+      "status": "imported",
+      "extracted": 1373,
+      "contentSha256": "6482c20f03eee2ac47723bf8fe205459e37305de1bd038e89ce4a8bd53385cf7",
+      "license": {
+        "name": "CC-BY (see source for version)",
+        "url": "https://github.com/EbookFoundation/free-programming-books/blob/main/LICENSE"
+      }
+    },
+    {
+      "repo": "EbookFoundation/free-programming-books",
+      "branch": "main",
+      "file": "casts/free-podcasts-screencasts-en.md",
+      "category": "learning",
+      "tags": [
+        "videos",
+        "podcasts",
+        "programming"
+      ],
+      "name": "free-programming-books",
+      "sourceUrl": "https://github.com/EbookFoundation/free-programming-books/blob/main/casts/free-podcasts-screencasts-en.md",
+      "status": "imported",
+      "extracted": 266,
+      "contentSha256": "f78985336299740c9b569487931b307159f41c292b02302a7f0c0218ecaded9a",
+      "license": {
+        "name": "CC-BY (see source for version)",
+        "url": "https://github.com/EbookFoundation/free-programming-books/blob/main/LICENSE"
+      }
+    },
+    {
+      "repo": "Practical-Tutorials/project-based-learning",
+      "branch": "master",
+      "file": "README.md",
+      "category": "learning",
+      "tags": [
+        "projects",
+        "tutorials",
+        "ideas"
+      ],
+      "name": "project-based-learning",
+      "sourceUrl": "https://github.com/Practical-Tutorials/project-based-learning/blob/master/README.md",
+      "status": "imported",
+      "extracted": 441,
+      "contentSha256": "540e81c1f5062f0ed2b5b318593a6de7bc8cff6d240b825ce045c68183da1512",
+      "license": {
+        "name": "MIT",
+        "url": "https://github.com/Practical-Tutorials/project-based-learning/blob/master/LICENSE.md"
+      }
+    },
+    {
+      "repo": "codecrafters-io/build-your-own-x",
+      "branch": "master",
+      "file": "README.md",
+      "category": "learning",
+      "tags": [
+        "projects",
+        "tutorials",
+        "ideas"
+      ],
+      "name": "build-your-own-x",
+      "sourceUrl": "https://github.com/codecrafters-io/build-your-own-x/blob/master/README.md",
+      "status": "imported",
+      "extracted": 358,
+      "contentSha256": "895a9e99d3964faf6d5992cedce69790b46cbadd59c0fc10dd3d520284aba6f6",
+      "license": {
+        "name": "Not detected",
+        "url": "https://github.com/codecrafters-io/build-your-own-x"
+      }
+    },
+    {
+      "repo": "public-apis/public-apis",
+      "branch": "master",
+      "file": "README.md",
+      "category": "tools",
+      "tags": [
+        "api",
+        "data",
+        "integrations"
+      ],
+      "name": "public-apis",
+      "sourceUrl": "https://github.com/public-apis/public-apis/blob/master/README.md",
+      "status": "imported",
+      "extracted": 2294,
+      "contentSha256": "1ce4b056b48404fe8a332497495ca5d12ca2b9f5aa4e985e8fd5fb14f90fe164",
+      "license": {
+        "name": "MIT",
+        "url": "https://github.com/public-apis/public-apis/blob/master/LICENSE"
+      }
+    },
+    {
+      "repo": "steven2358/awesome-generative-ai",
+      "branch": "main",
+      "file": "README.md",
+      "category": "tools",
+      "tags": [
+        "ai",
+        "generative-ai"
+      ],
+      "name": "awesome-generative-ai",
+      "sourceUrl": "https://github.com/steven2358/awesome-generative-ai/blob/main/README.md",
+      "status": "imported",
+      "extracted": 349,
+      "contentSha256": "f6b42402c0dd5e6ec9eb9a1b104cef6d430989a1b373c1ed1d82241ea573975e",
+      "license": {
+        "name": "CC0",
+        "url": "https://github.com/steven2358/awesome-generative-ai/blob/main/LICENSE"
+      }
+    },
+    {
+      "repo": "Shubhamsaboo/awesome-llm-apps",
+      "branch": "main",
+      "file": "README.md",
+      "category": "inspiration",
+      "tags": [
+        "ai",
+        "agents",
+        "projects"
+      ],
+      "name": "awesome-llm-apps",
+      "sourceUrl": "https://github.com/Shubhamsaboo/awesome-llm-apps/blob/main/README.md",
+      "status": "imported",
+      "extracted": 122,
+      "contentSha256": "91e321c262b6c6be2de89bb66d4d6f5874ea0010f4793a5bf9701982924ee6af",
+      "license": {
+        "name": "Apache-2.0",
+        "url": "https://github.com/Shubhamsaboo/awesome-llm-apps/blob/main/LICENSE"
+      }
+    },
+    {
+      "repo": "punkpeye/awesome-mcp-servers",
+      "branch": "main",
+      "file": "README.md",
+      "category": "tools",
+      "tags": [
+        "mcp",
+        "agents",
+        "integrations"
+      ],
+      "name": "awesome-mcp-servers",
+      "sourceUrl": "https://github.com/punkpeye/awesome-mcp-servers/blob/main/README.md",
+      "status": "imported",
+      "extracted": 4637,
+      "contentSha256": "30cfd63388477a60dd7c21b8cdf24b287a15b1e592c7e3bc2b08ebe2222a4670",
+      "license": {
+        "name": "MIT",
+        "url": "https://github.com/punkpeye/awesome-mcp-servers/blob/main/LICENSE"
+      }
+    },
+    {
+      "repo": "VoltAgent/awesome-agent-skills",
+      "branch": "main",
+      "file": "README.md",
+      "category": "skills",
+      "tags": [
+        "agents",
+        "skills"
+      ],
+      "name": "awesome-agent-skills",
+      "sourceUrl": "https://github.com/VoltAgent/awesome-agent-skills/blob/main/README.md",
+      "status": "imported",
+      "extracted": 1250,
+      "contentSha256": "c49246a722de9eddb4be64eca9f4ec5a909efe73a2990ae0496ec44efd9e3135",
+      "license": {
+        "name": "MIT",
+        "url": "https://github.com/VoltAgent/awesome-agent-skills/blob/main/LICENSE"
+      }
+    },
+    {
+      "repo": "anthropics/skills",
+      "branch": "main",
+      "file": "README.md",
+      "category": "skills",
+      "tags": [
+        "agents",
+        "skills"
+      ],
+      "name": "skills",
+      "sourceUrl": "https://github.com/anthropics/skills/blob/main/README.md",
+      "status": "imported",
+      "extracted": 8,
+      "contentSha256": "2fb9c4cc026366ea6e21c60cb23c908a4d27c62071819cc06beffaac102d0694",
+      "license": {
+        "name": "Not detected",
+        "url": "https://github.com/anthropics/skills"
+      }
+    },
+    {
+      "repo": "github/awesome-copilot",
+      "branch": "main",
+      "file": "README.md",
+      "category": "skills",
+      "tags": [
+        "agents",
+        "copilot",
+        "skills"
+      ],
+      "name": "awesome-copilot",
+      "sourceUrl": "https://github.com/github/awesome-copilot/blob/main/README.md",
+      "status": "imported",
+      "extracted": 8,
+      "contentSha256": "f81aa4eb5861eb5a8e2cb16ee4ddf53a5df4c0ac86045447397ace768c47fe96",
+      "license": {
+        "name": "MIT",
+        "url": "https://github.com/github/awesome-copilot/blob/main/LICENSE"
+      }
+    },
+    {
+      "repo": "sindresorhus/awesome-npm",
+      "branch": "main",
+      "file": "readme.md",
+      "category": "tools",
+      "tags": [
+        "npm",
+        "javascript",
+        "packages"
+      ],
+      "name": "awesome-npm",
+      "sourceUrl": "https://github.com/sindresorhus/awesome-npm/blob/main/readme.md",
+      "status": "imported",
+      "extracted": 99,
+      "contentSha256": "7eb1609f0f00ac364b08107204c842e48d063112ebe2a838626df9fb77201804",
+      "license": {
+        "name": "CC0",
+        "url": "https://github.com/sindresorhus/awesome-npm/blob/main/license"
+      }
+    },
+    {
+      "repo": "TheJambo/awesome-testing",
+      "branch": "master",
+      "file": "README.md",
+      "category": "learning",
+      "tags": [
+        "testing",
+        "quality"
+      ],
+      "name": "awesome-testing",
+      "sourceUrl": "https://github.com/TheJambo/awesome-testing/blob/master/README.md",
+      "status": "imported",
+      "extracted": 233,
+      "contentSha256": "3beb9b72577c029ea5d9559136cc220137562cfd97cfc08ba867cef80b90924b",
+      "license": {
+        "name": "CC0",
+        "url": "https://github.com/TheJambo/awesome-testing/blob/master/LICENSE"
+      }
+    },
+    {
+      "repo": "rust-unofficial/awesome-rust",
+      "branch": "main",
+      "file": "README.md",
+      "category": "tools",
+      "tags": [
+        "rust",
+        "systems"
+      ],
+      "name": "awesome-rust",
+      "sourceUrl": "https://github.com/rust-unofficial/awesome-rust/blob/main/README.md",
+      "status": "imported",
+      "extracted": 1967,
+      "contentSha256": "ea3b6405d128d3d70311190f555120da86ab32a3aa1801239aae330fe5c3dd20",
+      "license": {
+        "name": "CC0",
+        "url": "https://github.com/rust-unofficial/awesome-rust/blob/main/LICENSE.txt"
+      }
+    },
+    {
+      "repo": "akullpp/awesome-java",
+      "branch": "master",
+      "file": "README.md",
+      "category": "tools",
+      "tags": [
+        "java",
+        "backend"
+      ],
+      "name": "awesome-java",
+      "sourceUrl": "https://github.com/akullpp/awesome-java/blob/master/README.md",
+      "status": "imported",
+      "extracted": 868,
+      "contentSha256": "b5d5c0a19c770e8fb031f7ebaa448dc5e94a97e9c9ff9dfc4a98a89863455ac2",
+      "license": {
+        "name": "CC-BY-SA (see source for version)",
+        "url": "https://github.com/akullpp/awesome-java/blob/master/LICENSE.md"
+      }
+    },
+    {
+      "repo": "awesome-selfhosted/awesome-selfhosted",
+      "branch": "master",
+      "file": "README.md",
+      "category": "tools",
+      "tags": [
+        "self-hosted",
+        "applications",
+        "deployment"
+      ],
+      "name": "awesome-selfhosted",
+      "sourceUrl": "https://github.com/awesome-selfhosted/awesome-selfhosted/blob/master/README.md",
+      "status": "imported",
+      "extracted": 1311,
+      "contentSha256": "51c7a6b5db6c4cf647ab94eb169765828ab406d5bbefbfcd00399636c3073e18",
+      "license": {
+        "name": "CC-BY-SA (see source for version)",
+        "url": "https://github.com/awesome-selfhosted/awesome-selfhosted/blob/master/LICENSE"
+      }
+    },
+    {
+      "repo": "TheComputerM/awesome-svelte",
+      "branch": "master",
+      "file": "README.md",
+      "category": "components",
+      "tags": [
+        "svelte",
+        "frontend",
+        "components"
+      ],
+      "name": "awesome-svelte",
+      "sourceUrl": "https://github.com/TheComputerM/awesome-svelte/blob/master/README.md",
+      "status": "imported",
+      "extracted": 198,
+      "contentSha256": "9a5a87c43643f5c5b0779b3249c4bc640755e1342b977611bf7099f549a6d06c",
+      "license": {
+        "name": "CC0",
+        "url": "https://github.com/TheComputerM/awesome-svelte/blob/master/LICENSE"
+      }
+    },
+    {
+      "repo": "josephmisiti/awesome-machine-learning",
+      "branch": "master",
+      "file": "README.md",
+      "category": "tools",
+      "tags": [
+        "machine-learning",
+        "ai",
+        "data"
+      ],
+      "name": "awesome-machine-learning",
+      "sourceUrl": "https://github.com/josephmisiti/awesome-machine-learning/blob/master/README.md",
+      "status": "imported",
+      "extracted": 1251,
+      "contentSha256": "420661616d069350bf7c8bb38ca1152ab9ac81f3634283b408759a05b5771552",
+      "license": {
+        "name": "Unclassified; see source",
+        "url": "https://github.com/josephmisiti/awesome-machine-learning/blob/master/LICENSE"
+      }
+    },
+    {
+      "repo": "f/awesome-chatgpt-prompts",
+      "branch": "main",
+      "file": "README.md",
+      "category": "skills",
+      "tags": [
+        "prompting",
+        "agents"
+      ],
+      "name": "awesome-chatgpt-prompts",
+      "sourceUrl": "https://github.com/f/awesome-chatgpt-prompts/blob/main/README.md",
+      "status": "imported",
+      "extracted": 4,
+      "contentSha256": "e31838b62cf72b28573211f756898f51be18b776df71eeec2358cbd44e74e1d8",
+      "license": {
+        "name": "CC0",
+        "url": "https://github.com/f/awesome-chatgpt-prompts/blob/main/LICENSE"
+      }
+    },
+    {
+      "repo": "nikgraf/awesome-react-hooks",
+      "branch": "master",
+      "file": "README.md",
+      "category": "components",
+      "tags": [
+        "react",
+        "hooks",
+        "frontend"
+      ],
+      "name": "awesome-react-hooks",
+      "sourceUrl": "https://github.com/nikgraf/awesome-react-hooks/blob/master/README.md",
+      "status": "imported",
+      "extracted": 42,
+      "contentSha256": "27dbe1c24f45ec8641ba086a57f641a3c18a832dff1411a0821e797a3e3e3b36",
+      "license": {
+        "name": "Not detected",
+        "url": "https://github.com/nikgraf/awesome-react-hooks"
+      }
+    },
+    {
+      "repo": "brillout/awesome-react-components",
+      "branch": "master",
+      "file": "README.md",
+      "category": "components",
+      "tags": [
+        "react",
+        "components",
+        "frontend"
+      ],
+      "name": "awesome-react-components",
+      "sourceUrl": "https://github.com/brillout/awesome-react-components/blob/master/README.md",
+      "status": "imported",
+      "extracted": 563,
+      "contentSha256": "cef8d2e0891d4f3b0b0d1fec06f74d54f245dc6850f475e7ceb4194e10307e54",
+      "license": {
+        "name": "CC0",
+        "url": "https://github.com/brillout/awesome-react-components/blob/master/license"
+      }
+    }
+  ]
+}
