@@ -17,6 +17,14 @@ The link check attempted all 12,073 non-GitHub destinations and found 45 verifie
 
 The [source manifest](../data/community-sources.json) records totals by reason and the hashes of the imported documents. The [review ledger](../data/community-review.json) keeps individual findings and repairs available to the next import.
 
+## What was checked for the opening scene
+
+The opening scene has 360 distinct resources. All 108 featured cards and the first 252 entries on the community floor roster have a specific use case, frameworks or formats, estimated setup effort, a caveat, a review date and links to the material reviewed. Open a tile's **Resource page** to see those sources, or use **Copy this reference** to send the evidence to an agent. The [featured records](../data/coding-resources.json), [community card ledger](../data/community-cards.json) and [floor roster](../data/floor-community.json) identify which cards these are. The ledger survives a community reimport because it is keyed by resource ID.
+
+The reviews establish what the cited documentation, examples or tools offered on the stated date. Setup levels are editorial estimates. A logo, an imported listing or a reachable URL alone does not establish that a package works in a student's stack. All 15 rotating reserves received the same editorial review. Other search results can have only the original collection's description and source.
+
+API access has a separate [provider evidence ledger](../data/api-requirements.json). Each verified entry records the key status, the operation or conditions it applies to, the provider's source and the date checked. For example, the National Weather Service asks callers to identify their app, while Open-Meteo's hosted free forecast has noncommercial usage and attribution conditions. A search for `weather API without an API key` can return either and shows those conditions. Services with required keys or missing verification are excluded. Check the provider's current terms for the student's actual deployment.
+
 ## What we took from the nine references
 
 | Site | What we found | Decision for the Coding Index |

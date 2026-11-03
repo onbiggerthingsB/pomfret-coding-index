@@ -1,0 +1,128 @@
+{
+  "community-ce0d61199427e31e": {
+    "apiKey": "conditional",
+    "note": "The hosted forecast API is keyless for noncommercial use within the free limits. Attribute the data. Commercial hosted use requires a subscription and a key.",
+    "sourceUrl": "https://open-meteo.com/",
+    "checkedAt": "2026-11-02"
+  },
+  "community-003792addce58608": {
+    "apiKey": "conditional",
+    "note": "The hosted forecast API is keyless for noncommercial use within the free limits. Attribute the data. Commercial hosted use requires a subscription and a key.",
+    "sourceUrl": "https://open-meteo.com/",
+    "checkedAt": "2026-11-02"
+  },
+  "community-e38846b4eca76a34": {
+    "apiKey": "required",
+    "note": "Forecast requests require a Pirate Weather key and an active subscription to the forecast API.",
+    "sourceUrl": "https://docs.pirateweather.net/en/dev/API/",
+    "checkedAt": "2026-11-02"
+  },
+  "community-95eac036c6560e57": {
+    "apiKey": "required",
+    "note": "Register an account and supply its APPID for OpenWeather API calls.",
+    "sourceUrl": "https://openweathermap.org/faq",
+    "checkedAt": "2026-11-02"
+  },
+  "community-61eca8c1b4525101": {
+    "apiKey": "not-required",
+    "note": "The US National Weather Service accepts a descriptive User-Agent for its public forecast API. Identify your app in requests.",
+    "sourceUrl": "https://www.weather.gov/documentation/services-web-api",
+    "checkedAt": "2026-11-02"
+  },
+  "community-49463a98b12fcbe5": {
+    "apiKey": "not-required",
+    "note": "The public Frankfurter endpoint serves exchange rates without an API key.",
+    "sourceUrl": "https://frankfurter.dev/",
+    "checkedAt": "2026-11-02"
+  },
+  "community-2d709e921b8fb5af": {
+    "apiKey": "not-required",
+    "note": "Public PokéAPI resources can be read without authentication. Cache responses you reuse.",
+    "sourceUrl": "https://pokeapi.co/docs/v2",
+    "checkedAt": "2026-11-02"
+  },
+  "community-5b035862037c0cf7": {
+    "apiKey": "not-required",
+    "note": "The Met collection endpoints accept public requests without a key. Check the public-domain field before reusing an artwork image.",
+    "sourceUrl": "https://metmuseum.github.io/",
+    "checkedAt": "2026-11-02"
+  },
+  "community-9ccac5110d4563c7": {
+    "apiKey": "not-required",
+    "note": "The World Bank Indicators API accepts public requests for country and indicator data without authentication.",
+    "sourceUrl": "https://datahelpdesk.worldbank.org/knowledgebase/articles/889392-about-the-indicators-api-documentation",
+    "checkedAt": "2026-11-02"
+  },
+  "community-a1e13daa806ff317": {
+    "apiKey": "not-required",
+    "note": "The Open Trivia Database serves quiz questions without a key. Its optional session token helps avoid repeated questions.",
+    "sourceUrl": "https://opentdb.com/api_config.php",
+    "checkedAt": "2026-11-02"
+  },
+  "community-19df6db5cbfa6902": {
+    "apiKey": "not-required",
+    "note": "JSONPlaceholder provides keyless sample data for prototypes. Writes are simulated.",
+    "sourceUrl": "https://jsonplaceholder.typicode.com/",
+    "checkedAt": "2026-11-02"
+  },
+  "community-969c8808eba4bd98": {
+    "apiKey": "required",
+    "note": "Mapbox API requests need an access token. Use a public token with appropriate scopes for a browser map.",
+    "sourceUrl": "https://docs.mapbox.com/accounts/guides/tokens/",
+    "checkedAt": "2026-11-02"
+  },
+  "community-c7b884355614657b": {
+    "apiKey": "required",
+    "note": "Mapbox API requests need an access token. Use a public token with appropriate scopes for a browser map.",
+    "sourceUrl": "https://docs.mapbox.com/accounts/guides/tokens/",
+    "checkedAt": "2026-11-02"
+  },
+  "community-d6809f9f369ac027": {
+    "apiKey": "required",
+    "note": "Accessing Airtable base records requires authorization, such as a personal access token scoped to the base.",
+    "sourceUrl": "https://support.airtable.com/docs/creating-personal-access-tokens",
+    "checkedAt": "2026-11-02"
+  },
+  "community-30e46c5d0b97c28f": {
+    "apiKey": "required",
+    "note": "Send a bearer token when calling models through OpenRouter.",
+    "sourceUrl": "https://openrouter.ai/docs/api/reference/authentication",
+    "checkedAt": "2026-11-02"
+  },
+  "community-8b97b9a45ae80f2b": {
+    "apiKey": "required",
+    "note": "Send a bearer token when calling models through OpenRouter.",
+    "sourceUrl": "https://openrouter.ai/docs/api/reference/authentication",
+    "checkedAt": "2026-11-02"
+  },
+  "community-4bf6a160b31afdfc": {
+    "apiKey": "required",
+    "note": "Cohere model requests require an API key.",
+    "sourceUrl": "https://docs.cohere.com/reference/about",
+    "checkedAt": "2026-11-02"
+  },
+  "community-2327a176271d39da": {
+    "apiKey": "required",
+    "note": "Cohere model requests require an API key.",
+    "sourceUrl": "https://docs.cohere.com/reference/about",
+    "checkedAt": "2026-11-02"
+  },
+  "community-e59be344cd986680": {
+    "apiKey": "required",
+    "note": "The Filestack web picker requires an application API key.",
+    "sourceUrl": "https://www.filestack.com/docs/uploads/pickers/web/",
+    "checkedAt": "2026-11-02"
+  },
+  "community-8da5b343fdc01d23": {
+    "apiKey": "required",
+    "note": "The Filestack web picker requires an application API key.",
+    "sourceUrl": "https://www.filestack.com/docs/uploads/pickers/web/",
+    "checkedAt": "2026-11-02"
+  },
+  "community-66adb3e8f26c44d4": {
+    "apiKey": "required",
+    "note": "Public photo-search requests use the access key from a registered Unsplash application.",
+    "sourceUrl": "https://unsplash.com/documentation",
+    "checkedAt": "2026-11-02"
+  }
+}

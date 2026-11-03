@@ -1,18 +1,38 @@
+import type { Metadata } from "next";
+import { StandaloneResourceActions } from "@/components/ResourceActions";
+import { indexPath, parseIndexLocation } from "@/lib/index-navigation";
 import Link from "next/link";
+import { ResourceAccess } from "@/components/ResourceAccess";
 import { notFound } from "next/navigation";
 import { getResource, resourceCategories } from "@/lib/resources";
 
 export const dynamic = "force-dynamic";
 
-export default async function ResourcePage({ params }: { params: Promise<{ id: string }> }) {
+type Props = {
+  params: Promise<{ id: string }>;
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
+};
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { id } = await params;
+  const resource = getResource(id);
+  return resource ? { title: `${resource.name} · The Coding Index`, description: resource.description } : {};
+}
+
+export default async function ResourcePage({ params, searchParams }: Props) {
   const { id } = await params;
   const resource = getResource(id);
   if (!resource) notFound();
+  const context = new URLSearchParams();
+  for (const [key, value] of Object.entries(await searchParams)) {
+    if (typeof value === "string") context.set(key, value);
+  }
+  const back = indexPath({ ...parseIndexLocation(context.toString()), resource: null });
 
   return (
     <main className="fixed inset-0 overflow-y-auto bg-ink px-6 py-10 text-text sm:py-16">
       <article className="mx-auto max-w-2xl">
-        <Link href="/" className="text-sm text-muted underline-offset-4 hover:text-text hover:underline">Back to the Coding Library</Link>
+        <Link href={back} className="text-sm text-muted underline-offset-4 hover:text-text hover:underline">{back === "/" ? "Back to the Coding Library" : "Return to your library view"}</Link>
         <header className="mt-12">
           <p className="text-sm text-muted">{resourceCategories[resource.category]} · {resource.kind}</p>
           <h1 className="mt-3 text-3xl font-normal tracking-tight sm:text-4xl" style={{ fontFamily: "var(--font-geist-serif), Georgia, serif" }}>{resource.name}</h1>
@@ -23,6 +43,8 @@ export default async function ResourcePage({ params }: { params: Promise<{ id: s
           {resource.agentUrl && <a href={resource.agentUrl} target="_blank" rel="noopener noreferrer" className="rounded-md border border-line-strong px-5 py-3 text-sm">Agent documentation</a>}
           <a href={`/api/resources?id=${encodeURIComponent(resource.id)}`} className="rounded-md border border-line-strong px-5 py-3 text-sm">Read JSON</a>
         </div>
+        <StandaloneResourceActions resource={resource} />
+        <ResourceAccess resource={resource} />
         {resource.guidance && (
           <section className="mt-12 border-t border-line pt-6" aria-labelledby="reviewed-guidance">
             <h2 id="reviewed-guidance" className="text-base font-medium">Reviewed guidance</h2>

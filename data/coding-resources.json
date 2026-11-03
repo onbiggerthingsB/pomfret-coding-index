@@ -1384,16 +1384,16 @@
     "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development",
     "description": "Structured web-development lessons covering HTML, CSS, JavaScript and the foundations behind browser applications.",
     "category": "learning",
-    "tags": ["learning", "html", "css", "javascript", "beginner", "web development", "documentation"],
+    "tags": ["learning", "html", "css", "javascript", "beginner", "web development", "documentation", "dialog"],
     "kind": "documentation",
     "sourceUrl": "https://developer.mozilla.org/en-US/docs/Learn_web_development",
     "guidance": {
-      "bestFor": "Build a signup form from native HTML inputs and explain which button submits it.",
+      "bestFor": "Build a signup form with native HTML inputs or open a modal with the browser's dialog element.",
       "frameworks": ["HTML", "Browser"],
       "setup": "low",
       "caveat": "Start with the forms lesson. Storing the submitted answers still requires a destination in your app.",
       "checkedAt": "2026-11-02",
-      "sourceUrls": ["https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/HTML_forms"]
+      "sourceUrls": ["https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/HTML_forms", "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/dialog"]
     }
   },
   {

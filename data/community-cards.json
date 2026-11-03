@@ -1,0 +1,4952 @@
+{
+  "community-9cbe205a8df2648d": {
+    "description": "Use Angular's TypeScript components to build a timetable with shared navigation and editable class details.",
+    "kind": "library",
+    "guidance": {
+      "bestFor": "A multi-page web app whose components share form data and navigation.",
+      "frameworks": [
+        "Angular",
+        "TypeScript"
+      ],
+      "setup": "moderate",
+      "caveat": "Use the Angular major version already in the project when choosing packages and examples.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://github.com/angular/angular"
+      ]
+    }
+  },
+  "community-cd1cf756a3cceed5": {
+    "name": "Ant Design for React Native",
+    "description": "Build the list, inputs and buttons for a mobile sign-up screen with Ant Design's React Native components.",
+    "kind": "library",
+    "guidance": {
+      "bestFor": "A native class app where students enter information on a phone.",
+      "frameworks": [
+        "React Native",
+        "iOS",
+        "Android"
+      ],
+      "setup": "moderate",
+      "caveat": "This package targets React Native. Choose the mobile web package for a site that opens in a browser.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://rn.mobile.ant.design/",
+        "https://github.com/ant-design/ant-design-mobile-rn"
+      ]
+    }
+  },
+  "community-735362ce9672e68f": {
+    "description": "Install a set of Vue controls for an inventory table, filters and an item-editing form.",
+    "kind": "library",
+    "guidance": {
+      "bestFor": "Adding consistent forms and tables to a Vue admin interface.",
+      "frameworks": [
+        "Vue",
+        "Ant Design"
+      ],
+      "setup": "moderate",
+      "caveat": "Use the Vue package and match its major version to the app; examples for Ant Design React use different APIs.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://github.com/vueComponent/ant-design-vue"
+      ]
+    }
+  },
+  "community-eb59c0a4da328793": {
+    "description": "Use mobile web controls such as a picker and popup to build a touch-friendly check-in form.",
+    "kind": "library",
+    "guidance": {
+      "bestFor": "A React website that students open on their phones.",
+      "frameworks": [
+        "React",
+        "Mobile web"
+      ],
+      "setup": "moderate",
+      "caveat": "These controls target a browser. An app built with React Native needs the separate native package.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://github.com/ant-design/ant-design-mobile"
+      ]
+    }
+  },
+  "community-f8f43e49b0d97e16": {
+    "name": "Ant Design Charts",
+    "description": "Use Ant Design Charts to plot daily attendance as a line chart in React.",
+    "kind": "library",
+    "guidance": {
+      "bestFor": "A dashboard whose chart maps a date column to the x-axis and a measured value to the y-axis.",
+      "frameworks": [
+        "React",
+        "JavaScript",
+        "TypeScript"
+      ],
+      "setup": "moderate",
+      "caveat": "The chart expects data records and field mappings; turn API responses into that shape before rendering.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://ant-design-charts.antgroup.com/en/",
+        "https://ant-design-charts.antgroup.com/en/components/plots/line"
+      ]
+    }
+  },
+  "community-641875415b61f754": {
+    "description": "Build a content site with Astro and hydrate an interactive widget only on the pages that need it.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "A portfolio with mostly static project pages and one interactive filter.",
+      "frameworks": [
+        "Astro",
+        "HTML",
+        "JavaScript"
+      ],
+      "setup": "moderate",
+      "caveat": "A UI component can render as plain HTML. Choose a client directive on the components that need browser interaction.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://github.com/withastro/astro",
+        "https://docs.astro.build/en/concepts/islands/"
+      ]
+    }
+  },
+  "community-ee40d88ea29e0b09": {
+    "description": "Use Axios to request a public forecast API and show the result or an error in your interface.",
+    "kind": "library",
+    "guidance": {
+      "bestFor": "An app that shares request configuration across several JSON endpoints.",
+      "frameworks": [
+        "JavaScript",
+        "Browser",
+        "Node.js"
+      ],
+      "setup": "low",
+      "caveat": "Browser requests still follow the server's CORS policy. A client library cannot grant cross-origin access.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://github.com/axios/axios",
+        "https://axios.rest/pages/getting-started/first-steps"
+      ]
+    }
+  },
+  "community-6a1de1ab9f404553": {
+    "description": "Run Biome's formatter and linter to spot inconsistent code before merging a pull request.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "A team that wants one check for formatting and code quality on changed files.",
+      "frameworks": [
+        "JavaScript",
+        "TypeScript",
+        "JSON"
+      ],
+      "setup": "low",
+      "caveat": "Choose which formatter owns each file type before enabling automatic fixes alongside an existing formatter.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://github.com/biomejs/biome",
+        "https://biomejs.dev/installation/quick-start/"
+      ]
+    }
+  },
+  "community-cd1cb5b5b252b6c0": {
+    "name": "CPython source",
+    "description": "Read the CPython interpreter source to investigate how a Python operation works under the hood.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Inspecting or contributing to the implementation that runs Python programs.",
+      "frameworks": [
+        "Python",
+        "C"
+      ],
+      "setup": "advanced",
+      "caveat": "The default branch contains development source. Install a released Python interpreter to run an ordinary Python app.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://github.com/python/cpython"
+      ]
+    }
+  },
+  "community-52cd6f5e3bc52f48": {
+    "description": "Write a Cypress browser test that signs in, submits a form and checks the result the user sees.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Rerunning a checkout or login flow whenever the website changes.",
+      "frameworks": [
+        "JavaScript",
+        "TypeScript",
+        "Browser testing"
+      ],
+      "setup": "moderate",
+      "caveat": "Run the app with repeatable test data and controlled test accounts so a failing assertion points to the interface.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://github.com/cypress-io/cypress"
+      ]
+    }
+  },
+  "community-dfc80ee0426fca56": {
+    "description": "Bind data to SVG marks with D3 to create a custom scatterplot, scale or interactive axis.",
+    "kind": "library",
+    "guidance": {
+      "bestFor": "A data story with chart interactions or marks that a preset chart cannot express.",
+      "frameworks": [
+        "JavaScript",
+        "SVG",
+        "DOM"
+      ],
+      "setup": "moderate",
+      "caveat": "You define the scales, marks and updates. Budget time for labels and accessible alternatives.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://github.com/d3/d3"
+      ]
+    }
+  },
+  "community-0dc082de2306e07e": {
+    "name": "Deno",
+    "description": "Use the Deno runtime to run a TypeScript script that fetches and transforms a dataset.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Sharing a command-line tool written in TypeScript without a separate compile step.",
+      "frameworks": [
+        "Deno",
+        "JavaScript",
+        "TypeScript"
+      ],
+      "setup": "moderate",
+      "caveat": "Deno restricts access to the network and filesystem by default. Grant only what the script needs.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://github.com/denoland/deno"
+      ]
+    }
+  },
+  "community-68c89894eae48486": {
+    "description": "Build a documentation website with Docusaurus from your team's Markdown or MDX pages.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "A guide with a sidebar for installation instructions, concepts and examples.",
+      "frameworks": [
+        "React",
+        "Markdown",
+        "MDX"
+      ],
+      "setup": "moderate",
+      "caveat": "The generator produces a site to deploy. Decide which docs version goes with each software release.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://github.com/meta/docusaurus"
+      ]
+    }
+  },
+  "community-1ce554b3198255e9": {
+    "description": "Configure ESLint to flag problematic JavaScript patterns in the editor and in a pull request.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Catching repeated mistakes in agent-written code before review.",
+      "frameworks": [
+        "JavaScript",
+        "ESLint"
+      ],
+      "setup": "low",
+      "caveat": "Check which rules and plugins your project enables. A clean lint run still needs behavioral tests.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://github.com/eslint/eslint"
+      ]
+    }
+  },
+  "community-f12f3d8cb55abc01": {
+    "description": "Add Express routes and middleware for an API that reads and creates assignments.",
+    "kind": "library",
+    "guidance": {
+      "bestFor": "A small Node service where the team wants control over routes and JSON responses.",
+      "frameworks": [
+        "Node.js",
+        "JavaScript"
+      ],
+      "setup": "moderate",
+      "caveat": "Express leaves validation and persistence to your app. Decide how a route handles a malformed request.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://github.com/expressjs/express"
+      ]
+    }
+  },
+  "community-3fc86703f4dd4d8f": {
+    "description": "Create a Fastify endpoint with a schema that checks the shape of incoming JSON.",
+    "kind": "library",
+    "guidance": {
+      "bestFor": "An API that should reject an incorrect score or missing player ID before saving it.",
+      "frameworks": [
+        "Node.js",
+        "JavaScript",
+        "TypeScript"
+      ],
+      "setup": "moderate",
+      "caveat": "Use schemas you control; Fastify's validation and serialization compile schemas into executable functions.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://github.com/fastify/fastify",
+        "https://fastify.dev/docs/latest/Reference/Validation-and-Serialization/"
+      ]
+    }
+  },
+  "community-2bc0f0f249f8cb71": {
+    "description": "Define a small HTTP API with Hono and run it on a supported server or edge runtime.",
+    "kind": "library",
+    "guidance": {
+      "bestFor": "A webhook or JSON endpoint that uses standard Request and Response objects.",
+      "frameworks": [
+        "JavaScript",
+        "TypeScript",
+        "Web APIs"
+      ],
+      "setup": "moderate",
+      "caveat": "Runtime-specific services such as a database binding still need the adapter or setup for your chosen host.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://github.com/honojs/hono"
+      ]
+    }
+  },
+  "community-e36cbf2093afe536": {
+    "description": "Write Jest unit tests for a score calculation, including ties and missing values.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Checking deterministic logic or mocking a dependency so a failure can be reproduced locally.",
+      "frameworks": [
+        "JavaScript",
+        "Jest"
+      ],
+      "setup": "low",
+      "caveat": "A passing unit test with a mock cannot confirm that the real database or browser behaves the same way.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://github.com/jestjs/jest"
+      ]
+    }
+  },
+  "community-81d116c0938bf51a": {
+    "description": "Use Lodash utilities to group records by team or sort a list before displaying it.",
+    "kind": "library",
+    "guidance": {
+      "bestFor": "Working with nested collections where a small reusable transformation makes the data flow easier to read.",
+      "frameworks": [
+        "JavaScript"
+      ],
+      "setup": "low",
+      "caveat": "Compare the needed function with the JavaScript methods already available before adding the dependency.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://github.com/lodash/lodash"
+      ]
+    }
+  },
+  "community-8e24af85aec962ff": {
+    "name": "NestJS",
+    "description": "Use Nest modules, controllers and services to organize a Node API as more routes are added.",
+    "kind": "library",
+    "guidance": {
+      "bestFor": "An API with several domains that share services, such as assignments and student accounts.",
+      "frameworks": [
+        "Node.js",
+        "TypeScript"
+      ],
+      "setup": "moderate",
+      "caveat": "Its dependency injection and module structure add setup. Decide which data and operations belong to each module.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://github.com/nestjs/nest"
+      ]
+    }
+  },
+  "community-dcb792d718508bec": {
+    "description": "Use the Next.js App Router to give a portfolio an index and a URL for every project.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "A React site with shared layouts and nested pages that should open directly from a link.",
+      "frameworks": [
+        "Next.js",
+        "React"
+      ],
+      "setup": "moderate",
+      "caveat": "Keep server and client component boundaries in mind when adding interactions that need browser APIs.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://github.com/vercel/next.js",
+        "https://nextjs.org/docs/app/getting-started/layouts-and-pages"
+      ]
+    }
+  },
+  "community-e6ca8458e9c714f4": {
+    "name": "NG-ZORRO",
+    "description": "Use NG-ZORRO's Angular table components to add filters and sorting to a lab inventory.",
+    "kind": "library",
+    "guidance": {
+      "bestFor": "A data-heavy Angular page that uses Ant Design's visual conventions.",
+      "frameworks": [
+        "Angular",
+        "TypeScript"
+      ],
+      "setup": "moderate",
+      "caveat": "Choose client-side or server-side sorting and pagination to match how many records the table receives.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://ng.ant.design/",
+        "https://ng.ant.design/components/table/en"
+      ]
+    }
+  },
+  "community-202ed8802a6eae23": {
+    "description": "Create a Vue site with Nuxt that renders a public project page for each entry in a catalog.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "A Vue app with routing and server rendering as well as interactive controls.",
+      "frameworks": [
+        "Vue",
+        "Nuxt",
+        "TypeScript"
+      ],
+      "setup": "moderate",
+      "caveat": "Code that touches window or document must run in the browser when the page also renders on the server.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://github.com/nuxt/nuxt"
+      ]
+    }
+  },
+  "community-1304a105f0946866": {
+    "description": "Start Parcel from an HTML entry file to build and preview a small site with bundled scripts and styles.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "A student project that has an HTML file and wants a development server and production build.",
+      "frameworks": [
+        "HTML",
+        "CSS",
+        "JavaScript"
+      ],
+      "setup": "low",
+      "caveat": "Serve the generated output from the production build. The development server serves a different workflow.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://github.com/parcel-bundler/parcel",
+        "https://parceljs.org/getting-started/webapp/"
+      ]
+    }
+  },
+  "community-4263a6f361fd9d1e": {
+    "description": "Create a Pinia store so a Vue list and detail view can both update the same favorite items.",
+    "kind": "library",
+    "guidance": {
+      "bestFor": "Sharing reactive application state across components without passing it through several parents.",
+      "frameworks": [
+        "Vue 3",
+        "TypeScript",
+        "JavaScript"
+      ],
+      "setup": "low",
+      "caveat": "Use the release that supports your Vue major version. Persisting a store after refresh needs an explicit strategy.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://github.com/vuejs/pinia"
+      ]
+    }
+  },
+  "community-b399aaf67c8c753f": {
+    "description": "Use pnpm to install JavaScript dependencies and manage packages in a multi-project workspace.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "A team sharing dependencies across several packages with a committed pnpm lockfile.",
+      "frameworks": [
+        "Node.js",
+        "Package manager"
+      ],
+      "setup": "low",
+      "caveat": "Use the package manager and lockfile the repository declares so teammates and CI resolve the same dependencies.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://github.com/pnpm/pnpm"
+      ]
+    }
+  },
+  "community-15f5136fd03f9ab3": {
+    "description": "Render a lightweight interactive widget with Preact components and JSX.",
+    "kind": "library",
+    "guidance": {
+      "bestFor": "An embedded search or voting widget where the amount of client JavaScript matters.",
+      "frameworks": [
+        "JavaScript",
+        "JSX",
+        "Preact"
+      ],
+      "setup": "moderate",
+      "caveat": "Some React libraries depend on React-specific behavior. Check compatibility before using them in a Preact app.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://github.com/preactjs/preact"
+      ]
+    }
+  },
+  "community-b9458b212c01ead3": {
+    "name": "Prisma ORM",
+    "description": "Use Prisma ORM to express database reads and writes for a TypeScript assignment tracker.",
+    "kind": "library",
+    "guidance": {
+      "bestFor": "An app that regularly reads related records, such as courses and their assignments.",
+      "frameworks": [
+        "TypeScript",
+        "SQL",
+        "Prisma ORM"
+      ],
+      "setup": "moderate",
+      "caveat": "Check the Prisma major version in your project. The repository distinguishes development and supported release branches.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://github.com/prisma/orm"
+      ]
+    }
+  },
+  "community-31ff6e314f2a5cf3": {
+    "description": "Give a React app separate routes for a team list and each team's page using React Router.",
+    "kind": "library",
+    "guidance": {
+      "bestFor": "A client app whose screens must work with external links and browser Back.",
+      "frameworks": [
+        "React",
+        "JavaScript",
+        "TypeScript"
+      ],
+      "setup": "moderate",
+      "caveat": "Match examples to your router mode. Declarative, data and framework setups expose different features.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://github.com/remix-run/react-router"
+      ]
+    }
+  },
+  "community-5c4dd456ca1735be": {
+    "description": "Track shared state and named actions so several views can react to the same cart update.",
+    "kind": "library",
+    "guidance": {
+      "bestFor": "An app where many controls update the same data and the team wants to trace what changed.",
+      "frameworks": [
+        "JavaScript",
+        "Redux Toolkit"
+      ],
+      "setup": "moderate",
+      "caveat": "The Redux team recommends Redux Toolkit for new Redux code. Older examples often contain unnecessary manual setup.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://github.com/reduxjs/redux",
+        "https://redux.js.org/introduction/why-rtk-is-redux-today"
+      ]
+    }
+  },
+  "community-9f028105decfa304": {
+    "name": "Remix 3 source",
+    "description": "Explore the Remix 3 source and examples for building web features around browser and server APIs.",
+    "kind": "library",
+    "guidance": {
+      "bestFor": "Investigating the design and implementation of the developing Remix framework.",
+      "frameworks": [
+        "JavaScript",
+        "Web APIs",
+        "Remix 3"
+      ],
+      "setup": "advanced",
+      "caveat": "The linked default branch is Remix 3 under active development. Match tutorials and API examples to the version you actually run.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://github.com/remix-run/remix"
+      ]
+    }
+  },
+  "community-ea794a1f5f672288": {
+    "name": "Node.js",
+    "description": "Use the Node.js runtime to run a JavaScript script or server outside the browser.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Automating a build task or serving data to a frontend using JavaScript.",
+      "frameworks": [
+        "Node.js",
+        "JavaScript",
+        "Command line"
+      ],
+      "setup": "moderate",
+      "caveat": "The link leads to the runtime's source repository. For a project, install a supported Node release matching its declared version.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://github.com/nodejs/node"
+      ]
+    }
+  },
+  "community-5dd06ff1ad737e1b": {
+    "description": "Extract repeated styles into Sass variables and mixins and compile the result to CSS.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "A site with repeated style rules that would benefit from a shared authoring pattern.",
+      "frameworks": [
+        "SCSS",
+        "Sass",
+        "CSS"
+      ],
+      "setup": "low",
+      "caveat": "Browsers consume the compiled CSS. An SCSS file needs a compiler or a build step before it ships.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://github.com/sass/sass",
+        "https://sass-lang.com/documentation/"
+      ]
+    }
+  },
+  "community-43d3ef9bd32addf2": {
+    "description": "Build a reactive filter component with Svelte and compile it to browser JavaScript.",
+    "kind": "library",
+    "guidance": {
+      "bestFor": "A form or list whose displayed content should update when its state changes.",
+      "frameworks": [
+        "Svelte",
+        "JavaScript",
+        "TypeScript"
+      ],
+      "setup": "moderate",
+      "caveat": "Svelte components need a compatible compiler and build setup. Match syntax to the project's Svelte version.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://github.com/sveltejs/svelte"
+      ]
+    }
+  },
+  "community-b662278c0d08c19d": {
+    "name": "Tailwind CSS",
+    "description": "Build responsive cards by applying Tailwind utility classes in the markup.",
+    "kind": "library",
+    "guidance": {
+      "bestFor": "A page where teammates want consistent spacing, colors and responsive breakpoints.",
+      "frameworks": [
+        "Tailwind CSS",
+        "CSS",
+        "HTML"
+      ],
+      "setup": "low",
+      "caveat": "Ensure the build can discover the class names you use, especially when markup is generated.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://github.com/tailwindlabs/tailwindcss"
+      ]
+    }
+  },
+  "community-0d8bce7e29a5cd98": {
+    "name": "Visual Studio Code source (Code - OSS)",
+    "description": "Inspect the Code - OSS implementation behind Visual Studio Code to see how editor features are built.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Working on the editor itself or investigating how a feature behaves in its open-source implementation.",
+      "frameworks": [
+        "Source editor",
+        "TypeScript"
+      ],
+      "setup": "advanced",
+      "caveat": "This repository contains Code - OSS source. The packaged Visual Studio Code distribution includes Microsoft-specific customizations.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://github.com/Microsoft/vscode"
+      ]
+    }
+  },
+  "community-2b14193563ce6363": {
+    "description": "Use Vite's development server and build command to iterate on a browser app.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Starting a frontend with quick local updates and an optimized production build.",
+      "frameworks": [
+        "JavaScript",
+        "TypeScript",
+        "Frontend tooling"
+      ],
+      "setup": "low",
+      "caveat": "Check the production build separately from the development server, especially asset paths under your deployment URL.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://github.com/vitejs/vite"
+      ]
+    }
+  },
+  "community-9f8aa196366d6171": {
+    "name": "Vue 2 (legacy)",
+    "description": "Read the original Vue 2 source while maintaining or migrating an older Vue application.",
+    "kind": "library",
+    "guidance": {
+      "bestFor": "Tracing behavior in an existing application pinned to Vue 2.",
+      "frameworks": [
+        "Vue 2",
+        "JavaScript"
+      ],
+      "setup": "moderate",
+      "caveat": "Vue 2 has reached end of life. Use the current Vue guide and supported Vue release for a new project.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://github.com/vuejs/vue",
+        "https://vuejs.org/guide/introduction.html"
+      ]
+    }
+  },
+  "community-26bdc348dc94e4e5": {
+    "description": "Use webpack to bundle application modules and process styles or other assets through loaders.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "An existing frontend that already has a webpack config and needs another entry or asset type.",
+      "frameworks": [
+        "JavaScript",
+        "Bundler",
+        "Node.js"
+      ],
+      "setup": "moderate",
+      "caveat": "Loaders and plugins affect different stages. Changing both at once makes a build failure harder to isolate.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://github.com/webpack/webpack"
+      ]
+    }
+  },
+  "community-60c94267a77d6d05": {
+    "name": "Yarn Classic (v1)",
+    "description": "Use the Yarn Classic source and documentation to maintain dependencies in a project pinned to Yarn 1.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Reproducing an existing Yarn 1 installation or debugging a legacy yarn.lock workflow.",
+      "frameworks": [
+        "Node.js",
+        "Yarn Classic"
+      ],
+      "setup": "low",
+      "caveat": "This repository covers Yarn 1. Modern Yarn has different releases, settings and installation instructions.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://github.com/yarnpkg/yarn",
+        "https://yarnpkg.com/getting-started"
+      ]
+    }
+  },
+  "community-d8864b187c866fa6": {
+    "description": "Use Cursor to ask an agent to inspect project files, propose an edit and work through its implementation.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Tracing a behavior across several files in an existing codebase before making a change.",
+      "frameworks": [
+        "Code editor",
+        "AI coding agent"
+      ],
+      "setup": "low",
+      "caveat": "Review the actual diff and run the project's own checks before accepting the change.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://cursor.com/"
+      ]
+    }
+  },
+  "community-3b1a46da764e4da9": {
+    "description": "Use Bun to run a TypeScript script, install dependencies or execute a project's tests.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Prototyping a small JavaScript service with the runtime and toolchain together.",
+      "frameworks": [
+        "Bun",
+        "JavaScript",
+        "TypeScript"
+      ],
+      "setup": "low",
+      "caveat": "Check dependencies and deployment support before switching an existing Node project to Bun.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://bun.sh/"
+      ]
+    }
+  },
+  "community-511343c5e0711328": {
+    "name": "draw.io (diagrams.net)",
+    "description": "Draw the steps of a password reset or data flow in a browser and share the diagram with your agent.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Agreeing on branches, error states and handoffs before implementing a feature.",
+      "frameworks": [
+        "Diagram editor",
+        "Browser"
+      ],
+      "setup": "low",
+      "caveat": "Keep the editable diagram along with the exported image so teammates can change the flow.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://draw.io/"
+      ]
+    }
+  },
+  "community-b6ebf74696c4482c": {
+    "description": "Build a small 2D game in Godot by arranging scenes, scripting movement and responding to collisions.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "A playable prototype with a character, obstacles and a score display.",
+      "frameworks": [
+        "Godot",
+        "GDScript",
+        "2D games"
+      ],
+      "setup": "moderate",
+      "caveat": "Choose tutorials for the installed Godot version, then test collision shapes and input in the running game.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://godotengine.org/",
+        "https://docs.godotengine.org/en/stable/getting_started/first_2d_game/index.html"
+      ]
+    }
+  },
+  "community-2d59a23a2b457c95": {
+    "description": "Open a project in OpenCode to ask questions about its files and work through a change from the terminal.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Inspecting an unfamiliar codebase alongside an agent that can use project tools.",
+      "frameworks": [
+        "AI coding agent",
+        "Terminal"
+      ],
+      "setup": "low",
+      "caveat": "Configure the model provider you intend to use and check tool permissions before letting it run project commands.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://opencode.ai/",
+        "https://opencode.ai/docs/"
+      ]
+    }
+  },
+  "community-6529347d85fd03e3": {
+    "description": "Design a responsive site in Framer and connect repeated content such as portfolio entries through its CMS.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Publishing a site your teammates can continue editing visually.",
+      "frameworks": [
+        "Visual site builder",
+        "Web publishing"
+      ],
+      "setup": "low",
+      "caveat": "Decide whether Framer will host and manage the site before building around its CMS and publishing tools.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://www.framer.com/"
+      ]
+    }
+  },
+  "community-1e23cc4ffa5176b0": {
+    "name": "Chart.js",
+    "description": "Render a bar or line chart from labeled data in a canvas element using Chart.js.",
+    "kind": "library",
+    "guidance": {
+      "bestFor": "A dashboard with common chart types such as scores by game or attendance by day.",
+      "frameworks": [
+        "JavaScript",
+        "Canvas"
+      ],
+      "setup": "low",
+      "caveat": "Provide an accessible text summary or data table as well as the canvas drawing.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://www.chartjs.org/",
+        "https://www.chartjs.org/docs/latest/getting-started/usage.html"
+      ]
+    }
+  },
+  "community-60a5de8a1a5913c3": {
+    "description": "Choose a Frontend Mentor challenge and implement a responsive page against a supplied design brief.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Practicing how to translate a visual specification into a working, testable interface.",
+      "frameworks": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "Design briefs"
+      ],
+      "setup": "low",
+      "caveat": "Check the assets included with the specific challenge before planning your implementation.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://www.frontendmentor.io/"
+      ]
+    }
+  },
+  "community-5fa3274eddcae7de": {
+    "name": "Figma Design",
+    "description": "Create a shared Figma design to show layout, components and screen states before your agent writes the interface.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Getting feedback on a form's empty, error and complete states before coding them.",
+      "frameworks": [
+        "Design",
+        "Prototype",
+        "Browser"
+      ],
+      "setup": "low",
+      "caveat": "A clickable prototype can illustrate interactions, but still needs working validation, data and navigation in the app.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://www.figma.com/graphic-design-tool/",
+        "https://www.figma.com/design/"
+      ]
+    }
+  },
+  "community-a69034dde468b5bd": {
+    "description": "Build an interactive animation in Rive and load the exported file with the runtime for your app.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Animating a mascot or control that changes state in response to a user's input.",
+      "frameworks": [
+        "Interactive animation",
+        "Rive runtime"
+      ],
+      "setup": "moderate",
+      "caveat": "Choose a runtime that supports the features used in the file and wire the animation inputs to real app events.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://rive.app/",
+        "https://rive.app/docs/runtimes/getting-started"
+      ]
+    }
+  },
+  "community-9652cfee3a6e3a26": {
+    "name": "GIMP",
+    "description": "Edit a photo in layers and export a transparent PNG for a player card or website banner.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Cut a subject out of a team photo and place it on a new background.",
+      "frameworks": [
+        "Desktop",
+        "PNG",
+        "XCF"
+      ],
+      "setup": "low",
+      "caveat": "Save an XCF copy before exporting. The PNG combines the visible layers into a single image.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://docs.gimp.org/3.0/en/gimp-images-out.html",
+        "https://www.gimp.org/"
+      ]
+    }
+  },
+  "community-1557d6500f286e52": {
+    "description": "Open the palette generator to build a color scheme and copy swatch values into your site's CSS.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Keep a team's existing brand color and explore matching accent colors for its scoreboard.",
+      "frameworks": [
+        "Browser",
+        "Hex colors"
+      ],
+      "setup": "low",
+      "caveat": "A matching palette can still have unreadable text. Test the exact foreground and background combination you plan to use.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://coolors.co/"
+      ]
+    }
+  },
+  "community-03a89053f2f115c3": {
+    "description": "Browse models and datasets, then open a model card to see what a project can run or adapt.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Find an image classifier and check which labels and examples it supports before designing the interface.",
+      "frameworks": [
+        "Model Hub",
+        "Model cards"
+      ],
+      "setup": "low",
+      "caveat": "Models have individual licenses, limitations and input formats. Check the card for the model you select.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://huggingface.co/docs/hub/model-cards",
+        "https://huggingface.co/"
+      ]
+    }
+  },
+  "community-ae550e9c2d6c7bad": {
+    "description": "Install the Flutter SDK to build a mobile, web or desktop app from Dart widgets.",
+    "kind": "library",
+    "guidance": {
+      "bestFor": "Build a study timer with the same screens and controls on Android and iOS.",
+      "frameworks": [
+        "Dart",
+        "Flutter"
+      ],
+      "setup": "moderate",
+      "caveat": "Set up the tools for each target platform. A successful web preview does not test the native builds.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://docs.flutter.dev/install",
+        "https://flutter.dev/"
+      ]
+    }
+  },
+  "community-6897bacf002e7976": {
+    "description": "Browse four-color palettes and copy colors for a poster, landing page or dashboard.",
+    "kind": "gallery",
+    "guidance": {
+      "bestFor": "Choose a consistent set of colors for teams, buttons and page backgrounds.",
+      "frameworks": [
+        "Browser",
+        "Hex colors"
+      ],
+      "setup": "low",
+      "caveat": "These are community submissions. Check legibility before assigning two swatches to text and its background.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://colorhunt.co/about",
+        "https://colorhunt.co/"
+      ]
+    }
+  },
+  "community-6e7f58f6b868b28a": {
+    "name": "Go",
+    "description": "Read Go's tutorials and use its toolchain to write a small HTTP service with routes and JSON responses.",
+    "kind": "documentation",
+    "guidance": {
+      "bestFor": "Build an API that lists music albums and accepts a new album from a form.",
+      "frameworks": [
+        "Go",
+        "Gin",
+        "HTTP"
+      ],
+      "setup": "moderate",
+      "caveat": "The Gin tutorial keeps data in memory. Add persistent storage before expecting records to survive a restart.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://go.dev/doc/tutorial/web-service-gin",
+        "https://go.dev/"
+      ]
+    }
+  },
+  "community-785f2a176f788519": {
+    "description": "Use Expo's React Native tools to build a phone app and preview screens on a device.",
+    "kind": "library",
+    "guidance": {
+      "bestFor": "Make a club check-in app whose buttons and navigation use native mobile components.",
+      "frameworks": [
+        "React Native",
+        "JavaScript",
+        "TypeScript"
+      ],
+      "setup": "moderate",
+      "caveat": "Expo Go ships with a fixed set of native modules. Adding custom native code calls for a development build.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://docs.expo.dev/develop/development-builds/introduction/",
+        "https://expo.dev/"
+      ]
+    }
+  },
+  "community-acbd23c8bfe89df0": {
+    "description": "Draw a scalable logo with vector paths, edit the shapes and export a web asset.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Create a crisp team crest for both a navigation icon and a large header.",
+      "frameworks": [
+        "SVG",
+        "Desktop"
+      ],
+      "setup": "low",
+      "caveat": "Keep the original SVG for later resizing. Exporting only a small PNG fixes the available resolution.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://inkscape.org/about/"
+      ]
+    }
+  },
+  "community-ccb0d01a683cb2ce": {
+    "description": "Send an HTTP request with chosen headers and parameters, then inspect its status and response in Postman.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Reproduce an API error before connecting the endpoint to a student-facing form.",
+      "frameworks": [
+        "HTTP",
+        "JSON",
+        "REST"
+      ],
+      "setup": "low",
+      "caveat": "A successful request here does not establish that a browser page may call the endpoint across origins. Test the frontend too.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://learning.postman.com/docs/sending-requests/requests/",
+        "https://www.getpostman.com/"
+      ]
+    }
+  },
+  "community-63f00916b80a4e87": {
+    "description": "Open an interactive coding lesson and practice a language feature in small exercises.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Learn just enough JavaScript conditionals to explain why an agent's filter skips a row.",
+      "frameworks": [
+        "Browser",
+        "Programming courses"
+      ],
+      "setup": "low",
+      "caveat": "Choose a course matching your current language. Transfer the exercise to your repository to check your understanding.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://www.codecademy.com/learn/learn-javascript",
+        "https://www.codecademy.com/"
+      ]
+    }
+  },
+  "community-eae789634e3477cd": {
+    "description": "Find a motion asset and use a compatible Lottie player to add a looping loader or a success animation.",
+    "kind": "gallery",
+    "guidance": {
+      "bestFor": "Preview an animated checkmark before embedding it in a form's confirmation screen.",
+      "frameworks": [
+        "Lottie",
+        "dotLottie",
+        "Web"
+      ],
+      "setup": "low",
+      "caveat": "Match the exported file format to the player and give users who reduce motion a static confirmation.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://developers.lottiefiles.com/docs/dotlottie-player/dotlottie-web/",
+        "https://lottiefiles.com/"
+      ]
+    }
+  },
+  "community-6355c1abf82e4fcf": {
+    "description": "Follow the Python examples to define HTTP endpoints and try requests in the generated interactive API documentation.",
+    "kind": "documentation",
+    "guidance": {
+      "bestFor": "Give a homework tracker a JSON endpoint that looks up an assignment by ID.",
+      "frameworks": [
+        "Python",
+        "FastAPI",
+        "OpenAPI"
+      ],
+      "setup": "moderate",
+      "caveat": "The Python server runs separately from the browser interface. Point the frontend at the running API.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://fastapi.tiangolo.com/tutorial/first-steps/",
+        "https://fastapi.tiangolo.com/"
+      ]
+    }
+  },
+  "community-4b1af71a907b6013": {
+    "description": "Load a machine-learning model in the browser for a creative JavaScript sketch.",
+    "kind": "library",
+    "guidance": {
+      "bestFor": "Make an on-screen drawing respond to detected hand points from a webcam.",
+      "frameworks": [
+        "JavaScript",
+        "p5.js",
+        "TensorFlow.js"
+      ],
+      "setup": "moderate",
+      "caveat": "Webcam examples depend on camera access and a model download. Include a waiting state before predictions begin.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://github.com/ml5js/ml5-next-gen",
+        "https://ml5js.org/"
+      ]
+    }
+  },
+  "community-42004a7f8f43f7e7": {
+    "name": "CSS-Tricks",
+    "description": "Read illustrated CSS explanations alongside examples of layout rules for containers and their children.",
+    "kind": "article",
+    "guidance": {
+      "bestFor": "Diagnose why a row of navigation buttons wraps or leaves uneven space.",
+      "frameworks": [
+        "CSS",
+        "Flexbox",
+        "Grid"
+      ],
+      "setup": "low",
+      "caveat": "First identify the flex container. A rule placed on the child can affect a different part of the layout.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://css-tricks.com/snippets/css/a-guide-to-flexbox/"
+      ]
+    }
+  },
+  "community-4ccc1494ef6cd65d": {
+    "description": "Pack selected repository files into one text document that a coding agent can read.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Give an agent just the routes, UI and tests involved in a bug in one upload.",
+      "frameworks": [
+        "CLI",
+        "XML",
+        "Markdown"
+      ],
+      "setup": "low",
+      "caveat": "Set inclusion and ignore rules and inspect the output before sharing. Large dependency trees consume context needlessly.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://repomix.com/guide/configuration",
+        "https://repomix.com/"
+      ]
+    }
+  },
+  "community-fd9f02188375c5f6": {
+    "description": "Read Zig syntax and compiler examples for topics such as error handling, slices and memory management.",
+    "kind": "documentation",
+    "guidance": {
+      "bestFor": "Look up the type of a slice when reviewing a Zig parser written by an agent.",
+      "frameworks": [
+        "Zig"
+      ],
+      "setup": "low",
+      "caveat": "The linked master reference tracks development. Select the manual matching your installed compiler.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://ziglang.org/documentation/",
+        "https://ziglang.org/documentation/master"
+      ]
+    }
+  },
+  "community-9ce0111413787035": {
+    "description": "Follow Flask's quickstart to map a URL to a Python function and return HTML or a response.",
+    "kind": "documentation",
+    "guidance": {
+      "bestFor": "Serve a small classroom poll on a local route before adding a database.",
+      "frameworks": [
+        "Python",
+        "Flask",
+        "WSGI"
+      ],
+      "setup": "moderate",
+      "caveat": "Use the built-in development server for local work. Choose a production WSGI server for a deployment.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://flask.palletsprojects.com/en/stable/quickstart/",
+        "https://flask.palletsprojects.com/"
+      ]
+    }
+  },
+  "community-9a8584b373e27e5d": {
+    "description": "Sketch a user flow on the online whiteboard, or use the separate React SDK to embed a drawing canvas.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Draw the path from login to a completed task and hand the diagram to your coding agent.",
+      "frameworks": [
+        "Browser whiteboard",
+        "React SDK"
+      ],
+      "setup": "low",
+      "caveat": "Using the hosted whiteboard needs no React project. Embedding the editor requires the SDK, its stylesheet and a sized container.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://tldraw.dev/quick-start",
+        "https://www.tldraw.com/"
+      ]
+    }
+  },
+  "community-aef7c9db81c68ce2": {
+    "description": "Use Python figures and axes to plot data and label the result for a notebook or report.",
+    "kind": "library",
+    "guidance": {
+      "bestFor": "Compare daily sensor readings with a line chart that names the axes and units.",
+      "frameworks": [
+        "Python",
+        "Matplotlib"
+      ],
+      "setup": "moderate",
+      "caveat": "Keep a handle to each Axes when building multiple plots so labels and settings reach the intended chart.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://matplotlib.org/stable/users/explain/quick_start.html"
+      ]
+    }
+  },
+  "community-8505cde88d7d53ef": {
+    "description": "Open an image in the browser, compare encoders or quality settings, then download the smaller asset.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Shrink a photographic header while checking whether fine details survive.",
+      "frameworks": [
+        "Browser",
+        "Image compression"
+      ],
+      "setup": "low",
+      "caveat": "Zoom in on text and sharp edges before exporting. The smallest file can visibly change those details.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://github.com/GoogleChromeLabs/squoosh",
+        "https://squoosh.app/"
+      ]
+    }
+  },
+  "community-5caf462d9abb17f6": {
+    "description": "Follow the board setup guides and built-in sketches to upload code to an Arduino.",
+    "kind": "documentation",
+    "guidance": {
+      "bestFor": "Run Blink to confirm the computer, board and upload path work before wiring a sensor.",
+      "frameworks": [
+        "Arduino IDE",
+        "Arduino boards"
+      ],
+      "setup": "moderate",
+      "caveat": "Choose the correct board and port in the IDE. The onboard LED setup varies across boards.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://docs.arduino.cc/built-in-examples/basics/Blink/",
+        "https://www.arduino.cc/en/Guide"
+      ]
+    }
+  },
+  "community-e9556bbef96608db": {
+    "description": "Choose an icon set and add consistent symbols to navigation, buttons and status labels.",
+    "kind": "library",
+    "guidance": {
+      "bestFor": "Replace a toolbar's text-only save control with a recognizable icon and an accessible name.",
+      "frameworks": [
+        "SVG",
+        "Web fonts",
+        "HTML"
+      ],
+      "setup": "low",
+      "caveat": "Use an icon and style from the package or kit you have configured. Availability varies by collection.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://docs.fontawesome.com/web/add-icons/how-to",
+        "https://fontawesome.com/"
+      ]
+    }
+  },
+  "community-73d75733406d9548": {
+    "name": "unDraw",
+    "description": "Browse reusable illustrations and download an SVG for an empty state or onboarding screen.",
+    "kind": "gallery",
+    "guidance": {
+      "bestFor": "Add an illustration to the first screen of a reading list before a student saves any books.",
+      "frameworks": [
+        "SVG",
+        "Illustrations"
+      ],
+      "setup": "low",
+      "caveat": "The license permits using illustrations in projects but restricts redistributing them as an asset collection.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://undraw.co/license",
+        "https://undraw.co/"
+      ]
+    }
+  },
+  "community-a4fe8a0c29be69ae": {
+    "name": "PostgreSQL Documentation",
+    "description": "Read versioned SQL examples for storing records, joining tables and querying a relational database.",
+    "kind": "documentation",
+    "guidance": {
+      "bestFor": "Join students and club memberships to list the people enrolled in each activity.",
+      "frameworks": [
+        "PostgreSQL",
+        "SQL"
+      ],
+      "setup": "low",
+      "caveat": "Use the documentation for the PostgreSQL version on your server. Joining tables requires the right matching keys.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://www.postgresql.org/docs/current/tutorial-join.html",
+        "https://www.postgresql.org/docs/"
+      ]
+    }
+  },
+  "community-4917fe035ec15a0b": {
+    "description": "Use multidimensional Python arrays for calculations on an entire dataset at once.",
+    "kind": "library",
+    "guidance": {
+      "bestFor": "Normalize columns of sensor readings by subtracting their respective means.",
+      "frameworks": [
+        "Python",
+        "NumPy"
+      ],
+      "setup": "moderate",
+      "caveat": "Check array shapes before relying on broadcasting. Compatible dimensions can align along a different axis than you intended.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://numpy.org/doc/stable/user/basics.broadcasting.html",
+        "https://www.numpy.org/"
+      ]
+    }
+  },
+  "community-03d80ef10378827d": {
+    "description": "Work through runnable tutorials on tensors, data loaders, training loops and prediction.",
+    "kind": "documentation",
+    "guidance": {
+      "bestFor": "Train a small image classifier and compare predictions against labeled test examples.",
+      "frameworks": [
+        "Python",
+        "PyTorch"
+      ],
+      "setup": "moderate",
+      "caveat": "Match tensor shapes and the selected device across model and inputs. A tutorial that selects an accelerator needs a CPU fallback.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://docs.pytorch.org/tutorials/beginner/basics/quickstart_tutorial.html",
+        "https://pytorch.org/tutorials"
+      ]
+    }
+  },
+  "community-88b199e56e2c7351": {
+    "description": "Explore community-mapped places and streets as the starting point for a location-based project.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Check whether the paths and buildings needed by a campus map are already mapped.",
+      "frameworks": [
+        "Geographic data",
+        "Web maps"
+      ],
+      "setup": "low",
+      "caveat": "Credit OpenStreetMap contributors and check the tile server's policy before embedding a map or prefetching tiles.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://operations.osmfoundation.org/policies/tiles/",
+        "https://www.openstreetmap.org/"
+      ]
+    }
+  },
+  "community-21359fe8c171c407": {
+    "description": "Design a responsive website visually and use its CMS for repeated content such as club profiles.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Prototype a publication where each interview uses the same page design.",
+      "frameworks": [
+        "Visual site builder",
+        "HTML",
+        "CSS"
+      ],
+      "setup": "moderate",
+      "caveat": "Check export coverage if your agent will maintain the result elsewhere. Exported front-end files do not include all hosted CMS behavior.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://help.webflow.com/hc/en-us/articles/33961386739347-Code-export",
+        "https://webflow.com/"
+      ]
+    }
+  },
+  "community-e65dace2be7f1494": {
+    "description": "Explore Kotlin course materials and exercises designed for teaching programming.",
+    "kind": "documentation",
+    "guidance": {
+      "bestFor": "Adapt a lesson on functions or conditions into practice questions for a study group.",
+      "frameworks": [
+        "Kotlin",
+        "Teaching materials"
+      ],
+      "setup": "low",
+      "caveat": "Some materials are written for instructors. Select the exercise and confirm what learners must set up before assigning it.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://kotlinlang.org/education/"
+      ]
+    }
+  },
+  "community-30f11e9a931e1659": {
+    "description": "Run a supported model locally and connect a small app to Ollama's model API.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Build a text summarizer that sends notes to a model running on your laptop.",
+      "frameworks": [
+        "Local models",
+        "CLI",
+        "HTTP API"
+      ],
+      "setup": "moderate",
+      "caveat": "Choose a local model that fits your machine and download it before the demo. Cloud models follow a different setup.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://docs.ollama.com/quickstart",
+        "https://ollama.com/"
+      ]
+    }
+  },
+  "community-ebae70be7c8afbd2": {
+    "description": "Build an internal dashboard by wiring table and form widgets to a database or API query.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Give a club an interface for viewing equipment and updating inventory counts.",
+      "frameworks": [
+        "Low-code UI",
+        "JavaScript",
+        "SQL",
+        "REST"
+      ],
+      "setup": "moderate",
+      "caveat": "A widget does not store changes by itself. Wire its submit event to a query with the right data-source permissions.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://docs.appsmith.com/",
+        "https://www.appsmith.com/"
+      ]
+    }
+  },
+  "community-2210207ad3281e35": {
+    "name": "Uiverse",
+    "description": "Browse community interface snippets and copy the code for a button, loader or other control.",
+    "kind": "gallery",
+    "guidance": {
+      "bestFor": "Try several button press effects inside a settings screen before choosing one.",
+      "frameworks": [
+        "HTML",
+        "CSS",
+        "Tailwind CSS"
+      ],
+      "setup": "low",
+      "caveat": "Check the snippet's styling format and give icon-only controls a keyboard focus state and an accessible name.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://uiverse.io/buttons",
+        "https://uiverse.io/"
+      ]
+    }
+  },
+  "community-46f6ef523788247e": {
+    "description": "Build a browser-based 3D scene using HTML entities for objects, lights and cameras.",
+    "kind": "library",
+    "guidance": {
+      "bestFor": "Create a virtual gallery that visitors can explore on a normal screen before trying a headset.",
+      "frameworks": [
+        "HTML",
+        "JavaScript",
+        "WebXR"
+      ],
+      "setup": "moderate",
+      "caveat": "Test headset interactions on a compatible device. Mouse navigation alone cannot verify VR controls.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://aframe.io/docs/1.7.0/introduction/",
+        "https://aframe.io/"
+      ]
+    }
+  },
+  "community-c18a3784986b167e": {
+    "description": "Configure build tasks and dependencies for a JVM or Android project.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Have every teammate run the same test or package task using the project's Gradle Wrapper.",
+      "frameworks": [
+        "JVM",
+        "Java",
+        "Kotlin",
+        "Android"
+      ],
+      "setup": "moderate",
+      "caveat": "Use the checked-in wrapper to match the project's Gradle version instead of assuming a locally installed version is compatible.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://docs.gradle.org/current/userguide/gradle_wrapper.html",
+        "https://gradle.org/"
+      ]
+    }
+  },
+  "community-d6809f9f369ac027": {
+    "name": "Airtable Web API",
+    "description": "Read the API documentation to retrieve or update records in an Airtable base from an app.",
+    "kind": "documentation",
+    "guidance": {
+      "bestFor": "Connect an equipment request form to an Airtable inventory that staff can edit.",
+      "frameworks": [
+        "HTTP",
+        "JSON",
+        "Airtable"
+      ],
+      "setup": "moderate",
+      "caveat": "For a personal integration, scope the access token to the needed base and operations. Keep it out of client-side code.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://support.airtable.com/docs/creating-personal-access-tokens",
+        "https://airtable.com/api"
+      ]
+    }
+  },
+  "community-3db046d68ce99224": {
+    "description": "Store related records as vertices and edges and query the connections with AQL.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Find the classmates linked through two shared clubs in a student-organization graph.",
+      "frameworks": [
+        "ArangoDB",
+        "AQL",
+        "Graph database"
+      ],
+      "setup": "advanced",
+      "caveat": "Edge direction and traversal depth change the result. Model which relationships may be followed before writing the query.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://docs.arangodb.com/stable/aql/graphs/traversals/",
+        "https://arangodb.com/"
+      ]
+    }
+  },
+  "community-24a3ef2862c175b1": {
+    "name": "vanilla-extract",
+    "description": "Generate static CSS from typed theme tokens and locally scoped styles written in TypeScript.",
+    "kind": "library",
+    "guidance": {
+      "bestFor": "Share a typed color and spacing contract across a project's light and dark themes.",
+      "frameworks": [
+        "TypeScript",
+        "CSS",
+        "Build tools"
+      ],
+      "setup": "moderate",
+      "caveat": "Configure the integration for your bundler. A plain browser cannot execute the style files as CSS.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://vanilla-extract.style/documentation/getting-started/",
+        "https://vanilla-extract.style/"
+      ]
+    }
+  },
+  "community-7ea75a22f67bc51d": {
+    "description": "Use a hosted identity service and its SDK to add sign-in and user profiles to an app.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Let students sign in and return to a private dashboard after authentication.",
+      "frameworks": [
+        "OAuth",
+        "OpenID Connect",
+        "React"
+      ],
+      "setup": "moderate",
+      "caveat": "Register the correct callback URL for each environment. A successful login alone does not authorize access to another user's records.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://auth0.com/docs/quickstart/spa/react",
+        "https://auth0.com/"
+      ]
+    }
+  },
+  "community-bf8208ef46b6a456": {
+    "name": "ApexCharts.js",
+    "description": "Render interactive charts in a web page by passing data series and display options to a JavaScript library.",
+    "kind": "library",
+    "guidance": {
+      "bestFor": "Plot weekly attendance for several clubs and let the reader compare trends.",
+      "frameworks": [
+        "JavaScript",
+        "Web charts"
+      ],
+      "setup": "moderate",
+      "caveat": "Review the applicable license for your organization and distribution model before embedding the library in a product.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://apexcharts.com/license/",
+        "https://apexcharts.com/"
+      ]
+    }
+  },
+  "community-4e62781705efa487": {
+    "description": "Define scheduled workflows in Python and inspect individual task runs in Airflow's interface.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Fetch a daily CSV, validate it and refresh a report only after the previous steps finish.",
+      "frameworks": [
+        "Python",
+        "Workflow orchestration"
+      ],
+      "setup": "advanced",
+      "caveat": "Plan for retries when writing output. Rerunning a failed task should not duplicate rows from a previous attempt.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://airflow.apache.org/docs/apache-airflow/stable/index.html",
+        "https://airflow.apache.org/"
+      ]
+    }
+  },
+  "community-37e54acb88e28331": {
+    "description": "Inspect traces and evaluations to understand how an AI application uses models and tools.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Trace a retrieval agent to see whether a wrong answer began with the search results or the final model response.",
+      "frameworks": [
+        "LLM observability",
+        "Traces",
+        "Evaluations"
+      ],
+      "setup": "advanced",
+      "caveat": "Set up instrumentation before expecting a trace. Review which prompts, model responses and user data your app sends.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://phoenix.arize.com/",
+        "https://www.arize.com/"
+      ]
+    }
+  },
+  "community-971c9f6a114c361b": {
+    "name": "3dicons",
+    "description": "Browse rendered 3D icons for feature cards, empty states and landing pages.",
+    "kind": "gallery",
+    "guidance": {
+      "bestFor": "Pick a set of objects with a consistent camera angle and lighting for an onboarding sequence.",
+      "frameworks": [
+        "3D renders",
+        "Image assets"
+      ],
+      "setup": "low",
+      "caveat": "Check the terms attached to the pack you download. The site lists both free and premium assets.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://3dicons.co/"
+      ]
+    }
+  },
+  "community-b3d002e12aa77afd": {
+    "description": "Define build and test targets with explicit dependencies for a multi-package codebase.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Build only the targets that depend on a shared C++ library after it changes.",
+      "frameworks": [
+        "Build system",
+        "C++",
+        "Multi-language"
+      ],
+      "setup": "advanced",
+      "caveat": "Each dependency must be declared for reproducible builds. Budget time to write build rules when adopting Bazel.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://bazel.build/start/cpp",
+        "https://bazel.build/"
+      ]
+    }
+  },
+  "community-d8b8a5c5df3c6956": {
+    "description": "Automate repeatable front-end build steps by configuring named tasks in a Gruntfile.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Turn linting and asset processing in an existing JavaScript project into one command.",
+      "frameworks": [
+        "JavaScript",
+        "Node.js",
+        "CLI"
+      ],
+      "setup": "moderate",
+      "caveat": "The CLI and the project's local Grunt installation serve different roles. Install the plugins your Gruntfile actually references.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://gruntjs.com/getting-started",
+        "https://gruntjs.com/"
+      ]
+    }
+  },
+  "community-05d02281fc374385": {
+    "description": "Open a messy table, explore its values and standardize inconsistent entries before exporting.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Merge spelling variants of school names that would otherwise split a chart into duplicate categories.",
+      "frameworks": [
+        "Desktop",
+        "Tabular data",
+        "CSV"
+      ],
+      "setup": "low",
+      "caveat": "Inspect proposed clusters before merging. Similar-looking names can represent different schools.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://openrefine.org/docs/manual/cellediting",
+        "https://openrefine.org/"
+      ]
+    }
+  },
+  "community-48ce218ceec909c6": {
+    "name": "Aurelia",
+    "description": "Build a web interface with templates, custom components and data binding through the Aurelia framework.",
+    "kind": "library",
+    "guidance": {
+      "bestFor": "Implement a filterable roster and bind form inputs to the state displayed by the list.",
+      "frameworks": [
+        "JavaScript",
+        "TypeScript",
+        "HTML templates"
+      ],
+      "setup": "moderate",
+      "caveat": "Check the Aurelia major version before copying examples. Use a starter and documentation for the same release.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://docs.aurelia.io/",
+        "https://aurelia.io/"
+      ]
+    }
+  },
+  "community-ceb6346b4150b579": {
+    "description": "Read the protocol guides and build a server that exposes selected tools or resources to a compatible AI client.",
+    "kind": "documentation",
+    "guidance": {
+      "bestFor": "Give a coding agent a lookup tool for an approved collection of project notes.",
+      "frameworks": [
+        "MCP",
+        "Client-server protocols"
+      ],
+      "setup": "moderate",
+      "caveat": "Connecting the server and authorizing a tool are separate decisions. Expose only the operations your project actually needs.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://modelcontextprotocol.io/docs/develop/build-server",
+        "https://modelcontextprotocol.io/"
+      ]
+    }
+  },
+  "community-bcb7bf32fafb3f1a": {
+    "description": "Work through staged programming challenges that reconstruct parts of systems such as Redis from scratch.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Implement a Redis-compatible command and use the stage tests to understand the wire protocol.",
+      "frameworks": [
+        "Build-your-own challenges",
+        "CLI"
+      ],
+      "setup": "advanced",
+      "caveat": "Check access before relying on the testing workflow. Reading stage instructions and submitting a solution have different membership rules.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://codecrafters.io/challenges/redis",
+        "https://codecrafters.io/"
+      ]
+    }
+  },
+  "community-5d7b0d6bd85de5c9": {
+    "name": "Apache ECharts",
+    "description": "Define axes and series in JavaScript to create interactive visualizations for the browser.",
+    "kind": "library",
+    "guidance": {
+      "bestFor": "Draw a line chart of daily team scores and pair the category labels with the correct values.",
+      "frameworks": [
+        "JavaScript",
+        "Web charts"
+      ],
+      "setup": "moderate",
+      "caveat": "Keep category order and series values aligned. Missing days or independently sorted arrays can mislabel points.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://echarts.apache.org/handbook/en/how-to/chart-types/line/basic-line/",
+        "https://echarts.apache.org/en/index.html"
+      ]
+    }
+  },
+  "community-b759fdbf70ead576": {
+    "description": "Index documents in a search cluster and query their fields through a search API.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Build a searchable archive of club announcements with text and date filters.",
+      "frameworks": [
+        "Search engine",
+        "REST",
+        "JSON"
+      ],
+      "setup": "advanced",
+      "caveat": "Running the engine adds a service to maintain. Use the quickstart locally and review its security settings before opening the server to others.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://docs.opensearch.org/latest/getting-started/quickstart/",
+        "https://opensearch.org/"
+      ]
+    }
+  },
+  "community-ca8a7a3a9897716a": {
+    "description": "Read Baeldung’s Spring Boot testing tutorial to add a test for a Java web controller.",
+    "kind": "documentation",
+    "guidance": {
+      "bestFor": "Choose between a focused controller test and a test that starts the application context.",
+      "frameworks": [
+        "Java",
+        "Spring Boot",
+        "JUnit"
+      ],
+      "setup": "low",
+      "caveat": "Check the tutorial’s dependency versions against your project before copying annotations or imports.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://www.baeldung.com/spring-boot-testing"
+      ]
+    }
+  },
+  "community-61e99db656a77652": {
+    "description": "Build an Activepieces flow that turns a submitted feedback form into a message for your project team.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Connect a trigger to actions in the services your team already uses, then test the flow with a sample submission.",
+      "frameworks": [
+        "Visual workflow editor",
+        "App integrations",
+        "Webhooks"
+      ],
+      "setup": "moderate",
+      "caveat": "Each connected account needs permission to perform its step. Test with sample records before enabling the trigger.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://www.activepieces.com/"
+      ]
+    }
+  },
+  "community-2e2f7f833366781a": {
+    "description": "Add a Chatwoot chat widget to a project and answer visitors’ questions from a shared inbox.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Route an incoming question to a teammate and keep the conversation history visible to the support team.",
+      "frameworks": [
+        "Website widget",
+        "Shared inbox"
+      ],
+      "setup": "moderate",
+      "caveat": "Decide who will monitor the inbox and what students should disclose in chat before placing the widget on a public site.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://www.chatwoot.com/"
+      ]
+    }
+  },
+  "community-3c4f23dab56aca93": {
+    "description": "Use Unsloth to run a local language model and experiment with fine-tuning it on example responses.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Compare an existing model with an adapter trained to answer a small, specific set of questions.",
+      "frameworks": [
+        "Local language models",
+        "Python",
+        "LoRA"
+      ],
+      "setup": "advanced",
+      "caveat": "Check the hardware requirements for your chosen model and training method. A model that runs for inference may need more memory for training.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://unsloth.ai/"
+      ]
+    }
+  },
+  "community-8b97b9a45ae80f2b": {
+    "description": "Call OpenRouter’s model API to compare how different language models answer the same project prompt.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Keep the request structure consistent and record the model ID, response and cost for each run.",
+      "frameworks": [
+        "HTTP API",
+        "Language models"
+      ],
+      "setup": "moderate",
+      "caveat": "API requests need a key. Keep it on your server and check the selected model’s price before running a batch.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://openrouter.ai/docs/api_reference/authentication"
+      ]
+    }
+  },
+  "community-1bbd41a7b06070f3": {
+    "description": "Open a Bitwarden vault to organize project logins that teammates need to access.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Share a test account with the appropriate group and update its password in one place.",
+      "frameworks": [
+        "Password vault",
+        "Browser extensions",
+        "Desktop apps"
+      ],
+      "setup": "low",
+      "caveat": "Choose who can access a shared item. Avoid handing a production credential to an agent by pasting the vault entry into its chat.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://bitwarden.com/"
+      ]
+    }
+  },
+  "community-6b817f8f9533480a": {
+    "description": "Install ActivityWatch to see how much of a coding session you spent in the editor and browser.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Compare time spent in broad activity categories across several sessions using locally collected events.",
+      "frameworks": [
+        "Desktop app",
+        "Activity watcher"
+      ],
+      "setup": "low",
+      "caveat": "An active window shows where the device was focused. It cannot tell whether you were reading code, thinking or away from the keyboard.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://activitywatch.net/"
+      ]
+    }
+  },
+  "community-e9f38658c0e123e1": {
+    "description": "Open a CryptPad instance and write a design brief together in an encrypted shared document.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Collaborate on notes while deciding separately who gets a view link and who can edit.",
+      "frameworks": [
+        "Browser",
+        "Collaborative documents"
+      ],
+      "setup": "low",
+      "caveat": "Treat a document’s sharing link as a credential and check its access setting before posting it in a public issue.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://cryptpad.org/",
+        "https://docs.cryptpad.org/en/user_guide/share_and_access.html"
+      ]
+    }
+  },
+  "community-7f4a442ee05e87e8": {
+    "description": "Use Bytebase to review a database schema change before the migration runs against a shared database.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Give a teammate a chance to review the SQL that adds a column or changes a table.",
+      "frameworks": [
+        "SQL databases",
+        "Database migrations"
+      ],
+      "setup": "advanced",
+      "caveat": "Connect a development database first. Approval of a migration does not prove that existing application queries will still work.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://www.bytebase.com/"
+      ]
+    }
+  },
+  "community-3a4feba660e650f8": {
+    "description": "Install Payload in a Next.js project to give editors an admin screen for publishing student articles.",
+    "kind": "library",
+    "guidance": {
+      "bestFor": "Define collections for authors and posts once, then use them in the admin interface and the site.",
+      "frameworks": [
+        "Next.js",
+        "TypeScript",
+        "Headless CMS"
+      ],
+      "setup": "moderate",
+      "caveat": "Plan the database and access rules for drafts before giving editors accounts or exposing the content API.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://payloadcms.com/",
+        "https://payloadcms.com/docs/access-control/overview"
+      ]
+    }
+  },
+  "community-b34b1955b3ac37c0": {
+    "description": "Set up a Bugzilla tracker for a project where testers file bugs and developers record fixes.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Collect steps to reproduce a bug, assign it and follow it through verification.",
+      "frameworks": [
+        "Issue tracker",
+        "Web application"
+      ],
+      "setup": "advanced",
+      "caveat": "Set up products, components and permissions first so reports arrive in a queue somebody actually monitors.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://www.bugzilla.org/",
+        "https://www.bugzilla.org/docs/"
+      ]
+    }
+  },
+  "community-a836bfd4d0fa0e7a": {
+    "description": "Connect an app to Appwrite for account sign-in, uploaded files and persistent records.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Build a homework submission page where a signed-in student can retrieve their own uploads.",
+      "frameworks": [
+        "Web SDKs",
+        "Authentication",
+        "Database",
+        "File storage"
+      ],
+      "setup": "moderate",
+      "caveat": "Configure permissions on each collection or bucket. Signing a user in does not by itself restrict which records they can read.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://appwrite.io/",
+        "https://appwrite.io/docs/advanced/security/permissions"
+      ]
+    }
+  },
+  "community-b6b92f50b571271b": {
+    "description": "Browse edX courses to find a structured lesson for a skill your project needs, such as Python or data analysis.",
+    "kind": "gallery",
+    "guidance": {
+      "bestFor": "Compare the syllabus, prerequisites and exercise format before picking a course for independent study.",
+      "frameworks": [
+        "Online courses",
+        "Browser"
+      ],
+      "setup": "low",
+      "caveat": "Enrollment, assessment access and certificates depend on the individual offering. Check the course page before planning around a graded assignment.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://www.edx.org/"
+      ]
+    }
+  },
+  "community-872a3430334da3e3": {
+    "description": "Build a custom tracker in Twenty CRM for a team’s contacts, meetings and follow-up tasks.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Link people to organizations and record when a teammate should follow up.",
+      "frameworks": [
+        "CRM workspace",
+        "Custom records"
+      ],
+      "setup": "moderate",
+      "caveat": "Choose record types and relationships before importing a contact spreadsheet. Resolve duplicates before assigning follow-ups.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://twenty.com/"
+      ]
+    }
+  },
+  "community-e1d1c75f4c676942": {
+    "description": "Read a roadmap.sh learning path to break a broad goal such as learning backend development into topics.",
+    "kind": "documentation",
+    "guidance": {
+      "bestFor": "Find the next missing skill in your project and open that topic’s learning resources.",
+      "frameworks": [
+        "Browser",
+        "Learning roadmaps"
+      ],
+      "setup": "low",
+      "caveat": "A roadmap covers an entire role. Select the branches your project needs now and use a small exercise to check understanding.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://roadmap.sh/"
+      ]
+    }
+  },
+  "community-33291c4d5f218ed4": {
+    "description": "Open ChartDB to turn your database’s schema metadata into a diagram of tables and relationships.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Show how assignments, students and submissions connect without drawing every column manually.",
+      "frameworks": [
+        "SQL",
+        "Database schema",
+        "Browser"
+      ],
+      "setup": "low",
+      "caveat": "Use the import query for your database engine. Review the schema metadata before sharing a diagram outside your team.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://chartdb.io/"
+      ]
+    }
+  },
+  "community-0f1093f2dd068481": {
+    "description": "Install Astropy and read a FITS image’s header and data array from Python.",
+    "kind": "library",
+    "guidance": {
+      "bestFor": "Inspect observation metadata before plotting the corresponding astronomical image.",
+      "frameworks": [
+        "Python",
+        "FITS",
+        "Astronomy"
+      ],
+      "setup": "moderate",
+      "caveat": "A FITS file can contain multiple header/data units. Select the extension holding the image you actually want.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://docs.astropy.org/en/stable/io/fits/"
+      ]
+    }
+  },
+  "community-b1274842c3912a06": {
+    "description": "Use Ente Photos to collect and share an encrypted album of images from a class project.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Give contributors an album link and organize their photos into one collection.",
+      "frameworks": [
+        "Photo library",
+        "Mobile apps",
+        "Web app"
+      ],
+      "setup": "low",
+      "caveat": "Decide whether the link should allow contributions or just viewing before sending it to the class.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://ente.com/"
+      ]
+    }
+  },
+  "community-e41e212f7d704d8c": {
+    "description": "Use an AppFlowy workspace to put a project board, meeting notes and team documents in one place.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Turn decisions from a planning session into tracked tasks beside the notes that explain them.",
+      "frameworks": [
+        "Workspace app",
+        "Documents",
+        "Project boards"
+      ],
+      "setup": "moderate",
+      "caveat": "Self-hosting makes the team responsible for server updates and backups. Establish who maintains the workspace before depending on it.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://appflowy.com/"
+      ]
+    }
+  },
+  "community-276e328b01f109da": {
+    "description": "Set up a Rocket.Chat workspace with channels for announcements, support and project discussions.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Separate general questions from team conversations and retain their history in a shared space.",
+      "frameworks": [
+        "Team messaging",
+        "Web and mobile apps"
+      ],
+      "setup": "advanced",
+      "caveat": "Assign channel membership and moderation roles before inviting everyone. A public channel may expose the full conversation history.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://www.rocket.chat/"
+      ]
+    }
+  },
+  "community-2757fbbf336ac035": {
+    "description": "Apply Charts.css to an HTML table to display a bar chart of weekly project totals.",
+    "kind": "library",
+    "guidance": {
+      "bestFor": "Keep the data in table cells while styling the same values as a chart in the browser.",
+      "frameworks": [
+        "HTML tables",
+        "CSS"
+      ],
+      "setup": "low",
+      "caveat": "Supply the chart’s sizing values and readable labels when the source data changes. CSS styling alone cannot calculate totals for you.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://chartscss.org/",
+        "https://chartscss.org/charts/bar/"
+      ]
+    }
+  },
+  "community-c7a821d203a3becf": {
+    "description": "Connect a benchmark suite to Bencher to track whether changes make a hot function slower.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Compare runs of the same benchmark over commits and inspect possible performance regressions.",
+      "frameworks": [
+        "Benchmark reports",
+        "CI"
+      ],
+      "setup": "moderate",
+      "caveat": "Runner hardware and background load can swamp small differences. Establish a baseline before failing a build over a timing change.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://bencher.dev/"
+      ]
+    }
+  },
+  "community-168cdb70759c589f": {
+    "description": "Deploy Flarum to host a discussion forum where students can tag questions and revisit earlier answers.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Give project questions a persistent home with searchable discussions and a moderation queue.",
+      "frameworks": [
+        "Forum software",
+        "Web server"
+      ],
+      "setup": "advanced",
+      "caveat": "Decide which users can start, tag or moderate discussions. Check extension compatibility when upgrading the forum.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://flarum.org/",
+        "https://docs.flarum.org/"
+      ]
+    }
+  },
+  "community-13da1f870f5ca6ff": {
+    "description": "Use Swagger’s OpenAPI tools to describe endpoints and present interactive documentation for your API.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Let another student inspect the request fields and try a sample request against a test server.",
+      "frameworks": [
+        "OpenAPI",
+        "REST APIs",
+        "JSON",
+        "YAML"
+      ],
+      "setup": "moderate",
+      "caveat": "The displayed examples come from the API specification. Update it when the implementation changes so the docs describe the deployed endpoints.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://swagger.io/"
+      ]
+    }
+  },
+  "community-dbed699620a2193a": {
+    "description": "Install Syncthing on two devices to synchronize a project folder directly between them.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Keep working files available on both machines while controlling which folders and devices participate.",
+      "frameworks": [
+        "File synchronization",
+        "Desktop platforms"
+      ],
+      "setup": "moderate",
+      "caveat": "Deleting a file can propagate to the other device. Keep independent backups for files you need to recover.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://docs.syncthing.net/users/faq.html"
+      ]
+    }
+  },
+  "community-2327a176271d39da": {
+    "description": "Use Cohere’s Rerank API to reorder a shortlist of documents for a student’s search query.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Compare the original search order with the model’s order on questions where you already know the best document.",
+      "frameworks": [
+        "HTTP API",
+        "Text ranking"
+      ],
+      "setup": "moderate",
+      "caveat": "Retrieve the candidate documents first. The reranker can reorder what you send, so a missing source cannot appear in its answer.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://docs.cohere.com/docs/reranking-with-cohere"
+      ]
+    }
+  },
+  "community-13b81f91358639cf": {
+    "description": "Read Continue’s acquisition announcement and follow the project repository to study its open-source coding agent.",
+    "kind": "article",
+    "guidance": {
+      "bestFor": "Investigate an existing Continue integration or learn how an editor and a coding agent exchange context.",
+      "frameworks": [
+        "Source code",
+        "Coding agents"
+      ],
+      "setup": "low",
+      "caveat": "Continue announced it joined Cursor. Check maintenance and release status in the repository before choosing it for a new dependency.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://continue.dev/",
+        "https://github.com/continuedev/continue"
+      ]
+    }
+  },
+  "community-c5f33e7c0fc832c8": {
+    "description": "Open a repository in GitKraken Desktop to inspect branches and commits before merging a teammate’s change.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Trace where two branches diverged and review the files changed in a particular commit.",
+      "frameworks": [
+        "Git",
+        "Desktop app"
+      ],
+      "setup": "low",
+      "caveat": "Check which local branch and remote are selected before using a push or merge action in the visual client.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://www.gitkraken.com/",
+        "https://www.gitkraken.com/git-client"
+      ]
+    }
+  },
+  "community-9c4f3bd0258f241f": {
+    "description": "Add Swiper to a site to create a swipeable gallery of photos or project demos.",
+    "kind": "library",
+    "guidance": {
+      "bestFor": "Give a portfolio a touch-friendly carousel with arrows, pagination and individually selectable slides.",
+      "frameworks": [
+        "JavaScript",
+        "React",
+        "Vue",
+        "Web Components"
+      ],
+      "setup": "low",
+      "caveat": "Add a keyboard-accessible way to change slides and test how much of the next slide is visible on a narrow phone.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://swiperjs.com/",
+        "https://swiperjs.com/swiper-api"
+      ]
+    }
+  },
+  "community-e522237149c58c29": {
+    "description": "Use Svix to deliver signed webhook events when an action happens in your app.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Notify another service when a submission arrives and inspect delivery attempts if the receiver is offline.",
+      "frameworks": [
+        "HTTP webhooks",
+        "Server SDKs"
+      ],
+      "setup": "moderate",
+      "caveat": "Retries can deliver an event more than once. Verify its signature and have the receiver recognize event IDs it has already processed.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://www.svix.com/",
+        "https://docs.svix.com/receiving/verifying-payloads/how"
+      ]
+    }
+  },
+  "community-dac34d4486c6232e": {
+    "description": "Launch a Discourse forum where a class can ask questions, discuss releases and find earlier answers.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Organize help threads by topic so that a solution remains useful to the next person with the same question.",
+      "frameworks": [
+        "Community forum",
+        "Browser"
+      ],
+      "setup": "moderate",
+      "caveat": "Choose categories and who can read or moderate them. Private project discussions need deliberate access settings.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://www.discourse.org/"
+      ]
+    }
+  },
+  "community-ae3746e139f8ac29": {
+    "description": "Add DataTables to an HTML table to sort, search and paginate a list of assignments.",
+    "kind": "library",
+    "guidance": {
+      "bestFor": "Let a student find an assignment by title or order rows by a column without reloading the full page.",
+      "frameworks": [
+        "JavaScript",
+        "HTML tables"
+      ],
+      "setup": "low",
+      "caveat": "Client-side filtering sees only rows supplied to the browser. Choose server-side processing if the full dataset is too large to send.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://datatables.net/manual/core/installation",
+        "https://github.com/DataTables/DataTablesSrc"
+      ]
+    }
+  },
+  "community-edee6fbff82f9c91": {
+    "description": "Deploy Harbor to store container images for a team and manage which members can pull or publish them.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Keep a private registry for a shared deployment and inspect image vulnerability scans before rollout.",
+      "frameworks": [
+        "OCI images",
+        "Docker",
+        "Kubernetes"
+      ],
+      "setup": "advanced",
+      "caveat": "Plan persistent storage, certificates and permissions. A shared registry becomes an availability dependency for future deployments.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://goharbor.io/"
+      ]
+    }
+  },
+  "community-b54b9095c5ce4108": {
+    "description": "Write a Robot Framework acceptance test that describes a user journey as a sequence of keywords.",
+    "kind": "library",
+    "guidance": {
+      "bestFor": "Turn a repeated task such as signing in and checking a status into a test a teammate can read.",
+      "frameworks": [
+        "Python",
+        "Robot Framework test files"
+      ],
+      "setup": "moderate",
+      "caveat": "Install and configure the library that implements your keywords. Browser automation needs an appropriate browser library and runtime.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://robotframework.org/"
+      ]
+    }
+  },
+  "community-2dfb2b98942aa350": {
+    "description": "Index project titles and tags in Typesense to add typo-tolerant search and filters to a catalog.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Help a visitor find an item even when its name is slightly misspelled, then narrow the matches by a facet.",
+      "frameworks": [
+        "Search server",
+        "JSON documents",
+        "HTTP API"
+      ],
+      "setup": "moderate",
+      "caveat": "Plan how updates in your database reach the search index. Put a search-only key in the browser and keep administrative access on the server.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://typesense.org/",
+        "https://typesense.org/docs/guide/data-access-control.html"
+      ]
+    }
+  },
+  "community-cc11e4c69adb7140": {
+    "description": "Use drawDB in a browser to model tables, connect foreign keys and export the SQL for your chosen database.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Sketch students, courses and enrollments before writing the first migration.",
+      "frameworks": [
+        "SQL",
+        "Entity-relationship diagrams",
+        "Browser"
+      ],
+      "setup": "low",
+      "caveat": "Choose the correct database dialect before exporting and review the generated statements before running them against existing data.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://www.drawdb.app/"
+      ]
+    }
+  },
+  "community-5c59cd357f820dc4": {
+    "name": "draw.io product guide",
+    "description": "Open the draw.io product site for guides to diagramming and a link into its browser editor.",
+    "kind": "documentation",
+    "guidance": {
+      "bestFor": "Choose a storage option and diagram type before sketching a login flow or service architecture.",
+      "frameworks": [
+        "Browser",
+        "Diagram files"
+      ],
+      "setup": "low",
+      "caveat": "This is the product site for the same editor listed as draw.io. Save the editable drawing as well as any image you export.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://www.drawio.com/",
+        "https://app.diagrams.net/"
+      ]
+    }
+  },
+  "community-1a894bd0f99797f9": {
+    "description": "Install GTK and a language binding to build a native desktop window with controls and click handlers.",
+    "kind": "library",
+    "guidance": {
+      "bestFor": "Create a small desktop utility with a file picker, a button and a status message.",
+      "frameworks": [
+        "GTK",
+        "C",
+        "Language bindings"
+      ],
+      "setup": "moderate",
+      "caveat": "Match your toolkit version and examples. GTK 3 and GTK 4 differ in their widgets and application APIs.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://www.gtk.org/",
+        "https://docs.gtk.org/gtk4/migrating-3to4.html"
+      ]
+    }
+  },
+  "community-fa01c19d3e5dc77c": {
+    "description": "Run Keycloak to let two project apps sign users in through the same identity provider.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Give the apps separate clients and reuse the same account across both.",
+      "frameworks": [
+        "OpenID Connect",
+        "OAuth 2.0",
+        "SAML"
+      ],
+      "setup": "advanced",
+      "caveat": "Register the correct redirect URI for each client and configure the app to enforce its roles after login.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://www.keycloak.org/"
+      ]
+    }
+  },
+  "community-aaf2008b2dd1733d": {
+    "description": "Add UnoCSS to a frontend build to generate styles from utility classes used in your markup.",
+    "kind": "library",
+    "guidance": {
+      "bestFor": "Keep a small set of spacing and color rules consistent across buttons, cards and navigation.",
+      "frameworks": [
+        "CSS",
+        "JavaScript build tools"
+      ],
+      "setup": "moderate",
+      "caveat": "The extractor needs complete class names. Use literal alternatives or a safelist for classes constructed from runtime values.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://unocss.dev/guide/extracting"
+      ]
+    }
+  },
+  "community-16859c5182eb47d6": {
+    "description": "Open an Etherpad instance to draft a team specification together and inspect its revision history.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Have teammates annotate acceptance criteria in a shared text document and see who edited each section.",
+      "frameworks": [
+        "Browser",
+        "Collaborative text editor"
+      ],
+      "setup": "low",
+      "caveat": "Check the instance’s sharing settings before posting a pad URL. Choose where to host and retain pads containing private notes.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://etherpad.org/"
+      ]
+    }
+  },
+  "community-dd2bae099b20c93e": {
+    "description": "Use Documenso to send a sample project agreement through a document-signing workflow.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Place fields for two participants and test what each recipient sees before the document is completed.",
+      "frameworks": [
+        "Web application",
+        "Document signing"
+      ],
+      "setup": "moderate",
+      "caveat": "Confirm recipient addresses and field assignments with a test document before sending a real agreement.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://documenso.com/"
+      ]
+    }
+  },
+  "community-5b1869603a207c33": {
+    "description": "Choose matching Iconoir symbols for a toolbar and use their SVG files or framework components.",
+    "kind": "library",
+    "guidance": {
+      "bestFor": "Use one icon family for search, bookmarks and navigation across a web or mobile interface.",
+      "frameworks": [
+        "SVG",
+        "React",
+        "React Native",
+        "Flutter"
+      ],
+      "setup": "low",
+      "caveat": "Give icon-only buttons a text label for assistive technology. A consistent drawing style cannot explain an ambiguous action.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://iconoir.com/"
+      ]
+    }
+  },
+  "community-40e0c2050ea632a7": {
+    "description": "Install a Fontsource font package and serve the font files with your site.",
+    "kind": "library",
+    "guidance": {
+      "bestFor": "Keep the same typeface in your app without depending on a third-party font request at page load.",
+      "frameworks": [
+        "Web fonts",
+        "CSS",
+        "npm"
+      ],
+      "setup": "low",
+      "caveat": "Import only the weights, styles and character subsets that your pages use. Check that students’ names render in the selected subset.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://fontsource.org/docs/getting-started/install"
+      ]
+    }
+  },
+  "community-cc76cd5cb3935b13": {
+    "description": "Call Exa from your backend to find web pages and retrieve text for a research assistant.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Present links alongside generated summaries so students can inspect the pages that supported an answer.",
+      "frameworks": [
+        "Search API",
+        "HTTP",
+        "Server SDKs"
+      ],
+      "setup": "moderate",
+      "caveat": "Keep the API key on the server. Inspect the returned pages before treating a retrieved passage as evidence.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://exa.ai/docs/search/quickstart"
+      ]
+    }
+  },
+  "community-6df9102a5a645844": {
+    "description": "Install Framework7 to create a mobile-style interface with pages, navigation and touch controls.",
+    "kind": "library",
+    "guidance": {
+      "bestFor": "Prototype a tabbed schedule app in the browser and check how it feels on a phone.",
+      "frameworks": [
+        "JavaScript",
+        "React",
+        "Vue",
+        "Svelte",
+        "PWA"
+      ],
+      "setup": "moderate",
+      "caveat": "A browser prototype cannot exercise every native feature. Plan separate packaging and device testing if the project needs an app-store build.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://framework7.io/"
+      ]
+    }
+  },
+  "community-110e7243c6a2d147": {
+    "description": "Save links, PDFs and screenshots in Karakeep and search the collection when you need an old reference.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Build a personal design notebook where a remembered phrase can lead back to the original page.",
+      "frameworks": [
+        "Bookmark manager",
+        "Browser"
+      ],
+      "setup": "moderate",
+      "caveat": "Some sites block page capture or require a login. Check the saved item before relying on it as an offline copy.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://karakeep.com/",
+        "https://docs.karakeep.com/"
+      ]
+    }
+  },
+  "community-ba98721e17380a8d": {
+    "description": "Host Forgejo for a team that wants to manage Git repositories, issues and code reviews on its own server.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Keep project planning and pull requests beside the source code under the team’s control.",
+      "frameworks": [
+        "Git",
+        "Self-hosted web service"
+      ],
+      "setup": "advanced",
+      "caveat": "Assign someone to maintain updates, backups and repository access before moving the team’s only checkout to the server.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://forgejo.org/"
+      ]
+    }
+  },
+  "community-53755613855171df": {
+    "description": "Use Firezone to give selected teammates access to a private development service.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Connect a teammate to an internal dashboard while limiting access to the resources their account needs.",
+      "frameworks": [
+        "WireGuard",
+        "Network access policies",
+        "Client applications"
+      ],
+      "setup": "advanced",
+      "caveat": "Install a gateway that can actually reach the private service and test the access rules with a non-admin account.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://www.firezone.dev/",
+        "https://www.firezone.dev/kb/quickstart"
+      ]
+    }
+  },
+  "community-34108d2e35c75d1c": {
+    "description": "Host FreshRSS to gather updates from engineering blogs, podcasts and release feeds in one reader.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Give a project team a reading queue that lists new posts from its chosen sources.",
+      "frameworks": [
+        "RSS",
+        "Atom",
+        "Self-hosted web app"
+      ],
+      "setup": "moderate",
+      "caveat": "A site needs a feed or another supported source. Check that your server’s refresh schedule picks up new posts.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://freshrss.org/"
+      ]
+    }
+  },
+  "community-02c136fed3ac4e98": {
+    "description": "Define a Kestra workflow that fetches a dataset, transforms it and produces a report on a schedule.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Keep task order, retries and execution history visible when a multi-step job fails.",
+      "frameworks": [
+        "YAML workflows",
+        "Task plugins",
+        "Scheduler"
+      ],
+      "setup": "advanced",
+      "caveat": "Design retryable tasks so a second run cannot publish the same report twice. Check which plugins and credentials each task needs.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://kestra.io/",
+        "https://kestra.io/docs/workflow-components/triggers/schedule-trigger"
+      ]
+    }
+  },
+  "community-7f6d808bb0169574": {
+    "description": "Add Vueform fields to a Vue page to collect and validate assignment submissions.",
+    "kind": "library",
+    "guidance": {
+      "bestFor": "Build a multi-field form with a date picker, file input and validation feedback.",
+      "frameworks": [
+        "Vue",
+        "JavaScript",
+        "Forms"
+      ],
+      "setup": "moderate",
+      "caveat": "Match the guide to the Vueform version you install. A file picker still needs a configured upload destination on your server.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://vueform.com/",
+        "https://vueform.com/docs/installation"
+      ]
+    }
+  },
+  "community-c9038abab275528d": {
+    "description": "Open the regex playground and run a pattern against a few valid and invalid student IDs.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "See exactly which characters matched, then save example strings as pass/fail tests before using the pattern in a form.",
+      "frameworks": [
+        "JavaScript",
+        "PCRE"
+      ],
+      "setup": "low",
+      "caveat": "Select the same regex flavor as your application. JavaScript and PCRE can interpret the same expression differently.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://regexr.com/",
+        "https://github.com/gskinner/regexr"
+      ]
+    }
+  },
+  "community-b1f3826153725497": {
+    "description": "Install Medusa to give a school merchandise store a product catalog, carts and order management.",
+    "kind": "library",
+    "guidance": {
+      "bestFor": "Model a shirt with several sizes, add the variants to a cart and inspect the resulting order in the admin.",
+      "frameworks": [
+        "TypeScript",
+        "Node.js",
+        "PostgreSQL"
+      ],
+      "setup": "advanced",
+      "caveat": "The backend and storefront run separately. The local starter also needs PostgreSQL, so budget time for the database.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://docs.medusajs.com/learn/installation",
+        "https://medusajs.com/"
+      ]
+    }
+  },
+  "community-f88d8672a247a8ce": {
+    "description": "Use Flagsmith to release a redesigned dashboard to a small group before turning it on for everyone.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Keep two implementations in one release and choose between them with an environment or user-segment flag.",
+      "frameworks": [
+        "Feature flags",
+        "SDK",
+        "HTTP API"
+      ],
+      "setup": "moderate",
+      "caveat": "Your app needs to define what happens when a flag is off or its value is unavailable. Test that path before rollout.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://flagsmith.com/"
+      ]
+    }
+  },
+  "community-9bac3f4057df8fed": {
+    "description": "Run the Gogs Git service on your own server to host repositories for a class team.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Give a small group a private central Git remote on a machine it controls.",
+      "frameworks": [
+        "Git",
+        "Go binary",
+        "Self-hosting"
+      ],
+      "setup": "advanced",
+      "caveat": "Someone must maintain the server and back up its repositories and database. A local Git checkout alone does not provide team hosting.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://gogs.io/"
+      ]
+    }
+  },
+  "community-be05c4a4ab614ba0": {
+    "description": "Instrument an AI app with Langfuse to inspect the model calls, retrieval and tools behind a single answer.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Follow a poor chatbot response back to the search or model step that produced it.",
+      "frameworks": [
+        "LLM tracing",
+        "OpenTelemetry"
+      ],
+      "setup": "moderate",
+      "caveat": "Only instrumented operations appear in a trace. Decide which inputs and outputs you need to record before sending them.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://langfuse.com/docs/observability/overview",
+        "https://langfuse.com/"
+      ]
+    }
+  },
+  "community-8093ce1859740e0e": {
+    "name": "TanStack Query for Svelte",
+    "description": "Follow the Svelte Query guide to fetch an assignment list, cache the response and refresh it after submitting work.",
+    "kind": "documentation",
+    "guidance": {
+      "bestFor": "Keep server data in sync across Svelte views without writing separate loading and refresh logic for each one.",
+      "frameworks": [
+        "Svelte",
+        "TanStack Query",
+        "JavaScript"
+      ],
+      "setup": "moderate",
+      "caveat": "Use the Svelte adapter's reactive function syntax. Pasting the React examples changes how updates are tracked.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://tanstack.com/query/latest/docs/framework/svelte/quick-start",
+        "https://tanstack.com/query/latest/docs/svelte/overview"
+      ]
+    }
+  },
+  "community-9f8dcaa7e55487eb": {
+    "description": "Run Caddy in front of a web app to route requests and serve the site over HTTPS.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Publish a project through a domain while the application listens on a different local port.",
+      "frameworks": [
+        "Web server",
+        "HTTP",
+        "Reverse proxy"
+      ],
+      "setup": "moderate",
+      "caveat": "For public certificate issuance, point the domain's DNS at the server and check the documented network requirements.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://caddyserver.com/docs/automatic-https",
+        "https://caddyserver.com/"
+      ]
+    }
+  },
+  "community-b4c308e9449a9c53": {
+    "description": "Use Formbricks to create a short feedback survey that classmates can open from a link.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Gather reactions to a prototype, then use an embedded survey if you need feedback at a particular point in the app.",
+      "frameworks": [
+        "Web surveys",
+        "JavaScript"
+      ],
+      "setup": "low",
+      "caveat": "A shareable survey link works outside your application. Triggering an in-app survey requires connecting it to the app.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://formbricks.com/surveys",
+        "https://github.com/formbricks/formbricks",
+        "https://formbricks.com/"
+      ]
+    }
+  },
+  "community-662faebc5d3a2d6a": {
+    "description": "Install Hugo and turn a folder of Markdown articles into a browsable project journal.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Publish a collection of weekly notes with shared templates and a static deployment.",
+      "frameworks": [
+        "Hugo",
+        "Markdown",
+        "Static site generator"
+      ],
+      "setup": "moderate",
+      "caveat": "Draft pages can appear in the development preview but be excluded from the published site. Check their draft setting before building.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://gohugo.io/getting-started/quick-start/",
+        "https://gohugo.io/"
+      ]
+    }
+  },
+  "community-e69d64e782a70f83": {
+    "description": "Use Nextcloud Files to give a project team a shared folder for design drafts, datasets and meeting notes.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Keep the team's working documents together with access controlled by the organization running the service.",
+      "frameworks": [
+        "File sharing",
+        "Self-hosting",
+        "Web"
+      ],
+      "setup": "advanced",
+      "caveat": "Students need access to a Nextcloud instance. If the team hosts its own, it also owns storage capacity, upgrades and backups.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://nextcloud.com/"
+      ]
+    }
+  },
+  "community-dcb1fe42b9a89344": {
+    "description": "Install Sigma.js to draw an interactive network of people, documents or projects in a web page.",
+    "kind": "library",
+    "guidance": {
+      "bestFor": "Explore nodes and their connections, such as which projects depend on the same packages.",
+      "frameworks": [
+        "JavaScript",
+        "WebGL",
+        "Graphology"
+      ],
+      "setup": "moderate",
+      "caveat": "Supply the graph data and a layout for the nodes. The renderer cannot infer meaningful positions from a list of names.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://www.sigmajs.org/",
+        "https://github.com/jacomyal/sigma.js"
+      ]
+    }
+  },
+  "community-df1010ff6cb936e1": {
+    "description": "Add clipboard.js to a browser page so a button copies a code snippet or a project brief.",
+    "kind": "library",
+    "guidance": {
+      "bestFor": "Let a student copy text from a specific element and see whether the copy succeeded.",
+      "frameworks": [
+        "JavaScript",
+        "DOM"
+      ],
+      "setup": "low",
+      "caveat": "If you mount and remove the button in a single-page app, destroy its clipboard instance on cleanup. Handle the error event too.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://clipboardjs.com/"
+      ]
+    }
+  },
+  "community-8e5c3476a9c655f9": {
+    "description": "Open the GDevelop game editor and connect conditions and actions to make a collectible disappear when a character touches it.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Prototype a platform game's scoring rules in an event sheet and test them in the preview.",
+      "frameworks": [
+        "GDevelop",
+        "Game events"
+      ],
+      "setup": "low",
+      "caveat": "An event can run repeatedly while its condition remains true. Account for that when awarding points.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://wiki.gdevelop.io/gdevelop5/events/",
+        "https://gdevelop.io/"
+      ]
+    }
+  },
+  "community-c985249d6a0e624c": {
+    "description": "Install Mastra to build a TypeScript agent that looks up information through a tool you define.",
+    "kind": "library",
+    "guidance": {
+      "bestFor": "Give a study assistant a narrow tool for retrieving assignment details and inspect when it calls that tool.",
+      "frameworks": [
+        "TypeScript",
+        "Node.js",
+        "AI agents"
+      ],
+      "setup": "moderate",
+      "caveat": "Choose and configure a compatible model separately, and validate the inputs accepted by each tool.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://mastra.ai/docs/agents/overview",
+        "https://mastra.ai/"
+      ]
+    }
+  },
+  "community-325aa537fe10517f": {
+    "description": "Run OctoPrint on a host connected to a 3D printer, then monitor jobs through its web interface.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Watch the progress of a class prototype print from a browser on the printer's network.",
+      "frameworks": [
+        "3D printing",
+        "OctoPi",
+        "Local network"
+      ],
+      "setup": "advanced",
+      "caveat": "You need a supported printer and a connected host. Verify the hardware and connection before designing around live print data.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://octoprint.org/download/",
+        "https://octoprint.org/"
+      ]
+    }
+  },
+  "community-2c78ac725bff409b": {
+    "description": "Install Hardhat to compile and test an Ethereum contract locally before deploying it.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Write a test that checks which account may update a class voting contract and inspect a failed transaction.",
+      "frameworks": [
+        "Solidity",
+        "Ethereum",
+        "TypeScript"
+      ],
+      "setup": "moderate",
+      "caveat": "Choose the network deliberately. Sending a transaction on a public chain has different consequences from a local simulation.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://hardhat.org/"
+      ]
+    }
+  },
+  "community-c91c30c354ab859e": {
+    "description": "Use the ColorZilla browser extension to sample a color from a page, or open its gradient editor to export CSS.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Match a project's palette to an existing illustration without guessing the hex values.",
+      "frameworks": [
+        "Chrome",
+        "Firefox",
+        "CSS"
+      ],
+      "setup": "low",
+      "caveat": "A sampled pixel includes the effects of any overlay or gradient. Sample a flat region or inspect the original CSS for the intended token.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://www.colorzilla.com/"
+      ]
+    }
+  },
+  "community-d509a8c0d98bfceb": {
+    "description": "Run Gemini CLI in a project directory to ask how a feature is implemented and review suggested edits.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Trace an unfamiliar code path across files before changing the feature.",
+      "frameworks": [
+        "Terminal",
+        "Gemini",
+        "Source code"
+      ],
+      "setup": "moderate",
+      "caveat": "Configure a supported sign-in or API credential and check the proposed file changes and shell commands before accepting them.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://github.com/google-gemini/gemini-cli",
+        "https://geminicli.com/docs/get-started/authentication/",
+        "https://geminicli.com/"
+      ]
+    }
+  },
+  "community-e72ea032372579b3": {
+    "description": "Connect a database to Metabase and use its visual query builder to chart weekly survey responses.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Turn a table of anonymous responses into a repeatable question and dashboard for the team.",
+      "frameworks": [
+        "SQL",
+        "Dashboards",
+        "Databases"
+      ],
+      "setup": "moderate",
+      "caveat": "The chart reflects the underlying rows. Check how duplicate responses are counted and who has permission to inspect them.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://www.metabase.com/docs/latest/questions/introduction",
+        "https://www.metabase.com/"
+      ]
+    }
+  },
+  "community-d9fa580077e68cf2": {
+    "description": "Install OpenCV and use its Canny tutorial to outline the edges of objects in a photo.",
+    "kind": "library",
+    "guidance": {
+      "bestFor": "Compare edge maps for the same object under different lighting before using them in a camera project.",
+      "frameworks": [
+        "Python",
+        "OpenCV",
+        "Computer vision"
+      ],
+      "setup": "moderate",
+      "caveat": "The two thresholds affect which edges survive. Try them on representative images instead of tuning a single photograph.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://docs.opencv.org/4.x/da/d22/tutorial_py_canny.html",
+        "https://opencv.org/"
+      ]
+    }
+  },
+  "community-bfd216e85c3ec1b2": {
+    "description": "Run Gotenberg in Docker and POST a web page or office document to get a PDF version.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Give a report generator a repeatable server-side PDF export with browser rendering.",
+      "frameworks": [
+        "Docker",
+        "HTTP API",
+        "PDF"
+      ],
+      "setup": "moderate",
+      "caveat": "The conversion runs inside a container. Make sure stylesheets, fonts and images are reachable from there.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://gotenberg.dev/"
+      ]
+    }
+  },
+  "community-82b49b5fc70ca818": {
+    "description": "Open a CodyHouse component and adapt its markup and styles for a navigation menu or a new page section.",
+    "kind": "library",
+    "guidance": {
+      "bestFor": "Start from a working interface example and inspect its states before fitting it to your design.",
+      "frameworks": [
+        "HTML",
+        "CSS",
+        "JavaScript"
+      ],
+      "setup": "low",
+      "caveat": "Check the component's dependencies and license. Some examples use CodyHouse styles or paid assets.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://codyhouse.co/ds/components",
+        "https://codyhouse.co/"
+      ]
+    }
+  },
+  "community-27741b0025ef748d": {
+    "description": "Set up Gitea to host a team's repositories and use issues and pull requests to review changes.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Practice a branch-and-review workflow on a Git service the school or team operates.",
+      "frameworks": [
+        "Git",
+        "Self-hosting",
+        "Code review"
+      ],
+      "setup": "advanced",
+      "caveat": "A self-hosted installation needs durable storage and someone responsible for upgrades and backups.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://docs.gitea.com/"
+      ]
+    }
+  },
+  "community-54b899b195996957": {
+    "description": "Add MLflow tracking calls to a training script to compare parameters and evaluation metrics across runs.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Find which combination of features and model settings performed best on the same held-out dataset.",
+      "frameworks": [
+        "Python",
+        "Machine learning",
+        "Experiment tracking"
+      ],
+      "setup": "moderate",
+      "caveat": "Metrics are only comparable when evaluation stays consistent. Record the dataset split along with the run's parameters.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://mlflow.org/docs/latest/ml/tracking/",
+        "https://mlflow.org/"
+      ]
+    }
+  },
+  "community-617fe5fb70db9959": {
+    "description": "Run openHAB and create a rule that switches a light on when a sensor changes state.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Combine events from connected devices in a classroom automation experiment.",
+      "frameworks": [
+        "Home automation",
+        "Rules",
+        "Device bindings"
+      ],
+      "setup": "advanced",
+      "caveat": "Check for a binding for the actual device and protocol before planning an automation around it.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://www.openhab.org/"
+      ]
+    }
+  },
+  "community-5e1a86347052daa5": {
+    "description": "Use the GrapesJS editor framework to let students assemble a club page from editable headings, images and layout blocks.",
+    "kind": "library",
+    "guidance": {
+      "bestFor": "Build a drag-and-drop page editor in which users can change the content and export their design.",
+      "frameworks": [
+        "JavaScript",
+        "HTML",
+        "CSS"
+      ],
+      "setup": "moderate",
+      "caveat": "The homepage features the Studio SDK. Use the core documentation if your project specifically needs the open-source framework.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://grapesjs.com/docs/",
+        "https://grapesjs.com/"
+      ]
+    }
+  },
+  "community-969c8808eba4bd98": {
+    "name": "Mapbox documentation",
+    "description": "Follow Mapbox’s map guides to put campus locations on an interactive map; use the token guide when connecting the map to your site.",
+    "kind": "documentation",
+    "guidance": {
+      "bestFor": "Build a map that students can zoom and pan instead of displaying a static campus image.",
+      "frameworks": [
+        "Mapbox GL JS",
+        "JavaScript"
+      ],
+      "setup": "moderate",
+      "caveat": "Only expose a public token with appropriate scopes in the browser. Keep secret tokens on the server.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://docs.mapbox.com/accounts/guides/tokens/",
+        "https://docs.mapbox.com/"
+      ]
+    }
+  },
+  "community-4c26c1eda3d9f901": {
+    "description": "Read Teleport’s setup and access guides to give teammates individual access to a shared development server.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Replace a team’s shared SSH login with access tied to individual identities and roles.",
+      "frameworks": [
+        "SSH",
+        "Databases"
+      ],
+      "setup": "advanced",
+      "caveat": "You need authority to enroll the target machine and configure the team’s access policies before classmates can use it.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://goteleport.com/docs/",
+        "https://goteleport.com/"
+      ]
+    }
+  },
+  "community-df2f568fba6a92c8": {
+    "description": "Open Mockoon, create a local API route and give it a sample JSON response so work on the frontend can start early.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Test what a results page shows when an API returns records, an empty array or an error.",
+      "frameworks": [
+        "HTTP",
+        "JSON"
+      ],
+      "setup": "low",
+      "caveat": "A passing test against a mock does not confirm that the real server returns the same status codes and fields.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://mockoon.com/"
+      ]
+    }
+  },
+  "community-3ce4f47b8c548942": {
+    "description": "Run Open WebUI and connect a model to give classmates a browser chat interface for comparing prompts.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Give an existing model a usable local chat screen without building the conversation UI from scratch.",
+      "frameworks": [
+        "Ollama",
+        "OpenAI-compatible APIs",
+        "Docker"
+      ],
+      "setup": "moderate",
+      "caveat": "The interface still needs a model provider. A remote endpoint receives the prompts even if the interface runs on your computer.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://docs.openwebui.com/getting-started/quick-start/",
+        "https://openwebui.com/"
+      ]
+    }
+  },
+  "community-dbd554708c38d775": {
+    "description": "Run ArchiveBox on a reading list to preserve copies of web pages in formats such as HTML, PDF and screenshots.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Build a reference collection that preserves what a project source looked like when your team found it.",
+      "frameworks": [
+        "Docker",
+        "Web archiving"
+      ],
+      "setup": "moderate",
+      "caveat": "A screenshot can preserve the appearance of an interactive demo without preserving its behavior. Check the archived copy.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://github.com/ArchiveBox/ArchiveBox",
+        "https://archivebox.io/"
+      ]
+    }
+  },
+  "community-3e1fc8455f78f6ff": {
+    "name": "Databricks API reference",
+    "description": "Look up a workspace endpoint in the Databricks API reference before writing code to trigger a data job or inspect its run.",
+    "kind": "documentation",
+    "guidance": {
+      "bestFor": "Automate a repetitive action in a Databricks workspace your class already uses.",
+      "frameworks": [
+        "REST",
+        "Databricks"
+      ],
+      "setup": "advanced",
+      "caveat": "API calls need workspace access and authorization; the reference itself does not supply a running workspace.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://docs.databricks.com/api/workspace/introduction",
+        "https://docs.databricks.com/dev-tools/api/latest/index.html"
+      ]
+    }
+  },
+  "community-e30a300af7f0a596": {
+    "description": "Set up Home Assistant, connect a supported device and build an automation such as switching a light on when a sensor changes.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Prototype a classroom installation that responds to a real sensor and exposes its state on a dashboard.",
+      "frameworks": [
+        "Home Assistant",
+        "IoT"
+      ],
+      "setup": "moderate",
+      "caveat": "Check the integration for the particular device before buying hardware or designing a demo around it.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://www.home-assistant.io/getting-started/",
+        "https://home-assistant.io/"
+      ]
+    }
+  },
+  "community-67e8513ec70150db": {
+    "description": "Run Navidrome against your own music files and browse the resulting collection through its web player or a compatible music client.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Turn a collection of student-recorded tracks into a searchable listening library.",
+      "frameworks": [
+        "Self-hosting",
+        "Subsonic"
+      ],
+      "setup": "moderate",
+      "caveat": "You supply the audio files. Accurate artist and album tags make the collection easier to browse.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://www.navidrome.org/"
+      ]
+    }
+  },
+  "community-3f828e58a73ebf93": {
+    "description": "Open an Overleaf project and collaborate on a LaTeX report with equations, citations and a compiled PDF preview.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Write a team lab report where classmates can edit the same source and inspect the typeset result.",
+      "frameworks": [
+        "LaTeX"
+      ],
+      "setup": "low",
+      "caveat": "A typo in a LaTeX command can interrupt compilation. Check the build log when the PDF stops updating.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://www.overleaf.com/"
+      ]
+    }
+  },
+  "community-3fa62046261b458f": {
+    "description": "Watch Laracasts programming screencasts and follow a Laravel or PHP lesson in a small practice app.",
+    "kind": "video",
+    "guidance": {
+      "bestFor": "Learn one technique by watching it implemented, then reproduce it in a project your team controls.",
+      "frameworks": [
+        "Laravel",
+        "PHP"
+      ],
+      "setup": "low",
+      "caveat": "Check the framework version used by the series before copying commands into a newer project.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://laracasts.com/"
+      ]
+    }
+  },
+  "community-dbbe5ae745ef7974": {
+    "description": "Read the Racket Guide’s examples of functions, lists and local bindings, then run small variations in a Racket environment.",
+    "kind": "documentation",
+    "guidance": {
+      "bestFor": "Translate familiar programming ideas into Racket and see how a list-processing function works.",
+      "frameworks": [
+        "Racket"
+      ],
+      "setup": "low",
+      "caveat": "The guide assumes some programming experience; beginners may need to learn basic programming concepts alongside it.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://docs.racket-lang.org/guide/index.html"
+      ]
+    }
+  },
+  "community-8f87a74e6edb72c2": {
+    "description": "Open Hoppscotch, send a request to a project endpoint and inspect its status, headers and response before wiring it into the UI.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Determine whether a failing search screen is receiving bad data or failing to display a valid response.",
+      "frameworks": [
+        "HTTP",
+        "REST",
+        "GraphQL"
+      ],
+      "setup": "low",
+      "caveat": "The browser can block cross-origin requests. Pick one of the documented interceptors if the API does not permit the web client’s origin.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://docs.hoppscotch.io/documentation/getting-started/introduction",
+        "https://docs.hoppscotch.io/documentation/features/interceptor",
+        "https://hoppscotch.io/"
+      ]
+    }
+  },
+  "community-5a25ac7fd590f7b2": {
+    "description": "Install Apache NetBeans and open a Java project to edit, run and debug it in one desktop application.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Set breakpoints and inspect values when a Java program produces the wrong result.",
+      "frameworks": [
+        "Java",
+        "JDK"
+      ],
+      "setup": "moderate",
+      "caveat": "Check the JDK requirements for the NetBeans release and for the project you plan to open.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://netbeans.apache.org/"
+      ]
+    }
+  },
+  "community-5681e98931e18a6c": {
+    "description": "Configure Panda CSS to turn styles and variants written in your app into generated CSS; try it on a button with several visual states.",
+    "kind": "library",
+    "guidance": {
+      "bestFor": "Share a set of style tokens and component variants without hand-maintaining a stylesheet for each combination.",
+      "frameworks": [
+        "TypeScript",
+        "CSS"
+      ],
+      "setup": "moderate",
+      "caveat": "The build needs to discover the styles in source. Use the documented CSS-variable approach for values known only at runtime.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://panda-css.com/docs/guides/dynamic-styling",
+        "https://panda-css.com/"
+      ]
+    }
+  },
+  "community-6791f9ef32398f1b": {
+    "description": "Use StyleX to define reusable component styles in JavaScript and compile them into CSS; start with a shared button and its variants.",
+    "kind": "library",
+    "guidance": {
+      "bestFor": "Compose several styles while keeping their precedence predictable across components.",
+      "frameworks": [
+        "JavaScript",
+        "CSS"
+      ],
+      "setup": "moderate",
+      "caveat": "Set up the compiler for your build. Ordinary arbitrary JavaScript expressions are not interchangeable with styles the compiler can analyze.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://stylexjs.com/docs/learn/thinking-in-stylex/",
+        "https://stylexjs.com/"
+      ]
+    }
+  },
+  "community-263231022e5eba8f": {
+    "name": "Apache Druid",
+    "description": "Follow the Apache Druid tutorials to ingest an event dataset and query counts grouped by time.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Explore an analytics dashboard question such as which hour sees the most events across many records.",
+      "frameworks": [
+        "SQL",
+        "Apache Druid"
+      ],
+      "setup": "advanced",
+      "caveat": "The quickstart runs a database with several services; for a small static chart you can work directly with a CSV instead.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://druid.apache.org/docs/latest/tutorials/",
+        "https://druid.apache.org/"
+      ]
+    }
+  },
+  "community-ebb49573fa14f300": {
+    "description": "Open a Huly workspace to keep a student team’s issues, shared documents and project discussions together.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Trace a bug from its initial report through the team’s discussion and assigned work.",
+      "frameworks": [
+        "Project management"
+      ],
+      "setup": "low",
+      "caveat": "Decide who needs workspace access before using it to collect feedback from people outside the team.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://huly.io/"
+      ]
+    }
+  },
+  "community-6b001533ac2e04ee": {
+    "description": "Experiment with nivo’s interactive bar chart, then use the React component to compare categories such as club attendance by month.",
+    "kind": "library",
+    "guidance": {
+      "bestFor": "Switch between stacked and grouped bars and see which one answers your audience’s question.",
+      "frameworks": [
+        "React",
+        "D3"
+      ],
+      "setup": "moderate",
+      "caveat": "Match the chart’s keys and index field to your rows; changing the labels alone does not change which values are plotted.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://nivo.rocks/bar/",
+        "https://nivo.rocks/"
+      ]
+    }
+  },
+  "community-f1403f358893ce86": {
+    "description": "Open Plane and put project issues into a board or development cycle so teammates can see what is ready, in progress and complete.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Give a group project a shared backlog with assignees and a concrete next task for each person.",
+      "frameworks": [
+        "Project management"
+      ],
+      "setup": "low",
+      "caveat": "Agree on what each workflow state means; moving a task to Done will not run or verify its code.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://plane.so/"
+      ]
+    }
+  },
+  "community-cbb47273f53c79b9": {
+    "description": "Install Vue Final Modal and use it to build a dialog such as a confirmation screen that opens from a button.",
+    "kind": "library",
+    "guidance": {
+      "bestFor": "Reuse modal behavior across Vue screens while designing the dialog to fit the rest of the site.",
+      "frameworks": [
+        "Vue",
+        "Nuxt"
+      ],
+      "setup": "moderate",
+      "caveat": "Programmatic dialogs need the documented modal container mounted in your app; installing the package alone will not display them.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://vue-final-modal.org/get-started/guide/setup/",
+        "https://vue-final-modal.org/"
+      ]
+    }
+  },
+  "community-b00ca09b1ba3e06d": {
+    "description": "Browse F-Droid’s Android app catalog and open a project’s source link to investigate how it implements a feature.",
+    "kind": "gallery",
+    "guidance": {
+      "bestFor": "Find real open-source Android examples before designing an offline tool or mobile utility.",
+      "frameworks": [
+        "Android",
+        "Open source"
+      ],
+      "setup": "low",
+      "caveat": "Check the individual project’s license before reusing code or artwork; appearance in the catalog does not erase its attribution terms.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://f-droid.org/en/docs/Inclusion_Policy/",
+        "https://f-droid.org/"
+      ]
+    }
+  },
+  "community-ae2b30c1d47bbf46": {
+    "description": "Choose a project-based course on Hyperskill and work through its stages and exercises in a language you want to practice.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Give a learner a sequence of small programming tasks that lead toward a finished project.",
+      "frameworks": [
+        "Java",
+        "Kotlin",
+        "Python"
+      ],
+      "setup": "low",
+      "caveat": "Check the language and prerequisites for the selected track before asking teammates to follow it.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://hyperskill.org/"
+      ]
+    }
+  },
+  "community-dca1f40c815bc826": {
+    "description": "Set up NodeBB and organize a class help forum into topics and categories, then configure who can post and moderate.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Keep recurring coding questions and answers searchable beyond a single chat conversation.",
+      "frameworks": [
+        "Node.js",
+        "Self-hosting"
+      ],
+      "setup": "moderate",
+      "caveat": "If you self-host, plan for the database, account permissions and moderation as well as the initial installation.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://docs.nodebb.org/",
+        "https://nodebb.org/"
+      ]
+    }
+  },
+  "community-436501c01e8b3f18": {
+    "description": "Add Plausible’s tracking and a custom event to see how often visitors use a feature such as an export button.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Measure whether people discover a new feature after a change to its placement or label.",
+      "frameworks": [
+        "JavaScript",
+        "Web analytics"
+      ],
+      "setup": "moderate",
+      "caveat": "Use the same event name in your tracking call and goal. A button click measures intent unless you fire the event after the export succeeds.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://plausible.io/docs/custom-event-goals",
+        "https://plausible.io/"
+      ]
+    }
+  },
+  "community-e6fadebd1b102e0e": {
+    "description": "Create a Linkwarden collection for research links, save pages and share the collection with your project team.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Keep references with the team and retain archived versions when the original pages change.",
+      "frameworks": [
+        "Bookmarks",
+        "Web archiving"
+      ],
+      "setup": "low",
+      "caveat": "Review collection visibility and sharing permissions before mixing private references with material classmates can open.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://docs.linkwarden.app/",
+        "https://linkwarden.app/"
+      ]
+    }
+  },
+  "community-237cb89ffe666f21": {
+    "description": "Automate repeatable parts of a mobile release, such as capturing the same App Store screenshots across languages and devices.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Regenerate screenshots from an iOS UI test after redesigning the onboarding flow.",
+      "frameworks": [
+        "iOS",
+        "Android",
+        "Xcode"
+      ],
+      "setup": "moderate",
+      "caveat": "For iOS screenshots, set up the test scheme and run snapshot from the command line. Running the test inside Xcode alone will not produce the finished files.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://docs.fastlane.tools/getting-started/ios/screenshots/"
+      ]
+    }
+  },
+  "community-be5210116d9f02aa": {
+    "description": "Run a photo library and upload selected phone albums automatically to your own server.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Collect a photography club's event pictures and browse them from a phone or web browser.",
+      "frameworks": [
+        "Self-hosted server",
+        "Mobile apps"
+      ],
+      "setup": "advanced",
+      "caveat": "Back up both the database and media files. A copy of the database alone cannot restore missing photos.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://docs.immich.app/features/mobile-backup/",
+        "https://docs.immich.app/administration/backup-and-restore/"
+      ]
+    }
+  },
+  "community-021bc57bd1082f68": {
+    "description": "Open a folder of Markdown files as a vault and link project notes to design decisions, tests and meeting records.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Keep a searchable engineering notebook beside a project and link each decision to the notes behind it.",
+      "frameworks": [
+        "Markdown",
+        "Desktop",
+        "Mobile"
+      ],
+      "setup": "low",
+      "caveat": "Linking a note inside your vault does not share that file with your classmates. Choose how the team will exchange the vault or publish selected notes.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://obsidian.md/"
+      ]
+    }
+  },
+  "community-a6b5f6d91680cb08": {
+    "description": "Build a web application on the JVM with the Play framework, using Java or Scala for server routes.",
+    "kind": "library",
+    "guidance": {
+      "bestFor": "Add a server endpoint for a school events calendar when the team's backend already runs Java or Scala.",
+      "frameworks": [
+        "Java",
+        "Scala",
+        "JVM"
+      ],
+      "setup": "moderate",
+      "caveat": "Match tutorials to the major version. Play 3 uses Pekko, while Play 2 uses Akka.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://www.playframework.com/"
+      ]
+    }
+  },
+  "community-31696885b4e5f240": {
+    "description": "Install Blueprint to assemble dense React interfaces with tables, menus and other desktop-style controls.",
+    "kind": "library",
+    "guidance": {
+      "bestFor": "Create a desktop inventory screen where students browse many records and edit one in a panel.",
+      "frameworks": [
+        "React",
+        "CSS"
+      ],
+      "setup": "moderate",
+      "caveat": "Blueprint targets dense desktop interfaces. Try its controls at your smallest phone width before committing to it.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://github.com/palantir/blueprint"
+      ]
+    }
+  },
+  "community-f117526bd42ed4e8": {
+    "description": "Open a generator to create a custom SVG texture, repeating pattern or gradient for a page background.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Make a subtle pattern behind a project header and change the palette without redrawing the shapes.",
+      "frameworks": [
+        "SVG",
+        "Browser"
+      ],
+      "setup": "low",
+      "caveat": "Check contrast with actual text on top of the exported background. The generator only shows the artwork.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://www.fffuel.co/"
+      ]
+    }
+  },
+  "community-1e68173e4cd26f4f": {
+    "description": "Pick an Ionicons outline, filled or sharp icon and import it into a navigation bar or toolbar.",
+    "kind": "library",
+    "guidance": {
+      "bestFor": "Give a saved item a filled bookmark and an unsaved item its outline counterpart.",
+      "frameworks": [
+        "SVG",
+        "Web Components",
+        "Ionic"
+      ],
+      "setup": "low",
+      "caveat": "Provide an accessible name on an icon-only button. The SVG artwork alone doesn't tell a screen reader what the button does.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://ionicons.com/",
+        "https://github.com/ionic-team/ionicons"
+      ]
+    }
+  },
+  "community-6ed0fd3f24c91e68": {
+    "description": "Open an OpenProject board to organize a team's tasks into columns and assign work packages.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Run a class project with a backlog and a board for work in progress and completed tasks.",
+      "frameworks": [
+        "Web application",
+        "Project management"
+      ],
+      "setup": "low",
+      "caveat": "Check the board type before promising automatic updates. A basic board and an action board handle card moves differently.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://www.openproject.org/docs/user-guide/agile-boards/"
+      ]
+    }
+  },
+  "community-a19467d5ae999caf": {
+    "description": "Use a game server control panel to start a class server, inspect its console and manage its files.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Host a multiplayer game for a student group with separate resource limits for each server.",
+      "frameworks": [
+        "Docker",
+        "Linux",
+        "Game servers"
+      ],
+      "setup": "advanced",
+      "caveat": "Budget for an actual server. The panel manages it, and Wings runs the game instances on configured nodes.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://pterodactyl.io/",
+        "https://docs.pterodactyl.io/v2/wings/installing"
+      ]
+    }
+  },
+  "community-977a08c9e792be4f": {
+    "description": "Follow the Svelte guide to package an existing web app for Android or iOS and call native device features.",
+    "kind": "documentation",
+    "guidance": {
+      "bestFor": "Turn a working Svelte camera project into a mobile build that can request device permissions.",
+      "frameworks": [
+        "Svelte",
+        "Capacitor",
+        "iOS",
+        "Android"
+      ],
+      "setup": "moderate",
+      "caveat": "Build the web assets before syncing them to a native project. Edits in the Svelte source do not automatically update the installed app.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://capacitorjs.com/solution/svelte"
+      ]
+    },
+    "name": "Capacitor for Svelte"
+  },
+  "community-8da5b343fdc01d23": {
+    "description": "Add Filestack's JavaScript file picker to let students choose attachments and return handles for the uploaded files.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Let club members submit photos through a picker and display the uploaded image in a gallery.",
+      "frameworks": [
+        "JavaScript",
+        "File uploads",
+        "Web API"
+      ],
+      "setup": "moderate",
+      "caveat": "The hosted picker requires a Filestack API key. Decide which file types and upload sources your form will accept.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://www.filestack.com/docs/uploads/pickers/web/"
+      ]
+    }
+  },
+  "community-096f42a09e6296a4": {
+    "description": "Send a public page URL to Jina Reader to extract text an agent can use as a research reference.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Turn a long documentation page into text for a source-backed answer about your dependencies.",
+      "frameworks": [
+        "HTTP",
+        "Markdown",
+        "Search"
+      ],
+      "setup": "low",
+      "caveat": "Check the extracted text against the original page, especially when the answer depends on a diagram or dynamic example.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://jina.ai/"
+      ]
+    }
+  },
+  "community-e62a69cf528aa8e2": {
+    "description": "Run the PocketBase executable to get collections, sign-in, file uploads and live subscriptions for a small app.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Prototype a shared classroom bulletin board where a new announcement appears without reloading.",
+      "frameworks": [
+        "SQLite",
+        "HTTP API",
+        "Go"
+      ],
+      "setup": "moderate",
+      "caveat": "Give the server persistent storage for its database and uploaded files. An ephemeral deployment can lose the project's data.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://pocketbase.io/",
+        "https://pocketbase.io/docs/"
+      ]
+    }
+  },
+  "community-3d96d08f2c492c49": {
+    "description": "Write a slide deck in HTML and use reveal.js to navigate sections vertically and horizontally.",
+    "kind": "library",
+    "guidance": {
+      "bestFor": "Present an interactive coding demo with optional slides beneath a short main argument.",
+      "frameworks": [
+        "HTML",
+        "JavaScript",
+        "CSS"
+      ],
+      "setup": "low",
+      "caveat": "Check the PDF export separately. Incremental fragments can become separate pages when printed.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://revealjs.com/",
+        "https://revealjs.com/pdf-export/"
+      ]
+    }
+  },
+  "community-f213aa9d3b927b2c": {
+    "description": "Browse courses from universities and companies and use the syllabus to choose a topic for independent practice.",
+    "kind": "gallery",
+    "guidance": {
+      "bestFor": "Find a focused data-analysis lesson to help explain a chart your agent produced.",
+      "frameworks": [
+        "Courses",
+        "Web learning"
+      ],
+      "setup": "low",
+      "caveat": "Check the particular course's prerequisites, projects and enrollment terms. Those vary across providers and programs.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://www.coursera.org/"
+      ]
+    }
+  },
+  "community-95eac036c6560e57": {
+    "description": "Read the current-weather API documentation to look up temperature and conditions for a location.",
+    "kind": "documentation",
+    "guidance": {
+      "bestFor": "Add a weather panel to a club outings page using latitude and longitude.",
+      "frameworks": [
+        "REST API",
+        "JSON",
+        "Geographic coordinates"
+      ],
+      "setup": "low",
+      "caveat": "Requests require an OpenWeather API key. Set the units explicitly so temperatures appear in the scale your interface promises.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://openweathermap.org/current"
+      ]
+    }
+  },
+  "community-c19f06586daba02b": {
+    "description": "Use the Kaboom.js examples to understand sprites, keyboard controls and collision areas in an existing browser game.",
+    "kind": "library",
+    "guidance": {
+      "bestFor": "Help an agent modify a small legacy platformer and trace which component gives the player a collider.",
+      "frameworks": [
+        "JavaScript",
+        "Game development"
+      ],
+      "setup": "low",
+      "caveat": "The maintainers have discontinued Kaboom.js. Choose it for an existing project with a known version, and weigh the maintenance cost before starting a new one.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://kaboomjs.com/"
+      ]
+    }
+  },
+  "community-659c57d0686bd6c7": {
+    "description": "Run a time-series database and use SQL to query sensor readings in timestamp order.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Chart a greenhouse's temperature history and examine gaps in the measurements.",
+      "frameworks": [
+        "SQL",
+        "Time-series data"
+      ],
+      "setup": "moderate",
+      "caveat": "Choose the designated timestamp based on when the reading happened. It affects storage order and time-based queries.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://questdb.com/docs/concepts/designated-timestamp/"
+      ]
+    }
+  },
+  "community-6796d34f2a4e3c9e": {
+    "description": "Deploy Roundcube as a browser interface for reading and composing mail in an existing email account.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Add webmail access to a lab mail-server experiment and inspect a message with an attachment.",
+      "frameworks": [
+        "PHP",
+        "IMAP",
+        "Webmail"
+      ],
+      "setup": "advanced",
+      "caveat": "Roundcube needs a working mail backend. Plan for IMAP access and outbound mail delivery separately from the web interface.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://roundcube.net/",
+        "https://github.com/roundcube/roundcubemail"
+      ]
+    }
+  },
+  "community-db5d5775c6829e67": {
+    "description": "Open the IT Tools collection to convert, encode or inspect a short value while debugging a web project.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Decode a test Base64 value before comparing it with the text your application displays.",
+      "frameworks": [
+        "Browser",
+        "Data conversion"
+      ],
+      "setup": "low",
+      "caveat": "Pick the converter that matches the data format. A readable decoded value does not verify the origin or authenticity of its contents.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://it-tools.tech/",
+        "https://github.com/CorentinTh/it-tools/tree/main/src/tools"
+      ]
+    }
+  },
+  "community-63f2a5253dd0487f": {
+    "description": "Run a DNS filter and inspect which domains a test device requests as it loads a page.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Demonstrate DNS blocking by comparing the same browser request with a domain allowed and blocked.",
+      "frameworks": [
+        "Linux",
+        "Docker",
+        "DNS"
+      ],
+      "setup": "advanced",
+      "caveat": "Only devices using Pi-hole as their DNS resolver receive its filtering. Start by configuring a single test device.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://pi-hole.net/"
+      ]
+    }
+  },
+  "community-f324d2e121295d75": {
+    "description": "Follow the LlamaIndex Python tutorial to load documents, index them and ask a question about their contents.",
+    "kind": "library",
+    "guidance": {
+      "bestFor": "Build a small Q&A demo over a collection of public course handouts and check the answer against the originals.",
+      "frameworks": [
+        "Python",
+        "Document search"
+      ],
+      "setup": "moderate",
+      "caveat": "The linked starter uses OpenAI credentials. Choose an alternative model configuration if you need an entirely local demo.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://developers.llamaindex.ai/python/framework/getting_started/starter_example/"
+      ]
+    }
+  },
+  "community-3ac1f86baea65bbf": {
+    "description": "Paste a regular expression into a visual editor to inspect its groups, repetitions and alternatives.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Explain why an identifier pattern accepts one sample student ID and rejects another.",
+      "frameworks": [
+        "Regular expressions",
+        "Browser"
+      ],
+      "setup": "low",
+      "caveat": "Test the final expression in your app's own regex engine as well. Different languages can interpret the same pattern differently.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://regex-vis.com/",
+        "https://github.com/Bowen7/regex-vis"
+      ]
+    }
+  },
+  "community-71ab5a8cfe8a2572": {
+    "description": "Read the migration guide to replace an existing webpack build with Rspack and measure the rebuild time.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Speed up a large JavaScript project's development build while retaining compatible configuration.",
+      "frameworks": [
+        "JavaScript",
+        "TypeScript",
+        "webpack"
+      ],
+      "setup": "moderate",
+      "caveat": "Check loader, plugin and CLI flag compatibility. Some webpack flags cause Rspack to reject the command before loading the configuration.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://rspack.rs/guide/migration/webpack"
+      ]
+    }
+  },
+  "community-42936db47b6a66a6": {
+    "description": "Browse font pairings and try a heading and body combination on a sample of your own writing.",
+    "kind": "gallery",
+    "guidance": {
+      "bestFor": "Choose a type pairing for a portfolio using both a large project title and a paragraph of notes.",
+      "frameworks": [
+        "Typography",
+        "Web fonts"
+      ],
+      "setup": "low",
+      "caveat": "Confirm the selected fonts' available weights and licenses with their publisher before bundling the font files.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://fontpair.co/"
+      ]
+    }
+  },
+  "community-6944a00d0f60fdff": {
+    "description": "Use ownCloud shared spaces to organize files for a team project and give members access to the right folders.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Share an agreed set of media assets between the students editing a project.",
+      "frameworks": [
+        "File sharing",
+        "Self-hosting"
+      ],
+      "setup": "moderate",
+      "caveat": "Choose the deployment and sharing permissions before inviting the team. A member link and a public share grant different access.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://owncloud.org/"
+      ]
+    }
+  },
+  "community-68b60c069cdd77aa": {
+    "description": "Run a downloaded language model on your computer and send prompts to its local HTTP server from your app.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Prototype a study assistant against a local model before connecting it to a hosted service.",
+      "frameworks": [
+        "Local models",
+        "Desktop",
+        "HTTP API"
+      ],
+      "setup": "moderate",
+      "caveat": "Check that the model fits the host machine. A URL pointing to localhost will target each student's own computer when the app is shared.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://lmstudio.ai/docs/developer"
+      ]
+    }
+  },
+  "community-382ade5d2b5ca59b": {
+    "description": "Use scipy.signal to filter, convolve or compare data sampled from a sensor or microphone.",
+    "kind": "library",
+    "guidance": {
+      "bestFor": "Smooth noisy measurements and plot the original and filtered traces together.",
+      "frameworks": [
+        "Python",
+        "NumPy",
+        "Signal processing"
+      ],
+      "setup": "moderate",
+      "caveat": "Set the sampling rate to match the measurement. Filter parameters interpreted at the wrong rate can erase the signal you want to keep.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://docs.scipy.org/doc/scipy/tutorial/signal.html"
+      ]
+    }
+  },
+  "community-b73747722cbf1e4b": {
+    "description": "Read Stitches' styling API to maintain variants and design tokens in an existing component library.",
+    "kind": "library",
+    "guidance": {
+      "bestFor": "Add a compact size variant to a button in a project that already styles components with Stitches.",
+      "frameworks": [
+        "JavaScript",
+        "CSS-in-JS",
+        "TypeScript"
+      ],
+      "setup": "low",
+      "caveat": "The site states that Stitches is no longer maintained. Check compatibility with your project's current framework before expanding its use.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://stitches.dev/"
+      ]
+    }
+  },
+  "community-3e0d3bfa0ed5b618": {
+    "description": "Turn a document into a signing form, assign fields to its recipients and track completion in DocuSeal.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Prototype a club equipment checkout with different fields for the requester and the person issuing the equipment.",
+      "frameworks": [
+        "PDF",
+        "Web forms",
+        "Document signing"
+      ],
+      "setup": "moderate",
+      "caveat": "Test with a sample document and each recipient role before sharing. A field assigned to the wrong role can block completion.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://www.docuseal.com/guides"
+      ]
+    }
+  },
+  "community-77d7496ad354c934": {
+    "description": "Connect Storyblok's visual editor to a frontend so an editor can preview changes to an article or landing page.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Let club editors arrange reusable content blocks and see how a draft page will look.",
+      "frameworks": [
+        "Headless CMS",
+        "Content API",
+        "Visual editor"
+      ],
+      "setup": "moderate",
+      "caveat": "Wire the frontend's preview route to the visual editor. Creating the content model alone does not make the rendered page editable.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://www.storyblok.com/docs/concepts/visual-editor"
+      ]
+    }
+  },
+  "community-3f06c538eac09bcf": {
+    "description": "Add Matomo tracking events to understand which features visitors actually use on a website.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Measure how often users export a project brief compared with how often they open the results list.",
+      "frameworks": [
+        "JavaScript",
+        "Web analytics"
+      ],
+      "setup": "moderate",
+      "caveat": "Define and test distinct events for the two actions. A pageview counter cannot distinguish button presses within the same page.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://developer.matomo.org/guides/tracking-javascript-guide"
+      ]
+    }
+  },
+  "community-86e99b69e060f870": {
+    "description": "Install Starship to show the current Git branch and other project context in your shell prompt.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Help teammates notice which repository and branch they are using before running a command.",
+      "frameworks": [
+        "Terminal",
+        "Shell",
+        "Git"
+      ],
+      "setup": "low",
+      "caveat": "Add the initialization command for each shell in use. Some prompt symbols also need a compatible font.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://starship.rs/guide/"
+      ]
+    },
+    "name": "Starship"
+  },
+  "community-b61675685c0bd162": {
+    "description": "Use Temporal workflows and activities to coordinate long-running jobs that can resume after an interruption.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Process a set of uploaded videos through separate encoding and notification steps.",
+      "frameworks": [
+        "Workflow orchestration",
+        "Backend workers"
+      ],
+      "setup": "advanced",
+      "caveat": "Keep workflow logic deterministic for replay. Put external calls and operations with side effects in activities.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://docs.temporal.io/workflows"
+      ]
+    }
+  },
+  "community-e88a4e7129dfe79b": {
+    "description": "Call a hosted media model through fal and track an image-generation job from a prompt to its result.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Build a storyboard page that can queue a generation and show its status while a student continues editing.",
+      "frameworks": [
+        "Generative media",
+        "HTTP API"
+      ],
+      "setup": "moderate",
+      "caveat": "Keep the API key on your server. A key shipped in frontend code can be reused by anyone who receives the page.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://docs.fal.ai/model-apis/model-endpoints",
+        "https://fal.ai/docs/model-apis/authentication/key-based"
+      ]
+    }
+  },
+  "community-fcac8d62df5f65a3": {
+    "description": "Store data on the client with RxDB and replicate changes when the app regains a connection.",
+    "kind": "library",
+    "guidance": {
+      "bestFor": "Build a field notebook that still accepts observations while the student is offline.",
+      "frameworks": [
+        "JavaScript",
+        "TypeScript",
+        "Local-first data"
+      ],
+      "setup": "moderate",
+      "caveat": "Choose a conflict rule for simultaneous edits. Replication moves writes between devices, but the application must decide which version to keep.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://rxdb.info/replication.html"
+      ]
+    }
+  },
+  "community-cde30850ac43b4c1": {
+    "description": "Create a Micronaut backend with HTTP controllers and compile-time dependency injection.",
+    "kind": "library",
+    "guidance": {
+      "bestFor": "Expose a JVM-based timetable service to a school website through a JSON endpoint.",
+      "frameworks": [
+        "Java",
+        "Kotlin",
+        "JVM"
+      ],
+      "setup": "moderate",
+      "caveat": "Configure annotation processing for your language and build tool. Micronaut generates wiring during compilation.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://micronaut.io/"
+      ]
+    }
+  },
+  "community-164811526484ff1f": {
+    "description": "Model content in Strapi and fetch it from automatically generated REST endpoints in a separate frontend.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Let an editor publish club announcements and have a public website request them by date.",
+      "frameworks": [
+        "TypeScript",
+        "Node.js",
+        "REST API"
+      ],
+      "setup": "moderate",
+      "caveat": "Configure content permissions and request related fields explicitly when needed. A created content type alone does not make every record and relation available.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://docs.strapi.io/cms/api/rest"
+      ]
+    }
+  },
+  "community-24ec07b23f1ddd7a": {
+    "description": "Create a Chroma collection, add text and query it by similarity to a new question.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Find related passages in a set of project notes even when students phrase their questions differently.",
+      "frameworks": [
+        "Python",
+        "Embeddings",
+        "Vector search"
+      ],
+      "setup": "moderate",
+      "caveat": "Keep document identifiers alongside the matches and show the original passage. A close embedding match does not establish that a claim is correct.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://docs.trychroma.com/docs/overview/getting-started"
+      ]
+    }
+  },
+  "community-6c5a5ce056ffba0b": {
+    "description": "Search the Open VSX extension registry for add-ons that work in compatible code editors.",
+    "kind": "gallery",
+    "guidance": {
+      "bestFor": "Find a language extension for a classroom editor and share its exact publisher and extension name.",
+      "frameworks": [
+        "Editor extensions",
+        "VS Code API"
+      ],
+      "setup": "low",
+      "caveat": "Check the extension's required editor version and whether your editor uses Open VSX. A listing alone does not guarantee compatibility with every VS Code-based editor.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://open-vsx.org/",
+        "https://github.com/eclipse/openvsx"
+      ]
+    }
+  },
+  "community-508b9151abe19ae4": {
+    "description": "Send HTTP requests from your editor, inspect the responses and organize related requests into a collection.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Reproduce the difference between submitting a valid form and submitting one with a missing field to a test API.",
+      "frameworks": [
+        "VS Code",
+        "JetBrains",
+        "HTTP API"
+      ],
+      "setup": "low",
+      "caveat": "Check that the request's active environment points to the intended server before replaying a saved collection.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://docs.thunderclient.com/"
+      ]
+    }
+  },
+  "community-948c1b3e35d44259": {
+    "description": "Use the Mintlify starter to build a documentation site from pages kept alongside code in a repository.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Publish a getting-started guide with a working request example for a student-built API.",
+      "frameworks": [
+        "MDX",
+        "Git",
+        "Technical documentation"
+      ],
+      "setup": "moderate",
+      "caveat": "Choose how deployments are connected to the repository. Editing a local page only updates the public site after the publishing workflow runs.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://www.mintlify.com/docs/quickstart"
+      ]
+    }
+  },
+  "community-410461011d06a77d": {
+    "description": "Open a source file in Sublime Text and use column selection to edit aligned values across many lines at once.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Clean up repeated sample data or add the same prefix to a block of identifiers.",
+      "frameworks": [
+        "Text editor",
+        "Desktop"
+      ],
+      "setup": "low",
+      "caveat": "Column selection follows the visible rectangle. Check for lines of unequal length before applying a multi-line edit.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://www.sublimetext.com/docs/column_selection.html"
+      ]
+    }
+  },
+  "community-3ecd0dabd1c3bbd5": {
+    "description": "Connect translation files in a repository to Weblate so translators can review interface strings in a browser.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Translate the navigation and error messages of a student-built app while keeping changes in version control.",
+      "frameworks": [
+        "Localization",
+        "Version control"
+      ],
+      "setup": "moderate",
+      "caveat": "Set up the source strings and repository integration before inviting translators. Updates must still reach the version your app builds from.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://weblate.org/"
+      ]
+    }
+  },
+  "community-dc2079ec4672e491": {
+    "description": "Open a Livebook notebook to combine written explanations with runnable Elixir code cells.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Share a small data-cleaning experiment with a classmate who can change the inputs and reevaluate each step.",
+      "frameworks": [
+        "Elixir",
+        "LiveMarkdown",
+        "Notebooks"
+      ],
+      "setup": "low",
+      "caveat": "A notebook's saved text does not preserve a running runtime. Include setup cells and rerun dependencies when reopening it.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://livebook.dev/"
+      ]
+    }
+  },
+  "community-39f02042ee4094e6": {
+    "description": "Use Taiga's Kanban board, backlog and issue tracking to organize work for a team project.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Move tasks across columns as a group implements and tests a feature.",
+      "frameworks": [
+        "Kanban",
+        "Scrum",
+        "Web application"
+      ],
+      "setup": "low",
+      "caveat": "Taiga's board manages the team's work. If you want draggable columns inside your own product, choose an embeddable board component separately.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://www.taiga.io/"
+      ]
+    }
+  },
+  "community-95600659c05fc4d5": {
+    "description": "Declare the tools a project uses with Nix so teammates can enter the same development environment.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Share a reproducible compiler and command-line tool setup across a team.",
+      "frameworks": [
+        "Development environments",
+        "Linux",
+        "macOS"
+      ],
+      "setup": "moderate",
+      "caveat": "Pin the package inputs and check the target platforms. A shared list of package names alone does not fix their versions.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://nixos.org/"
+      ]
+    }
+  },
+  "community-be4d333f6dd68eb2": {
+    "description": "Use SurrealDB graph relations to store records and query connections between them.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Model club members, events and attendance so you can follow links in either direction.",
+      "frameworks": [
+        "SurrealQL",
+        "Graph database"
+      ],
+      "setup": "moderate",
+      "caveat": "Choose a graph relation when the connection needs its own meaning or fields. A simple record link can be sufficient for an ordinary reference.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://surrealdb.com/docs/learn/data-models/graph/creating-relations"
+      ]
+    }
+  },
+  "community-d8fdb6a7dcf7807c": {
+    "description": "Use Zulip topics to keep separate project discussions in one channel easy to find and follow.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Give a coding team a place for bug reports, deployment questions and design decisions without interleaving all the replies.",
+      "frameworks": [
+        "Team chat",
+        "Channels",
+        "Topics"
+      ],
+      "setup": "low",
+      "caveat": "Choose a specific topic when starting a conversation. Replies sent to a broad catch-all topic are harder for teammates to find later.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://zulip.com/help/introduction-to-topics"
+      ]
+    }
+  },
+  "community-a52e32fc9cb08d05": {
+    "description": "Send an HTTP POST to an ntfy topic to deliver a notification to a subscribed phone or desktop.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Have a build script alert a student when a long-running export finishes.",
+      "frameworks": [
+        "HTTP",
+        "Push notifications",
+        "Shell"
+      ],
+      "setup": "low",
+      "caveat": "For a shared project, configure access control before publishing private information. A topic name alone is not an authorization rule.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://docs.ntfy.sh/publish/",
+        "https://docs.ntfy.sh/config/#access-control"
+      ]
+    }
+  },
+  "community-ce0d61199427e31e": {
+    "name": "Open-Meteo",
+    "description": "Plot hourly temperatures for your town by sending latitude and longitude to the forecast API.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Build a weather widget and let students compare the forecast at two locations.",
+      "frameworks": [
+        "HTTP",
+        "JSON"
+      ],
+      "setup": "low",
+      "caveat": "Request units and a time zone explicitly so local chart labels match the forecast. The free hosted endpoint has noncommercial usage limits.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://open-meteo.com/en/docs",
+        "https://open-meteo.com/"
+      ]
+    }
+  },
+  "community-003792addce58608": {
+    "name": "Open-Meteo Ensemble",
+    "description": "Draw a range of possible temperatures from multiple members of a weather forecast model.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Show forecast uncertainty by plotting the spread of model runs for the same location and hour.",
+      "frameworks": [
+        "HTTP",
+        "JSON"
+      ],
+      "setup": "low",
+      "caveat": "Lead times and ensemble size vary by model. Select variables the model supports and label the model on the chart.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://open-meteo.com/en/docs/ensemble-api",
+        "https://open-meteo.com/"
+      ]
+    }
+  },
+  "community-e38846b4eca76a34": {
+    "name": "Pirate Weather",
+    "description": "Fetch a local forecast by coordinates using the Pirate Weather API.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Build a forecast card or adapt a project that uses Dark Sky style weather fields.",
+      "frameworks": [
+        "HTTP",
+        "JSON"
+      ],
+      "setup": "low",
+      "caveat": "Subscribe and obtain an API key before making requests. Route requests through your server so the key stays private.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://docs.pirateweather.net/en/dev/API/"
+      ]
+    }
+  },
+  "community-61eca8c1b4525101": {
+    "name": "National Weather Service API",
+    "description": "Look up a US location and follow its forecast URL to build a local weather page.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Make a school dashboard that shows the next forecast period for a nearby US town.",
+      "frameworks": [
+        "HTTP",
+        "JSON"
+      ],
+      "setup": "low",
+      "caveat": "Coverage is regional. Identify your application in requests and use the forecast URLs the points endpoint returns.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://www.weather.gov/documentation/services-web-api"
+      ]
+    }
+  },
+  "community-5ec37b639825806a": {
+    "description": "Send a project update to an in-app inbox, then add an email step to the same notification workflow.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "An app that needs to notify the same person on different channels.",
+      "frameworks": [
+        "Notification workflows",
+        "In-app inbox",
+        "Email"
+      ],
+      "setup": "moderate",
+      "caveat": "Decide which channel you can deliver through before building the workflow. Test with a single subscriber first.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://novu.co/"
+      ]
+    }
+  },
+  "community-c32f8a9c0d28158f": {
+    "description": "Share a set of button styles and form controls between a React website and a React Native app.",
+    "kind": "library",
+    "guidance": {
+      "bestFor": "A team maintaining the same sign-up flow on phones and the web.",
+      "frameworks": [
+        "React",
+        "React Native",
+        "TypeScript"
+      ],
+      "setup": "moderate",
+      "caveat": "Try one shared screen on each target. Web-only elements in a component still need a native counterpart.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://tamagui.dev/",
+        "https://tamagui.dev/ui/intro"
+      ]
+    }
+  },
+  "community-7c78f47a8a7f0809": {
+    "name": "ApostropheCMS",
+    "description": "Build a club site whose editors can update text and images on the page through a visual CMS.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "A site where contributors need to publish updates without editing the project source.",
+      "frameworks": [
+        "Node.js",
+        "JavaScript",
+        "CMS"
+      ],
+      "setup": "moderate",
+      "caveat": "The CMS runs as a Node.js application. Plan where it will run when the site is published.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://apostrophecms.com/",
+        "https://apostrophecms.com/product/node-js-cms"
+      ]
+    }
+  },
+  "community-877dd36ca5ab7c80": {
+    "description": "Start an attendance dashboard from an admin template and add interface components for the framework your class already uses.",
+    "kind": "library",
+    "guidance": {
+      "bestFor": "An internal tool with a navigation sidebar, forms and tables.",
+      "frameworks": [
+        "Bootstrap",
+        "React",
+        "Angular",
+        "Vue"
+      ],
+      "setup": "moderate",
+      "caveat": "The catalog mixes free templates with paid PRO components. Check the edition of any component you pick.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://coreui.io/"
+      ]
+    }
+  },
+  "community-baa1070f64bd666a": {
+    "description": "Follow Khronos tutorials and samples to draw a scene with a low-level graphics API.",
+    "kind": "documentation",
+    "guidance": {
+      "bestFor": "An advanced native graphics project where you want control over how the GPU renders a frame.",
+      "frameworks": [
+        "Vulkan",
+        "Native GPU graphics"
+      ],
+      "setup": "advanced",
+      "caveat": "Check the graphics driver and SDK for your target machine before adapting a sample.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://www.vulkan.org/"
+      ]
+    }
+  },
+  "community-41115ead3cd415e3": {
+    "name": "Exercism Rust Track",
+    "description": "Work through a short Rust exercise such as translating RNA into proteins, then use the feedback to improve your solution.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Practicing one Rust problem at a time or comparing your code with a mentor’s feedback.",
+      "frameworks": [
+        "Rust",
+        "Coding exercises"
+      ],
+      "setup": "low",
+      "caveat": "Joining the track requires signing in. Volunteer mentoring is a separate step after you solve an exercise.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://exercism.org/tracks/rust"
+      ]
+    }
+  },
+  "community-516ae926b897b3cb": {
+    "description": "Edit translated labels in the running interface so a classmate can see which button or menu a phrase belongs to.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "A bilingual app whose translators need to see the surrounding screen.",
+      "frameworks": [
+        "JavaScript SDK",
+        "REST API",
+        "Localization"
+      ],
+      "setup": "moderate",
+      "caveat": "Decide how the app loads its translation strings before inviting teammates to edit them.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://tolgee.io/"
+      ]
+    }
+  },
+  "community-8fb6203b01f4ccf4": {
+    "description": "Give a frontend a mock HTTP endpoint and return delayed responses or errors to test its loading and retry states.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Developing a client while the team is still building the real API.",
+      "frameworks": [
+        "HTTP",
+        "REST",
+        "JSON",
+        "OpenAPI"
+      ],
+      "setup": "low",
+      "caveat": "Use sample payloads when testing. The request inspector displays headers and bodies sent to the endpoint.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://beeceptor.com/"
+      ]
+    }
+  },
+  "community-26cfd16cd1882d42": {
+    "description": "Publish a project walkthrough in Markdown and give classmates one link to your code examples and build notes.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Keeping a public development journal or sharing a tutorial with other developers.",
+      "frameworks": [
+        "Markdown",
+        "Web publishing"
+      ],
+      "setup": "low",
+      "caveat": "You need to sign in to publish. Use a private draft while editing material that is not ready to share.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://hashnode.com/"
+      ]
+    }
+  },
+  "community-f6c5bbf87955e312": {
+    "description": "Host a club wiki or blog from the YunoHost app catalog and manage it through the server’s admin interface.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "A team that wants to learn how to operate a server for its own apps.",
+      "frameworks": [
+        "Self-hosting",
+        "Web applications"
+      ],
+      "setup": "advanced",
+      "caveat": "Plan who will maintain the server, install updates and restore backups after the project launches.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://yunohost.org/"
+      ]
+    }
+  },
+  "community-9156bfb54aacb5b2": {
+    "description": "Build a small iOS activity picker and see how changing state updates the text and image on screen.",
+    "kind": "documentation",
+    "guidance": {
+      "bestFor": "A first native iPhone app that responds to a button tap.",
+      "frameworks": [
+        "Swift",
+        "SwiftUI",
+        "Xcode"
+      ],
+      "setup": "moderate",
+      "caveat": "The walkthrough uses Xcode on a Mac. Allow time to install it before starting the exercise.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://www.swift.org/getting-started/swiftui/"
+      ]
+    }
+  },
+  "community-c887f2babf622c0a": {
+    "description": "Write one SQL query that joins an event log in object storage to records in a relational database.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Analyzing data split across systems without copying it into one database first.",
+      "frameworks": [
+        "SQL",
+        "MySQL",
+        "Object storage"
+      ],
+      "setup": "advanced",
+      "caveat": "Trino runs queries against connected sources. Set up the relevant connectors and access to each source first.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://trino.io/"
+      ]
+    }
+  },
+  "community-6a091669bf9d3c23": {
+    "description": "Connect an API or database to a live chart and embed it in a team report.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "An analytics page where several charts need to stay in sync with the source data.",
+      "frameworks": [
+        "SQL",
+        "APIs",
+        "Embeddable charts"
+      ],
+      "setup": "moderate",
+      "caveat": "The hosted product offers a trial. For a longer-running class dashboard, compare the hosted plan with the self-hosted project.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://chartbrew.com/",
+        "https://github.com/chartbrew/chartbrew"
+      ]
+    }
+  },
+  "community-45f6307e502ba42b": {
+    "description": "Try a regular expression or a JavaScript function in a desktop scratchpad and watch the result change as you type.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Checking one small piece of an agent’s code before putting it into an app.",
+      "frameworks": [
+        "JavaScript",
+        "Node.js",
+        "Desktop"
+      ],
+      "setup": "low",
+      "caveat": "The scratchpad includes Node.js and browser APIs together. Check the snippet again in the environment where you will ship it.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://runjs.app/"
+      ]
+    }
+  },
+  "community-84470f355df5222f": {
+    "name": "Actual Budget",
+    "description": "Try the budgeting demo with sample expenses, or use the local API to build a custom transaction importer.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "A personal finance project exploring envelope budgets or transaction imports.",
+      "frameworks": [
+        "Local-first apps",
+        "CSV",
+        "Budgeting API"
+      ],
+      "setup": "moderate",
+      "caveat": "The demo is enough for exploring a budget. Syncing your own data across devices requires a server.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://actualbudget.org/"
+      ]
+    }
+  }
+}

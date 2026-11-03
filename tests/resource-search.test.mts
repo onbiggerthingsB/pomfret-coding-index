@@ -20,7 +20,8 @@ test('holds explicit technology and exclusion terms even on a task search', () =
   const sansReact = searchResources({query: 'animate a button without React', limit: 100});
   assert.ok(sansReact.resources.length > 0);
   assert.ok(sansReact.resources.some(item => ['anime-js', 'transitions-dev', 'gustavo-craft'].includes(item.id)));
-  assert.ok(!sansReact.resources.some(item => [item.name, ...item.tags, ...(item.guidance?.frameworks ?? [])].join(' ').match(/\breact\b/i)));
+  assert.ok(sansReact.resources.every(item => !/\breact\b/i.test([item.name, ...item.tags, ...(item.guidance?.frameworks ?? [])].join(' '))
+    || item.guidance?.frameworks.some(f => /^(vue|svelte|solid|angular)\b/i.test(f))));
   assert.equal(top('React zxqnonexistent').length, 0);
   assert.equal(top('vue zxqnonexistent').length, 0);
   assert.equal(top('zxqnonexistent').length, 0);
@@ -71,5 +72,90 @@ test('negative terms filter single, combined and standalone searches', () => {
   assert.ok(excluded.total > 0);
   assert.ok(excluded.resources.every(item => !/\b(?:React|Vue)\b/i.test(
     [item.name, ...item.tags, item.description, ...(item.guidance?.frameworks ?? []), item.guidance?.bestFor].join(' '),
-  )));
+  ) || item.guidance?.frameworks.some(f => /^(svelte|solid|angular)\b/i.test(f))));
+});
+
+test('equivalent exclusions never reverse the requested framework', () => {
+  const reference = top('a modal without React', 20);
+  assert.ok(reference.includes('headless-ui'), 'reviewed Vue implementation works without React');
+  assert.ok(reference.length > 0);
+  assert.ok(!reference.includes('heroui'));
+  assert.ok(!reference.includes('react-aria'));
+  for (const query of [
+    'a modal that does not require React', "a modal that doesn't need React",
+    'a modal without having to install React', 'a modal that works without React',
+    'a modal with no dependency on React',
+  ]) assert.deepEqual(top(query, 20), reference, query);
+});
+
+test('explicit runtime conditions cannot be satisfied by a different ecosystem', () => {
+  assert.ok(top('Flutter', 1).length);
+  const flutter = searchResources({query: 'a calendar for a Flutter app', limit: 100}).resources;
+  assert.ok(!flutter.some(item => item.id === 'react-aria'));
+  assert.ok(flutter.every(item =>
+    /\bflutter\b/i.test([item.name, ...item.tags, ...(item.guidance?.frameworks ?? [])].join(' '))));
+  const vanilla = top('animations in plain JavaScript', 10);
+  assert.ok(vanilla.includes('anime-js'));
+  assert.ok(!vanilla.includes('react-spring') && !vanilla.includes('react-bits'));
+  assert.deepEqual(top('animations in vanilla JS', 10), vanilla);
+});
+
+test('distinctive subjects survive generic details and interaction verbs', () => {
+  for (const query of [
+    'kanban board', 'a kanban board where I drag cards between columns',
+    'make a kanban board for homework', 'kanban columns for a student newspaper',
+    'put cards into columns and drag them between todo and done', 'move tickets across lanes',
+  ]) {
+    const results = searchResources({query, limit: 3}).resources;
+    assert.ok(results.length, query);
+    assert.ok(results.every(item => /kanban/i.test(item.name)), JSON.stringify([query, results.map(item => item.name)]));
+  }
+});
+
+test('a browser-only API request finds a native implementation reference', () => {
+  for (const query of ['only browser APIs for dialogs', 'modal with native browser APIs', 'dialogs with browser APIs only']) {
+    assert.ok(top(query).includes('mdn-learn'), query);
+    assert.ok(searchResources({ query }).resources.every(item => item.kind === 'documentation'), query);
+  }
+  assert.equal(top('only browser APIs for zxqimaginary').length, 0);
+});
+
+test('exact pasted destinations resolve before ordinary words, including tracking and fragments', () => {
+  assert.deepEqual(top('https://www.mui.com/?utm_source=class#docs'), ['material-ui']);
+  assert.deepEqual(top('https://headlessui.com/'), ['headless-ui']);
+  assert.deepEqual(top('https://www.typescriptlang.org/docs/handbook/intro.html'), ['typescript-handbook']);
+  assert.deepEqual(top('https://unlisted.example/kanban'), []);
+  assert.equal(searchResources({query: 'https://mui.com/', category: 'icons'}).total, 0);
+});
+
+test('explicit alternatives and cumulative requirements have different results', () => {
+  const alternatives = top('modal in React or Vue', 100);
+  assert.ok(alternatives.includes('heroui') && alternatives.includes('primevue'));
+  const vueOnly = top('modal in Vue without React', 100);
+  assert.ok(vueOnly.includes('headless-ui') && !vueOnly.includes('heroui'));
+});
+
+test('a keyless API query keeps only entries with verified access and retains their conditions', () => {
+  for (const query of [
+    'weather API no key', 'a weather forecast without an API key',
+    'weather that doesn’t require an API key', 'weather forecast without needing to provide an API key',
+    'a weather API where no API key is needed', 'keyless weather API',
+  ]) {
+    const result = searchResources({query, limit: 100});
+    assert.deepEqual(result.filters, {apiKey: 'not-required'}, query);
+    assert.ok(result.resources.some(item => item.name === 'Open-Meteo'), query);
+    assert.ok(result.resources.every(item =>
+      item.requirements && item.requirements.apiKey !== 'required' && item.requirements.sourceUrl));
+    assert.ok(!result.resources.some(item => item.name === 'Pirate Weather'), query);
+  }
+  const commercial = searchResources({query: 'commercial weather API without an API key'});
+  assert.ok(commercial.resources.length);
+  assert.ok(commercial.resources.every(item => item.requirements?.apiKey === 'not-required'));
+});
+
+test('a generic resource type cannot satisfy an unrelated project description', () => {
+  const trivia = searchResources({query: 'an API for trivia without a key'}).resources;
+  assert.deepEqual(trivia.map(item => item.name), ['Open Trivia']);
+  assert.deepEqual(top('a library for zxqnonexistent'), []);
+  assert.deepEqual(top('an API for zxqnonexistent without a key'), []);
 });

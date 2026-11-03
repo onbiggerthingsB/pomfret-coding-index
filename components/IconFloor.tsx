@@ -7,7 +7,7 @@ import { createAtlas, type Sheet } from "./floor/atlas";
 import { createBounds } from "./floor/bounds";
 import { createDebug } from "./floor/debug";
 import { classifyRelease, createFloorDrag, DRAG_THRESHOLD, isClippedResult, pickFloorIcon, type DropBounds } from "./floor/drag";
-import { applyGrowth, applyHoldForces, park, wakeNear } from "./floor/forces";
+import { applyGrowth, applyHoldForces, needsPhysics, park, wakeNear } from "./floor/forces";
 import { advanceClock, createRenderPoses, STEP, SUBSTEP } from "./floor/timing";
 import { createIconBody } from "./floor/icon-body";
 import type { Anchor } from "./floor/layout";
@@ -84,6 +84,7 @@ export const IconFloor = memo(function IconFloor({ sources, featuredCount, reser
   // re-take all 180 refs each time.
   const setLabel = useMemo(() => Array.from({ length: MOST }, (_, k) => (el: HTMLDivElement | null) => void (labelRefs.current[k] = el)), []);
   const [iconSize, setIconSize] = useState(96);
+  const [animateBeam, setAnimateBeam] = useState(false);
   const pausedRef = useRef(false);
   const selectRef = useRef(onResourceSelect);
   const dropRef = useRef({ getDropBounds, onResourceDrop });
@@ -232,7 +233,7 @@ export const IconFloor = memo(function IconFloor({ sources, featuredCount, reser
         late: pace.filter((d) => d > mid * 1.6).length, // frames that missed their slot by enough to be seen
       };
     };
-    const stats = { stepMs: 0, drawMs: 0, awake: 0, swaps: 0, gx: 0, gy: 1, paced }; // read from the console as window.__floor when chasing lag
+    const stats = { solverSteps: 0, stepMs: 0, drawMs: 0, awake: 0, swaps: 0, gx: 0, gy: 1, paced }; // read from the console as window.__floor when chasing lag
     (window as unknown as { __floor?: unknown }).__floor = Object.assign(stats, createDebug(scene));
     const overlays = createOverlays(scene, { labels: () => labelRefs.current, tip: () => tipRef.current, frame: () => frameRef.current, clip: () => clipRef.current, content: () => contentRef.current, beam: () => beamRef.current });
     const swaps = createSwaps(scene, (i) => i === press?.index, invalidateGesture, stats, featuredCount, reserveSources);
@@ -272,6 +273,22 @@ export const IconFloor = memo(function IconFloor({ sources, featuredCount, reser
       scene.dirty = true;
     };
     if (!scene.animate) placeRemaining();
+    setAnimateBeam(scene.animate);
+
+    const syncMotion = () => {
+      const animate = !pausedRef.current && !reduced;
+      if (animate === scene.animate) return;
+      invalidateGesture();
+      scene.animate = animate;
+      setAnimateBeam(animate);
+      tilt.setSuspended(!animate || document.hidden);
+      if (!animate) {
+        swaps.finish();
+        placeRemaining();
+        matches.relayout();
+      }
+      resetClock();
+    };
 
     const paint = (i: number, scale: number) => {
       const sprite = (scale > 1 ? sharp.get(i) : null) ?? scene.atlas.patch(i);
@@ -340,6 +357,31 @@ export const IconFloor = memo(function IconFloor({ sources, featuredCount, reser
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     };
 
+    const stepPhysics = (elapsed: number) => {
+      if (!needsPhysics(scene, drag.body)) {
+        acc = 0;
+        canInterpolate = false;
+        blend = 1;
+        return;
+      }
+      const tick = advanceClock(acc, elapsed);
+      acc = tick.remainder;
+      if (tick.steps) canInterpolate = true;
+      blend = canInterpolate ? acc / SUBSTEP : 1;
+      if (!tick.steps) return;
+      const t0 = performance.now();
+      for (let step = 0; step < tick.steps; step++) {
+        applyGrowth(scene, SUBSTEP / STEP, drag.body);
+        applyHoldForces(scene, SUBSTEP, drag.body);
+        bounds.limitSpeeds(SUBSTEP);
+        if (step === tick.steps - 1) poses.beforeStep(scene.added);
+        Matter.Engine.update(engine, SUBSTEP);
+      }
+      poses.afterStep(scene.added);
+      stats.solverSteps += tick.steps;
+      stats.stepMs += ((performance.now() - t0) / tick.steps - stats.stepMs) * 0.1;
+    };
+
     const frame = (now: number) => {
       raf = requestAnimationFrame(frame);
       if (document.hidden) {
@@ -366,24 +408,7 @@ export const IconFloor = memo(function IconFloor({ sources, featuredCount, reser
           poured++;
           scene.dirty = true;
         }
-        const tick = advanceClock(acc, raw);
-        acc = tick.remainder;
-        if (tick.steps) canInterpolate = true;
-        blend = canInterpolate ? acc / SUBSTEP : 1;
-        const t0 = performance.now();
-        for (let step = 0; step < tick.steps; step++) {
-          applyGrowth(scene, SUBSTEP / STEP, drag.body);
-          applyHoldForces(scene, SUBSTEP, drag.body);
-          bounds.limitSpeeds(SUBSTEP);
-          if (step === tick.steps - 1) poses.beforeStep(scene.added);
-          Matter.Engine.update(engine, SUBSTEP);
-        }
-        if (tick.steps) {
-          poses.afterStep(scene.added);
-          stats.stepMs += ((performance.now() - t0) / tick.steps - stats.stepMs) * 0.1;
-        }
-      }
-      if (scene.animate) {
+        stepPhysics(raw);
         swaps.run(now);
         bounds.patrol(++frames);
       } else {
@@ -447,16 +472,8 @@ export const IconFloor = memo(function IconFloor({ sources, featuredCount, reser
         scene.dirty = true;
       },
       setPaused(paused) {
-        if (scene.animate !== (!paused && !reduced)) invalidateGesture();
         pausedRef.current = paused;
-        scene.animate = !paused && !reduced;
-        tilt.setSuspended(!scene.animate || document.hidden);
-        if (!scene.animate) {
-          swaps.finish();
-          placeRemaining();
-          matches.relayout();
-        }
-        resetClock();
+        syncMotion();
       },
       setTiltEnabled: enabled => tilt.setEnabled(enabled),
       calibrateTilt: () => tilt.calibrate(),
@@ -464,16 +481,8 @@ export const IconFloor = memo(function IconFloor({ sources, featuredCount, reser
     onReady?.();
 
     const onReducedMotion = (event: MediaQueryListEvent) => {
-      if (scene.animate !== (!event.matches && !pausedRef.current)) invalidateGesture();
       reduced = event.matches;
-      scene.animate = !reduced && !pausedRef.current;
-      tilt.setSuspended(!scene.animate || document.hidden);
-      if (!scene.animate) {
-        swaps.finish();
-        placeRemaining();
-        matches.relayout();
-      }
-      resetClock();
+      syncMotion();
     };
     reducedQuery.addEventListener("change", onReducedMotion);
 
@@ -630,11 +639,12 @@ export const IconFloor = memo(function IconFloor({ sources, featuredCount, reser
         ref={beamRef}
         aria-hidden
         className="pointer-events-none fixed left-0 top-0 will-change-transform"
-        style={{ width: iconSize, height: iconSize, opacity: 0, transition: "opacity 300ms ease-out" }}
+        style={{ width: iconSize, height: iconSize, opacity: 0, borderRadius: iconSize * 0.225,
+          transition: animateBeam ? "opacity 300ms ease-out" : "none", boxShadow: animateBeam ? undefined : "inset 0 0 0 1.5px #bcb9cc" }}
       >
-        <BorderBeam size="md" colorVariant="colorful" theme="dark" strength={1} brightness={1.9} saturation={1.5} borderRadius={iconSize * 0.225}>
+        {animateBeam && <BorderBeam size="md" colorVariant="colorful" theme="dark" strength={1} brightness={1.9} saturation={1.5} borderRadius={iconSize * 0.225}>
           <div style={{ width: iconSize, height: iconSize, borderRadius: iconSize * 0.225 }} />
-        </BorderBeam>
+        </BorderBeam>}
       </div>
       {/* The container again, in front of the canvas this time: it clips the labels and carries the soft edges that
           show there is more to scroll to. One probability label per match, each placed once in its cell. */}

@@ -45,3 +45,14 @@ for (const mode of ["project", "reference"] as const) {
     assert.match(output, /no checked compatibility guidance/i);
   });
 }
+
+test("shared entries and exports link back to the deployment that created the brief", () => {
+  const origin = "https://coding.preview.example";
+  const second = { ...reviewed, id: "second-entry" };
+  const brief = briefs.buildProjectBrief({ goal: "Choose a form", stack: "React", resources: [reviewed, second] }, origin);
+  for (const resource of [reviewed, second]) {
+    assert.ok(brief.includes(`${origin}/resources/${resource.id}`));
+    assert.ok(briefs.buildResourceBrief(resource, origin).includes(`${origin}/resources/${resource.id}`));
+  }
+  assert.equal(brief.split(`${origin}/llms.txt`).length - 1, 1);
+});

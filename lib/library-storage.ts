@@ -1,19 +1,30 @@
-import { emptyProject, parseProject, parseSaved, PROJECT_LIMIT, SAVED_LIMIT } from "./project-brief.ts";
+import { canonicalResourceId, emptyProject, parseProject, parseSaved, PROJECT_LIMIT, SAVED_LIMIT } from "./project-brief.ts";
+import { resourceIconUrl } from "./resource-icon.ts";
 import type { Project } from "./project-brief.ts";
 import type { Resource } from "./resources";
+import type { getCommunityMetadata } from "./community-metadata.ts";
 
 type Collection = "project" | "saved";
 type Field = "goal" | "stack";
-type Snapshot = { project: Project; saved: Resource[] };
+export type LibrarySnapshot = { project: Project; saved: Resource[] };
 type StorageAccess = Pick<Storage, "getItem" | "setItem">;
 type Lock = <T>(key: string, edit: () => T) => Promise<T>;
 
-export const emptyLibrary = (): Snapshot => ({ project: emptyProject(), saved: [] });
+export const emptyLibrary = (): LibrarySnapshot => ({ project: emptyProject(), saved: [] });
 const keyFor = (key: Collection | Field) => `coding-index:${key}`;
 const fieldLimit = { goal: 1200, stack: 160 };
 
-export function resolveFeatured(snapshot: Snapshot, featured: Map<string, Resource>): Snapshot {
-  const resolve = (item: Resource) => featured.get(item.id) || item;
+export function resolveLibraryResources(
+  snapshot: LibrarySnapshot,
+  featured: ReadonlyMap<string, Resource>,
+  communityReview?: typeof getCommunityMetadata,
+): LibrarySnapshot {
+  const resolve = (item: Resource) => {
+    const current = featured.get(item.id);
+    if (current) return current;
+    const review = item.origin === "community-index" && communityReview?.(item.id);
+    return review ? { ...item, ...review } : item;
+  };
   return { project: { ...snapshot.project, resources: snapshot.project.resources.map(resolve) }, saved: snapshot.saved.map(resolve) };
 }
 
@@ -41,7 +52,7 @@ export function withLibraryLock<T>(key: string, write: () => T): Promise<T> {
 
 // Each tab edits only the requested selection while holding the collection lock.
 // The goal and setup have separate keys so typing is synchronous and independent.
-export function createLibraryStore(access: () => StorageAccess, lock: Lock, publish: (value: Snapshot) => void) {
+export function createLibraryStore(access: () => StorageAccess, lock: Lock, publish: (value: LibrarySnapshot) => void) {
   let state = emptyLibrary();
   const inMemory = new Set<Collection | Field>();
   function refresh(key: string | null = null) {
@@ -74,6 +85,8 @@ export function createLibraryStore(access: () => StorageAccess, lock: Lock, publ
   }
 
   async function select(collection: Collection, resource: Resource, include: boolean) {
+    const id = canonicalResourceId(resource.id);
+    if (id !== resource.id) resource = { ...resource, id, icon: resourceIconUrl(id) };
     const key = keyFor(collection);
     const apply = (storage?: StorageAccess) => {
       const project = storage && collection === "project" ? parseProject(storage.getItem(key)) : state.project;

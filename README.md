@@ -28,11 +28,11 @@ npm start
 
 ## What is indexed
 
-The featured collection includes 108 starting points for components, icons, motion, design, agent workflows, learning and developer tools. All 108 include a use case, supported setups, a caveat and dated links to the sources checked. Other records come from 36 public coding collections.
+The 360 tiles in the opening scene represent 108 featured resources and 252 resources from public coding collections. Each of these cards explains what a student can do with the resource, which frameworks or formats it covers, how much setup to expect and one caveat. Dated source links let a student or agent verify the advice. The wider community catalog draws from 36 public collections.
 
 The [November 2 catalog review](docs/CATALOG_REVIEW.md) covers all 28,359 original community entries. It records which links were removed or repaired, the limits of the checks, and how to trace the 18 featured additions to their sources. The [live API](https://pomfret-coding-index.vercel.app/api/resources?limit=1) returns the current deduplicated total in `indexed` and the featured count in `totalFeatured`.
 
-The large catalog stays on the server. The browser receives the featured collection and paginated search results. The opening pile loads one image sheet containing 108 featured tiles and 252 distinct community logos. Only the community tiles rotate. After changing the roster or artwork, rebuild the sheet with `node --experimental-strip-types scripts/build-floor-sheet.mjs`.
+The large catalog stays on the server. The browser receives the featured collection and paginated search results. The opening pile loads its logos from one image sheet. All 15 reserve tiles that can rotate into the scene also have reviewed guidance. Other search results can have a logo without reviewed guidance. After changing the roster or artwork, rebuild the sheet with `node --experimental-strip-types scripts/build-floor-sheet.mjs`.
 
 To rebuild the community data from its recorded public sources, run the following command. It reads the recorded editorial decisions, fetches the public lists and updates the imported records and source manifest. Reviewed duplicate IDs remain usable through resource pages and the API.
 
@@ -47,8 +47,10 @@ Rebuild the app after changing the catalog so the homepage's count matches the u
 - Press `/` to focus search. Describe a project, such as `a homework dashboard with due dates and a completed filter`, or ask for a specific resource by name, then press Enter.
 - Up to 24 matching icons rise above the search bar with resource names. Click one to see its website, checked guidance when available, source and agent handoff. The text list keeps 60 results per page.
 - After submitting a search, press Tab to reach the results list. It includes descriptions and pagination.
+- Share the browser address to reopen a submitted search, category, results page or selected tile. Back and Forward restore those views. To share just one item, choose **Copy link** in its details. It opens a resource page where anyone can read the sources, save the item or add it to their own project.
+- Try `weather API without an API key` for providers with documented keyless access. A result marked **Keyless with conditions** explains when that access applies. Providers that require a key or whose access is unverified are excluded. An empty result means the index has no verified match for that search.
 - Open tabs in the same browser share saved resources and project picks.
-- Drag an icon into My project, or choose Add to project in its details. Add a goal and stack or setup constraints, then copy or download one Markdown brief containing up to 12 resources. The project kit persists in this browser; it is not automatically shared between devices.
+- Choose **Copy this reference** to send one card to an agent. For several references, drag icons into **My project** or choose **Add to project**. Supply a goal and any stack or setup constraints, then copy or download the Markdown brief. It includes up to 12 resource-page links, their sources and the index's agent guide. The kit stays in the student's browser. Send the brief itself to share the selection.
 - For agents opens a copyable prompt and the machine-readable entry points.
 - Pause motion freezes the scene. Reduced-motion preferences are supported.
 - Laptop tilt connects to an optional local helper on a compatible Apple Silicon MacBook. The helper reads the built-in accelerometer, and the page uses it to change gravity. See [laptop tilt setup](docs/LAPTOP_TILT.md).
@@ -58,6 +60,7 @@ Agent endpoints are available relative to the deployed origin.
 ```text
 /llms.txt
 /api/resources?q=components&limit=20&offset=0
+/api/resources?q=weather+API+without+an+API+key
 /api/resources?category=motion&kind=library
 /api/resources?id=shadcn-ui
 /resources/shadcn-ui
