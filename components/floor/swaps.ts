@@ -8,8 +8,8 @@ const CHURN = 900; // ms between swaps: the pile is a moving window onto a libra
 // when a swap happened in place, because now each one is a visible little event: one icon goes, another falls in.
 
 /** Images popping in and out of the pile: the steady churn, and a search match that was not in the pile yet. */
-export function createSwaps(scene: Scene, isDragged: (i: number) => boolean, invalidateGesture: (i: number) => void, stats: { swaps: number }) {
-  const reserve = createReserve((src) => scene.srcs.includes(src));
+export function createSwaps(scene: Scene, isDragged: (i: number) => boolean, invalidateGesture: (i: number) => void, stats: { swaps: number }, featuredCount = 0, overflow: string[] = []) {
+  const reserve = createReserve([...scene.srcs.slice(featuredCount), ...overflow]);
   let churnAt = performance.now() + 6000; // the pile pours first
 
   return {
@@ -32,13 +32,15 @@ export function createSwaps(scene: Scene, isDragged: (i: number) => boolean, inv
       return pop;
     },
 
-    /** Every third of a second one image in the pile pops away and another from the library takes its place. */
+    /** Rotate community tiles between searches. Featured slots stay in the pile. */
     churn(now: number) {
-      if (now < churnAt || scene.added < scene.bodies.length) return;
+      if (now < churnAt || scene.box || scene.added < scene.bodies.length || scene.added <= featuredCount) return;
       churnAt = now + CHURN * (0.6 + Math.random() * 0.8);
-      const i = Math.floor(Math.random() * scene.added);
+      const i = featuredCount + Math.floor(Math.random() * (scene.added - featuredCount));
       if (scene.holds.has(i) || scene.grown.has(i) || scene.pops.has(i) || isDragged(i)) return;
-      const img = reserve.next();
+      const occupied = new Set(scene.srcs);
+      for (const pending of scene.pops.values()) occupied.add(pending.src);
+      const img = reserve.next(occupied);
       if (img) this.swapIn(i, img, img.getAttribute("src")!, 0, undefined, true);
     },
 

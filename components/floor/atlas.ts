@@ -1,6 +1,6 @@
 import { crop, drawTile, type Patch, RADIUS } from "./sprite";
 
-/** The packed sheet of logos that `scripts/build-atlas.mjs` writes, and where in it each of the pile's logos sits. */
+/** The packed sheet of logos that `scripts/build-floor-sheet.mjs` writes, and where in it each of the pile's logos sits. */
 export type Sheet = { url: string; cell: number; gutter: number; cols: number };
 
 const GUTTER = 2; // transparent pixels between cells: a rotating icon samples a pixel or two past its own edge

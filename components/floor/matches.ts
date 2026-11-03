@@ -16,6 +16,7 @@ type Shown = {
   getAnchor: () => Anchor;
   launched: Set<number>; // cells that have an icon in them or on the way to them
   pending: Map<number, Pending>; // unique reservation per launch, including a later visit to the same cell
+  sources: Set<string>; // matches already in the pile keep their own slot until their row appears
   taken: Set<number>; // pile icons spoken for, so two cells cannot claim the same one
 };
 
@@ -24,7 +25,7 @@ type Shown = {
  * scrolled. Only the rows that can be seen set off. The rest wait in the pile and rise when they are scrolled into
  * view, so a search with a hundred matches costs no more than one with twenty.
  */
-export function createMatches(scene: Scene, overlays: ReturnType<typeof createOverlays>, swaps: ReturnType<typeof createSwaps>, loadImage: (src: string) => HTMLImageElement, invalidateGesture: (i: number) => void) {
+export function createMatches(scene: Scene, overlays: ReturnType<typeof createOverlays>, swaps: ReturnType<typeof createSwaps>, loadImage: (src: string) => HTMLImageElement, invalidateGesture: (i: number) => void, featuredCount = 0) {
   const { bodies, holds, grown, sharp, pops, srcs } = scene;
 
   /**
@@ -58,6 +59,22 @@ export function createMatches(scene: Scene, overlays: ReturnType<typeof createOv
         img.addEventListener("load", () => holds.get(i)?.rest.side === side && wanted.set(i, side), { once: true });
       }
     }
+  };
+  // Out-of-pile matches borrow a slot for the search. Keep the actual artwork,
+  // including its sheet cell, so retiring a result restores the same resource.
+  const borrowed = new Map<number, { src: string; image: Scene["images"][number]; tile: Scene["tiles"][number] }>();
+  const restore = (i: number) => {
+    const prior = borrowed.get(i);
+    if (!prior) return;
+    invalidateGesture(i);
+    borrowed.delete(i);
+    pops.delete(i);
+    srcs[i] = prior.src;
+    scene.images[i] = prior.image;
+    scene.tiles[i] = prior.tile;
+    sharp.delete(i);
+    scene.retile(i);
+    scene.dirty = true;
   };
   let shown: Shown | null = null;
   let token = 0; // bumps on every select/release, so an image that finishes loading late knows it is no longer wanted
@@ -161,6 +178,7 @@ export function createMatches(scene: Scene, overlays: ReturnType<typeof createOv
       holds.delete(i);
       shown.launched.delete(hold.rank);
       shown.taken.delete(i);
+      restore(i);
       if (typeof scene.tiles[i] === "number") scene.images[i] = null; // the sheet still has its pile-sized copy, so let the big one go
       scene.retile(i);
     }
@@ -187,8 +205,9 @@ export function createMatches(scene: Scene, overlays: ReturnType<typeof createOv
   /** The pile's spare icons. Worked out once per wave, not once per cell, which is the whole cost of a scroll. */
   const spareIcons = () => {
     const list: number[] = [];
-    const taken = shown?.taken;
-    for (let k = 0; k < scene.added; k++) if (!grown.has(k) && !taken?.has(k) && !pops.has(k) && bodies[k].position.y < scene.height + scene.size) list.push(k);
+    for (let k = featuredCount; k < scene.added; k++) {
+      if (!grown.has(k) && !shown?.taken.has(k) && !shown?.sources.has(srcs[k]) && !pops.has(k) && bodies[k].position.y < scene.height + scene.size) list.push(k);
+    }
     return list;
   };
 
@@ -224,7 +243,7 @@ export function createMatches(scene: Scene, overlays: ReturnType<typeof createOv
     }
     // The pile only shows a sample of the library. For a match that is not in it, a random image pops away,
     // the match springs up in its place, and it rises from there like any other.
-    if (!spare.length) return false;
+    if (i >= 0 || !spare.length) return false;
     const slot = spare.splice(Math.floor(Math.random() * spare.length), 1)[0];
     // Counted as pending, not launched, until it actually sets off. Marking it launched here and then scrolling away
     // before the picture arrived left the cell marked as done for good, with nothing in it and its pile icon never
@@ -232,13 +251,16 @@ export function createMatches(scene: Scene, overlays: ReturnType<typeof createOv
     const pending: Pending = { slot };
     shown.pending.set(rank, pending);
     shown.taken.add(slot);
+    const original = { src: srcs[slot], image: scene.images[slot], tile: scene.tiles[slot] };
     const img = loadImage(match.src);
     const current = () => mine === token && shown?.pending.get(rank) === pending;
     const done = () => {
       if (!shown || !current()) return;
       shown.pending.delete(rank);
+      borrowed.set(slot, original);
       if (launched.has(rank) || !nearView(rank, LOOKAHEAD)) {
-        shown.taken.delete(slot); // scrolled out of reach, or filled another way: the icon goes back to the pile
+        shown.taken.delete(slot);
+        restore(slot);
         return;
       }
       launched.add(rank);
@@ -265,15 +287,13 @@ export function createMatches(scene: Scene, overlays: ReturnType<typeof createOv
     if (!shown || !queue.length || (scene.animate && now - waveAt < WAVE_GAP)) return;
     waveAt = now;
     const spare = spareIcons();
-    for (let n = 0; n < WAVE && queue.length; ) {
-      const next = queue[0];
-      if (shown.launched.has(next.rank) || shown.pending.has(next.rank) || !nearView(next.rank, LOOKAHEAD)) {
-        queue.shift(); // already away, or scrolled out of reach while it waited
-        continue;
-      }
-      if (!launch(next.rank, next.fly, spare)) return; // nothing to spare: this cell keeps its place in the queue
-      queue.shift();
-      n++;
+    let launched = 0;
+    for (let remaining = queue.length; remaining > 0 && launched < WAVE; remaining--) {
+      const next = queue.shift()!;
+      if (shown.launched.has(next.rank) || shown.pending.has(next.rank) || !nearView(next.rank, LOOKAHEAD)) continue;
+      // A match not yet poured in can wait its turn while other visible matches launch.
+      if (launch(next.rank, next.fly, spare)) launched++;
+      else queue.push(next);
     }
   };
 
@@ -281,6 +301,7 @@ export function createMatches(scene: Scene, overlays: ReturnType<typeof createOv
     token++;
     if (shown) for (const [rank, pending] of shown.pending) cancelPending(shown, rank, pending);
     shown = null;
+    for (const i of borrowed.keys()) restore(i);
     queue.length = 0;
     scene.box = null;
     overlays.frame(null);
@@ -378,9 +399,16 @@ export function createMatches(scene: Scene, overlays: ReturnType<typeof createOv
     select(matches: Match[], getAnchor: () => Anchor) {
       release();
       token++;
+      // A background swap queued just before this search must not claim the same icon as a result.
+      for (const [i, pop] of pops) {
+        if (pop.rain && !pop.swapped) {
+          pops.delete(i);
+          scene.dirty = true;
+        }
+      }
       const few = matches;
       const layout = gridLayout(few.length, getAnchor(), scene, scene.bigSize);
-      shown = { matches: few, layout, getAnchor, launched: new Set(), pending: new Map(), taken: new Set() };
+      shown = { matches: few, layout, getAnchor, launched: new Set(), pending: new Map(), taken: new Set(), sources: new Set(few.map(match => match.src)) };
       scene.box = layout.box;
       scene.scroll = 0;
       scrolledBy = 0;

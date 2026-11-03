@@ -95,6 +95,30 @@
     "page": "https://tympanus.net/codrops/",
     "source": "https://github.com/codrops.png?size=256"
   },
+  "community-021bc57bd1082f68": {
+    "page": "https://obsidian.md/",
+    "source": "https://obsidian.md/favicon.svg"
+  },
+  "community-02c136fed3ac4e98": {
+    "page": "https://kestra.io/",
+    "source": "https://kestra.io/apple-touch-icon.png"
+  },
+  "community-03a89053f2f115c3": {
+    "page": "https://huggingface.co/",
+    "source": "https://huggingface.co/front/assets/huggingface_logo-noborder.svg"
+  },
+  "community-03d80ef10378827d": {
+    "page": "https://docs.pytorch.org/tutorials/",
+    "source": "https://docs.pytorch.org/favicon.ico"
+  },
+  "community-05d02281fc374385": {
+    "page": "https://openrefine.org/",
+    "source": "https://openrefine.org/img/openrefine_logo.svg"
+  },
+  "community-096f42a09e6296a4": {
+    "page": "https://jina.ai/",
+    "source": "https://jina.ai/icons/favicon-128x128.png"
+  },
   "community-0d8bce7e29a5cd98": {
     "page": "https://code.visualstudio.com/",
     "source": "https://code.visualstudio.com/assets/apple-touch-icon.png"
@@ -103,25 +127,117 @@
     "page": "https://deno.com/",
     "source": "https://deno.com/logo.svg?__frsh_c=ba3bc66b1456a2a2caff15a7f9da8773ea6ae3fc"
   },
+  "community-0f1093f2dd068481": {
+    "page": "https://www.astropy.org/",
+    "source": "https://www.astropy.org/_static/favicon.ico"
+  },
+  "community-110e7243c6a2d147": {
+    "page": "https://karakeep.com/",
+    "source": "https://karakeep.com/icons/logo-icon.svg"
+  },
   "community-1304a105f0946866": {
     "page": "https://parceljs.org/",
     "source": "https://parceljs.org/favicon.fe6f9d11.ico"
+  },
+  "community-13b81f91358639cf": {
+    "page": "https://continue.dev/",
+    "source": "https://continue.dev/favicon.png"
+  },
+  "community-13da1f870f5ca6ff": {
+    "page": "https://swagger.io/",
+    "source": "https://swagger.io/swagger_fav.png"
+  },
+  "community-1557d6500f286e52": {
+    "page": "https://coolors.co/",
+    "source": "https://coolors.co/assets/img/favicon.png"
   },
   "community-15f5136fd03f9ab3": {
     "page": "https://preactjs.com/",
     "source": "https://raw.githubusercontent.com/preactjs/preact-www/master/src/assets/branding/symbol.svg"
   },
+  "community-164811526484ff1f": {
+    "page": "https://strapi.io/",
+    "source": "https://strapi.io/android-chrome-192x192.png"
+  },
+  "community-16859c5182eb47d6": {
+    "page": "https://etherpad.org/",
+    "source": "https://etherpad.org/favicon.ico"
+  },
+  "community-168cdb70759c589f": {
+    "page": "https://flarum.org/",
+    "source": "https://flarum.org/apple-touch-icon.png?v=YAXePblQz9"
+  },
+  "community-1a894bd0f99797f9": {
+    "page": "https://www.gtk.org/",
+    "source": "https://www.gtk.org/assets/img/icons/apple-touch-icon.png"
+  },
+  "community-1bbd41a7b06070f3": {
+    "page": "https://bitwarden.com/",
+    "source": "https://bitwarden.com/icons/icon-48x48.png"
+  },
   "community-1ce554b3198255e9": {
     "page": "https://eslint.org/",
     "source": "https://eslint.org/icon.svg"
+  },
+  "community-1e23cc4ffa5176b0": {
+    "page": "https://www.chartjs.org/",
+    "source": "https://www.chartjs.org/favicon.ico"
+  },
+  "community-1e68173e4cd26f4f": {
+    "page": "https://ionic.io/ionicons",
+    "source": "https://ionic.io/ionicons/assets/img/meta/apple-icon-57x57.png"
   },
   "community-202ed8802a6eae23": {
     "page": "https://nuxt.com/",
     "source": "https://nuxt.com/icon.png"
   },
+  "community-21359fe8c171c407": {
+    "page": "https://webflow.com/",
+    "source": "https://cdn.prod.website-files.com/686294e263eb7e215bd232f7/686d53d0446d4237b2f38c5f_webclip.png"
+  },
+  "community-2210207ad3281e35": {
+    "page": "https://uiverse.io/",
+    "source": "https://uiverse.io/apple-touch-icon.png"
+  },
+  "community-2327a176271d39da": {
+    "page": "https://cohere.com/",
+    "source": "https://cohere.com/apple-touch-icon.png"
+  },
+  "community-237cb89ffe666f21": {
+    "page": "https://fastlane.tools/",
+    "source": "https://fastlane.tools/assets/images/favicon.ico"
+  },
+  "community-24a3ef2862c175b1": {
+    "page": "https://vanilla-extract.style/",
+    "source": "https://vanilla-extract.style/android-chrome-192x192.png"
+  },
+  "community-24ec07b23f1ddd7a": {
+    "page": "https://www.trychroma.com/",
+    "source": "https://www.trychroma.com/img/favicon.ico"
+  },
+  "community-263231022e5eba8f": {
+    "page": "https://druid.apache.org/",
+    "source": "https://druid.apache.org/img/favicon.png"
+  },
   "community-26bdc348dc94e4e5": {
     "page": "https://webpack.js.org/",
     "source": "https://webpack.js.org/icon_512x512.png"
+  },
+  "community-26cfd16cd1882d42": {
+    "page": "https://hashnode.com/",
+    "source": "https://hashnode.com/apple-icon.png?apple-icon.23nnv7gka9h2i.png"
+  },
+  "community-2757fbbf336ac035": {
+    "page": "https://chartscss.org/",
+    "source": "https://chartscss.org/assets/img/logo.svg"
+  },
+  "community-276e328b01f109da": {
+    "page": "https://www.rocket.chat/",
+    "source": "https://cdn.prod.website-files.com/611a19b9853b7414a0f6b3f6/6132017f51d1acdee170210c_webclip%20256px.png"
+  },
+  "community-27741b0025ef748d": {
+    "page": "https://about.gitea.com/",
+    "source": "https://about.gitea.com/gitea.svg"
   },
   "community-2b14193563ce6363": {
     "page": "https://vite.dev/",
@@ -131,65 +247,497 @@
     "page": "https://hono.dev/",
     "source": "https://hono.dev/images/logo.svg"
   },
+  "community-2c78ac725bff409b": {
+    "page": "https://hardhat.org/",
+    "source": "https://hardhat.org/favicon.ico"
+  },
+  "community-2d59a23a2b457c95": {
+    "page": "https://opencode.ai/",
+    "source": "https://opencode.ai/apple-touch-icon-v3.png"
+  },
+  "community-2dfb2b98942aa350": {
+    "page": "https://typesense.org/",
+    "source": "https://typesense.org/favicon.png"
+  },
+  "community-2e2f7f833366781a": {
+    "page": "https://www.chatwoot.com/",
+    "source": "https://www.chatwoot.com/favicon/apple-touch-icon.png"
+  },
+  "community-30f11e9a931e1659": {
+    "page": "https://ollama.com/",
+    "source": "https://ollama.com/public/apple-touch-icon.png"
+  },
+  "community-31696885b4e5f240": {
+    "page": "https://blueprintjs.com/",
+    "source": "https://blueprintjs.com/assets/favicon.png"
+  },
   "community-31ff6e314f2a5cf3": {
     "page": "https://reactrouter.com/",
     "source": "https://reactrouter.com/favicon-light.png"
+  },
+  "community-325aa537fe10517f": {
+    "page": "https://octoprint.org/",
+    "source": "https://octoprint.org/assets/img/apple-touch-icon-57x57.png"
+  },
+  "community-33291c4d5f218ed4": {
+    "page": "https://chartdb.io/",
+    "source": "https://framerusercontent.com/images/h9piY1tJdoPWxalabcA9UTX7Yg.png"
+  },
+  "community-34108d2e35c75d1c": {
+    "page": "https://freshrss.org/",
+    "source": "https://freshrss.org/favicon.ico"
+  },
+  "community-37e54acb88e28331": {
+    "page": "https://arize.com/",
+    "source": "https://arize.com/wp-content/themes/arize-2022/images/favicon.png"
+  },
+  "community-382ade5d2b5ca59b": {
+    "page": "https://scipy.org/",
+    "source": "https://scipy.org/images/favicon.ico"
+  },
+  "community-39f02042ee4094e6": {
+    "page": "https://taiga.io/",
+    "source": "https://taiga.io/media/images/favicon.2e16d0ba.fill-76x76.png"
+  },
+  "community-3a4feba660e650f8": {
+    "page": "https://payloadcms.com/",
+    "source": "https://payloadcms.com/images/favicon.svg"
+  },
+  "community-3ac1f86baea65bbf": {
+    "page": "https://regex-vis.com/",
+    "source": "https://regex-vis.com/favicon.png"
+  },
+  "community-3b1a46da764e4da9": {
+    "page": "https://bun.sh/",
+    "source": "https://bun.sh/logo.svg"
+  },
+  "community-3c4f23dab56aca93": {
+    "page": "https://unsloth.ai/",
+    "source": "https://unsloth.ai/cgi/image/unsloth_logo_no_shadow_KgfOV6keeBZnffQsKUny3.png?width=144&quality=100&height=144&fit=pad&format=auto"
+  },
+  "community-3ce4f47b8c548942": {
+    "page": "https://openwebui.com/",
+    "source": "https://openwebui.com/favicon.png"
+  },
+  "community-3d96d08f2c492c49": {
+    "page": "https://revealjs.com/",
+    "source": "https://revealjs.com/images/favicon.svg"
+  },
+  "community-3db046d68ce99224": {
+    "page": "https://arango.ai/",
+    "source": "https://cdn-ileelek.nitrocdn.com/sXYAZLumybqOWnupmQzoYCIzmJyAtkMh/assets/images/optimized/rev-244f48d/arango.ai/wp-content/themes/knightowl/assets/img/icons/favicons/favicon.svg"
+  },
+  "community-3e0d3bfa0ed5b618": {
+    "page": "https://www.docuseal.com/",
+    "source": "https://www.docuseal.com/favicon.svg"
+  },
+  "community-3e1fc8455f78f6ff": {
+    "page": "https://docs.databricks.com/aws/en/reference/api",
+    "source": "https://docs.databricks.com/aws/en/favicon.ico"
+  },
+  "community-3ecd0dabd1c3bbd5": {
+    "page": "https://weblate.org/en/",
+    "source": "https://weblate.org/static/weblate-180.png"
+  },
+  "community-3f06c538eac09bcf": {
+    "page": "https://matomo.org/",
+    "source": "https://m-img.org/spai/q_lossless+ret_img+to_webp/matomo.org/wp-content/uploads/2026/04/favicon-matomo-2026-450x450.png"
+  },
+  "community-3f828e58a73ebf93": {
+    "page": "https://www.overleaf.com/",
+    "source": "https://cdn.overleaf.com/favicon.svg"
+  },
+  "community-3fa62046261b458f": {
+    "page": "https://laracasts.com/",
+    "source": "https://laracasts.com/favicons/favicon.svg"
   },
   "community-3fc86703f4dd4d8f": {
     "page": "https://fastify.dev/",
     "source": "https://fastify.dev/favicon.svg"
   },
+  "community-40e0c2050ea632a7": {
+    "page": "https://fontsource.org/",
+    "source": "https://fontsource.org/apple-touch-icon.png"
+  },
+  "community-410461011d06a77d": {
+    "page": "https://www.sublimetext.com/",
+    "source": "https://www.sublimetext.com/images/icon.png"
+  },
+  "community-41115ead3cd415e3": {
+    "page": "https://exercism.org/tracks/rust",
+    "source": "https://assets.exercism.org/meta/apple-touch-icon.png"
+  },
+  "community-42004a7f8f43f7e7": {
+    "page": "https://css-tricks.com/",
+    "source": "https://css-tricks.com/favicon.svg"
+  },
   "community-4263a6f361fd9d1e": {
     "page": "https://pinia.vuejs.org/",
     "source": "https://pinia.vuejs.org/logo.svg"
+  },
+  "community-42936db47b6a66a6": {
+    "page": "https://fontpair.co/",
+    "source": "https://fontpair.co/favicon.png"
+  },
+  "community-436501c01e8b3f18": {
+    "page": "https://plausible.io/",
+    "source": "https://plausible.io/assets/images/icon/favicon.svg"
   },
   "community-43d3ef9bd32addf2": {
     "page": "https://svelte.dev/",
     "source": "https://svelte.dev/favicon.png"
   },
+  "community-45f6307e502ba42b": {
+    "page": "https://runjs.app/",
+    "source": "https://runjs.app/static/apple-touch-icon.png"
+  },
+  "community-46f6ef523788247e": {
+    "page": "https://aframe.io/",
+    "source": "https://aframe.io/images/aframe-logo-152.png"
+  },
+  "community-48ce218ceec909c6": {
+    "page": "https://aurelia.io/",
+    "source": "https://aurelia.io/favicon.ico"
+  },
+  "community-4917fe035ec15a0b": {
+    "page": "https://numpy.org/",
+    "source": "https://numpy.org/images/favicon.ico"
+  },
+  "community-4b1af71a907b6013": {
+    "page": "https://ml5js.org/",
+    "source": "https://ml5js.org/icons/icon-48x48.png?v=745d7ba46a9fd863e06e7b524444aacf"
+  },
+  "community-4c26c1eda3d9f901": {
+    "page": "https://goteleport.com/",
+    "source": "https://goteleport.com/static/favicon.svg"
+  },
+  "community-4ccc1494ef6cd65d": {
+    "page": "https://repomix.com/",
+    "source": "https://repomix.com/images/repomix-logo.svg"
+  },
+  "community-4e62781705efa487": {
+    "page": "https://airflow.apache.org/",
+    "source": "https://airflow.apache.org/favicons/apple-touch-icon-180x180.png"
+  },
+  "community-508b9151abe19ae4": {
+    "page": "https://www.thunderclient.com/",
+    "source": "https://www.thunderclient.com/images/thunder-256-v2.png"
+  },
+  "community-511343c5e0711328": {
+    "page": "https://app.diagrams.net/",
+    "source": "https://app.diagrams.net/images/apple-touch-icon.png"
+  },
+  "community-516ae926b897b3cb": {
+    "page": "https://tolgee.io/",
+    "source": "https://framerusercontent.com/images/RQ2TsPhCGWAp5WbgMXO9NtODDM.png"
+  },
   "community-52cd6f5e3bc52f48": {
     "page": "https://www.cypress.io/",
     "source": "https://www.cypress.io/apple-touch-icon.png"
+  },
+  "community-53755613855171df": {
+    "page": "https://www.firezone.dev/",
+    "source": "https://www.firezone.dev/icon.svg?icon.40ftvii4igvp7.svg"
+  },
+  "community-54b899b195996957": {
+    "page": "https://mlflow.org/",
+    "source": "https://mlflow.org/img/mlflow-favicon.ico"
+  },
+  "community-5681e98931e18a6c": {
+    "page": "https://panda-css.com/",
+    "source": "https://panda-css.com/apple-touch-icon.png"
+  },
+  "community-5a25ac7fd590f7b2": {
+    "page": "https://netbeans.apache.org/front/main/index.html",
+    "source": "https://netbeans.apache.org/_/images/fav/apple-touch-icon.png"
+  },
+  "community-5b1869603a207c33": {
+    "page": "https://iconoir.com/",
+    "source": "https://iconoir.com/favicon.png"
   },
   "community-5c4dd456ca1735be": {
     "page": "https://redux.js.org/",
     "source": "https://redux.js.org/img/redux.svg"
   },
+  "community-5c59cd357f820dc4": {
+    "page": "https://www.drawio.com/",
+    "source": "https://www.drawio.com/favicon.ico"
+  },
+  "community-5caf462d9abb17f6": {
+    "page": "https://docs.arduino.cc/",
+    "source": "https://cdn.arduino.cc/header-footer/prod/assets/favicon-arduino/favicon.ico"
+  },
+  "community-5d7b0d6bd85de5c9": {
+    "page": "https://echarts.apache.org/en/index.html",
+    "source": "https://echarts.apache.org/en/images/favicon.png?_v_=20240226"
+  },
   "community-5dd06ff1ad737e1b": {
     "page": "https://sass-lang.com/",
     "source": "https://sass-lang.com/icon.png"
+  },
+  "community-5e1a86347052daa5": {
+    "page": "https://grapesjs.com/",
+    "source": "https://grapesjs.com/favicon/grapesjs-logo.png"
+  },
+  "community-5ec37b639825806a": {
+    "page": "https://www.novu.co/",
+    "source": "https://www.novu.co/favicon/favicon.png"
+  },
+  "community-5fa3274eddcae7de": {
+    "page": "https://www.figma.com/design/",
+    "source": "https://static.figma.com/app/icon/2/favicon.svg"
+  },
+  "community-60a5de8a1a5913c3": {
+    "page": "https://www.frontendmentor.io/",
+    "source": "https://www.frontendmentor.io/favicon/apple-touch-icon.png"
   },
   "community-60c94267a77d6d05": {
     "page": "https://yarnpkg.com/",
     "source": "https://yarnpkg.com/img/yarn-favicon.svg"
   },
+  "community-617fe5fb70db9959": {
+    "page": "https://www.openhab.org/",
+    "source": "https://www.openhab.org/apple-icon.png"
+  },
+  "community-61e99db656a77652": {
+    "page": "https://www.activepieces.com/",
+    "source": "https://www.activepieces.com/favicon.svg"
+  },
+  "community-6355c1abf82e4fcf": {
+    "page": "https://fastapi.tiangolo.com/",
+    "source": "https://fastapi.tiangolo.com/img/favicon.png"
+  },
+  "community-63f00916b80a4e87": {
+    "page": "https://www.codecademy.com/",
+    "source": "https://www.codecademy.com/apple-touch-icon.png"
+  },
+  "community-63f2a5253dd0487f": {
+    "page": "https://pi-hole.net/",
+    "source": "https://wp-cdn.pi-hole.net/wp-content/uploads/2016/12/cropped-Vortex-R-180x180.png"
+  },
   "community-641875415b61f754": {
     "page": "https://astro.build/",
     "source": "https://astro.build/favicon.svg"
+  },
+  "community-6529347d85fd03e3": {
+    "page": "https://www.framer.com/",
+    "source": "https://framerusercontent.com/images/Io89FonxEaWg4nxvQQllVLwPUUI.png"
+  },
+  "community-659c57d0686bd6c7": {
+    "page": "https://questdb.com/",
+    "source": "https://questdb.com/favicon.ico"
+  },
+  "community-662faebc5d3a2d6a": {
+    "page": "https://gohugo.io/",
+    "source": "https://gohugo.io/apple-touch-icon.png"
+  },
+  "community-6791f9ef32398f1b": {
+    "page": "https://stylexjs.com/",
+    "source": "https://stylexjs.com/favicon.svg"
+  },
+  "community-6796d34f2a4e3c9e": {
+    "page": "https://roundcube.net/",
+    "source": "https://roundcube.net/images/roundcube_logo_icon.svg"
+  },
+  "community-67e8513ec70150db": {
+    "page": "https://www.navidrome.org/",
+    "source": "https://www.navidrome.org/favicons/apple-icon-57x57.png"
+  },
+  "community-6897bacf002e7976": {
+    "page": "https://colorhunt.co/",
+    "source": "https://colorhunt.co/img/colorhunt-favicon.svg?2"
+  },
+  "community-68b60c069cdd77aa": {
+    "page": "https://lmstudio.ai/",
+    "source": "https://lmstudio.ai/assets/marketing/logo-192x192.png"
   },
   "community-68c89894eae48486": {
     "page": "https://docusaurus.io/",
     "source": "https://docusaurus.io/img/docusaurus.png"
   },
+  "community-6944a00d0f60fdff": {
+    "page": "https://owncloud.com/",
+    "source": "https://owncloud.com/wp-content/themes/ownCloud/dist/assets/img/favicon/apple-touch-icon.png"
+  },
+  "community-6a091669bf9d3c23": {
+    "page": "https://chartbrew.com/",
+    "source": "https://chartbrew.com/favicon.ico?favicon.0_xmmdwytl6_5.ico"
+  },
   "community-6a1de1ab9f404553": {
     "page": "https://biomejs.dev/",
     "source": "https://biomejs.dev/img/favicon.svg"
+  },
+  "community-6b001533ac2e04ee": {
+    "page": "https://nivo.rocks/",
+    "source": "https://nivo.rocks/icons/icon-192x192.png?v=2c40177db7a1031e6d0f8e313d17ad0f"
+  },
+  "community-6b817f8f9533480a": {
+    "page": "https://activitywatch.net/",
+    "source": "https://activitywatch.net/img/logo.png"
+  },
+  "community-6c5a5ce056ffba0b": {
+    "page": "https://open-vsx.org/",
+    "source": "https://open-vsx.org/favicon.ico"
+  },
+  "community-6df9102a5a645844": {
+    "page": "https://framework7.io/",
+    "source": "https://framework7.io/i/favicon.png"
+  },
+  "community-6e7f58f6b868b28a": {
+    "page": "https://go.dev/",
+    "source": "https://go.dev/images/favicon-gopher.svg"
+  },
+  "community-6ed0fd3f24c91e68": {
+    "page": "https://www.openproject.org/",
+    "source": "https://www.openproject.org/assets/images/favicons/apple-touch-icon-120x120-e72a13fd.png"
+  },
+  "community-71ab5a8cfe8a2572": {
+    "page": "https://www.rspack.dev/",
+    "source": "https://assets.rspack.rs/rspack/favicon-128x128.png"
   },
   "community-735362ce9672e68f": {
     "page": "https://github.com/vueComponent/ant-design-vue",
     "source": "https://www.antdv.com/logo.png"
   },
+  "community-73d75733406d9548": {
+    "page": "https://undraw.co/",
+    "source": "https://undraw.co/apple-touch-icon.png"
+  },
+  "community-77d7496ad354c934": {
+    "page": "https://www.storyblok.com/",
+    "source": "https://www.storyblok.com/favicon.svg"
+  },
+  "community-785f2a176f788519": {
+    "page": "https://expo.dev/",
+    "source": "https://static.expo.dev/static/brand/app-icon-512x512.png"
+  },
+  "community-7c78f47a8a7f0809": {
+    "page": "https://apostrophecms.com/",
+    "source": "https://apostrophecms.com/apple-touch-icon.png"
+  },
+  "community-7ea75a22f67bc51d": {
+    "page": "https://auth0.com/",
+    "source": "https://cdn.auth0.com/website/website/favicons/auth0-favicon.svg"
+  },
+  "community-7f4a442ee05e87e8": {
+    "page": "https://www.bytebase.com/",
+    "source": "https://www.bytebase.com/favicon/favicon.png"
+  },
+  "community-7f6d808bb0169574": {
+    "page": "https://vueform.com/",
+    "source": "https://vueform.com/favicon/apple-touch-icon.png"
+  },
+  "community-8093ce1859740e0e": {
+    "page": "https://tanstack.com/query/latest/docs/framework/svelte/overview",
+    "source": "https://tanstack.com/apple-touch-icon.png"
+  },
   "community-81d116c0938bf51a": {
     "page": "https://lodash.com/",
     "source": "https://lodash.com/icons/apple-touch-180x180.png"
+  },
+  "community-82b49b5fc70ca818": {
+    "page": "https://codyhouse.co/",
+    "source": "https://codyhouse.co/assets/img/favicon.svg"
+  },
+  "community-84470f355df5222f": {
+    "page": "https://actualbudget.org/",
+    "source": "https://actualbudget.org/img/favicon.ico"
+  },
+  "community-8505cde88d7d53ef": {
+    "page": "https://squoosh.app/",
+    "source": "https://squoosh.app/c/icon-large-maskable-c2078ced.png"
+  },
+  "community-86e99b69e060f870": {
+    "page": "https://starship.rs/",
+    "source": "https://starship.rs/icon.png"
+  },
+  "community-872a3430334da3e3": {
+    "page": "https://twenty.com/",
+    "source": "https://twenty.com/favicon.ico?favicon.32uhsgd5leeaf.ico?dpl=dpl-5c0fc915-41091067825-1"
+  },
+  "community-877dd36ca5ab7c80": {
+    "page": "https://coreui.io/",
+    "source": "https://coreui.io/images/favicons/apple-icon-57x57.png"
+  },
+  "community-88b199e56e2c7351": {
+    "page": "https://www.openstreetmap.org/",
+    "source": "https://www.openstreetmap.org/assets/osm_logo-cc7d94392992162133be3baa21a37eb84f19f9b91178f704005378fbeecabb4e.svg"
+  },
+  "community-8b97b9a45ae80f2b": {
+    "page": "https://openrouter.ai/",
+    "source": "https://openrouter.ai/apple-touch-icon.png"
+  },
+  "community-8da5b343fdc01d23": {
+    "page": "https://www.filestack.com/",
+    "source": "https://www.filestack.com/wp-content/uploads/2022/09/favicon-32x32-1.png"
   },
   "community-8e24af85aec962ff": {
     "page": "https://nestjs.com/",
     "source": "https://nestjs.com/favicon.svg"
   },
+  "community-8e5c3476a9c655f9": {
+    "page": "https://gdevelop.io/",
+    "source": "https://gdevelop.io/favicons/apple-touch-icon.png"
+  },
+  "community-8f87a74e6edb72c2": {
+    "page": "https://hoppscotch.io/",
+    "source": "https://hoppscotch.io/icon.png"
+  },
+  "community-8fb6203b01f4ccf4": {
+    "page": "https://beeceptor.com/",
+    "source": "https://cdn.beeceptor.com/assets/images/logo-beeceptor.png"
+  },
+  "community-9156bfb54aacb5b2": {
+    "page": "https://www.swift.org/getting-started/swiftui/",
+    "source": "https://www.swift.org/favicon.ico"
+  },
+  "community-948c1b3e35d44259": {
+    "page": "https://www.mintlify.com/",
+    "source": "https://www.mintlify.com/favicon.ico?favicon.d9fa433b.ico"
+  },
+  "community-95600659c05fc4d5": {
+    "page": "https://nixos.org/",
+    "source": "https://nixos.org/favicon.svg"
+  },
+  "community-95eac036c6560e57": {
+    "page": "https://openweathermap.org/api",
+    "source": "https://openweathermap.org/icon.svg?icon.12sbjawem7k1w.svg"
+  },
+  "community-9652cfee3a6e3a26": {
+    "page": "https://www.gimp.org/",
+    "source": "https://www.gimp.org/images/wilber32.png"
+  },
+  "community-969c8808eba4bd98": {
+    "page": "https://docs.mapbox.com/",
+    "source": "https://static-assets.mapbox.com/branding/favicon/v2/safari-pinned-tab.svg?v=gAd4JjrGWl"
+  },
+  "community-971c9f6a114c361b": {
+    "page": "https://3dicons.co/",
+    "source": "https://3dicons.co/favicons/android-icon-192x192.png"
+  },
+  "community-977a08c9e792be4f": {
+    "page": "https://capacitorjs.com/solution/svelte",
+    "source": "https://capacitorjs.com/apple-icon-57x57.png"
+  },
+  "community-9a8584b373e27e5d": {
+    "page": "https://www.tldraw.com/",
+    "source": "https://www.tldraw.com/apple-touch-icon-152x152.svg"
+  },
+  "community-9bac3f4057df8fed": {
+    "page": "https://gogs.io/getting-started/introduction",
+    "source": "https://gogs.io/mintlify-assets/_mintlify/favicons/unknwon/QW55vOu9whFz9uXZ/_generated/favicon/android-chrome-192x192.png"
+  },
+  "community-9c4f3bd0258f241f": {
+    "page": "https://swiperjs.com/",
+    "source": "https://swiperjs.com/images/apple-touch-icon.png"
+  },
   "community-9cbe205a8df2648d": {
     "page": "https://angular.dev/",
     "source": "https://angular.dev/assets/icons/apple-touch-icon.png"
+  },
+  "community-9ce0111413787035": {
+    "page": "https://flask.palletsprojects.com/en/stable/",
+    "source": "https://flask.palletsprojects.com/en/stable/_static/flask-icon.svg"
   },
   "community-9f028105decfa304": {
     "page": "https://remix.run/",
@@ -199,17 +747,205 @@
     "page": "https://vuejs.org/",
     "source": "https://vuejs.org/logo.svg"
   },
+  "community-9f8dcaa7e55487eb": {
+    "page": "https://caddyserver.com/",
+    "source": "https://caddyserver.com/resources/images/favicon.png?v=a49be19"
+  },
+  "community-a19467d5ae999caf": {
+    "page": "https://pterodactyl.io/",
+    "source": "https://pterodactyl.io/favicon.svg?v=4"
+  },
+  "community-a4fe8a0c29be69ae": {
+    "page": "https://www.postgresql.org/docs/",
+    "source": "https://www.postgresql.org/media/img/about/press/elephant.png"
+  },
+  "community-a52e32fc9cb08d05": {
+    "page": "https://ntfy.sh/",
+    "source": "https://ntfy.sh/_next/static/media/logo.077f6a13.svg"
+  },
+  "community-a69034dde468b5bd": {
+    "page": "https://rive.app/",
+    "source": "https://framerusercontent.com/images/FSsYG2seqqLjyfBuDVWltK1xYs.png"
+  },
+  "community-a6b5f6d91680cb08": {
+    "page": "https://www.playframework.com/",
+    "source": "https://www.playframework.com/apple-touch-icon.png"
+  },
+  "community-a836bfd4d0fa0e7a": {
+    "page": "https://appwrite.io/",
+    "source": "https://appwrite.io/logo.svg"
+  },
+  "community-aaf2008b2dd1733d": {
+    "page": "https://unocss.dev/",
+    "source": "https://unocss.dev/favicon.svg"
+  },
+  "community-acbd23c8bfe89df0": {
+    "page": "https://inkscape.org/",
+    "source": "https://media.inkscape.org/static/images/inkscape-favicon.png"
+  },
+  "community-ae2b30c1d47bbf46": {
+    "page": "https://hyperskill.org/",
+    "source": "https://cdn.prod.website-files.com/6522a1d9333be21b9e0bf97c/6522a1d9333be21b9e0bf940_favicon.svg"
+  },
+  "community-ae3746e139f8ac29": {
+    "page": "https://datatables.net/",
+    "source": "https://datatables.net/media/images/apple-touch-icon.png"
+  },
+  "community-ae550e9c2d6c7bad": {
+    "page": "https://flutter.dev/",
+    "source": "https://flutter.dev/assets/favicon.26abda3864324ef4ac32dd0d3ce28907.png"
+  },
+  "community-aef7c9db81c68ce2": {
+    "page": "https://matplotlib.org/",
+    "source": "https://matplotlib.org/_static/favicon.ico"
+  },
+  "community-b00ca09b1ba3e06d": {
+    "page": "https://f-droid.org/",
+    "source": "https://f-droid.org/assets/apple-touch-icon_ypJwtCrcixeH_qV6LdcMYk1anFIR9o-_ufR__1wNdJY=.png"
+  },
+  "community-b1274842c3912a06": {
+    "page": "https://ente.com/",
+    "source": "https://ente.com/assets/icon.Dv-LNK-m.png"
+  },
+  "community-b1f3826153725497": {
+    "page": "https://medusajs.com/",
+    "source": "https://medusajs.com/favicon.png?v=2"
+  },
+  "community-b34b1955b3ac37c0": {
+    "page": "https://www.bugzilla.org/",
+    "source": "https://www.bugzilla.org/assets/favicon/favicon.ico"
+  },
   "community-b399aaf67c8c753f": {
     "page": "https://pnpm.io/",
     "source": "https://pnpm.io/img/logos/pnpm-standard-no-text.svg"
+  },
+  "community-b3d002e12aa77afd": {
+    "page": "https://bazel.build/",
+    "source": "https://bazel.build/mintlify-assets/_mintlify/favicons/bazel/PruV1ugoTEmyjX-1/_generated/favicon/apple-touch-icon.png"
+  },
+  "community-b4c308e9449a9c53": {
+    "page": "https://formbricks.com/",
+    "source": "https://formbricks.com/favicon/apple-touch-icon.png"
+  },
+  "community-b54b9095c5ce4108": {
+    "page": "https://robotframework.org/",
+    "source": "https://robotframework.org/favicon/apple-touch-icon.png"
+  },
+  "community-b61675685c0bd162": {
+    "page": "https://temporal.io/",
+    "source": "https://temporal.io/favicon.svg"
   },
   "community-b662278c0d08c19d": {
     "page": "https://tailwindcss.com/",
     "source": "https://tailwindcss.com/favicons/apple-touch-icon.png?v=4"
   },
+  "community-b6b92f50b571271b": {
+    "page": "https://www.edx.org/",
+    "source": "https://www.edx.org/favicon.ico"
+  },
+  "community-b6ebf74696c4482c": {
+    "page": "https://godotengine.org/",
+    "source": "https://godotengine.org/assets/favicon.svg"
+  },
+  "community-b73747722cbf1e4b": {
+    "page": "https://stitches.dev/",
+    "source": "https://stitches.dev/favicon.svg"
+  },
+  "community-b759fdbf70ead576": {
+    "page": "https://opensearch.org/",
+    "source": "https://opensearch.org/wp-content/uploads/2024/11/cropped-favicon-180x180.webp"
+  },
   "community-b9458b212c01ead3": {
     "page": "https://www.prisma.io/",
     "source": "https://www.prisma.io/icon.svg?icon.33jj2rcm8g1fz.svg"
+  },
+  "community-ba98721e17380a8d": {
+    "page": "https://forgejo.org/",
+    "source": "https://forgejo.org/favicon.svg"
+  },
+  "community-baa1070f64bd666a": {
+    "page": "https://www.vulkan.org/",
+    "source": "https://www.vulkan.org/user/themes/vulkan/images/favicon.png"
+  },
+  "community-bcb7bf32fafb3f1a": {
+    "page": "https://codecrafters.io/",
+    "source": "https://codecrafters.io/images/ui/favicon-black.svg"
+  },
+  "community-be05c4a4ab614ba0": {
+    "page": "https://langfuse.com/",
+    "source": "https://langfuse.com/apple-touch-icon.png"
+  },
+  "community-be4d333f6dd68eb2": {
+    "page": "https://surrealdb.com/",
+    "source": "https://surrealdb.com/assets/static/favicon.C76EUDBN.svg"
+  },
+  "community-be5210116d9f02aa": {
+    "page": "https://immich.app/",
+    "source": "https://immich.app/favicon.ico"
+  },
+  "community-bf8208ef46b6a456": {
+    "page": "https://apexcharts.com/",
+    "source": "https://apexcharts.com/favicon.svg?v=20260408"
+  },
+  "community-bfd216e85c3ec1b2": {
+    "page": "https://gotenberg.dev/",
+    "source": "https://gotenberg.dev/img/apple-touch-icon.png"
+  },
+  "community-c18a3784986b167e": {
+    "page": "https://gradle.org/",
+    "source": "https://gradle.org/assets/icon/apple-touch-icon.png"
+  },
+  "community-c19f06586daba02b": {
+    "page": "https://kaboomjs.com/",
+    "source": "https://kaboomjs.com/static/img/k.png"
+  },
+  "community-c32f8a9c0d28158f": {
+    "page": "https://tamagui.dev/",
+    "source": "https://tamagui.dev/favicon.svg"
+  },
+  "community-c5f33e7c0fc832c8": {
+    "page": "https://www.gitkraken.com/",
+    "source": "https://www.gitkraken.com/wp-content/uploads/2021/03/android-chrome-144x144-1.png"
+  },
+  "community-c7a821d203a3becf": {
+    "page": "https://bencher.dev/",
+    "source": "https://bencher.dev/favicon.svg"
+  },
+  "community-c887f2babf622c0a": {
+    "page": "https://trino.io/",
+    "source": "https://trino.io/assets/images/trino-logo/trino-ko_tiny-alt.svg"
+  },
+  "community-c9038abab275528d": {
+    "page": "https://regexr.com/",
+    "source": "https://regexr.com/assets/icons/apple-touch-icon.png?1"
+  },
+  "community-c91c30c354ab859e": {
+    "page": "https://www.colorzilla.com/",
+    "source": "https://www.colorzilla.com/images/favicon-32x32.png"
+  },
+  "community-c985249d6a0e624c": {
+    "page": "https://mastra.ai/",
+    "source": "https://mastra.ai/favicon/new-brand/icon.svg"
+  },
+  "community-ca8a7a3a9897716a": {
+    "page": "https://www.baeldung.com/",
+    "source": "https://www.baeldung.com/wp-content/themes/baeldung/favicon/apple-touch-icon-180x180.png"
+  },
+  "community-cbb47273f53c79b9": {
+    "page": "https://vue-final-modal.org/",
+    "source": "https://vue-final-modal.org/favicon.ico"
+  },
+  "community-cc11e4c69adb7140": {
+    "page": "https://www.drawdb.app/",
+    "source": "https://www.drawdb.app/favicon.ico"
+  },
+  "community-cc76cd5cb3935b13": {
+    "page": "https://exa.ai/",
+    "source": "https://exa.ai/images/favicon-32x32.png"
+  },
+  "community-ccb0d01a683cb2ce": {
+    "page": "https://www.postman.com/",
+    "source": "https://www.postman.com/_mk-www-next/icons/android-chrome-192x192.png"
   },
   "community-cd1cb5b5b252b6c0": {
     "page": "https://www.python.org/",
@@ -219,41 +955,217 @@
     "page": "https://github.com/ant-design/ant-design-mobile-rn",
     "source": "https://zos.alipayobjects.com/rmsportal/wIjMDnsrDoPPcIV.png"
   },
+  "community-cde30850ac43b4c1": {
+    "page": "https://micronaut.io/",
+    "source": "https://micronaut.io/micronaut-assets/icons/micronaut-sally.svg"
+  },
+  "community-ceb6346b4150b579": {
+    "page": "https://modelcontextprotocol.io/docs/2026-07-28/getting-started/intro",
+    "source": "https://modelcontextprotocol.io/mintlify-assets/_mintlify/favicons/mcp/ebiVJzri-bsiCfVZ/_generated/favicon/android-chrome-192x192.png"
+  },
+  "community-d509a8c0d98bfceb": {
+    "page": "https://geminicli.com/",
+    "source": "https://geminicli.com/icon.png"
+  },
+  "community-d6809f9f369ac027": {
+    "page": "https://airtable.com/developers/web",
+    "source": "https://airtable.com/images/favicon/baymax/favicon.svg?v=3"
+  },
+  "community-d8864b187c866fa6": {
+    "page": "https://cursor.com/",
+    "source": "https://cursor.com/marketing-static/favicon-light.svg"
+  },
+  "community-d8b8a5c5df3c6956": {
+    "page": "https://gruntjs.com/",
+    "source": "https://gruntjs.com/img/favicons/apple-touch-icon.png"
+  },
+  "community-d8fdb6a7dcf7807c": {
+    "page": "https://zulip.com:443/",
+    "source": "https://static.zulipchat.com/static/images/favicon.svg?v=4"
+  },
+  "community-d9fa580077e68cf2": {
+    "page": "https://opencv.org/",
+    "source": "https://opencv.org/wp-content/uploads/2020/07/cropped-Fav-180x180.png"
+  },
+  "community-dac34d4486c6232e": {
+    "page": "https://www.discourse.org/",
+    "source": "https://www.discourse.org/a/img/favicon.png"
+  },
+  "community-db5d5775c6829e67": {
+    "page": "https://it-tools.tech/",
+    "source": "https://it-tools.tech/apple-touch-icon.png"
+  },
+  "community-dbbe5ae745ef7974": {
+    "page": "https://docs.racket-lang.org/guide/index.html",
+    "source": "https://docs.racket-lang.org/favicon.ico"
+  },
+  "community-dbd554708c38d775": {
+    "page": "https://archivebox.io/",
+    "source": "https://archivebox.io/assets/apple-touch-icon.png"
+  },
+  "community-dbed699620a2193a": {
+    "page": "https://syncthing.net/",
+    "source": "https://syncthing.net/img/favicons/apple-touch-icon-72x72.png"
+  },
+  "community-dc2079ec4672e491": {
+    "page": "https://livebook.dev/",
+    "source": "https://livebook.dev/favicon.svg"
+  },
+  "community-dca1f40c815bc826": {
+    "page": "https://nodebb.org/",
+    "source": "https://nodebb.org/images/icons/apple-touch-icon.png"
+  },
+  "community-dcb1fe42b9a89344": {
+    "page": "https://www.sigmajs.org/",
+    "source": "https://www.sigmajs.org/_astro/logo-sigma-ruby.5vM0Bv4Y.svg"
+  },
   "community-dcb792d718508bec": {
     "page": "https://nextjs.org/",
     "source": "https://nextjs.org/_next/static/immutable/media/logo-next-light.2d2j04-25g3vf.svg"
+  },
+  "community-dd2bae099b20c93e": {
+    "page": "https://documenso.com/",
+    "source": "https://framerusercontent.com/images/n1YjYo5anGvu7ELsJPaFfluXGvE.png"
+  },
+  "community-df1010ff6cb936e1": {
+    "page": "https://clipboardjs.com/",
+    "source": "https://clipboardjs.com/favicon.ico"
+  },
+  "community-df2f568fba6a92c8": {
+    "page": "https://mockoon.com/",
+    "source": "https://mockoon.com/apple-touch-icon.png"
   },
   "community-dfc80ee0426fca56": {
     "page": "https://d3js.org/",
     "source": "https://d3js.org/logo.svg"
   },
+  "community-e1d1c75f4c676942": {
+    "page": "https://roadmap.sh/",
+    "source": "https://roadmap.sh/manifest/apple-touch-icon.png"
+  },
+  "community-e30a300af7f0a596": {
+    "page": "https://www.home-assistant.io/",
+    "source": "https://www.home-assistant.io/images/favicon.svg"
+  },
   "community-e36cbf2093afe536": {
     "page": "https://jestjs.io/",
     "source": "https://jestjs.io/img/jest.svg"
+  },
+  "community-e41e212f7d704d8c": {
+    "page": "https://appflowy.com/",
+    "source": "https://appflowy.com/_next/static/media/appflowy.929cfa16.ico"
+  },
+  "community-e522237149c58c29": {
+    "page": "https://www.svix.com/",
+    "source": "https://www.svix.com/icon.svg"
+  },
+  "community-e62a69cf528aa8e2": {
+    "page": "https://pocketbase.io/",
+    "source": "https://pocketbase.io/images/favicon/apple-touch-icon.png"
+  },
+  "community-e65dace2be7f1494": {
+    "page": "https://kotlinlang.org/education/",
+    "source": "https://kotlinlang.org/images/favicon/favicon.svg"
+  },
+  "community-e69d64e782a70f83": {
+    "page": "https://nextcloud.com/",
+    "source": "https://nextcloud.com/c/uploads/2026/04/Nextcloud_Hub-blue-logo-nav.svg"
   },
   "community-e6ca8458e9c714f4": {
     "page": "https://github.com/NG-ZORRO/ng-zorro-antd",
     "source": "https://img.alicdn.com/tfs/TB1TFFaHAvoK1RjSZFwXXciCFXa-106-120.svg"
   },
+  "community-e6fadebd1b102e0e": {
+    "page": "https://linkwarden.app/",
+    "source": "https://linkwarden.app/apple-touch-icon.png"
+  },
+  "community-e72ea032372579b3": {
+    "page": "https://www.metabase.com/",
+    "source": "https://www.metabase.com/images/favicon.svg"
+  },
+  "community-e88a4e7129dfe79b": {
+    "page": "https://fal.ai/",
+    "source": "https://cdn.prod.website-files.com/6a72ef21c470312422dea9b3/6adae13a030770b54ecc8783_fal-icon-favicon.png"
+  },
+  "community-e9556bbef96608db": {
+    "page": "https://fontawesome.com/",
+    "source": "https://fontawesome.com/images/favicon/icon.svg"
+  },
+  "community-e9f38658c0e123e1": {
+    "page": "https://cryptpad.org/",
+    "source": "https://cryptpad.org/images/main-favicon.png"
+  },
   "community-ea794a1f5f672288": {
     "page": "https://nodejs.org/",
     "source": "https://nodejs.org/static/logos/jsIconGreen.svg"
+  },
+  "community-eae789634e3477cd": {
+    "page": "https://lottiefiles.com/",
+    "source": "https://lottiefiles.com/icons/favicon.svg"
   },
   "community-eb59c0a4da328793": {
     "page": "https://mobile.ant.design/",
     "source": "https://gw.alipayobjects.com/zos/bmw-prod/69a27fcc-ce52-4f27-83f1-c44541e9b65d.svg"
   },
+  "community-ebae70be7c8afbd2": {
+    "page": "https://www.appsmith.com/",
+    "source": "https://www.appsmith.com/apple-touch-icon.png"
+  },
+  "community-ebb49573fa14f300": {
+    "page": "https://huly.io/",
+    "source": "https://huly.io/favicon/favicon.svg"
+  },
+  "community-edee6fbff82f9c91": {
+    "page": "https://goharbor.io/",
+    "source": "https://goharbor.io/favicon.svg"
+  },
   "community-ee40d88ea29e0b09": {
     "page": "https://axios-http.com/",
     "source": "https://axios.rest/apple-touch-icon.png"
+  },
+  "community-f117526bd42ed4e8": {
+    "page": "https://www.fffuel.co/",
+    "source": "https://www.fffuel.co/images/favicon/favicon.svg"
   },
   "community-f12f3d8cb55abc01": {
     "page": "https://expressjs.com/",
     "source": "https://expressjs.com/favicon.svg"
   },
+  "community-f1403f358893ce86": {
+    "page": "https://plane.so/",
+    "source": "https://plane.so/favicon/apple-touch-icon.png"
+  },
+  "community-f213aa9d3b927b2c": {
+    "page": "https://www.coursera.org/",
+    "source": "https://d3njjcbhbojbot.cloudfront.net/web/images/favicons/apple-touch-icon-v2-57x57.png"
+  },
+  "community-f324d2e121295d75": {
+    "page": "https://www.llamaindex.ai/",
+    "source": "https://www.llamaindex.ai/favicon.svg"
+  },
+  "community-f6c5bbf87955e312": {
+    "page": "https://yunohost.org/",
+    "source": "https://yunohost.org/assets/img/ynh_logo_roundcorner.png"
+  },
+  "community-f88d8672a247a8ce": {
+    "page": "https://www.flagsmith.com/",
+    "source": "https://cdn.prod.website-files.com/64425c978745b453797839bb/6492f2e21ba18a967f85529d_icon256.png"
+  },
   "community-f8f43e49b0d97e16": {
     "page": "https://ant-design-charts.antgroup.com/en/",
     "source": "https://mdn.alipayobjects.com/huamei_qa8qxu/afts/img/A*A-lcQbVTpjwAAAAAAAAAAAAADmJ7AQ/original"
+  },
+  "community-fa01c19d3e5dc77c": {
+    "page": "https://www.keycloak.org/",
+    "source": "https://www.keycloak.org/resources/favicon.svg"
+  },
+  "community-fcac8d62df5f65a3": {
+    "page": "https://rxdb.info/",
+    "source": "https://rxdb.info/files/logo/logo.svg"
+  },
+  "community-fd9f02188375c5f6": {
+    "page": "https://ziglang.org/documentation/master/",
+    "source": "https://ziglang.org/favicon.ico"
   },
   "component-gallery": {
     "page": "https://component.gallery/",

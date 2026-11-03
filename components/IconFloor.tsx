@@ -39,6 +39,8 @@ export type FloorApi = {
 
 type Props = {
   sources: string[];
+  featuredCount: number;
+  reserveSources: string[];
   /** Which cell of the packed sheet each pile icon is, or -1 for one that has to be loaded on its own (an upload). */
   cells: number[];
   sheet: Sheet | null;
@@ -70,7 +72,7 @@ const loadImage = (src: string) => {
  * this the floor re-rendered with it: 180 label elements reconciled, and, because their ref was an inline arrow, 180
  * refs detached and re-attached, thirteen times a second. That alone was most of the jank while typing.
  */
-export const IconFloor = memo(function IconFloor({ sources, cells, sheet, apiRef, onReady, onResourceSelect, getDropBounds, onResourceDrop, onTiltStatus }: Props) {
+export const IconFloor = memo(function IconFloor({ sources, featuredCount, reserveSources, cells, sheet, apiRef, onReady, onResourceSelect, getDropBounds, onResourceDrop, onTiltStatus }: Props) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const beamRef = useRef<HTMLDivElement>(null);
   const tipRef = useRef<HTMLDivElement>(null);
@@ -111,6 +113,8 @@ export const IconFloor = memo(function IconFloor({ sources, cells, sheet, apiRef
     const sleeping = Matter.Sleeping as unknown as { _motionSleepThreshold: number };
     sleeping._motionSleepThreshold = 0.35;
 
+    // A cold sprite sheet can take longer than the entire pour. Start only once art can actually be painted.
+    let dropAt = Infinity;
     const srcs = [...sources];
     const scene: Scene = {
       engine, srcs, images: srcs.map(() => null), tiles: srcs.map((_, i) => (sheet && cells[i] >= 0 ? cells[i] : null)),
@@ -120,8 +124,10 @@ export const IconFloor = memo(function IconFloor({ sources, cells, sheet, apiRef
       retile(i) {
         const tile = scene.tiles[i];
         if (typeof tile === "number") {
+          if (!scene.sheet) return loadOwn(i); // A borrowed cell can return after the packed image failed.
           if (scene.sheetImg?.complete && scene.sheetImg.naturalWidth) scene.atlas.putSheet(i, sheet!, scene.sheetImg, tile);
         } else if (!scene.atlas.putImage(i, tile)) return; // its own picture has not arrived yet; it will call back
+        if (dropAt === Infinity && scene.atlas.patch(i)) dropAt = performance.now() + 200;
         if (scene.grown.has(i)) scene.sharp.set(i, renderSprite(scene.images[i], scene.bigSize, scene.dpr)); // keep the enlarged copy crisp after a resize
         scene.dirty = true;
       },
@@ -229,8 +235,8 @@ export const IconFloor = memo(function IconFloor({ sources, cells, sheet, apiRef
     const stats = { stepMs: 0, drawMs: 0, awake: 0, swaps: 0, gx: 0, gy: 1, paced }; // read from the console as window.__floor when chasing lag
     (window as unknown as { __floor?: unknown }).__floor = Object.assign(stats, createDebug(scene));
     const overlays = createOverlays(scene, { labels: () => labelRefs.current, tip: () => tipRef.current, frame: () => frameRef.current, clip: () => clipRef.current, content: () => contentRef.current, beam: () => beamRef.current });
-    const swaps = createSwaps(scene, (i) => i === press?.index, invalidateGesture, stats);
-    const matches = createMatches(scene, overlays, swaps, loadImage, invalidateGesture);
+    const swaps = createSwaps(scene, (i) => i === press?.index, invalidateGesture, stats, featuredCount, reserveSources);
+    const matches = createMatches(scene, overlays, swaps, loadImage, invalidateGesture, featuredCount);
     Object.assign(stats, { holes: () => matches.holes() });
 
     const poses = createRenderPoses(bodies);
@@ -247,7 +253,6 @@ export const IconFloor = memo(function IconFloor({ sources, cells, sheet, apiRef
       canInterpolate = false;
       blend = 1;
     };
-    let dropAt = performance.now() + 200;
     let lastShake = 0;
     let wasAwake = false;
 
@@ -612,7 +617,7 @@ export const IconFloor = memo(function IconFloor({ sources, cells, sheet, apiRef
       Matter.Composite.clear(engine.world, false);
       Matter.Engine.clear(engine);
     };
-  }, [sources, cells, sheet, apiRef, onReady]);
+  }, [sources, featuredCount, reserveSources, cells, sheet, apiRef, onReady]);
 
   return (
     <>

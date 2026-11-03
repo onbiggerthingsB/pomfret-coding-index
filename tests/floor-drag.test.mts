@@ -221,3 +221,59 @@ test("a delayed image from a retired launch cannot replace or free the current r
   assert.equal(scene.holds.size, 0);
   swaps.stop();
 });
+
+test("search borrows a community tile and returns its original atlas cell when cleared", () => {
+  for (const animate of [true, false]) {
+    const { scene } = slotFixture(2);
+    scene.animate = animate;
+    scene.tiles = [0, 1];
+    scene.images = [null, null];
+    const image = { complete: true, naturalWidth: 32, addEventListener() {} } as unknown as HTMLImageElement;
+    const noop = () => {};
+    const overlays = { assign: () => 0, frame: noop, scroll: noop, fade: noop } as unknown as Parameters<typeof createMatches>[1];
+    const swaps = createSwaps(scene, () => false, noop, { swaps: 0 }, 1);
+    const matches = createMatches(scene, overlays, swaps, () => image, noop, 1);
+    matches.select([{ src: "outside-query-hit", title: "Hit", probability: 1 }], () => ({ x: 250, above: 380 }));
+    matches.tick(1);
+    if (animate) swaps.run(scene.pops.get(1)!.t0 + 155);
+    assert.deepEqual(scene.srcs, ["tile-0", "outside-query-hit"]);
+    matches.release();
+    assert.deepEqual(scene.srcs, ["tile-0", "tile-1"]);
+    assert.deepEqual(scene.tiles, [0, 1]);
+    assert.deepEqual(scene.images, [null, null]);
+    assert.equal(scene.pops.size, 0);
+    swaps.stop();
+  }
+});
+
+test("idle rotation retains featured tiles and only brings in distinct verified community logos", () => {
+  const { scene } = slotFixture(4);
+  const descriptor = Object.getOwnPropertyDescriptor(globalThis, "Image");
+  const loads: string[] = [];
+  class ImageStub {
+    address = "";
+    onload?: () => void;
+    set src(value: string) { this.address = value; loads.push(value); this.onload?.(); }
+    getAttribute() { return this.address; }
+  }
+  Object.defineProperty(globalThis, "Image", { configurable: true, value: ImageStub });
+  try {
+    const stats = { swaps: 0 };
+    const swaps = createSwaps(scene, () => false, () => {}, stats, 2, ["extra-1", "extra-2"]);
+    const verified = new Set([...scene.srcs, "extra-1", "extra-2"]);
+    const start = performance.now() + 7000;
+    for (let n = 0; n < 16; n++) {
+      swaps.churn(start + n * 1500);
+      swaps.run(start + n * 1500 + 1000);
+      assert.deepEqual(scene.srcs.slice(0, 2), ["tile-0", "tile-1"]);
+      assert.equal(new Set(scene.srcs).size, 4);
+      assert.ok(scene.srcs.every(src => verified.has(src)));
+    }
+    assert.ok(stats.swaps > 0);
+    assert.ok(loads.includes("extra-1"));
+    swaps.stop();
+  } finally {
+    if (descriptor) Object.defineProperty(globalThis, "Image", descriptor);
+    else Reflect.deleteProperty(globalThis, "Image");
+  }
+});

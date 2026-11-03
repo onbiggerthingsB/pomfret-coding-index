@@ -32,7 +32,7 @@ The featured collection includes 108 starting points for components, icons, moti
 
 The [November 2 catalog review](docs/CATALOG_REVIEW.md) covers all 28,359 original community entries. It records which links were removed or repaired, the limits of the checks, and how to trace the 18 featured additions to their sources. The [live API](https://pomfret-coding-index.vercel.app/api/resources?limit=1) returns the current deduplicated total in `indexed` and the featured count in `totalFeatured`.
 
-The large catalog stays on the server. The browser receives the featured collection and paginated search results. The physical pile displays a bounded sample, with repeated featured icons, independently of total index size.
+The large catalog stays on the server. The browser receives the featured collection and paginated search results. The opening pile loads one image sheet containing 108 featured tiles and 252 distinct community logos. Only the community tiles rotate. After changing the roster or artwork, rebuild the sheet with `node --experimental-strip-types scripts/build-floor-sheet.mjs`.
 
 To rebuild the community data from its recorded public sources, run the following command. It reads the recorded editorial decisions, fetches the public lists and updates the imported records and source manifest. Reviewed duplicate IDs remain usable through resource pages and the API.
 
@@ -65,9 +65,9 @@ Agent endpoints are available relative to the deployed origin.
 
 Search runs on the server using metadata tokens, synonyms and featured-resource weighting. It returns relevance weights. Localhost URLs require an agent with access to the same machine. Remote agents need a public deployment.
 
-Website favicons are requested through a fixed Google favicon endpoint and cached. If a favicon is unavailable, a local SVG monogram is returned. Linked brands and resources remain their owners' property.
+Bundled logos have recorded sources in `data/resource-logos.json`. Other websites use a cached favicon lookup. Linked brands and resources remain their owners' property.
 
-GitHub repository references use resource-specific monograms instead of repeating the GitHub logo. See [the classroom demonstration and peer-test guide](docs/CLASSROOM_DEMO.md).
+GitHub entries can use project artwork from their repository or a linked project website. Resources without verified or available artwork use a local monogram. See [the classroom demonstration and peer-test guide](docs/CLASSROOM_DEMO.md).
 
 ## Verification
 
