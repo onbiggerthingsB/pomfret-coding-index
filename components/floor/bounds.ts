@@ -6,10 +6,9 @@ export const HEADROOM = 140; // clear space above the window, under the ceiling,
 
 /**
  * Keeps every icon inside the window: four thick walls (the top one closes once the pile has poured in), a speed limit
- * so that no body can travel further than its own size between two collision checks, a pointer that cannot drag a body
- * past the edge, and a last-resort rescue for anything that still ends up outside.
+ * so that no body can travel further than its own size between two collision checks, and a last-resort rescue.
  */
-export function createBounds(scene: Scene, canvas: HTMLCanvasElement, mouse: Matter.Mouse) {
+export function createBounds(scene: Scene) {
   const { engine, bodies } = scene;
   let walls: Matter.Body[] = [];
   let ceiling: Matter.Body | null = null;
@@ -18,14 +17,6 @@ export function createBounds(scene: Scene, canvas: HTMLCanvasElement, mouse: Mat
   // The ceiling sits well above the window, not right on its edge, so an icon can be dropped in out of sight and is
   // already falling by the time you see it.
   const makeCeiling = () => Matter.Bodies.rectangle(scene.width / 2, -HEADROOM - WALL / 2, scene.width + WALL * 2, WALL, { isStatic: true });
-
-  // The physics mouse reads the pointer on its own. This listener runs after it and pulls the point back inside.
-  const clampPointer = () => {
-    const pad = scene.size / 2;
-    mouse.position.x = Math.max(pad, Math.min(scene.width - pad, mouse.position.x));
-    mouse.position.y = Math.max(pad, Math.min(scene.height - pad, mouse.position.y));
-  };
-  canvas.addEventListener("mousemove", clampPointer);
 
   return {
     build() {
@@ -78,6 +69,5 @@ export function createBounds(scene: Scene, canvas: HTMLCanvasElement, mouse: Mat
       }
     },
 
-    destroy: () => canvas.removeEventListener("mousemove", clampPointer),
   };
 }

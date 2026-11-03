@@ -210,7 +210,7 @@ export function createOverlays(scene: Scene, els: Elements) {
       }
     },
 
-    place(now: number) {
+    place(now: number, drawnPose: (i: number) => { position: { x: number; y: number }; angle: number }) {
       // A label appears when its icon arrives. After that nothing here is touched until the icon is let go.
       // "In its cell" is strict here (within 8 px, or parked). A label that showed up while its icon was still 40 px away
       // and tilted is what made a scroll during the rise look broken.
@@ -235,7 +235,7 @@ export function createOverlays(scene: Scene, els: Elements) {
         if (hold.rank === 0) best = i;
       });
       // The rim rides up with the best match, and hides while that match is scrolled out of the container.
-      const b = best >= 0 ? scene.bodies[best] : null;
+      const b = best >= 0 ? drawnPose(best) : null;
       const hidden = !b || (scene.holds.get(best)!.parked && !(inBox(b.position.x, b.position.y - half(best)) && inBox(b.position.x, b.position.y + half(best))));
       const on = hidden ? "0" : "1";
       if (on !== wrote.beamOn) beam.style.opacity = wrote.beamOn = on;

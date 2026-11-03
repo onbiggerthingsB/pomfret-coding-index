@@ -1,20 +1,21 @@
 import Matter from "matter-js";
-import { park, wakeAt, wakeNear } from "./forces";
-import { gridLayout, LABEL, type Anchor, type Layout } from "./layout";
+import { park, wakeAt, wakeNear } from "./forces.ts";
+import { gridLayout, LABEL, type Anchor, type Layout } from "./layout.ts";
 import type { createOverlays } from "./overlays";
-import type { Match, Scene } from "./scene";
-import { renderSprite } from "./sprite";
+import type { Match, Pop, Scene } from "./scene";
+import { renderSprite } from "./sprite.ts";
 import type { createSwaps } from "./swaps";
 
 const LOOKAHEAD = 0; // a row wholly outside the container is not launched at all: its cell is out in the page, under the search bar
 const KEEP = 3; // rows beyond the view a match may stay in before it gives its icon back
 
+type Pending = { slot: number; pop?: Pop };
 type Shown = {
   matches: Match[];
   layout: Layout;
   getAnchor: () => Anchor;
   launched: Set<number>; // cells that have an icon in them or on the way to them
-  pending: Map<number, number>; // cell -> the pile icon being swapped for it, before it has set off
+  pending: Map<number, Pending>; // unique reservation per launch, including a later visit to the same cell
   taken: Set<number>; // pile icons spoken for, so two cells cannot claim the same one
 };
 
@@ -23,7 +24,7 @@ type Shown = {
  * scrolled. Only the rows that can be seen set off. The rest wait in the pile and rise when they are scrolled into
  * view, so a search with a hundred matches costs no more than one with twenty.
  */
-export function createMatches(scene: Scene, overlays: ReturnType<typeof createOverlays>, swaps: ReturnType<typeof createSwaps>, loadImage: (src: string) => HTMLImageElement) {
+export function createMatches(scene: Scene, overlays: ReturnType<typeof createOverlays>, swaps: ReturnType<typeof createSwaps>, loadImage: (src: string) => HTMLImageElement, invalidateGesture: (i: number) => void) {
   const { bodies, holds, grown, sharp, pops, srcs } = scene;
 
   /**
@@ -68,6 +69,7 @@ export function createMatches(scene: Scene, overlays: ReturnType<typeof createOv
    */
   const begin = (i: number, rank: number, fly: boolean) => {
     if (!shown) return;
+    invalidateGesture(i);
     const rest = shown.layout.rests[rank];
     const match = shown.matches[rank];
     const label = overlays.assign(i, rank, match, rest, shown.layout.small);
@@ -124,12 +126,21 @@ export function createMatches(scene: Scene, overlays: ReturnType<typeof createOv
   const RETIRE_AT_ONCE = 6; // a flick can scroll past a dozen rows in a frame; giving them all back at once is the spike
   const QUIET = 140; // ms of stillness before icons are handed back, so a moving scroll never pays for it
   const SPARE_ENOUGH = 40; // unless the pile is running this low on lendable icons, in which case hand some back now
+  const cancelPending = (current: Shown, rank: number, pending: Pending) => {
+    current.pending.delete(rank);
+    current.taken.delete(pending.slot);
+    if (pending.pop && pops.get(pending.slot) === pending.pop) {
+      pops.delete(pending.slot);
+      scene.dirty = true; // paint the original resource at its full size again
+    }
+  };
   const retire = () => {
     if (!shown) return;
     let budget = RETIRE_AT_ONCE;
     for (const [i, hold] of [...holds]) {
       if (nearView(hold.rank, KEEP)) continue;
       if (budget-- <= 0) return; // the rest go back on the next frame: they are far out of sight either way
+      invalidateGesture(i);
       const body = bodies[i];
       const scale = grown.get(i) ?? 1;
       if (scale !== 1) Matter.Body.scale(body, 1 / scale, 1 / scale);
@@ -154,10 +165,9 @@ export function createMatches(scene: Scene, overlays: ReturnType<typeof createOv
       scene.retile(i);
     }
     // Cells that were waiting on a picture and have since scrolled well away give their pile icon back too.
-    for (const [rank, slot] of [...shown.pending]) {
+    for (const [rank, pending] of shown.pending) {
       if (nearView(rank, KEEP)) continue;
-      shown.pending.delete(rank);
-      shown.taken.delete(slot);
+      cancelPending(shown, rank, pending);
     }
   };
 
@@ -204,6 +214,9 @@ export function createMatches(scene: Scene, overlays: ReturnType<typeof createOv
     const mine = token;
     const i = srcs.indexOf(match.src);
     if (i >= 0 && i < scene.added && !shown.taken.has(i) && !pops.has(i) && !holds.has(i)) {
+      // The spare list was built for the whole wave. This exact match is no longer available to a later rank.
+      const spareIndex = spare.indexOf(i);
+      if (spareIndex >= 0) spare.splice(spareIndex, 1);
       launched.add(rank);
       shown.taken.add(i);
       begin(i, rank, fly);
@@ -216,11 +229,13 @@ export function createMatches(scene: Scene, overlays: ReturnType<typeof createOv
     // Counted as pending, not launched, until it actually sets off. Marking it launched here and then scrolling away
     // before the picture arrived left the cell marked as done for good, with nothing in it and its pile icon never
     // given back, which is what emptied the container after a hard scroll.
-    shown.pending.set(rank, slot);
+    const pending: Pending = { slot };
+    shown.pending.set(rank, pending);
     shown.taken.add(slot);
     const img = loadImage(match.src);
+    const current = () => mine === token && shown?.pending.get(rank) === pending;
     const done = () => {
-      if (mine !== token || !shown) return; // the person typed again while it loaded
+      if (!shown || !current()) return;
       shown.pending.delete(rank);
       if (launched.has(rank) || !nearView(rank, LOOKAHEAD)) {
         shown.taken.delete(slot); // scrolled out of reach, or filled another way: the icon goes back to the pile
@@ -229,13 +244,13 @@ export function createMatches(scene: Scene, overlays: ReturnType<typeof createOv
       launched.add(rank);
       begin(slot, rank, fly && whollyInView(rank));
     };
-    const ready = () => mine === token && swaps.swapIn(slot, img, match.src, 0, done);
+    const ready = () => {
+      if (current()) pending.pop = swaps.swapIn(slot, img, match.src, 0, done);
+    };
     const give = () => {
       // Its picture will not load. Hand the icon back so the cell can be filled by a later wave rather than
       // staying empty in the middle of the grid.
-      if (mine !== token || !shown) return;
-      shown.pending.delete(rank);
-      shown.taken.delete(slot);
+      if (shown && current()) cancelPending(shown, rank, pending);
     };
     if (img.complete && img.naturalWidth) ready();
     else {
@@ -264,12 +279,14 @@ export function createMatches(scene: Scene, overlays: ReturnType<typeof createOv
 
   const release = () => {
     token++;
+    if (shown) for (const [rank, pending] of shown.pending) cancelPending(shown, rank, pending);
     shown = null;
     queue.length = 0;
     scene.box = null;
     overlays.frame(null);
     if (!holds.size) return;
     holds.forEach((hold, i) => {
+      invalidateGesture(i);
       Matter.Sleeping.set(bodies[i], false);
       bodies[i].collisionFilter.mask = 0xffffffff; // it collides again on the way down
       bodies[i].collisionFilter.group = 0;
@@ -304,6 +321,7 @@ export function createMatches(scene: Scene, overlays: ReturnType<typeof createOv
    */
   const scrollIcons = (by: number) => {
     holds.forEach((hold, i) => {
+      if (hold.parked || hold.arrived || hold.labelled) invalidateGesture(i);
       if (hold.parked) Matter.Body.setPosition(bodies[i], { x: hold.rest.x, y: hold.rest.y - scene.scroll });
       else if (hold.arrived || hold.labelled) Matter.Body.setPosition(bodies[i], { x: bodies[i].position.x, y: bodies[i].position.y - by });
     });
@@ -395,6 +413,7 @@ export function createMatches(scene: Scene, overlays: ReturnType<typeof createOv
       overlays.frame(layout.box);
       overlays.scroll(scene.scroll, layout.scrollMost);
       holds.forEach((hold, i) => {
+        invalidateGesture(i);
         hold.rest = layout.rests[hold.rank];
         hold.scale = hold.rest.side / scene.size;
         hold.parked = false; // back under the spring, which carries it over and parks it again

@@ -1,8 +1,7 @@
 import Matter from "matter-js";
 import type { Scene } from "./scene";
+import { STEP } from "./timing.ts";
 
-export const STEP = 1000 / 60; // matter-js is only stable on a fixed timestep
-export const SUBSTEPS = 3; // collision checks per step. Hard hits used to leave icons overlapping: three short steps catch them, one long step did not
 // matter turns force into acceleration scaled by dt^2 (~278), so gravity is 0.001 in these units.
 const SPRING = 0.00002; // ~6x gravity from across the screen: a brisk lift that eases in as it arrives
 const DAMPING = 0.00046; // just under critical for that spring: one soft overshoot, then still
@@ -34,11 +33,12 @@ export const wakeNear = (scene: Scene, body: Matter.Body) => wakeAt(scene, body.
  * once per animation frame: at 120 Hz a per-frame force would land twice per step and send it off the screen.
  * Velocities are read through Body.getVelocity, which is per 1/60 s whatever the substep, so the tuning holds.
  */
-export function applyHoldForces(scene: Scene, dt: number) {
+export function applyHoldForces(scene: Scene, dt: number, grabbed?: Matter.Body) {
   const { engine, bodies, holds, size } = scene;
   let moving = false;
   holds.forEach((hold, i) => {
     const body = bodies[i];
+    if (body === grabbed) return;
     if (hold.parked) {
       if (!body.isSleeping) Matter.Sleeping.set(body, true); // something woke it (a drag, a jolt): back to sleep, it has a place
       return;
@@ -103,10 +103,11 @@ export function park(scene: Scene, i: number) {
 }
 
 /** Ease every grown icon toward the size it should be right now, scaling its rigid body along with it. */
-export function applyGrowth(scene: Scene, part = 1) {
+export function applyGrowth(scene: Scene, part = 1, grabbed?: Matter.Body) {
   const { bodies, holds, grown, sharp } = scene;
   grown.forEach((scale, i) => {
     const body = bodies[i];
+    if (body === grabbed) return;
     const hold = holds.get(i);
     let want = 1;
     if (hold) {
