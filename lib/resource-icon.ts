@@ -1,6 +1,6 @@
 /** Resource IDs stay in the URL even when several records use the same artwork. */
 export function resourceIconUrl(id: string): string {
-  return `/api/resource-icon/${encodeURIComponent(id)}?v=3`;
+  return `/api/resource-icon/${encodeURIComponent(id)}?v=4`;
 }
 
 /** GitHub project pages have project-specific artwork, separate from the host favicon. */

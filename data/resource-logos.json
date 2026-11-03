@@ -175,6 +175,10 @@
     "page": "https://biomejs.dev/",
     "source": "https://biomejs.dev/img/favicon.svg"
   },
+  "community-735362ce9672e68f": {
+    "page": "https://github.com/vueComponent/ant-design-vue",
+    "source": "https://www.antdv.com/logo.png"
+  },
   "community-81d116c0938bf51a": {
     "page": "https://lodash.com/",
     "source": "https://lodash.com/icons/apple-touch-180x180.png"
@@ -211,6 +215,10 @@
     "page": "https://www.python.org/",
     "source": "https://www.python.org/static/apple-touch-icon-144x144-precomposed.png"
   },
+  "community-cd1cf756a3cceed5": {
+    "page": "https://github.com/ant-design/ant-design-mobile-rn",
+    "source": "https://zos.alipayobjects.com/rmsportal/wIjMDnsrDoPPcIV.png"
+  },
   "community-dcb792d718508bec": {
     "page": "https://nextjs.org/",
     "source": "https://nextjs.org/_next/static/immutable/media/logo-next-light.2d2j04-25g3vf.svg"
@@ -223,9 +231,17 @@
     "page": "https://jestjs.io/",
     "source": "https://jestjs.io/img/jest.svg"
   },
+  "community-e6ca8458e9c714f4": {
+    "page": "https://github.com/NG-ZORRO/ng-zorro-antd",
+    "source": "https://img.alicdn.com/tfs/TB1TFFaHAvoK1RjSZFwXXciCFXa-106-120.svg"
+  },
   "community-ea794a1f5f672288": {
     "page": "https://nodejs.org/",
     "source": "https://nodejs.org/static/logos/jsIconGreen.svg"
+  },
+  "community-eb59c0a4da328793": {
+    "page": "https://mobile.ant.design/",
+    "source": "https://gw.alipayobjects.com/zos/bmw-prod/69a27fcc-ce52-4f27-83f1-c44541e9b65d.svg"
   },
   "community-ee40d88ea29e0b09": {
     "page": "https://axios-http.com/",
@@ -234,6 +250,10 @@
   "community-f12f3d8cb55abc01": {
     "page": "https://expressjs.com/",
     "source": "https://expressjs.com/favicon.svg"
+  },
+  "community-f8f43e49b0d97e16": {
+    "page": "https://ant-design-charts.antgroup.com/en/",
+    "source": "https://mdn.alipayobjects.com/huamei_qa8qxu/afts/img/A*A-lcQbVTpjwAAAAAAAAAAAAADmJ7AQ/original"
   },
   "component-gallery": {
     "page": "https://component.gallery/",
