@@ -1,3 +1,4 @@
+import { resourceIconUrl } from "./resource-icon.ts";
 import { readFileSync, statSync } from "node:fs";
 import path from "node:path";
 import { createHash } from "node:crypto";
@@ -224,7 +225,7 @@ function loadCatalog(): Catalog {
         origin: fileIndex === 0 ? "curated" : "community-index",
         featured: fileIndex === 0,
         guidance: fileIndex === 0 ? parseResourceGuidance(item.guidance) : undefined,
-        icon: `/api/resource-icon/${encodeURIComponent(id)}?v=2`,
+        icon: resourceIconUrl(id),
       };
       byId.set(id, resource);
       canonicalUrls.add(canonical);

@@ -2,7 +2,7 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import { iconHost, resourceMonogram } from "../lib/resource-icon.ts";
 
-test("GitHub repository resources use their own deterministic monograms", () => {
+test("GitHub projects skip the shared host favicon and have a deterministic fallback", () => {
   assert.equal(iconHost("https://github.com/example/alpha"), null);
   assert.equal(iconHost("https://www.github.com/example/beta/tree/main"), null);
   assert.equal(resourceMonogram("Alpha", "one"), resourceMonogram("Alpha", "one"));

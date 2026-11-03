@@ -1,0 +1,570 @@
+{
+  "aceternity-ui": {
+    "page": "https://ui.aceternity.com/",
+    "source": "https://ui.aceternity.com/apple-icon.png?2deb28af3ac52d4d"
+  },
+  "adobe-spectrum": {
+    "page": "https://spectrum.adobe.com/",
+    "source": "https://spectrum.adobe.com/img/favicons/favicon-180.png"
+  },
+  "agent-skills-format": {
+    "page": "https://agentskills.io/home",
+    "source": "https://mintcdn.com/agent-skills/T2VNvrX8aOSdN9Eu/favicon.svg"
+  },
+  "agents-md": {
+    "page": "https://agents.md/",
+    "source": "https://agents.md/favicon-light.png"
+  },
+  "amicro": {
+    "page": "https://amicro.dev/",
+    "source": "https://amicro.dev/favicon.jpg"
+  },
+  "anime-js": {
+    "page": "https://animejs.com/",
+    "source": "https://animejs.com/assets/images/favicon.png"
+  },
+  "ant-design": {
+    "page": "https://ant.design/",
+    "source": "https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg"
+  },
+  "anthropic-skills": {
+    "page": "https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills",
+    "source": "https://www.anthropic.com/images/icons/apple-touch-icon.png"
+  },
+  "aria-authoring-practices": {
+    "page": "https://www.w3.org/WAI/ARIA/apg/",
+    "source": "https://raw.githubusercontent.com/w3c/wai-aria-practices/HEAD/content-images/wai-aria-practices/w3c.svg"
+  },
+  "ark-ui": {
+    "page": "https://ark-ui.com/",
+    "source": "https://ark-ui.com/icon.svg?3e91f991fe6d39a3"
+  },
+  "autoanimate": {
+    "page": "https://auto-animate.formkit.com/",
+    "source": "https://auto-animate.formkit.com/assets/favicon-C1f1LLf8.svg"
+  },
+  "axe-core": {
+    "page": "https://www.deque.com/axe/axe-core/",
+    "source": "https://www.deque.com/wp-content/uploads/2025/10/favicon.svg"
+  },
+  "base-ui": {
+    "page": "https://base-ui.com/",
+    "source": "https://base-ui.com/static/favicon.svg"
+  },
+  "bits-ui": {
+    "page": "https://www.bits-ui.com/",
+    "source": "https://www.bits-ui.com/favicon-light.svg"
+  },
+  "bootstrap": {
+    "page": "https://getbootstrap.com/",
+    "source": "https://getbootstrap.com/docs/6.0/assets/img/favicons/apple-touch-icon.png"
+  },
+  "bulma": {
+    "page": "https://bulma.io/",
+    "source": "https://bulma.io/favicons/apple-touch-icon.png?v=201701041855"
+  },
+  "canvas-ui": {
+    "page": "https://canvasui.dev/",
+    "source": "https://canvasui.dev/favicon.svg"
+  },
+  "carbon-design": {
+    "page": "https://www.carbondesignsystem.com/",
+    "source": "https://www.carbondesignsystem.com/favicon.svg"
+  },
+  "chakra-ui": {
+    "page": "https://chakra-ui.com/",
+    "source": "https://raw.githubusercontent.com/chakra-ui/chakra-ui/731ecacbe6ac44eb05b65360429f0c9f64a2ab1c/media/logomark-colored.svg"
+  },
+  "chrome-devtools": {
+    "page": "https://github.com/ChromeDevTools/devtools-logo",
+    "source": "https://raw.githubusercontent.com/ChromeDevTools/devtools-logo/master/logos/svg/chrome-devtools-circle-128.svg"
+  },
+  "claude-code-practices": {
+    "page": "https://code.claude.com/docs/en/best-practices",
+    "source": "https://mintcdn.com/claude-code/c5r9_6tjPMzFdDDT/logo/light.svg"
+  },
+  "codepen": {
+    "page": "https://blog.codepen.io/logos/",
+    "source": "https://assets.codepen.io/t-1/codepen-logo.svg"
+  },
+  "coding-train-physics": {
+    "page": "https://thecodingtrain.com/tracks/physics-libraries",
+    "source": "https://thecodingtrain.com/apple-touch-icon.png"
+  },
+  "codrops": {
+    "page": "https://tympanus.net/codrops/",
+    "source": "https://github.com/codrops.png?size=256"
+  },
+  "community-0d8bce7e29a5cd98": {
+    "page": "https://code.visualstudio.com/",
+    "source": "https://code.visualstudio.com/assets/apple-touch-icon.png"
+  },
+  "community-0dc082de2306e07e": {
+    "page": "https://deno.com/",
+    "source": "https://deno.com/logo.svg?__frsh_c=ba3bc66b1456a2a2caff15a7f9da8773ea6ae3fc"
+  },
+  "community-1304a105f0946866": {
+    "page": "https://parceljs.org/",
+    "source": "https://parceljs.org/favicon.fe6f9d11.ico"
+  },
+  "community-15f5136fd03f9ab3": {
+    "page": "https://preactjs.com/",
+    "source": "https://raw.githubusercontent.com/preactjs/preact-www/master/src/assets/branding/symbol.svg"
+  },
+  "community-1ce554b3198255e9": {
+    "page": "https://eslint.org/",
+    "source": "https://eslint.org/icon.svg"
+  },
+  "community-202ed8802a6eae23": {
+    "page": "https://nuxt.com/",
+    "source": "https://nuxt.com/icon.png"
+  },
+  "community-26bdc348dc94e4e5": {
+    "page": "https://webpack.js.org/",
+    "source": "https://webpack.js.org/icon_512x512.png"
+  },
+  "community-2b14193563ce6363": {
+    "page": "https://vite.dev/",
+    "source": "https://vite.dev/logo-without-border.svg"
+  },
+  "community-2bc0f0f249f8cb71": {
+    "page": "https://hono.dev/",
+    "source": "https://hono.dev/images/logo.svg"
+  },
+  "community-31ff6e314f2a5cf3": {
+    "page": "https://reactrouter.com/",
+    "source": "https://reactrouter.com/favicon-light.png"
+  },
+  "community-3fc86703f4dd4d8f": {
+    "page": "https://fastify.dev/",
+    "source": "https://fastify.dev/favicon.svg"
+  },
+  "community-4263a6f361fd9d1e": {
+    "page": "https://pinia.vuejs.org/",
+    "source": "https://pinia.vuejs.org/logo.svg"
+  },
+  "community-43d3ef9bd32addf2": {
+    "page": "https://svelte.dev/",
+    "source": "https://svelte.dev/favicon.png"
+  },
+  "community-52cd6f5e3bc52f48": {
+    "page": "https://www.cypress.io/",
+    "source": "https://www.cypress.io/apple-touch-icon.png"
+  },
+  "community-5c4dd456ca1735be": {
+    "page": "https://redux.js.org/",
+    "source": "https://redux.js.org/img/redux.svg"
+  },
+  "community-5dd06ff1ad737e1b": {
+    "page": "https://sass-lang.com/",
+    "source": "https://sass-lang.com/icon.png"
+  },
+  "community-60c94267a77d6d05": {
+    "page": "https://yarnpkg.com/",
+    "source": "https://yarnpkg.com/img/yarn-favicon.svg"
+  },
+  "community-641875415b61f754": {
+    "page": "https://astro.build/",
+    "source": "https://astro.build/favicon.svg"
+  },
+  "community-68c89894eae48486": {
+    "page": "https://docusaurus.io/",
+    "source": "https://docusaurus.io/img/docusaurus.png"
+  },
+  "community-6a1de1ab9f404553": {
+    "page": "https://biomejs.dev/",
+    "source": "https://biomejs.dev/img/favicon.svg"
+  },
+  "community-81d116c0938bf51a": {
+    "page": "https://lodash.com/",
+    "source": "https://lodash.com/icons/apple-touch-180x180.png"
+  },
+  "community-8e24af85aec962ff": {
+    "page": "https://nestjs.com/",
+    "source": "https://nestjs.com/favicon.svg"
+  },
+  "community-9cbe205a8df2648d": {
+    "page": "https://angular.dev/",
+    "source": "https://angular.dev/assets/icons/apple-touch-icon.png"
+  },
+  "community-9f028105decfa304": {
+    "page": "https://remix.run/",
+    "source": "https://remix.run/favicon.svg"
+  },
+  "community-9f8aa196366d6171": {
+    "page": "https://vuejs.org/",
+    "source": "https://vuejs.org/logo.svg"
+  },
+  "community-b399aaf67c8c753f": {
+    "page": "https://pnpm.io/",
+    "source": "https://pnpm.io/img/logos/pnpm-standard-no-text.svg"
+  },
+  "community-b662278c0d08c19d": {
+    "page": "https://tailwindcss.com/",
+    "source": "https://tailwindcss.com/favicons/apple-touch-icon.png?v=4"
+  },
+  "community-b9458b212c01ead3": {
+    "page": "https://www.prisma.io/",
+    "source": "https://www.prisma.io/icon.svg?icon.33jj2rcm8g1fz.svg"
+  },
+  "community-cd1cb5b5b252b6c0": {
+    "page": "https://www.python.org/",
+    "source": "https://www.python.org/static/apple-touch-icon-144x144-precomposed.png"
+  },
+  "community-dcb792d718508bec": {
+    "page": "https://nextjs.org/",
+    "source": "https://nextjs.org/_next/static/immutable/media/logo-next-light.2d2j04-25g3vf.svg"
+  },
+  "community-dfc80ee0426fca56": {
+    "page": "https://d3js.org/",
+    "source": "https://d3js.org/logo.svg"
+  },
+  "community-e36cbf2093afe536": {
+    "page": "https://jestjs.io/",
+    "source": "https://jestjs.io/img/jest.svg"
+  },
+  "community-ea794a1f5f672288": {
+    "page": "https://nodejs.org/",
+    "source": "https://nodejs.org/static/logos/jsIconGreen.svg"
+  },
+  "community-ee40d88ea29e0b09": {
+    "page": "https://axios-http.com/",
+    "source": "https://axios.rest/apple-touch-icon.png"
+  },
+  "community-f12f3d8cb55abc01": {
+    "page": "https://expressjs.com/",
+    "source": "https://expressjs.com/favicon.svg"
+  },
+  "component-gallery": {
+    "page": "https://component.gallery/",
+    "source": "https://component.gallery/favicon.svg"
+  },
+  "cs50x": {
+    "page": "https://cs50.harvard.edu/x/",
+    "source": "https://cs50.harvard.edu/x/favicon.ico?1793642895"
+  },
+  "curated-design": {
+    "page": "https://curated.design/",
+    "source": "https://curated.design/apple-touch-icon.png"
+  },
+  "daisyui": {
+    "page": "https://daisyui.com/",
+    "source": "https://img.daisyui.com/images/daisyui/mark.svg"
+  },
+  "designbookmark": {
+    "page": "https://designbookmark.com/",
+    "source": "https://designbookmark.com/favicon-light.svg"
+  },
+  "designeer": {
+    "page": "https://designeer.xyz/",
+    "source": "https://designeer.xyz/icon.png"
+  },
+  "detail-design": {
+    "page": "https://detail.design/",
+    "source": "https://detail.design/icon-256.png"
+  },
+  "element-plus": {
+    "page": "https://element-plus.org/",
+    "source": "https://element-plus.org/images/element-plus-logo-small.svg"
+  },
+  "excalidraw": {
+    "page": "https://excalidraw.com/",
+    "source": "https://excalidraw.com/apple-touch-icon.png"
+  },
+  "flowbite": {
+    "page": "https://flowbite.com/",
+    "source": "https://flowbite.com/docs/images/logo.svg"
+  },
+  "fluent-ui": {
+    "page": "https://fluent2.microsoft.design/",
+    "source": "https://raw.githubusercontent.com/microsoft/fluentui/9c21962f67d6248e3b9f0af2942ee90fb18cda46/apps/public-docsite-v9/public/fluentui-logo.svg"
+  },
+  "freecodecamp": {
+    "page": "https://www.freecodecamp.org/learn",
+    "source": "https://www.freecodecamp.org/icons/icon-256x256.png"
+  },
+  "frontend-bootcamp": {
+    "page": "https://master.dev/bootcamp/",
+    "source": "https://cdn.master.dev/assets/fm-md/med/bootcamp/BootcampLogo.png"
+  },
+  "full-stack-open": {
+    "page": "https://fullstackopen.com/en/",
+    "source": "https://raw.githubusercontent.com/fullstack-hy2020/fullstack-hy2020.github.io/HEAD/src/images/favicon.png"
+  },
+  "geist-serif": {
+    "page": "https://vercel.com/blog/introducing-geist-serif",
+    "source": "https://assets.vercel.com/image/upload/contentful/image/e5382hct74si/6bDBfXkLRo6M3mICMM4ATR/ee7c5e191b54862dbc8d351b782344c3/Geist_Serif_Blog_OG_15.png"
+  },
+  "github-spec-kit": {
+    "page": "https://github.com/github/spec-kit",
+    "source": "https://raw.githubusercontent.com/github/spec-kit/main/media/logo_large.webp"
+  },
+  "gradientora": {
+    "page": "https://gradientora.com/",
+    "source": "https://cdn.prod.website-files.com/69de3de6661e9e021cc1ce0d/6a73b84088ff008707fb0f8b_Logo2.png"
+  },
+  "graphical": {
+    "page": "https://www.graphicalui.com/",
+    "source": "https://www.graphicalui.com/favicon-black-v3.png"
+  },
+  "gsap": {
+    "page": "https://gsap.com/",
+    "source": "https://gsap.com/apple-touch-icon.png"
+  },
+  "gustavo-craft": {
+    "page": "https://craft.gustavofior.com/",
+    "source": "https://craft.gustavofior.com/icon.png?icon.41u83-r-yo_fi.png?dpl=dpl_Dm9wFJCX3J3C92pQBmfe9VhuPXp4"
+  },
+  "headless-ui": {
+    "page": "https://headlessui.com/",
+    "source": "https://headlessui.com/apple-touch-icon.png"
+  },
+  "heroicons": {
+    "page": "https://heroicons.com/",
+    "source": "https://heroicons.com/_next/static/media/apple-touch-icon.822687be.png"
+  },
+  "heroui": {
+    "page": "https://heroui.com/",
+    "source": "https://heroui.com/icons/favicon.svg"
+  },
+  "hoverstates": {
+    "page": "https://www.hoverstat.es/",
+    "source": "https://www.hoverstat.es/icons/icon-256x256.png?v=dbe8486fc5d1a9c9fcaa551cad642890"
+  },
+  "hyperui": {
+    "page": "https://www.hyperui.dev/",
+    "source": "https://www.hyperui.dev/favicon.ico"
+  },
+  "iconify": {
+    "page": "https://iconify.design/",
+    "source": "https://iconify.design/favicon.svg"
+  },
+  "insposite": {
+    "page": "https://www.insposite.com/",
+    "source": "https://www.insposite.com/logo.svg"
+  },
+  "interactive-flexbox-guide": {
+    "page": "https://www.joshwcomeau.com/css/interactive-guide-to-flexbox/",
+    "source": "https://www.joshwcomeau.com/favicon.png"
+  },
+  "javascript-info": {
+    "page": "https://javascript.info/",
+    "source": "https://javascript.info/img/favicon/apple-touch-icon-precomposed.png"
+  },
+  "kinetics": {
+    "page": "https://kinetics.colorion.co/",
+    "source": "https://kinetics.colorion.co/favicon.svg"
+  },
+  "landbook": {
+    "page": "https://land-book.com/",
+    "source": "https://land-book.com/images/land-book-logo-simple-2.svg"
+  },
+  "lapa-ninja": {
+    "page": "https://www.lapa.ninja/",
+    "source": "https://www.lapa.ninja/apple-touch-icon.png"
+  },
+  "lucide": {
+    "page": "https://lucide.dev/",
+    "source": "https://lucide.dev/logo.light.svg"
+  },
+  "magic-ui": {
+    "page": "https://magicui.design/",
+    "source": "https://magicui.design/favicon.ico"
+  },
+  "mantine": {
+    "page": "https://mantine.dev/",
+    "source": "https://mantine.dev/favicon.svg"
+  },
+  "mapcn": {
+    "page": "https://www.mapcn.dev/",
+    "source": "https://www.mapcn.dev/icon.svg"
+  },
+  "material-symbols": {
+    "page": "https://fonts.google.com/icons",
+    "source": "https://www.gstatic.com/images/icons/material/apps/fonts/1x/catalog/v5/favicon.svg"
+  },
+  "material-ui": {
+    "page": "https://mui.com/",
+    "source": "https://mui.com/static/favicon.svg"
+  },
+  "matter-js": {
+    "page": "https://brm.io/matter-js/",
+    "source": "https://brm.io/matter-js/img/matter-js.svg"
+  },
+  "mdn-learn": {
+    "page": "https://developer.mozilla.org/en-US/docs/Learn_web_development",
+    "source": "https://developer.mozilla.org/apple-touch-icon.png"
+  },
+  "melt-ui": {
+    "page": "https://melt-ui.com/",
+    "source": "https://melt-ui.com/favicon.png"
+  },
+  "mobbin": {
+    "page": "https://mobbin.com/",
+    "source": "https://mobbin.com/mobbin-marketing-pages/images/apple-touch-icon.png"
+  },
+  "motion": {
+    "page": "https://motion.dev/",
+    "source": "https://motion.dev/favicon.svg"
+  },
+  "motion-primitives": {
+    "page": "https://motion-primitives.com/",
+    "source": "https://raw.githubusercontent.com/ibelick/motion-primitives/120f64f6ca60348e251f929e9c81f11ccbe45eda/components/website/icons/motion-primitives-logo.tsx"
+  },
+  "motionimo-frames": {
+    "page": "https://motionimo.xyz/frames",
+    "source": "https://motionimo.xyz/favicon.svg"
+  },
+  "naive-ui": {
+    "page": "https://www.naiveui.com/",
+    "source": "https://www.naiveui.com/assets/naivelogo-BdDVTUmz.svg"
+  },
+  "odin-project": {
+    "page": "https://www.theodinproject.com/",
+    "source": "https://www.theodinproject.com/assets/icons/odin-icon-22b41941.svg"
+  },
+  "one-page-love": {
+    "page": "https://onepagelove.com/",
+    "source": "https://onepagelove.com/wp-content/themes/onepagelove/frontend/img/favicon/apple-touch-icon.png"
+  },
+  "paper-shaders": {
+    "page": "https://shaders.paper.design/",
+    "source": "https://shaders.paper.design/apple-touch-icon.png"
+  },
+  "park-ui": {
+    "page": "https://park-ui.com/",
+    "source": "https://park-ui.com/icon.svg?icon.cf09a1df.svg"
+  },
+  "patternfly": {
+    "page": "https://www.patternfly.org/",
+    "source": "https://www.patternfly.org/assets/Favicon-Light.png"
+  },
+  "penpot": {
+    "page": "https://design.penpot.app/",
+    "source": "https://design.penpot.app/images/favicon.svg?version=2.19.0-RC5-1793350376"
+  },
+  "phosphor-icons": {
+    "page": "https://phosphoricons.com/",
+    "source": "https://phosphoricons.com/favicon-192.png"
+  },
+  "playwright": {
+    "page": "https://playwright.dev/",
+    "source": "https://playwright.dev/img/playwright-logo.svg"
+  },
+  "preline-ui": {
+    "page": "https://preline.co/",
+    "source": "https://preline.co/"
+  },
+  "primer": {
+    "page": "https://primer.style/",
+    "source": "https://primer.style/icon.svg?icon.1ohssj3nq107e.svg"
+  },
+  "primereact": {
+    "page": "https://primereact.dev/",
+    "source": "https://fqjltiegiezfetthbags.supabase.co/storage/v1/object/public/common.images/logo/primereact-logo.svg"
+  },
+  "primevue": {
+    "page": "https://primevue.dev/",
+    "source": "https://fqjltiegiezfetthbags.supabase.co/storage/v1/object/public/website.images/favicon/favicon.svg"
+  },
+  "quasar": {
+    "page": "https://quasar.dev/",
+    "source": "https://cdn.quasar.dev/logo-v2/favicon/favicon-128x128.png"
+  },
+  "radix-ui": {
+    "page": "https://www.radix-ui.com/",
+    "source": "https://www.radix-ui.com/favicon-black.svg"
+  },
+  "react-aria": {
+    "page": "https://react-aria.adobe.com/",
+    "source": "https://react-aria.adobe.com/server/react-aria-favicon.0d52b4c6.svg"
+  },
+  "react-bits": {
+    "page": "https://reactbits.dev/",
+    "source": "https://reactbits.dev/apple-touch-icon.png"
+  },
+  "react-learn": {
+    "page": "https://react.dev/learn",
+    "source": "https://react.dev/apple-touch-icon.png"
+  },
+  "react-spring": {
+    "page": "https://www.react-spring.dev/",
+    "source": "https://www.react-spring.dev/spring-icon.png"
+  },
+  "remix-icon": {
+    "page": "https://remixicon.com/",
+    "source": "https://www.remixicon.com/img/remixicon-logo.svg"
+  },
+  "shadcn-ui": {
+    "page": "https://ui.shadcn.com/",
+    "source": "https://ui.shadcn.com/apple-touch-icon.png"
+  },
+  "simple-icons": {
+    "page": "https://simpleicons.org/",
+    "source": "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/simpleicons.svg"
+  },
+  "siteinspire": {
+    "page": "https://www.siteinspire.com/",
+    "source": "https://www.siteinspire.com/apple-icon.png?apple-icon.0bgmpvoup4qur.png"
+  },
+  "skeleton": {
+    "page": "https://www.skeleton.dev/",
+    "source": "https://raw.githubusercontent.com/skeletonlabs/skeleton/e65535ebfb9b37bf37ccde1ed854b96397d21550/sites/skeleton.dev/src/assets/branding/skeleton.svg"
+  },
+  "storybook": {
+    "page": "https://storybook.js.org/",
+    "source": "https://storybook.js.org/icon.svg"
+  },
+  "superpowers": {
+    "page": "https://github.com/obra/superpowers/blob/main/.codex-plugin/plugin.json",
+    "source": "https://raw.githubusercontent.com/obra/superpowers/HEAD/assets/app-icon.png"
+  },
+  "tabler-icons": {
+    "page": "https://tabler.io/icons",
+    "source": "https://tabler.io/favicons/android-chrome-512x512.png"
+  },
+  "testing-library": {
+    "page": "https://testing-library.com/",
+    "source": "https://testing-library.com/img/octopus-128x128.png"
+  },
+  "three-js": {
+    "page": "https://threejs.org/",
+    "source": "https://threejs.org/files/favicon.ico"
+  },
+  "transitions-dev": {
+    "page": "https://transitions.dev/",
+    "source": "https://transitions.dev/assets/favicon-light-mode.png?v=4"
+  },
+  "tremor": {
+    "page": "https://www.tremor.so/",
+    "source": "https://www.tremor.so/favicon.ico"
+  },
+  "typescript-handbook": {
+    "page": "https://www.typescriptlang.org/docs/handbook/intro.html",
+    "source": "https://www.typescriptlang.org/icons/icon-256x256.png?v=8944a05a8b601855de116c8a56d3b3ae"
+  },
+  "ui-skills": {
+    "page": "https://www.ui-skills.com/",
+    "source": "https://www.ui-skills.com/uiskills-logo-light.webp"
+  },
+  "vercel-agent-skills": {
+    "page": "https://vercel.com/docs/agent-resources/skills",
+    "source": "https://assets.vercel.com/image/upload/q_auto/front/favicon/vercel/apple-touch-icon-180x180.png"
+  },
+  "vitest": {
+    "page": "https://vitest.dev/",
+    "source": "https://vitest.dev/logo-without-border.svg"
+  },
+  "vuetify": {
+    "page": "https://vuetifyjs.com/",
+    "source": "https://vuetifyjs.com/img/icons/android-chrome-512x512.png"
+  },
+  "web-awesome": {
+    "page": "https://webawesome.com/",
+    "source": "https://webawesome.com/assets/images/app-icons/icon.svg"
+  },
+  "web-dev-learn": {
+    "page": "https://web.dev/learn",
+    "source": "https://www.gstatic.com/devrel-devsite/prod/ve828226d17bf98b2ac333a1bbe96ed6401cc6183d543bad39ccac2722acbc6a7/web/images/touchicon-180.png"
+  }
+}

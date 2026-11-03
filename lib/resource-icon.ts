@@ -1,4 +1,9 @@
-/** null means use the local monogram without a network request. */
+/** Resource IDs stay in the URL even when several records use the same artwork. */
+export function resourceIconUrl(id: string): string {
+  return `/api/resource-icon/${encodeURIComponent(id)}?v=3`;
+}
+
+/** GitHub project pages have project-specific artwork, separate from the host favicon. */
 export function iconHost(url: string): string | null {
   try {
     const parsed = new URL(url);

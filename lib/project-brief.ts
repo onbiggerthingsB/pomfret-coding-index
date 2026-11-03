@@ -1,3 +1,4 @@
+import { resourceIconUrl } from "./resource-icon.ts";
 import type { Resource } from "./resources";
 export type Project = { goal: string; stack: string; resources: Resource[] };
 export const emptyProject = (): Project => ({ goal: "", stack: "", resources: [] });
@@ -30,7 +31,7 @@ export function readResource(value: unknown): Resource | null {
   const result: Resource = {
     id: item.id, name: item.name.trim().slice(0, 200), description: item.description.slice(0, 2000),
     url: item.url, sourceUrl: item.sourceUrl, category: item.category as Resource["category"], kind: item.kind as Resource["kind"],
-    tags: item.tags.slice(0, 30).map(tag => tag.slice(0, 100)), icon: `/api/resource-icon/${encodeURIComponent(item.id)}?v=2`,
+    tags: item.tags.slice(0, 30).map(tag => tag.slice(0, 100)), icon: resourceIconUrl(item.id),
     featured: item.featured === true, origin: item.origin === "curated" ? "curated" : "community-index",
   };
   if (safeUrl(item.agentUrl)) result.agentUrl = item.agentUrl;

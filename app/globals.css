@@ -183,7 +183,8 @@
 .index-resource-list { padding:8px 24px; }
 .index-resource-row { display:flex; width:100%; align-items:flex-start; gap:15px; text-align:left; padding:20px 0; border-bottom:1px solid #ffffff0c; }
 .index-resource-row:hover strong { color:#fff; }
-.index-resource-row>img { flex-shrink:0; border-radius:8px; background:#212124; object-fit:contain; }
+.index-resource-row>img, .index-detail-top img, .project-tray-icons img, .project-picks img { background-color:#f6f7f9; }
+.index-resource-row>img { flex-shrink:0; border-radius:8px; object-fit:contain; }
 .index-resource-row>span:nth-child(2) { flex:1; min-width:0; }
 .index-resource-row strong { color:#d9d9df; display:block; font-size:14px; font-weight:550; }
 .index-resource-row>span>span { display:block; font-size:12px; color:#8a8a94; line-height:1.6; margin-top:4px; }
@@ -200,7 +201,7 @@
 .index-detail { color:#ededf2; background:#151517; border:1px solid #ffffff24; border-radius:12px; padding:30px; width:min(480px,calc(100% - 32px)); max-height:calc(100dvh - 40px); overflow:auto; margin:auto; box-shadow:0 25px 100px #000a; }
 .index-detail::backdrop { background:#0008; backdrop-filter:blur(6px); }
 .index-detail-top { display:flex; justify-content:space-between; align-items:flex-start; }
-.index-detail-top img { border-radius:12px; background:#25252a; object-fit:contain; }
+.index-detail-top img { border-radius:12px; object-fit:contain; }
 .index-eyebrow { font-size:11px; color:#858591; margin-top:26px; }
 .index-detail h2 { font:400 clamp(32px, 5vw, 42px)/1.1 var(--font-geist-serif, Georgia), Georgia, serif; letter-spacing:-.035em; margin-top:5px; overflow-wrap:anywhere; }
 .index-description { color:#a0a0aa; margin:13px 0 20px; font-size:14px; line-height:1.8; }
@@ -564,7 +565,7 @@ textarea:focus-visible,summary:focus-visible { outline:2px solid #afafd5; outlin
 .project-empty button { font-size:12px; color:#d6d6ea; }
 .project-picks { list-style:none; padding:0; margin:0; }
 .project-picks li { display:flex; align-items:flex-start; gap:12px; padding:16px 0; border-bottom:1px solid #ffffff12; }
-.project-picks img { border-radius:7px; flex-shrink:0; background:#23232a; }
+.project-picks img { border-radius:7px; flex-shrink:0; }
 .project-picks li>div { flex:1; min-width:0; }
 .project-pick-name { text-align:left; font-size:13px; font-weight:550; color:#e3e3ef; }
 .project-pick-name:hover { text-decoration:underline; }
