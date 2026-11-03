@@ -26,8 +26,11 @@ await Promise.all(opening.map(async ({ id, name }, i) => {
     tile.copy(pixels, ((top + row) * width + left) * 4, row * cell * 4, (row + 1) * cell * 4);
   }
 }));
-const bytes = await sharp(pixels, {raw: {width, height, channels: 4}}).webp({ lossless: true }).toBuffer();
+// Preserve small logo details while reducing the cold page load. The sheet test compares every decoded tile to its original.
+const bytes = await sharp(pixels, { raw: { width, height, channels: 4 } })
+  .webp({ nearLossless: true, quality: 70, effort: 6 }).toBuffer();
 const hash = createHash("sha256").update(bytes).digest("hex").slice(0, 12);
-await writeFile("public/floor/opening.webp", bytes);
-await writeFile("data/floor-sheet.json", JSON.stringify({ url: `/floor/opening.webp?v=${hash}`, cell, gutter, cols }, null, 2) + "\n");
+const url = `/floor/opening-${hash}.webp`;
+await writeFile("public" + url, bytes);
+await writeFile("data/floor-sheet.json", JSON.stringify({ url, cell, gutter, cols }, null, 2) + "\n");
 console.log(`Packed ${opening.length} tiles in ${bytes.length} bytes.`);

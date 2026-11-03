@@ -11,9 +11,10 @@ import sheet from "../data/floor-sheet.json" with { type: "json" };
 test("every painted opening tile uses the corresponding resource's artwork exactly once", async () => {
   const featured = getFeaturedResources();
   const { sources } = getFloorRoster(featured);
-  const file = await readFile("public" + sheet.url.split("?")[0]);
+  const file = await readFile("public" + sheet.url);
   const digest = (buffer: Buffer) => createHash("sha256").update(buffer).digest("hex");
-  assert.ok(sheet.url.endsWith(digest(file).slice(0, 12)));
+  assert.equal(sheet.url, `/floor/opening-${digest(file).slice(0, 12)}.webp`);
+  assert.ok(file.length <= 800_000, `Opening sheet grew to ${file.length} bytes`);
   const { data, info } = await sharp(file).ensureAlpha().raw().toBuffer({ resolveWithObject: true });
   const step = sheet.cell + sheet.gutter;
   assert.equal(info.width, sheet.cols * step);
@@ -34,7 +35,7 @@ test("every painted opening tile uses the corresponding resource's artwork exact
       const pixel = (Math.floor(sheet.cell / 4) * sheet.cell + Math.floor(sheet.cell / 4)) * 3;
       assert.deepEqual(extracted.subarray(pixel, pixel + 3), expected.subarray(pixel, pixel + 3));
     } else {
-      // SIMD resampling can round channels differently on different architectures.
+      // Allow for near-lossless compression and platform-specific resampling.
       const error = extracted.reduce((sum, value, n) => sum + Math.abs(value - expected[n]), 0);
       assert.ok(error / extracted.length < 1, id);
     }

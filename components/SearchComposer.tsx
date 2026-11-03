@@ -8,13 +8,14 @@ type Props = {
   onChange: (v: string) => void;
   onSubmit: (v: string) => void;
   onClear: () => void;
+  actionLabel: string;
   busy: boolean;
   paused: boolean;
 };
 
-export function SearchComposer({ value, onChange, onSubmit, onClear, busy, paused }: Props) {
+export function SearchComposer({ value, onChange, onSubmit, onClear, actionLabel, busy, paused }: Props) {
   const input = useRef<HTMLInputElement>(null);
-  const ready = value.trim().length >= 2;
+  const ready = Boolean(value.trim() || actionLabel);
 
   // Text typed before React finished loading lives only in the DOM, so adopt it once.
   useEffect(() => {
@@ -74,10 +75,11 @@ export function SearchComposer({ value, onChange, onSubmit, onClear, busy, pause
         placeholder="What do you want to build?"
         className="min-w-0 flex-1 bg-transparent py-2 text-[18px] leading-8 tracking-[-0.01em] text-text outline-none placeholder:text-faint"
       />
-      <span className="search-shortcuts" aria-hidden="true">
+      {!actionLabel && <span className="search-shortcuts" aria-hidden="true">
         {!busy && (ready ? <kbd className="search-enter">Enter</kbd> : !value && <kbd className="search-slash">/</kbd>)}
-      </span>
-      <button type="submit" disabled={busy || !ready} aria-label={busy ? "Searching" : "Search"} aria-busy={busy} className="search-submit">
+      </span>}
+      <button type="submit" disabled={!ready && !busy} aria-disabled={busy || undefined} aria-label={busy ? "Searching" : actionLabel || "Search"} aria-busy={busy} className="search-submit">
+        {actionLabel && <span className="search-action-label">{actionLabel}</span>}
         <Orb state={busy ? "busy" : ready ? "ready" : "idle"} paused={paused} />
       </button>
     </form>

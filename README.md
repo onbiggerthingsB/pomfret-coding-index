@@ -28,7 +28,7 @@ npm start
 
 ## What is indexed
 
-The featured collection includes 108 starting points for components, icons, motion, design, agent workflows, learning and developer tools. Thirty-two have a dated guide with use cases, setup and caveats. Other records come from 36 public coding collections.
+The featured collection includes 108 starting points for components, icons, motion, design, agent workflows, learning and developer tools. All 108 include a use case, supported setups, a caveat and dated links to the sources checked. Other records come from 36 public coding collections.
 
 The [November 2 catalog review](docs/CATALOG_REVIEW.md) covers all 28,359 original community entries. It records which links were removed or repaired, the limits of the checks, and how to trace the 18 featured additions to their sources. The [live API](https://pomfret-coding-index.vercel.app/api/resources?limit=1) returns the current deduplicated total in `indexed` and the featured count in `totalFeatured`.
 
@@ -44,10 +44,10 @@ Rebuild the app after changing the catalog so the homepage's count matches the u
 
 ## Students and agents
 
-- Press `/` to focus search. Try `microinteractions`, `gradients` or `components for a dashboard`, then press Enter.
+- Press `/` to focus search. Describe a project, such as `a homework dashboard with due dates and a completed filter`, or ask for a specific resource by name, then press Enter.
 - Up to 24 matching icons rise above the search bar with resource names. Click one to see its website, checked guidance when available, source and agent handoff. The text list keeps 60 results per page.
-- Use the results list for keyboard access, descriptions and pagination.
-- Saved resources stay in the current browser.
+- After submitting a search, press Tab to reach the results list. It includes descriptions and pagination.
+- Open tabs in the same browser share saved resources and project picks.
 - Drag an icon into My project, or choose Add to project in its details. Add a goal and stack or setup constraints, then copy or download one Markdown brief containing up to 12 resources. The project kit persists in this browser; it is not automatically shared between devices.
 - For agents opens a copyable prompt and the machine-readable entry points.
 - Pause motion freezes the scene. Reduced-motion preferences are supported.
@@ -63,7 +63,7 @@ Agent endpoints are available relative to the deployed origin.
 /resources/shadcn-ui
 ```
 
-Search runs on the server using metadata tokens, synonyms and featured-resource weighting. It returns relevance weights. Localhost URLs require an agent with access to the same machine. Remote agents need a public deployment.
+Search ranks matches on the server using names, tags, descriptions and reviewed use cases. Scores express relevance to the query. Localhost URLs require an agent with access to the same machine. Remote agents need a public deployment.
 
 Bundled logos have recorded sources in `data/resource-logos.json`. Other websites use a cached favicon lookup. Linked brands and resources remain their owners' property.
 

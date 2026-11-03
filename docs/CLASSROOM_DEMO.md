@@ -7,7 +7,7 @@ The educational purpose is to help students compare coding resources, explain a 
 ## Demonstration
 
 1. Start with a concrete class project, such as a homework dashboard with due dates and a completed filter.
-2. Search for `components for a dashboard`. Explain that search ranks catalog words and synonyms; the rank is not a quality score.
+2. Enter the whole project idea in the search box. Open the results list and look at the first three suggestions. Try adding your framework when it matters to your choice.
 3. Open Material UI or another result. Read its use case, framework, setup estimate and caveat. Compare it with another candidate.
 4. Drag a useful icon into My project, or use Add to project. Physics drives exploration and collecting resources. The text list and buttons provide an alternative.
 5. Enter the project goal and existing setup. Choose only the resources that deserve comparison; the tray holds up to twelve.

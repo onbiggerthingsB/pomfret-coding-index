@@ -67,6 +67,8 @@ type IndexedResource = {
   name: string;
   names: Set<string>;
   tags: Set<string>;
+  guidance?: Set<string>;
+  frameworks?: Set<string>;
   description: string;
   words: Set<string>;
   urlWords: Set<string>;
@@ -78,14 +80,43 @@ type Catalog = {
   featured: Resource[];
   byId: Map<string, Resource>;
   index: IndexedResource[];
+  frequencies: Map<string, number>;
 };
 
 let catalog: Catalog | undefined;
 
-const stopWords = new Set("a am an and anything are as at be by can could create find for from get give help how i in is it looking m me my need of on or our please re searching show something that the to use using want we website with would".split(" "));
+const stopWords = new Set("a am an and anything are as at be by can could create find for from get give help how i in is it looking m me my need of on or our please re searching show something that the to use using want we website with would what which who where when that they them their people let like works work your it s ve does do did new through".split(" "));
+const stackTerms = new Set([
+  "react", "vue", "svelte", "angular", "solid", "nextjs", "nuxtjs", "tailwind", "bootstrap",
+  "javascript", "typescript", "css", "html", "python", "rust", "java", "go", "kotlin", "swift", "php",
+]);
+const accessibilityTerms = new Set(["accessible", "accessibility", "a11y"]);
 const interfaceObjects = new Set(["card", "button", "panel", "menu", "modal", "list", "element"]);
 const aliases: Record<string, string[]> = {
   component: ["component", "ui", "designsystem"],
+  modal: ["modal", "dialog"],
+  dialog: ["dialog", "modal"],
+  check: ["check", "audit", "testing", "verification"],
+  audit: ["audit", "check", "testing"],
+  login: ["login", "signin", "authentication"],
+  authenticate: ["authenticate", "authentication"],
+  upload: ["upload", "uploader", "uploading"],
+  dragdrop: ["dragdrop", "dropzone", "drag", "draggable"],
+  drop: ["drop", "dropzone", "dragdrop", "draggable"],
+  pick: ["pick", "picker", "datepicker", "choose"],
+  date: ["date", "datepicker", "calendar"],
+  bounce: ["bounce", "spring", "physics"],
+  drag: ["drag", "draggable", "gesture"],
+  map: ["map", "mapping", "geospatial"],
+  place: ["place", "location", "marker"],
+  soccer: ["soccer", "football"],
+  picture: ["picture", "image", "photo"],
+  signup: ["signup", "registration", "register"],
+  codebase: ["codebase", "repository", "repo", "instructions"],
+  uploader: ["uploader", "upload", "picker"],
+  scroll: ["scroll", "scrolling"],
+  scrolling: ["scrolling", "scroll"],
+  transition: ["transition", "animation"],
   icon: ["icon", "symbol", "pictogram"],
   animation: ["animation", "motion", "animate"],
   animate: ["animate", "animation", "motion"],
@@ -109,6 +140,7 @@ const aliases: Record<string, string[]> = {
 function normalize(value: string): string {
   return value.normalize("NFKD").replace(/[\u0300-\u036f]/g, "").toLowerCase()
     .replace(/c\+\+/g, " cpp ").replace(/c#/g, " csharp ").replace(/\.net\b/g, " dotnet ")
+    .replace(/\b(react|vue|svelte|angular|solid)\.?js\b/g, "$1").replace(/\b(next|nuxt)\.js\b/g, "$1js")
     .replace(/[^a-z0-9]+/g, " ").trim();
 }
 
@@ -246,9 +278,16 @@ function loadCatalog(): Catalog {
     tags: new Set(words([...resource.tags, resource.category, resource.kind].join(" "))),
     description: normalize(resource.description),
     words: new Set(words(resource.description)),
+    guidance: resource.guidance && new Set(words(resource.guidance.bestFor)),
+    frameworks: resource.guidance && new Set(words(resource.guidance.frameworks.join(" "))),
     urlWords: new Set(words(resource.url)),
   }));
-  catalog = { signature, resources, featured: resources.filter(item => item.featured), byId, index };
+  const frequencies = new Map<string, number>();
+  for (const entry of index) {
+    const seen = new Set([...entry.names, ...entry.tags, ...entry.words, ...(entry.guidance ?? [])]);
+    for (const term of seen) frequencies.set(term, (frequencies.get(term) ?? 0) + 1);
+  }
+  catalog = { signature, resources, featured: resources.filter(item => item.featured), byId, index, frequencies };
   return catalog;
 }
 
@@ -264,23 +303,99 @@ export function getResource(id: string): Resource | undefined {
   return loadCatalog().byId.get(id);
 }
 
-function tokenScore(entry: IndexedResource, token: string, interfaceMotion: boolean): number {
+function mentions(entry: IndexedResource, term: string): boolean {
+  return entry.names.has(term) || entry.tags.has(term) || !!entry.frameworks?.has(term);
+}
+
+function tokenScore(entry: IndexedResource, alternatives: string[]): number {
   let best = 0;
-  // Element-animation libraries can apply to cards or buttons even when the
-  // catalog describes their general component support instead of each shape.
-  const alternatives = interfaceMotion && interfaceObjects.has(token)
-    ? [token, "element", "component", "ui"]
-    : Object.hasOwn(aliases, token) ? aliases[token] : [token];
-  for (const [index, alternative] of alternatives.entries()) {
+  for (const [index, term] of alternatives.entries()) {
     let score = 0;
-    if (entry.names.has(alternative)) score = 18;
-    else if (entry.tags.has(alternative)) score = 12;
-    else if (entry.words.has(alternative)) score = 4;
-    else if (alternative.length >= 3 && [...entry.names, ...entry.tags].some(word => word.startsWith(alternative))) score = 3;
-    else if (alternative.length >= 3 && entry.urlWords.has(alternative)) score = 1;
-    best = Math.max(best, index === 0 ? score : score * 0.7);
+    if (entry.names.has(term)) score = 18;
+    else if (entry.tags.has(term) || entry.frameworks?.has(term)) score = 12;
+    else if (entry.guidance?.has(term)) score = 10;
+    else if (entry.words.has(term)) score = 4;
+    else if (term.length >= 3) {
+      for (const set of [entry.names, entry.tags]) {
+        for (const word of set) {
+          if (word.startsWith(term)) {
+            score = 3;
+            break;
+          }
+        }
+        if (score) break;
+      }
+      if (!score && entry.urlWords.has(term)) score = 1;
+    }
+    // A synonym can score at most 0.6 × 18. A direct name or tag wins.
+    if (index === 0 && score >= 12) return score;
+    best = Math.max(best, index === 0 ? score : score * 0.6);
   }
   return best;
+}
+
+function planSearch(query: string, catalog: Catalog) {
+  const framed = normalize(query.replace(/(^|\s)-(\w+)/g, "$1without $2"))
+    .replace(/^(?:what|which) (?:tools?|libraries|resources?) (?:can|should|could) (?:i|we) use (?:to|for) /, "")
+    .replace(/^(?:learn how to|help me learn how to|i m trying to|i am trying to) /, "")
+    .replace(/^(?:i d like to |i would like to |can you help me )/, "")
+    .replace(/\b(?:to|am|m|are|re)\s+(?:build|building|make|making|create|creating)\b/g, " ")
+    .replace(/\b(?:build|building|make|making|add|adding)\s+(?:a|an|my|our)\b/g, " ")
+    .replace(/\bwalk ((?:my |our |an? )?\w+) through\b/g, "$1")
+    .replace(/\b(?:my|our|this|the|a|an) ([a-z0-9]+) (?:web ?site|site|webpage|app|project)\b/g, "$1")
+    .replace(/\b(?:my|our|this|the) (?:web ?site|site|webpage)\b/g, " ")
+    .replace(/\bsign up\b/g, "signup")
+    .replace(/\b(?:sign|log) (?:in|into)\b/g, "login")
+    .replace(/\bdrag (?:and |n )?drop\b/g, "dragdrop")
+    .replace(/\bauthenticat(?:e|ing) (?:the )?users?\b/g, "authentication")
+    .replace(/\b(?:without(?: using)?|no|not(?: built with| using| use| include)?|excluding|except|avoid|don t (?:want|use|include))\b/g, "exclude");
+  const raw = words(framed);
+  const excluded = new Set<string>();
+  const terms = new Set<string>();
+  for (let i = 0; i < raw.length; i++) {
+    if (raw[i] === "exclude" && i + 1 < raw.length) {
+      excluded.add(raw[++i]);
+      while (["and", "or"].includes(raw[i + 1]) && stackTerms.has(raw[i + 2])) {
+        excluded.add(raw[i + 2]);
+        i += 2;
+      }
+    } else if (!stopWords.has(raw[i])) terms.add(raw[i]);
+  }
+  const motionQuery = [...terms].some(term => ["animate", "animated", "animating", "animation", "motion"].includes(term));
+  const content = [...terms].filter(term => !stackTerms.has(term));
+  const subject = new Set(words(framed.split(/\b(?:that|where|with|of|for|when)\b/)[0]).filter(term => content.includes(term)));
+  const interfaceMotion = motionQuery && [...terms].some(term => interfaceObjects.has(term));
+  const audit = terms.has("check") && [...accessibilityTerms].some(term => terms.has(term));
+  const browserTest = (terms.has("test") || terms.has("testing")) && [...terms].some(term => ["login", "checkout", "page", "form", "signup"].includes(term));
+  const fileUpload = (terms.has("upload") || terms.has("uploader")) && terms.has("file");
+  const loginForm = terms.has("login") && terms.has("form");
+  // A classroom subject can help rank a dashboard or a test without being
+  // a requirement of the general-purpose tool that implements it.
+  let focus: string[] = [];
+  if (browserTest) focus = ["test", "testing"];
+  else if (fileUpload) focus = ["file", "upload", "uploader"];
+  else if (loginForm) focus = ["form"];
+  else if (terms.has("dashboard")) focus = ["dashboard"];
+  else if (terms.has("debug") || terms.has("debugging")) focus = ["debug", "debugging"];
+  else if (terms.size >= 3) focus = ["scroll", "scrolling", "transition"].filter(term => terms.has(term));
+  return {
+    excluded: [...excluded], browserTest, fileUpload, loginForm, interfaceMotion,
+    contentCount: content.length,
+    needsBehavior: /\b(?:that|when)\b/.test(framed) && ["bounce", "drag", "animate"].some(term => terms.has(term)),
+    terms: [...terms].map(term => {
+      const alternatives = audit && term === "check" ? ["audit", "check", "testing"]
+        : interfaceMotion && interfaceObjects.has(term) ? [term, "element", "component", "ui", "dom", "css"]
+        : Object.hasOwn(aliases, term) ? aliases[term] : [term];
+      const frequency = Math.max(...alternatives.map(word => catalog.frequencies.get(word) ?? 0));
+      return {
+        term, alternatives, stack: stackTerms.has(term),
+        subject: subject.size === 1 && subject.has(term),
+        focus: focus.includes(term),
+        required: focus.includes(term) || stackTerms.has(term) || accessibilityTerms.has(term),
+        importance: 1 + Math.min(5, Math.log((catalog.index.length + 1) / (frequency + 1))) / 6,
+      };
+    }),
+  };
 }
 
 /** Deterministic metadata search. Scores are ranking weights, not probabilities. */
@@ -288,14 +403,8 @@ export function searchResources(options: SearchOptions = {}): ResourceSearch {
   const current = loadCatalog();
   const query = (options.query ?? "").trim().slice(0, 300);
   const normalized = normalize(query);
-  // Remove request framing while retaining meaningful searches such as
-  // "build tools" and "building simulation".
-  const searchable = normalized
-    .replace(/\b(?:to|am|m|are|re)\s+(?:build|building|make|making|create|creating)\b/g, " ")
-    .replace(/\b(?:build|building|make|making)\s+(?:a|an|my|our)\b/g, " ");
-  const tokens = [...new Set(words(searchable).filter(word => !stopWords.has(word)))];
-  const interfaceMotion = tokens.some(token => ["animate", "animated", "animating", "animation", "motion"].includes(token));
-  const broadQuery = tokens.length === 1 && Object.hasOwn(aliases, tokens[0]);
+  const plan = planSearch(query, current);
+  const broadQuery = plan.terms.length === 1 && Object.hasOwn(aliases, plan.terms[0].term);
   const limit = Number.isFinite(options.limit) ? Math.max(1, Math.min(100, Math.trunc(options.limit!))) : 30;
   const offset = Number.isFinite(options.offset) ? Math.max(0, Math.trunc(options.offset!)) : 0;
   const matches: ResourceResult[] = [];
@@ -303,16 +412,49 @@ export function searchResources(options: SearchOptions = {}): ResourceSearch {
   for (const entry of current.index) {
     if (options.category && options.category !== "all" && entry.resource.category !== options.category) continue;
     if (options.kind && options.kind !== "all" && entry.resource.kind !== options.kind) continue;
-    // Broad queries should lead with the class's selected starting points.
-    let score = entry.resource.featured ? 80 : 0;
-    if (query) {
-      if (!tokens.length) continue;
-      const scores = tokens.map(token => tokenScore(entry, token, interfaceMotion));
-      if (scores.some(weight => weight === 0)) continue;
-      score += scores.reduce((sum, weight) => sum + weight, 0);
-      if (entry.name === normalized) score += broadQuery ? 60 : 150;
-      else if (entry.name.includes(normalized)) score += broadQuery ? 20 : 45;
+    let score = entry.resource.featured ? (plan.terms.length > 1 ? 32 : 80) : 0;
+    if (query && entry.name === normalized) {
+      // Names such as "No-Login Web Apps" contain ordinary search operators.
+      score += broadQuery ? 60 : 1000;
+    } else if (query) {
+      if (!plan.terms.length && !plan.excluded.length) continue;
+      if (plan.excluded.some(term => mentions(entry, term) || entry.words.has(term) || entry.guidance?.has(term))) continue;
+      let eligible = true;
+      let matched = 0;
+      let strongAnchor = false;
+      for (const {term, required, alternatives, stack, subject, importance, focus} of plan.terms) {
+        if (stack && !mentions(entry, term)) {
+          eligible = false;
+          break;
+        }
+        const weight = tokenScore(entry, alternatives);
+        if (required && !weight) {
+          eligible = false;
+          break;
+        }
+        if (!weight) continue;
+        if (!stack) {
+          matched++;
+          if ((focus || subject) && weight >= 6 && !plan.needsBehavior) strongAnchor = true;
+        }
+        score += (weight + 8) * importance;
+        if (subject) score += weight;
+        if (focus && mentions(entry, term)) score += 14;
+      }
+      // A framework alone cannot satisfy an unknown feature request. A single
+      // specific subject (e.g. a chart of soccer scores) can supply a useful tool.
+      if (!eligible || (matched < Math.min(2, plan.contentCount) && !strongAnchor)) continue;
+      if (entry.name.includes(normalized)) score += broadQuery ? 20 : 45;
       if (entry.description.includes(normalized)) score += 12;
+      if (plan.fileUpload && (entry.tags.has("uploader") || entry.names.has("upload"))) score += 20;
+      if (plan.browserTest) {
+        const browserAutomation = entry.tags.has("browser") && entry.tags.has("automation");
+        if (matched === 1 && !browserAutomation) continue;
+        if (browserAutomation) score += 35;
+        else if (entry.resource.kind === "library" && entry.tags.has("testing") && entry.tags.has("component")) score += 12;
+      }
+      if (plan.interfaceMotion && entry.resource.category === "motion" && entry.resource.kind === "library") score += 18;
+      if ((plan.fileUpload || plan.loginForm) && entry.resource.category === "components") score += 30;
     }
     matches.push({ ...entry.resource, score: Math.round(score * 10) / 10 });
   }

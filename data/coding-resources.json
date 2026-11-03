@@ -78,7 +78,19 @@
     "tags": ["ui", "react", "components", "accessibility", "keyboard", "internationalization"],
     "kind": "library",
     "agentUrl": "https://react-aria.adobe.com/llms.txt",
-    "sourceUrl": "https://react-aria.adobe.com/"
+    "sourceUrl": "https://react-aria.adobe.com/",
+    "guidance": {
+      "bestFor": "Add a due date field to a React assignment form so students can type a date or choose it from a calendar.",
+      "frameworks": [
+        "React"
+      ],
+      "setup": "moderate",
+      "caveat": "The date picker uses date objects from @internationalized/date. Parse saved date strings before passing them back to the field.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://react-aria.adobe.com/DatePicker"
+      ]
+    }
   },
   {
     "id": "headless-ui",
@@ -86,20 +98,22 @@
     "url": "https://headlessui.com/",
     "description": "Unstyled interactive components for React and Vue that pair with your own CSS or Tailwind styles.",
     "category": "components",
-    "tags": ["ui", "react", "vue", "tailwind", "components", "headless", "menu"],
+    "tags": ["ui", "react", "vue", "tailwind", "components", "headless", "menu", "dialog", "modal", "accessibility"],
     "kind": "library",
     "sourceUrl": "https://headlessui.com/",
     "guidance": {
-      "bestFor": "Keyboard-friendly menus and other controls with your own visual design.",
+      "bestFor": "Keyboard-friendly menus and accessible modal dialogs with your own visual design.",
       "frameworks": [
         "React",
         "Vue"
       ],
       "setup": "moderate",
-      "caveat": "Choose the docs for your framework; unstyled components still need styles and meaningful labels.",
+      "caveat": "Your app controls when the dialog is open and supplies its title and styles. Use the examples for your framework.",
       "checkedAt": "2026-11-02",
       "sourceUrls": [
-        "https://headlessui.com/react/menu"
+        "https://headlessui.com/react/menu",
+        "https://headlessui.com/react/dialog",
+        "https://headlessui.com/v1/vue/dialog"
       ]
     }
   },
@@ -158,7 +172,15 @@
     "tags": ["ui", "react", "components", "accessibility", "design system", "theming"],
     "kind": "library",
     "agentUrl": "https://chakra-ui.com/llms.txt",
-    "sourceUrl": "https://chakra-ui.com/"
+    "sourceUrl": "https://chakra-ui.com/",
+    "guidance": {
+      "bestFor": "Show whether a file upload is still running, has finished or has failed in a React app using a toast tied to the upload request.",
+      "frameworks": ["React", "Chakra UI"],
+      "setup": "moderate",
+      "caveat": "Mount the Toaster in the app first. Connect the toast to the actual upload promise so it reports success only after the upload finishes.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": ["https://chakra-ui.com/docs/components/toast"]
+    }
   },
   {
     "id": "ant-design",
@@ -169,7 +191,19 @@
     "tags": ["ui", "react", "components", "tables", "forms", "admin", "dashboard"],
     "kind": "library",
     "agentUrl": "https://ant.design/llms.txt",
-    "sourceUrl": "https://ant.design/"
+    "sourceUrl": "https://ant.design/",
+    "guidance": {
+      "bestFor": "Build a React homework dashboard that sorts assignments by due date and filters completed work out of a table.",
+      "frameworks": [
+        "React"
+      ],
+      "setup": "moderate",
+      "caveat": "Give each assignment a stable row key and supply its filter and sort rules. The table cannot infer what counts as completed from your data.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://ant.design/components/table/"
+      ]
+    }
   },
   {
     "id": "fluent-ui",
@@ -179,7 +213,15 @@
     "category": "components",
     "tags": ["ui", "react", "components", "microsoft", "design system", "accessibility"],
     "kind": "library",
-    "sourceUrl": "https://fluent2.microsoft.design/"
+    "sourceUrl": "https://fluent2.microsoft.design/",
+    "guidance": {
+      "bestFor": "Add a confirmation dialog before a classmate discards unsaved notes in a React editor.",
+      "frameworks": ["React", "Fluent UI"],
+      "setup": "moderate",
+      "caveat": "An alert dialog interrupts work and traps keyboard focus. Reserve it for choices with a cost, such as losing edits.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": ["https://fluent2.microsoft.design/components/web/react/core/dialog/usage"]
+    }
   },
   {
     "id": "carbon-design",
@@ -190,7 +232,15 @@
     "tags": ["ui", "components", "design system", "ibm", "data", "enterprise"],
     "kind": "library",
     "agentUrl": "https://www.carbondesignsystem.com/llms.txt",
-    "sourceUrl": "https://www.carbondesignsystem.com/"
+    "sourceUrl": "https://www.carbondesignsystem.com/",
+    "guidance": {
+      "bestFor": "Build a table for a lab inventory where students sort equipment and select several items for one action.",
+      "frameworks": ["React", "Carbon Design System"],
+      "setup": "moderate",
+      "caveat": "Keep long equipment histories on a details page. Carbon's expandable rows work best for short, supplementary details.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": ["https://www.carbondesignsystem.com/building-blocks/core/components/data-table/guidelines", "https://www.carbondesignsystem.com/getting-started/developing/carbon-core/react"]
+    }
   },
   {
     "id": "primer",
@@ -200,7 +250,15 @@
     "category": "components",
     "tags": ["ui", "components", "github", "react", "design system", "developer tools"],
     "kind": "library",
-    "sourceUrl": "https://primer.style/"
+    "sourceUrl": "https://primer.style/",
+    "guidance": {
+      "bestFor": "Put Rename, Duplicate and Archive in an actions menu beside each project in a React project list.",
+      "frameworks": ["React", "Primer React"],
+      "setup": "moderate",
+      "caveat": "Give each action a descriptive label. If the current student cannot perform any actions, disable the menu trigger.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": ["https://primer.style/product/components/action-menu/", "https://primer.style/product/components/action-menu/accessibility/"]
+    }
   },
   {
     "id": "adobe-spectrum",
@@ -210,7 +268,15 @@
     "category": "components",
     "tags": ["ui", "components", "adobe", "design tokens", "design system", "web components"],
     "kind": "library",
-    "sourceUrl": "https://spectrum.adobe.com/"
+    "sourceUrl": "https://spectrum.adobe.com/",
+    "guidance": {
+      "bestFor": "Decide where a form should show an error, such as an invalid email field or a homework file that failed to upload.",
+      "frameworks": ["Framework-independent design guidance"],
+      "setup": "low",
+      "caveat": "Toasts disappear. Keep an input error beside the field a student needs to fix, and reserve a toast for brief feedback about an action.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": ["https://spectrum.adobe.com/page/writing-for-errors/"]
+    }
   },
   {
     "id": "bootstrap",
@@ -221,7 +287,21 @@
     "tags": ["ui", "components", "css", "responsive", "html", "layout"],
     "kind": "library",
     "agentUrl": "https://getbootstrap.com/llms.txt",
-    "sourceUrl": "https://getbootstrap.com/"
+    "sourceUrl": "https://getbootstrap.com/",
+    "guidance": {
+      "bestFor": "Give a plain HTML club website a navigation bar that collapses into a menu on a phone.",
+      "frameworks": [
+        "HTML",
+        "CSS",
+        "JavaScript"
+      ],
+      "setup": "low",
+      "caveat": "The mobile menu toggle uses Bootstrap's Collapse JavaScript. Loading only the stylesheet leaves the toggle inactive.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://getbootstrap.com/docs/5.3/components/navbar/"
+      ]
+    }
   },
   {
     "id": "bulma",
@@ -231,7 +311,15 @@
     "category": "components",
     "tags": ["ui", "components", "css", "responsive", "flexbox", "html"],
     "kind": "library",
-    "sourceUrl": "https://bulma.io/"
+    "sourceUrl": "https://bulma.io/",
+    "guidance": {
+      "bestFor": "Build a club website in HTML with navigation links across a laptop screen and a menu button on a phone.",
+      "frameworks": ["HTML", "CSS", "JavaScript"],
+      "setup": "low",
+      "caveat": "Bulma supplies the styles. Wire up the menu button to toggle is-active on the button and menu, and update aria-expanded when it opens.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": ["https://bulma.io/documentation/components/navbar/"]
+    }
   },
   {
     "id": "daisyui",
@@ -242,7 +330,15 @@
     "tags": ["ui", "components", "tailwind", "css", "themes", "html"],
     "kind": "library",
     "agentUrl": "https://daisyui.com/llms.txt",
-    "sourceUrl": "https://daisyui.com/"
+    "sourceUrl": "https://daisyui.com/",
+    "guidance": {
+      "bestFor": "Style a native HTML dialog in Tailwind so a student can preview a quiz question and return to editing it.",
+      "frameworks": ["HTML", "Tailwind CSS", "daisyUI"],
+      "setup": "low",
+      "caveat": "The dialog classes control its appearance. Wire the preview button to showModal() and provide a close control.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": ["https://daisyui.com/components/modal/"]
+    }
   },
   {
     "id": "flowbite",
@@ -253,7 +349,15 @@
     "tags": ["ui", "components", "tailwind", "html", "dropdown", "modal", "forms"],
     "kind": "library",
     "agentUrl": "https://raw.githubusercontent.com/themesberg/flowbite/main/README.md",
-    "sourceUrl": "https://github.com/themesberg/flowbite"
+    "sourceUrl": "https://github.com/themesberg/flowbite",
+    "guidance": {
+      "bestFor": "Add a dropdown for choosing a project action on a Tailwind site using HTML data attributes.",
+      "frameworks": ["HTML", "Tailwind CSS", "JavaScript"],
+      "setup": "moderate",
+      "caveat": "The dropdown needs Flowbite's JavaScript. If your app replaces its markup after loading, initialize the new dropdown after it renders.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": ["https://flowbite.com/docs/components/dropdowns/", "https://flowbite.com/docs/getting-started/javascript/"]
+    }
   },
   {
     "id": "preline-ui",
@@ -263,7 +367,15 @@
     "category": "components",
     "tags": ["ui", "components", "tailwind", "blocks", "templates", "landing page"],
     "kind": "library",
-    "sourceUrl": "https://preline.co/"
+    "sourceUrl": "https://preline.co/",
+    "guidance": {
+      "bestFor": "Build an FAQ for a class event where clicking a question reveals its answer.",
+      "frameworks": ["HTML", "Tailwind CSS", "JavaScript"],
+      "setup": "moderate",
+      "caveat": "Load Preline's accordion JavaScript and give each question and answer unique IDs so a copied button opens the right panel.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": ["https://preline.co/docs/components/accordion.html"]
+    }
   },
   {
     "id": "hyperui",
@@ -273,7 +385,15 @@
     "category": "components",
     "tags": ["ui", "components", "tailwind", "copy paste", "ecommerce", "marketing"],
     "kind": "library",
-    "sourceUrl": "https://www.hyperui.dev/"
+    "sourceUrl": "https://www.hyperui.dev/",
+    "guidance": {
+      "bestFor": "Copy a styled contact form into a Tailwind site for a school club and adapt the fields to the information the club needs.",
+      "frameworks": ["HTML", "Tailwind CSS"],
+      "setup": "low",
+      "caveat": "The examples use a placeholder form action. Connect a submission handler before promising visitors their message was sent.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": ["https://www.hyperui.dev/components/marketing/contact-forms/"]
+    }
   },
   {
     "id": "park-ui",
@@ -283,7 +403,15 @@
     "category": "components",
     "tags": ["ui", "components", "react", "solid", "panda css", "design system"],
     "kind": "library",
-    "sourceUrl": "https://park-ui.com/"
+    "sourceUrl": "https://park-ui.com/",
+    "guidance": {
+      "bestFor": "Add a drag-and-drop file picker to a React assignment form and set how many attachments a student can select.",
+      "frameworks": ["React", "Ark UI", "Panda CSS"],
+      "setup": "advanced",
+      "caveat": "Set up Panda CSS and generate its styles before adding the component. The picker defaults to one file unless you change maxFiles.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": ["https://park-ui.com/docs/components/file-upload", "https://park-ui.com/docs/installation"]
+    }
   },
   {
     "id": "ark-ui",
@@ -294,7 +422,15 @@
     "tags": ["ui", "components", "headless", "react", "vue", "svelte", "solid"],
     "kind": "library",
     "agentUrl": "https://ark-ui.com/llms.txt",
-    "sourceUrl": "https://ark-ui.com/"
+    "sourceUrl": "https://ark-ui.com/",
+    "guidance": {
+      "bestFor": "Build a custom-styled dialog that asks students to confirm deleting an assignment.",
+      "frameworks": ["React", "Vue", "Svelte", "Solid"],
+      "setup": "moderate",
+      "caveat": "The dialog provides interaction behavior. Supply your own styles for the backdrop, panel and focus states.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": ["https://ark-ui.com/docs/components/dialog", "https://ark-ui.com/docs/guides/styling"]
+    }
   },
   {
     "id": "heroui",
@@ -305,7 +441,15 @@
     "tags": ["ui", "components", "react", "tailwind", "accessibility", "nextui"],
     "kind": "library",
     "agentUrl": "https://heroui.com/llms.txt",
-    "sourceUrl": "https://heroui.com/"
+    "sourceUrl": "https://heroui.com/",
+    "guidance": {
+      "bestFor": "Open a React signup form in a modal with a scrollable body and a visible close button.",
+      "frameworks": ["React", "Tailwind CSS"],
+      "setup": "moderate",
+      "caveat": "Import HeroUI’s styles and choose where long forms should scroll so the close button stays reachable.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": ["https://heroui.com/en/docs/react/components/modal", "https://heroui.com/en/docs/react/getting-started/quick-start"]
+    }
   },
   {
     "id": "aceternity-ui",
@@ -316,7 +460,15 @@
     "tags": ["ui", "components", "react", "tailwind", "animation", "background", "landing page"],
     "kind": "library",
     "agentUrl": "https://ui.aceternity.com/llms.txt",
-    "sourceUrl": "https://ui.aceternity.com/"
+    "sourceUrl": "https://ui.aceternity.com/",
+    "guidance": {
+      "bestFor": "Give a portfolio project card a layered 3D tilt as the pointer moves over it.",
+      "frameworks": ["React", "Tailwind CSS"],
+      "setup": "moderate",
+      "caveat": "The depth effect depends on hover. Keep the title and project link visible on touchscreens.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": ["https://ui.aceternity.com/components/3d-card-effect"]
+    }
   },
   {
     "id": "magic-ui",
@@ -327,7 +479,15 @@
     "tags": ["ui", "components", "react", "tailwind", "animation", "landing page", "effects"],
     "kind": "library",
     "agentUrl": "https://magicui.design/llms.txt",
-    "sourceUrl": "https://magicui.design/"
+    "sourceUrl": "https://magicui.design/",
+    "guidance": {
+      "bestFor": "Create a scrolling row of club logos across a React landing page.",
+      "frameworks": ["React", "Tailwind CSS"],
+      "setup": "low",
+      "caveat": "Pausing on hover is optional and only helps pointer users. Provide a way to pause or read a stationary row.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": ["https://magicui.design/docs/components/marquee"]
+    }
   },
   {
     "id": "react-bits",
@@ -338,7 +498,15 @@
     "tags": ["ui", "components", "react", "animation", "background", "typography", "creative coding"],
     "kind": "library",
     "agentUrl": "https://reactbits.dev/llms.txt",
-    "sourceUrl": "https://reactbits.dev/"
+    "sourceUrl": "https://reactbits.dev/",
+    "guidance": {
+      "bestFor": "Build an animated portfolio heading using the SplitText component in an existing React app.",
+      "frameworks": ["React", "JavaScript", "TypeScript", "CSS", "Tailwind CSS"],
+      "setup": "low",
+      "caveat": "Pick the JavaScript or TypeScript version that matches the app and choose either plain CSS or Tailwind before copying.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": ["https://reactbits.dev/get-started/introduction"]
+    }
   },
   {
     "id": "motion-primitives",
@@ -348,7 +516,15 @@
     "category": "components",
     "tags": ["ui", "components", "react", "animation", "transitions", "motion"],
     "kind": "library",
-    "sourceUrl": "https://github.com/ibelick/motion-primitives"
+    "sourceUrl": "https://github.com/ibelick/motion-primitives",
+    "guidance": {
+      "bestFor": "Animate a scoreboard total from its previous number to its new value in React.",
+      "frameworks": ["React", "Motion", "Tailwind CSS"],
+      "setup": "moderate",
+      "caveat": "The spring animates a number you supply. Keep the actual score in application state so it remains accurate during animation.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": ["https://motion-primitives.com/docs/animated-number", "https://github.com/ibelick/motion-primitives"]
+    }
   },
   {
     "id": "tremor",
@@ -358,7 +534,15 @@
     "category": "components",
     "tags": ["ui", "components", "react", "tailwind", "charts", "dashboard", "data visualization"],
     "kind": "library",
-    "sourceUrl": "https://www.tremor.so/"
+    "sourceUrl": "https://www.tremor.so/",
+    "guidance": {
+      "bestFor": "Compare survey responses across classes in a dashboard bar chart.",
+      "frameworks": ["React", "Tailwind CSS"],
+      "setup": "moderate",
+      "caveat": "Tremor’s copyable chart requires Tailwind CSS 4 or later. The chart’s index and category names must match keys in your data.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": ["https://www.tremor.so/docs/visualizations/bar-chart", "https://www.tremor.so/docs/getting-started/installation"]
+    }
   },
   {
     "id": "web-awesome",
@@ -369,7 +553,15 @@
     "tags": ["ui", "components", "web components", "html", "forms", "shoelace"],
     "kind": "library",
     "agentUrl": "https://webawesome.com/llms.txt",
-    "sourceUrl": "https://webawesome.com/"
+    "sourceUrl": "https://webawesome.com/",
+    "guidance": {
+      "bestFor": "Add a settings dialog to an HTML project using the wa-dialog custom element.",
+      "frameworks": ["HTML", "Web Components", "JavaScript"],
+      "setup": "moderate",
+      "caveat": "Give the dialog an accessible label even when you hide its header.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": ["https://webawesome.com/docs/components/dialog"]
+    }
   },
   {
     "id": "patternfly",
@@ -379,7 +571,15 @@
     "category": "components",
     "tags": ["ui", "components", "react", "tables", "dashboard", "design system"],
     "kind": "library",
-    "sourceUrl": "https://www.patternfly.org/"
+    "sourceUrl": "https://www.patternfly.org/",
+    "guidance": {
+      "bestFor": "Build an admin table where staff can sort rows and expand one record to inspect its details.",
+      "frameworks": ["React", "HTML", "CSS"],
+      "setup": "moderate",
+      "caveat": "For sortable columns, track the current sort direction and update the displayed row order when a header is activated.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": ["https://www.patternfly.org/components/table/"]
+    }
   },
   {
     "id": "primereact",
@@ -390,7 +590,15 @@
     "tags": ["ui", "components", "react", "forms", "tables", "theming"],
     "kind": "library",
     "agentUrl": "https://primereact.dev/llms.txt",
-    "sourceUrl": "https://primereact.dev/"
+    "sourceUrl": "https://primereact.dev/",
+    "guidance": {
+      "bestFor": "Build a searchable equipment inventory with paginated rows and filters for individual columns.",
+      "frameworks": ["React"],
+      "setup": "moderate",
+      "caveat": "In the unstyled DataTable, you compose the filters, sorting controls and table markup yourself. Pick a styled version if you want the library to supply the visual treatment.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": ["https://primereact.dev/docs/primitive/components/datatable"]
+    }
   },
   {
     "id": "primevue",
@@ -400,7 +608,19 @@
     "category": "components",
     "tags": ["ui", "components", "vue", "forms", "tables", "theming"],
     "kind": "library",
-    "sourceUrl": "https://primevue.dev/"
+    "sourceUrl": "https://primevue.dev/",
+    "guidance": {
+      "bestFor": "Add a keyboard-accessible modal to a Vue project, such as a confirmation dialog before deleting an assignment.",
+      "frameworks": [
+        "Vue"
+      ],
+      "setup": "moderate",
+      "caveat": "Enable modal behavior to keep keyboard focus inside. Your trigger button must report which dialog it controls and whether it is open.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://primevue.dev/dialog/"
+      ]
+    }
   },
   {
     "id": "vuetify",
@@ -411,7 +631,15 @@
     "tags": ["ui", "components", "vue", "material design", "responsive", "layout"],
     "kind": "library",
     "agentUrl": "https://vuetifyjs.com/llms.txt",
-    "sourceUrl": "https://github.com/vuetifyjs/vuetify"
+    "sourceUrl": "https://github.com/vuetifyjs/vuetify",
+    "guidance": {
+      "bestFor": "Show a large assignment archive in a Vue table that fetches one page at a time.",
+      "frameworks": ["Vue"],
+      "setup": "moderate",
+      "caveat": "The server-side table reports page, sort and search changes. Your API must apply them before returning the rows.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": ["https://vuetifyjs.com/en/components/data-tables/server-side-tables/", "https://raw.githubusercontent.com/vuetifyjs/vuetify/master/packages/docs/src/pages/en/components/data-tables/server-side-tables.md"]
+    }
   },
   {
     "id": "naive-ui",
@@ -422,7 +650,15 @@
     "tags": ["ui", "components", "vue", "typescript", "themes", "forms"],
     "kind": "library",
     "agentUrl": "https://www.naiveui.com/llms.txt",
-    "sourceUrl": "https://github.com/tusen-ai/naive-ui"
+    "sourceUrl": "https://github.com/tusen-ai/naive-ui",
+    "guidance": {
+      "bestFor": "Build a paginated Vue sign-up roster where a teacher can select several students at once.",
+      "frameworks": ["Vue 3", "TypeScript"],
+      "setup": "moderate",
+      "caveat": "Give each row a stable unique key so selections still identify the same student after a page change.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": ["https://github.com/tusen-ai/naive-ui/blob/main/src/data-table/demos/enUS/select.demo.vue", "https://github.com/tusen-ai/naive-ui"]
+    }
   },
   {
     "id": "element-plus",
@@ -433,7 +669,15 @@
     "tags": ["ui", "components", "vue", "forms", "tables", "admin"],
     "kind": "library",
     "agentUrl": "https://element-plus.org/llms.txt",
-    "sourceUrl": "https://element-plus.org/"
+    "sourceUrl": "https://element-plus.org/",
+    "guidance": {
+      "bestFor": "Build a Vue event registration form that validates each field and can reset an unfinished entry.",
+      "frameworks": ["Vue 3"],
+      "setup": "moderate",
+      "caveat": "For validation and reset to work, each form item’s prop must point to the matching key in the form model.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": ["https://element-plus.org/en-US/component/form.html"]
+    }
   },
   {
     "id": "quasar",
@@ -444,7 +688,15 @@
     "tags": ["ui", "components", "vue", "pwa", "mobile", "desktop", "cross platform"],
     "kind": "library",
     "agentUrl": "https://quasar.dev/llms.txt",
-    "sourceUrl": "https://quasar.dev/"
+    "sourceUrl": "https://quasar.dev/",
+    "guidance": {
+      "bestFor": "Display a club inventory as a searchable table on laptops and as cards on small screens.",
+      "frameworks": ["Vue 3", "Quasar"],
+      "setup": "moderate",
+      "caveat": "Set a unique row key before enabling selection. If you paginate on the server, supply the total row count as well.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": ["https://quasar.dev/vue-components/table/"]
+    }
   },
   {
     "id": "skeleton",
@@ -455,7 +707,15 @@
     "tags": ["ui", "components", "tailwind", "svelte", "themes", "design system"],
     "kind": "library",
     "agentUrl": "https://www.skeleton.dev/llms.txt",
-    "sourceUrl": "https://www.skeleton.dev/"
+    "sourceUrl": "https://www.skeleton.dev/",
+    "guidance": {
+      "bestFor": "Make a themed FAQ accordion where students can keep two answers open for comparison.",
+      "frameworks": ["Svelte", "React", "Tailwind CSS"],
+      "setup": "moderate",
+      "caveat": "The accordion opens one item at a time by default. Enable multiple expansion when readers need to compare answers.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": ["https://www.skeleton.dev/docs/svelte/framework-components/accordion", "https://www.skeleton.dev/docs/react/framework-components/accordion", "https://www.skeleton.dev/"]
+    }
   },
   {
     "id": "bits-ui",
@@ -466,7 +726,15 @@
     "tags": ["ui", "components", "svelte", "headless", "accessibility", "forms"],
     "kind": "library",
     "agentUrl": "https://www.bits-ui.com/llms.txt",
-    "sourceUrl": "https://www.bits-ui.com/"
+    "sourceUrl": "https://www.bits-ui.com/",
+    "guidance": {
+      "bestFor": "Build a Svelte course picker where typing narrows the list and the keyboard selects a course.",
+      "frameworks": ["Svelte"],
+      "setup": "moderate",
+      "caveat": "Wire the typed query to your own filtered list so users see the matching courses.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": ["https://bits-ui.com/docs/components/combobox"]
+    }
   },
   {
     "id": "melt-ui",
@@ -477,7 +745,15 @@
     "tags": ["ui", "components", "svelte", "headless", "accessibility", "design system"],
     "kind": "library",
     "agentUrl": "https://next.melt-ui.com/guides/installation/",
-    "sourceUrl": "https://melt-ui.com/"
+    "sourceUrl": "https://melt-ui.com/",
+    "guidance": {
+      "bestFor": "Build a Svelte autocomplete picker with custom markup for a student directory.",
+      "frameworks": ["Svelte", "SvelteKit"],
+      "setup": "moderate",
+      "caveat": "The combobox builder supplies the behaviors and state. You attach them to the input and list and supply the styling.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": ["https://melt-ui.com/docs/builders/combobox", "https://melt-ui.com/docs/introduction"]
+    }
   },
   {
     "id": "lucide",
@@ -511,7 +787,15 @@
     "category": "icons",
     "tags": ["icons", "svg", "tailwind", "outline", "solid", "assets"],
     "kind": "library",
-    "sourceUrl": "https://heroicons.com/"
+    "sourceUrl": "https://heroicons.com/",
+    "guidance": {
+      "bestFor": "Give a React or Vue toolbar clear icons for search, editing and navigation, with smaller glyphs for dense controls.",
+      "frameworks": ["SVG", "React", "Vue"],
+      "setup": "low",
+      "caveat": "Use the import path for the intended size. The 16px and 20px sets are solid, while the 24px set also offers outlines.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": ["https://github.com/tailwindlabs/heroicons"]
+    }
   },
   {
     "id": "tabler-icons",
@@ -521,7 +805,15 @@
     "category": "icons",
     "tags": ["icons", "svg", "outline", "interface", "assets", "figma"],
     "kind": "library",
-    "sourceUrl": "https://tabler.io/icons"
+    "sourceUrl": "https://tabler.io/icons",
+    "guidance": {
+      "bestFor": "Match a settings sidebar and a compact data table with the same SVG icons, adjusting stroke width to stay legible at each size.",
+      "frameworks": ["SVG", "React"],
+      "setup": "low",
+      "caveat": "Import individual icons by name so the bundler can leave out the rest of the set.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": ["https://docs.tabler.io/icons/libraries/react"]
+    }
   },
   {
     "id": "phosphor-icons",
@@ -531,7 +823,15 @@
     "category": "icons",
     "tags": ["icons", "svg", "weights", "interface", "assets", "react"],
     "kind": "library",
-    "sourceUrl": "https://github.com/phosphor-icons/core"
+    "sourceUrl": "https://github.com/phosphor-icons/core",
+    "guidance": {
+      "bestFor": "Use an outlined heart for an unsaved item and the same heart in a filled weight after a student saves it.",
+      "frameworks": ["React", "SVG"],
+      "setup": "low",
+      "caveat": "Expose the saved state in the button's accessible name or pressed state so the change in icon weight is also available to screen reader users.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": ["https://github.com/phosphor-icons/react"]
+    }
   },
   {
     "id": "iconify",
@@ -541,7 +841,15 @@
     "category": "icons",
     "tags": ["icons", "svg", "search", "collections", "assets", "frameworks"],
     "kind": "library",
-    "sourceUrl": "https://iconify.design/"
+    "sourceUrl": "https://iconify.design/",
+    "guidance": {
+      "bestFor": "Build a searchable icon picker that uses names from several icon collections in the same interface.",
+      "frameworks": ["SVG", "Web Components", "React", "Vue", "Svelte"],
+      "setup": "moderate",
+      "caveat": "On-demand icons need network access the first time they load. Bundle the icons for essential controls if the app must work offline.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": ["https://iconify.design/docs/usage/"]
+    }
   },
   {
     "id": "simple-icons",
@@ -551,7 +859,15 @@
     "category": "icons",
     "tags": ["icons", "svg", "logos", "brands", "integrations", "assets"],
     "kind": "library",
-    "sourceUrl": "https://github.com/simple-icons/simple-icons"
+    "sourceUrl": "https://github.com/simple-icons/simple-icons",
+    "guidance": {
+      "bestFor": "Show recognizable GitHub, Figma and other brand marks beside the tools a student lists in a project portfolio.",
+      "frameworks": ["SVG", "JavaScript"],
+      "setup": "low",
+      "caveat": "Check each brand's usage rules before recoloring a logo. Some records have no guidelines link, so follow up with the brand itself.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": ["https://github.com/simple-icons/simple-icons"]
+    }
   },
   {
     "id": "remix-icon",
@@ -561,7 +877,15 @@
     "category": "icons",
     "tags": ["icons", "svg", "outline", "filled", "interface", "assets"],
     "kind": "library",
-    "sourceUrl": "https://github.com/Remix-Design/RemixIcon"
+    "sourceUrl": "https://github.com/Remix-Design/RemixIcon",
+    "guidance": {
+      "bestFor": "Give a mobile tab bar matching outline and filled symbols for its inactive and selected tabs.",
+      "frameworks": ["SVG", "CSS icon font", "React"],
+      "setup": "low",
+      "caveat": "When using the icon font, load its stylesheet and use the exact line or fill class name. A missing stylesheet can leave a control blank.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": ["https://github.com/Remix-Design/RemixIcon"]
+    }
   },
   {
     "id": "material-symbols",
@@ -571,7 +895,15 @@
     "category": "icons",
     "tags": ["icons", "svg", "google", "material design", "fonts", "assets"],
     "kind": "library",
-    "sourceUrl": "https://github.com/google/material-design-icons"
+    "sourceUrl": "https://github.com/google/material-design-icons",
+    "guidance": {
+      "bestFor": "Switch the same bookmark symbol from outlined to filled when an article is saved, keeping its alignment steady.",
+      "frameworks": ["CSS variable fonts", "SVG"],
+      "setup": "low",
+      "caveat": "For a web font, request only your icon names and the axes you actually vary. The full font includes thousands of unused symbols.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": ["https://developers.google.com/fonts/docs/material_symbols"]
+    }
   },
   {
     "id": "matter-js",
@@ -627,7 +959,15 @@
     "tags": ["animation", "javascript", "timeline", "scroll", "svg", "creative coding"],
     "kind": "library",
     "agentUrl": "https://gsap.com/llms.txt",
-    "sourceUrl": "https://gsap.com/"
+    "sourceUrl": "https://gsap.com/",
+    "guidance": {
+      "bestFor": "Coordinate a title, illustration and caption so a student can pause or replay the whole introduction with one control.",
+      "frameworks": ["JavaScript", "DOM"],
+      "setup": "moderate",
+      "caveat": "Put the steps on one timeline and position them there. Separate delays have to be recalculated when an earlier step changes length.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": ["https://gsap.com/docs/v3/GSAP/Timeline/"]
+    }
   },
   {
     "id": "react-spring",
@@ -637,7 +977,15 @@
     "category": "motion",
     "tags": ["animation", "react", "springs", "physics", "transitions", "gestures"],
     "kind": "library",
-    "sourceUrl": "https://www.react-spring.dev/"
+    "sourceUrl": "https://www.react-spring.dev/",
+    "guidance": {
+      "bestFor": "Make a React drawer slide into place with a spring and respond if the user closes it before the opening motion finishes.",
+      "frameworks": ["React", "React DOM"],
+      "setup": "moderate",
+      "caveat": "Pass animated values to an animated element and choose the web package for a DOM project. Tune the spring with the actual drawer distance.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": ["https://www.react-spring.dev/docs/components/use-spring"]
+    }
   },
   {
     "id": "autoanimate",
@@ -647,7 +995,15 @@
     "category": "motion",
     "tags": ["animation", "transitions", "lists", "react", "vue", "svelte", "javascript"],
     "kind": "library",
-    "sourceUrl": "https://auto-animate.formkit.com/"
+    "sourceUrl": "https://auto-animate.formkit.com/",
+    "guidance": {
+      "bestFor": "Animate an assignment list when adding work, deleting a row or reordering items by due date.",
+      "frameworks": ["JavaScript", "React", "Vue", "Svelte"],
+      "setup": "low",
+      "caveat": "Attach it to the parent whose direct children move. Updating text inside an existing child does not trigger a list animation.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": ["https://auto-animate.formkit.com/"]
+    }
   },
   {
     "id": "three-js",
@@ -681,7 +1037,15 @@
     "category": "motion",
     "tags": ["animation", "javascript", "svg", "css", "timeline", "effects"],
     "kind": "library",
-    "sourceUrl": "https://animejs.com/"
+    "sourceUrl": "https://animejs.com/",
+    "guidance": {
+      "bestFor": "Sequence a set of shapes in an interactive diagram so an arrow and its caption can move at different points on the same timeline.",
+      "frameworks": ["JavaScript", "DOM"],
+      "setup": "moderate",
+      "caveat": "The current timeline examples import createTimeline. Check the installed Anime.js version before using an older snippet.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": ["https://animejs.com/documentation/timeline/"]
+    }
   },
   {
     "id": "codrops",
@@ -691,7 +1055,15 @@
     "category": "inspiration",
     "tags": ["inspiration", "tutorials", "creative coding", "webgl", "animation", "web design", "ideas"],
     "kind": "article",
-    "sourceUrl": "https://tympanus.net/codrops/"
+    "sourceUrl": "https://tympanus.net/codrops/",
+    "guidance": {
+      "bestFor": "Follow a worked visual tutorial to build one effect, such as a scroll-driven image reveal in a portfolio.",
+      "frameworks": ["Web tutorials", "JavaScript", "Stack varies by tutorial"],
+      "setup": "moderate",
+      "caveat": "Check the individual tutorial's stack first. For example, the Astro landing-page tutorial uses GSAP and canvas, while other demos depend on React or Three.js.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": ["https://tympanus.net/codrops/category/tutorials/"]
+    }
   },
   {
     "id": "siteinspire",
@@ -701,7 +1073,15 @@
     "category": "inspiration",
     "tags": ["inspiration", "web design", "portfolio", "typography", "layout", "gallery", "ideas"],
     "kind": "gallery",
-    "sourceUrl": "https://www.siteinspire.com/"
+    "sourceUrl": "https://www.siteinspire.com/",
+    "guidance": {
+      "bestFor": "Find typographic or grid-based portfolios and choose a layout direction for a student photography site.",
+      "frameworks": ["Web design reference"],
+      "setup": "low",
+      "caveat": "Give your agent the particular site you selected and name the layout decision. A gallery thumbnail leaves mobile and keyboard behavior unspecified.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": ["https://www.siteinspire.com/"]
+    }
   },
   {
     "id": "landbook",
@@ -711,7 +1091,15 @@
     "category": "inspiration",
     "tags": ["inspiration", "web design", "landing page", "layout", "gallery", "ideas"],
     "kind": "gallery",
-    "sourceUrl": "https://land-book.com/"
+    "sourceUrl": "https://land-book.com/",
+    "guidance": {
+      "bestFor": "Compare how landing pages and storefronts introduce the product before sketching the first screen of your own site.",
+      "frameworks": ["Web design reference"],
+      "setup": "low",
+      "caveat": "Open the underlying site to inspect how the layout responds at different widths. A saved screenshot captures a single view.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": ["https://land-book.com/"]
+    }
   },
   {
     "id": "lapa-ninja",
@@ -721,7 +1109,15 @@
     "category": "inspiration",
     "tags": ["inspiration", "landing page", "saas", "portfolio", "gallery", "web design", "ideas"],
     "kind": "gallery",
-    "sourceUrl": "https://www.lapa.ninja/"
+    "sourceUrl": "https://www.lapa.ninja/",
+    "guidance": {
+      "bestFor": "Study the sequence of sections in a full-page landing screenshot before writing a product page for your own app.",
+      "frameworks": ["Web design reference"],
+      "setup": "low",
+      "caveat": "Check the capture date or visit the original. The gallery includes past versions, so your reference may differ from the live website.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": ["https://www.lapa.ninja/"]
+    }
   },
   {
     "id": "one-page-love",
@@ -731,7 +1127,15 @@
     "category": "inspiration",
     "tags": ["inspiration", "one page", "landing page", "portfolio", "templates", "ideas"],
     "kind": "gallery",
-    "sourceUrl": "https://onepagelove.com/"
+    "sourceUrl": "https://onepagelove.com/",
+    "guidance": {
+      "bestFor": "Compare separate hero and signup section examples to plan a single-page launch website for a class project.",
+      "frameworks": ["Web design reference"],
+      "setup": "low",
+      "caveat": "Record whether you chose a showcased website, a section example or a downloadable template before asking your agent to use it.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": ["https://onepagelove.com/"]
+    }
   },
   {
     "id": "mobbin",
@@ -741,7 +1145,15 @@
     "category": "inspiration",
     "tags": ["inspiration", "ui", "ux", "mobile", "user flows", "onboarding", "screens"],
     "kind": "gallery",
-    "sourceUrl": "https://mobbin.com/"
+    "sourceUrl": "https://mobbin.com/",
+    "guidance": {
+      "bestFor": "Map the steps of a mobile onboarding flow by comparing screens from shipped apps before designing your own first-run experience.",
+      "frameworks": ["Mobile UI reference", "Web UI reference"],
+      "setup": "low",
+      "caveat": "Write down the action that moves between screens and test it in your prototype. Screenshots alone cannot demonstrate validation or focus behavior.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": ["https://mobbin.com/explore/mobile/flows"]
+    }
   },
   {
     "id": "curated-design",
@@ -751,7 +1163,15 @@
     "category": "inspiration",
     "tags": ["inspiration", "web design", "gallery", "portfolio", "landing page", "ideas"],
     "kind": "gallery",
-    "sourceUrl": "https://curated.design/"
+    "sourceUrl": "https://curated.design/",
+    "guidance": {
+      "bestFor": "Find websites by industry and style to compare typography and hierarchy for a portfolio or product homepage.",
+      "frameworks": ["Web design reference"],
+      "setup": "low",
+      "caveat": "Open the referenced site and point your agent to a particular page or section. The gallery preview alone gives little information about its responsive layout.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": ["https://curated.design/"]
+    }
   },
   {
     "id": "hoverstates",
@@ -761,7 +1181,15 @@
     "category": "inspiration",
     "tags": ["inspiration", "experimental", "interaction", "animation", "web design", "ideas"],
     "kind": "gallery",
-    "sourceUrl": "https://www.hoverstat.es/"
+    "sourceUrl": "https://www.hoverstat.es/",
+    "guidance": {
+      "bestFor": "Find an example of a reactive menu, cursor treatment or image hover effect to prototype in a portfolio.",
+      "frameworks": ["Web interaction reference"],
+      "setup": "low",
+      "caveat": "For a pointer-driven example, design a tap or keyboard equivalent before building it into navigation.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": ["https://www.hoverstat.es/"]
+    }
   },
   {
     "id": "agent-skills-format",
@@ -772,7 +1200,19 @@
     "tags": ["agents", "skills", "skill.md", "instructions", "specification", "workflow"],
     "kind": "documentation",
     "agentUrl": "https://agentskills.io/llms.txt",
-    "sourceUrl": "https://agentskills.io/home"
+    "sourceUrl": "https://agentskills.io/home",
+    "guidance": {
+      "bestFor": "Turn a repeated task, such as reviewing a teammate's pull request, into a SKILL.md that a compatible agent can reuse.",
+      "frameworks": [
+        "Agent Skills-compatible agents"
+      ],
+      "setup": "low",
+      "caveat": "The skill name must match its folder. Describe when it should run so an agent can pick it for the right task.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://agentskills.io/specification"
+      ]
+    }
   },
   {
     "id": "anthropic-skills",
@@ -782,7 +1222,22 @@
     "category": "skills",
     "tags": ["agents", "skills", "claude", "instructions", "workflow", "examples"],
     "kind": "skills",
-    "sourceUrl": "https://github.com/anthropics/skills"
+    "sourceUrl": "https://github.com/anthropics/skills",
+    "guidance": {
+      "bestFor": "Use the webapp-testing example to help Claude open a local app, try a broken interaction and capture what the browser shows.",
+      "frameworks": [
+        "Claude Code",
+        "Python",
+        "Playwright"
+      ],
+      "setup": "moderate",
+      "caveat": "That example runs Python Playwright scripts. A classmate needs a working Python and browser setup to repeat your check.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://github.com/anthropics/skills",
+        "https://github.com/anthropics/skills/blob/main/skills/webapp-testing/SKILL.md"
+      ]
+    }
   },
   {
     "id": "vercel-agent-skills",
@@ -792,7 +1247,20 @@
     "category": "skills",
     "tags": ["agents", "skills", "react", "next.js", "performance", "ui", "review"],
     "kind": "skills",
-    "sourceUrl": "https://github.com/vercel-labs/agent-skills"
+    "sourceUrl": "https://github.com/vercel-labs/agent-skills",
+    "guidance": {
+      "bestFor": "Ask an agent why a React dashboard loads slowly. Its React performance skill covers requests that wait on each other and code shipped to the browser.",
+      "frameworks": [
+        "React",
+        "Next.js"
+      ],
+      "setup": "low",
+      "caveat": "Some rules use Next.js server features. On a plain React site, start with the client rules and measure the page before and after a change.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://github.com/vercel-labs/agent-skills/tree/main/skills/react-best-practices"
+      ]
+    }
   },
   {
     "id": "github-spec-kit",
@@ -802,7 +1270,21 @@
     "category": "skills",
     "tags": ["agents", "planning", "requirements", "specification", "acceptance criteria", "workflow"],
     "kind": "tool",
-    "sourceUrl": "https://github.com/github/spec-kit"
+    "sourceUrl": "https://github.com/github/spec-kit",
+    "guidance": {
+      "bestFor": "Turn a team's idea for a shared assignment tracker into a written feature spec, a plan and tasks that teammates can review.",
+      "frameworks": [
+        "Supported coding agents",
+        "Python",
+        "uv"
+      ],
+      "setup": "moderate",
+      "caveat": "The quick start needs Python 3.11 or newer and uv. Budget time to review the spec and plan before the agent starts building.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://github.com/github/spec-kit"
+      ]
+    }
   },
   {
     "id": "agents-md",
@@ -812,7 +1294,20 @@
     "category": "skills",
     "tags": ["agents", "instructions", "context", "repository", "workflow", "agents.md"],
     "kind": "documentation",
-    "sourceUrl": "https://agents.md/"
+    "sourceUrl": "https://agents.md/",
+    "guidance": {
+      "bestFor": "Give every teammate's coding agent the same instructions for starting the app, running tests and working in the team's project folders.",
+      "frameworks": [
+        "Coding agents that read AGENTS.md",
+        "Markdown"
+      ],
+      "setup": "low",
+      "caveat": "A closer AGENTS.md can override the root file. Put commands that apply only to one project in that project's folder.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://agents.md/"
+      ]
+    }
   },
   {
     "id": "superpowers",
@@ -822,7 +1317,19 @@
     "category": "skills",
     "tags": ["agents", "skills", "planning", "debugging", "testing", "review", "workflow"],
     "kind": "skills",
-    "sourceUrl": "https://github.com/obra/superpowers"
+    "sourceUrl": "https://github.com/obra/superpowers",
+    "guidance": {
+      "bestFor": "Have an agent break a multiplayer feature into small changes, write a failing test for each one and review the work as it goes.",
+      "frameworks": [
+        "Supported coding agents"
+      ],
+      "setup": "moderate",
+      "caveat": "The full workflow adds a design review and a written plan. Set aside time to read them before approving implementation.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://github.com/obra/superpowers"
+      ]
+    }
   },
   {
     "id": "claude-code-practices",
@@ -833,7 +1340,19 @@
     "tags": ["agents", "claude", "prompting", "context", "verification", "workflow"],
     "kind": "documentation",
     "agentUrl": "https://code.claude.com/docs/en/best-practices.md",
-    "sourceUrl": "https://code.claude.com/docs/en/best-practices"
+    "sourceUrl": "https://code.claude.com/docs/en/best-practices",
+    "guidance": {
+      "bestFor": "Give Claude Code a bug it can reproduce, such as a filter that hides unfinished work, and ask for a test that proves the fix.",
+      "frameworks": [
+        "Claude Code"
+      ],
+      "setup": "low",
+      "caveat": "Choose what counts as proof. A passing test can check the filter logic, but a layout change may need a browser screenshot.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://code.claude.com/docs/en/best-practices"
+      ]
+    }
   },
   {
     "id": "aria-authoring-practices",
@@ -867,7 +1386,15 @@
     "category": "learning",
     "tags": ["learning", "html", "css", "javascript", "beginner", "web development", "documentation"],
     "kind": "documentation",
-    "sourceUrl": "https://developer.mozilla.org/en-US/docs/Learn_web_development"
+    "sourceUrl": "https://developer.mozilla.org/en-US/docs/Learn_web_development",
+    "guidance": {
+      "bestFor": "Build a signup form from native HTML inputs and explain which button submits it.",
+      "frameworks": ["HTML", "Browser"],
+      "setup": "low",
+      "caveat": "Start with the forms lesson. Storing the submitted answers still requires a destination in your app.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": ["https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/HTML_forms"]
+    }
   },
   {
     "id": "web-dev-learn",
@@ -877,7 +1404,15 @@
     "category": "learning",
     "tags": ["learning", "css", "accessibility", "performance", "responsive", "testing", "web development"],
     "kind": "documentation",
-    "sourceUrl": "https://web.dev/learn"
+    "sourceUrl": "https://web.dev/learn",
+    "guidance": {
+      "bestFor": "Improve a form that is hard to fill out on a phone. Work through autofill, validation and testing.",
+      "frameworks": ["HTML", "Browser"],
+      "setup": "low",
+      "caveat": "The lessons teach browser behavior. Test your actual form with the keyboard and the input types you chose.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": ["https://web.dev/learn/forms"]
+    }
   },
   {
     "id": "react-learn",
@@ -909,7 +1444,15 @@
     "category": "learning",
     "tags": ["learning", "typescript", "types", "javascript", "documentation", "debugging"],
     "kind": "documentation",
-    "sourceUrl": "https://www.typescriptlang.org/docs/handbook/intro.html"
+    "sourceUrl": "https://www.typescriptlang.org/docs/handbook/intro.html",
+    "guidance": {
+      "bestFor": "Fix a TypeScript error when a search result might be a string, an object or null.",
+      "frameworks": ["TypeScript"],
+      "setup": "low",
+      "caveat": "Checking a type in your code helps narrow a union. A type annotation alone cannot validate an incoming API response.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": ["https://www.typescriptlang.org/docs/handbook/2/narrowing.html"]
+    }
   },
   {
     "id": "javascript-info",
@@ -919,7 +1462,15 @@
     "category": "learning",
     "tags": ["learning", "javascript", "browser", "async", "constructor", "objects", "beginner", "tutorial"],
     "kind": "documentation",
-    "sourceUrl": "https://javascript.info/"
+    "sourceUrl": "https://javascript.info/",
+    "guidance": {
+      "bestFor": "Trace what happens between clicking a button and its event handler running.",
+      "frameworks": ["JavaScript", "DOM"],
+      "setup": "low",
+      "caveat": "The examples attach handlers to DOM elements. In a framework, use its event conventions for the same behavior.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": ["https://javascript.info/introduction-browser-events"]
+    }
   },
   {
     "id": "odin-project",
@@ -929,7 +1480,15 @@
     "category": "learning",
     "tags": ["learning", "curriculum", "projects", "html", "css", "javascript", "full stack"],
     "kind": "documentation",
-    "sourceUrl": "https://www.theodinproject.com/"
+    "sourceUrl": "https://www.theodinproject.com/",
+    "guidance": {
+      "bestFor": "Build a landing page or calculator while practicing Git, CSS layout and DOM events.",
+      "frameworks": ["HTML", "CSS", "JavaScript", "Git"],
+      "setup": "moderate",
+      "caveat": "The Foundations projects assume you work in a local editor. Allow time for Git and command-line setup.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": ["https://www.theodinproject.com/paths/foundations/courses/foundations"]
+    }
   },
   {
     "id": "freecodecamp",
@@ -939,7 +1498,15 @@
     "category": "learning",
     "tags": ["learning", "curriculum", "exercises", "projects", "javascript", "python", "beginner"],
     "kind": "documentation",
-    "sourceUrl": "https://github.com/freeCodeCamp/freeCodeCamp"
+    "sourceUrl": "https://github.com/freeCodeCamp/freeCodeCamp",
+    "guidance": {
+      "bestFor": "Find a small coding exercise to practice the skill your agent just used before changing your own project.",
+      "frameworks": ["Browser", "JavaScript", "HTML", "CSS"],
+      "setup": "low",
+      "caveat": "An exercise checks its own requirements. Repeat the change in your project to see whether you can apply it there.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": ["https://github.com/freeCodeCamp/freeCodeCamp"]
+    }
   },
   {
     "id": "full-stack-open",
@@ -949,7 +1516,15 @@
     "category": "learning",
     "tags": ["learning", "full stack", "react", "node.js", "api", "database", "typescript"],
     "kind": "documentation",
-    "sourceUrl": "https://fullstackopen.com/en/"
+    "sourceUrl": "https://fullstackopen.com/en/",
+    "guidance": {
+      "bestFor": "Connect a React interface to a Node.js API and follow the request through both parts of the app.",
+      "frameworks": ["React", "JavaScript", "Node.js"],
+      "setup": "advanced",
+      "caveat": "The course assumes programming experience and basic familiarity with web development, databases and Git.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": ["https://fullstackopen.com/en/part0/general_info", "https://fullstackopen.com/en/"]
+    }
   },
   {
     "id": "cs50x",
@@ -959,7 +1534,15 @@
     "category": "learning",
     "tags": ["learning", "computer science", "algorithms", "lectures", "beginner", "projects"],
     "kind": "video",
-    "sourceUrl": "https://cs50.harvard.edu/x/"
+    "sourceUrl": "https://cs50.harvard.edu/x/",
+    "guidance": {
+      "bestFor": "Practice explaining why an algorithm works before asking an agent to optimize it.",
+      "frameworks": ["C", "Python", "Algorithms"],
+      "setup": "low",
+      "caveat": "Choose the lecture or problem set that matches your question. Early algorithm examples use C, so translate the idea to your app's language.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": ["https://cs50.harvard.edu/x/"]
+    }
   },
   {
     "id": "coding-train-physics",
@@ -969,7 +1552,15 @@
     "category": "learning",
     "tags": ["learning", "video", "matter.js", "physics", "p5.js", "javascript", "creative coding"],
     "kind": "video",
-    "sourceUrl": "https://thecodingtrain.com/tracks/physics-libraries"
+    "sourceUrl": "https://thecodingtrain.com/tracks/physics-libraries",
+    "guidance": {
+      "bestFor": "Build a Plinko board or a draggable pendulum and see how bodies and constraints affect the motion.",
+      "frameworks": ["JavaScript", "Matter.js", "p5.js"],
+      "setup": "low",
+      "caveat": "Some videos show older engine calls. Check the project's installed Matter.js version before copying the setup.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": ["https://thecodingtrain.com/tracks/physics-libraries"]
+    }
   },
   {
     "id": "frontend-bootcamp",
@@ -979,7 +1570,15 @@
     "category": "learning",
     "tags": ["learning", "video", "html", "css", "javascript", "beginner", "projects"],
     "kind": "video",
-    "sourceUrl": "https://master.dev/bootcamp/"
+    "sourceUrl": "https://master.dev/bootcamp/",
+    "guidance": {
+      "bestFor": "Use the calculator project to practice turning a design into HTML, CSS and JavaScript.",
+      "frameworks": ["HTML", "CSS", "JavaScript"],
+      "setup": "low",
+      "caveat": "This is a sequence of classes and exercises. Pick the relevant lesson if you already have a working project.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": ["https://master.dev/bootcamp/"]
+    }
   },
   {
     "id": "interactive-flexbox-guide",
@@ -989,7 +1588,15 @@
     "category": "learning",
     "tags": ["learning", "article", "css", "flexbox", "layout", "responsive", "interactive"],
     "kind": "article",
-    "sourceUrl": "https://www.joshwcomeau.com/css/interactive-guide-to-flexbox/"
+    "sourceUrl": "https://www.joshwcomeau.com/css/interactive-guide-to-flexbox/",
+    "guidance": {
+      "bestFor": "Find out why a toolbar overflows on a narrow screen by changing item size, shrink and wrap in a live example.",
+      "frameworks": ["CSS", "Flexbox"],
+      "setup": "low",
+      "caveat": "The demo isolates flex layout. Reproduce the problem with the same parent width and text lengths as your page.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": ["https://www.joshwcomeau.com/css/interactive-guide-to-flexbox/"]
+    }
   },
   {
     "id": "storybook",
@@ -1000,7 +1607,15 @@
     "tags": ["tools", "components", "testing", "documentation", "design system", "frontend"],
     "kind": "tool",
     "agentUrl": "https://storybook.js.org/llms.txt",
-    "sourceUrl": "https://storybook.js.org/"
+    "sourceUrl": "https://storybook.js.org/",
+    "guidance": {
+      "bestFor": "See a component's empty, loading and populated states side by side without walking through the whole app.",
+      "frameworks": ["UI components", "Storybook"],
+      "setup": "moderate",
+      "caveat": "You supply each story's props and context. A story with mock data still needs a separate check against the real service.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": ["https://storybook.js.org/docs/get-started/whats-a-story"]
+    }
   },
   {
     "id": "playwright",
@@ -1058,7 +1673,23 @@
     "category": "tools",
     "tags": ["tools", "testing", "components", "accessibility", "react", "user behavior", "verification"],
     "kind": "library",
-    "sourceUrl": "https://testing-library.com/"
+    "sourceUrl": "https://testing-library.com/",
+    "guidance": {
+      "bestFor": "Test a login form by finding its labeled inputs and submit button, then checking the message a student sees after submitting.",
+      "frameworks": [
+        "DOM",
+        "JavaScript",
+        "React",
+        "Vue"
+      ],
+      "setup": "moderate",
+      "caveat": "These helpers need a test runner and a browser or simulated DOM. Use a real browser to check whether the form fits on a phone.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://testing-library.com/docs/queries/about/",
+        "https://testing-library.com/docs/dom-testing-library/intro/"
+      ]
+    }
   },
   {
     "id": "axe-core",
@@ -1068,7 +1699,20 @@
     "category": "tools",
     "tags": ["tools", "testing", "accessibility", "audit", "automation", "verification"],
     "kind": "library",
-    "sourceUrl": "https://github.com/dequelabs/axe-core"
+    "sourceUrl": "https://github.com/dequelabs/axe-core",
+    "guidance": {
+      "bestFor": "Check a website for accessibility issues by scanning the login form and its error state during a browser test.",
+      "frameworks": [
+        "Browser DOM",
+        "JavaScript"
+      ],
+      "setup": "moderate",
+      "caveat": "The scan can flag issues for manual review and covers only some accessibility requirements. Try the form with a keyboard as well.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://github.com/dequelabs/axe-core"
+      ]
+    }
   },
   {
     "id": "chrome-devtools",
@@ -1078,7 +1722,15 @@
     "category": "tools",
     "tags": ["tools", "debugging", "browser", "performance", "css", "network", "javascript"],
     "kind": "documentation",
-    "sourceUrl": "https://developer.chrome.com/docs/devtools"
+    "sourceUrl": "https://developer.chrome.com/docs/devtools",
+    "guidance": {
+      "bestFor": "Debug an image or API request that never appears by checking its URL, status and response headers.",
+      "frameworks": ["Chrome", "Browser developer tools"],
+      "setup": "low",
+      "caveat": "The Network panel records while it is open. Reload or repeat the action before inspecting a missing request.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": ["https://developer.chrome.com/docs/devtools/network"]
+    }
   },
   {
     "id": "codepen",
@@ -1088,7 +1740,15 @@
     "category": "tools",
     "tags": ["tools", "playground", "html", "css", "javascript", "examples", "prototyping"],
     "kind": "tool",
-    "sourceUrl": "https://codepen.io/"
+    "sourceUrl": "https://codepen.io/",
+    "guidance": {
+      "bestFor": "Share a small reproduction of a broken button, animation or CSS layout with a live preview.",
+      "frameworks": ["HTML", "CSS", "JavaScript"],
+      "setup": "low",
+      "caveat": "Match the dependencies and preprocessing used in your real app. A Pen can run with different settings.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": ["https://codepen.io/"]
+    }
   },
   {
     "id": "excalidraw",
@@ -1098,7 +1758,15 @@
     "category": "tools",
     "tags": ["tools", "wireframe", "diagrams", "planning", "whiteboard", "user flows", "ideas"],
     "kind": "tool",
-    "sourceUrl": "https://github.com/excalidraw/excalidraw"
+    "sourceUrl": "https://github.com/excalidraw/excalidraw",
+    "guidance": {
+      "bestFor": "Sketch the screens and decisions in a sign-in flow and give the diagram to your coding agent.",
+      "frameworks": ["Whiteboard", "Diagram"],
+      "setup": "low",
+      "caveat": "An exported image communicates the flow. Keep the editable drawing if you want to rearrange its elements later.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": ["https://github.com/excalidraw/excalidraw"]
+    }
   },
   {
     "id": "penpot",
@@ -1109,7 +1777,15 @@
     "tags": ["tools", "design", "prototyping", "components", "mockups", "handoff", "svg"],
     "kind": "tool",
     "agentUrl": "https://penpot.app/llms.txt",
-    "sourceUrl": "https://penpot.app/"
+    "sourceUrl": "https://penpot.app/",
+    "guidance": {
+      "bestFor": "Test how a user moves from a project list to a detail screen by connecting boards in a clickable prototype.",
+      "frameworks": ["Design prototype", "Browser"],
+      "setup": "low",
+      "caveat": "Prototype links simulate navigation. The agent still needs to implement routing and decide where data comes from.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": ["https://help.penpot.app/user-guide/prototyping/"]
+    }
   },
   {
     "id": "designeer",

@@ -7,7 +7,7 @@ November 2, 2026. The class needs resources a student can inspect, explain to a 
 | November 2 review | Result |
 | --- | --- |
 | Original featured collection | All 90 destinations reviewed. We improved 38 cards, including 28 new links to agent-readable material. |
-| Featured additions | All nine supplied websites and nine additional X discoveries. The featured collection now has 108 entries, including 32 with reviewed guidance. |
+| Featured additions | All nine supplied websites and nine additional X discoveries. The collection has 108 featured entries. An initial 32 had reviewed guidance. A second pass added use cases, setup notes, caveats and source links to the remaining 76. |
 | Community collection | All 28,359 original records from 36 source documents screened. 1,122 removed or consolidated, leaving 27,237. |
 | Searchable catalog | 27,345 unique resources. 74 historical IDs resolve to their current entry for shared links and API lookups. |
 

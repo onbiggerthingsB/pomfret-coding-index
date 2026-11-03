@@ -13,7 +13,7 @@ test('every featured record loads with its authored ID, destination and guidance
     assert.ok(resource, item.id);
     assert.equal(resource.url, new URL(item.url).href, item.id);
     assert.equal(resource.featured, true);
-    if (item.guidance) assert.ok(resource.guidance, `Invalid guidance for ${item.id}`);
+    assert.ok(resource.guidance, `Missing or invalid reviewed guidance for ${item.id}`);
   }
 });
 
