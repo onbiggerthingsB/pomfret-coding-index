@@ -27,12 +27,12 @@ test("every bundled logo belongs to a catalog resource and has a recorded source
   }
 });
 
-test("the Ant Design site and official repo share the brand but keep separate selectable and saved identities", () => {
+test("the Ant Design site and repo keep addressable icons but save as one project", () => {
   const site = getResource("ant-design")!;
   const repo = getResource("community-a24166629bd76570")!;
   assert.ok(sources[site.id]);
   assert.equal(aliases[repo.id], site.id);
   assert.equal(site.icon, resourceIconUrl(site.id));
   assert.notEqual(repo.icon, site.icon);
-  assert.equal(readResource({ ...repo, icon: "/api/resource-icon/old?v=2" })?.icon, resourceIconUrl(repo.id));
+  assert.equal(readResource({ ...repo, icon: "/api/resource-icon/old?v=2" })?.icon, resourceIconUrl(site.id));
 });

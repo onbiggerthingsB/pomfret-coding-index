@@ -58,7 +58,7 @@ const projectPrompts: [string, string[]][] = [
 for (const [query, expected] of projectPrompts) {
   test(query, () => {
     const results = searchResources({query, limit: 3}).resources;
-    assert.ok(results.some(item => expected.includes(item.name)), results.map(item => item.name).join(', '));
+    assert.ok(results.some(item => expected.some(name => name.toLowerCase() === item.name.toLowerCase())), results.map(item => item.name).join(', '));
   });
 }
 
@@ -108,7 +108,7 @@ test('distinctive subjects survive generic details and interaction verbs', () =>
   ]) {
     const results = searchResources({query, limit: 3}).resources;
     assert.ok(results.length, query);
-    assert.ok(results.every(item => /kanban/i.test(item.name)), JSON.stringify([query, results.map(item => item.name)]));
+    assert.ok(results.every(item => /\bkanban\b/i.test(item.name + ' ' + item.description)), JSON.stringify([query, results.map(item => item.name)]));
   }
 });
 
@@ -158,4 +158,73 @@ test('a generic resource type cannot satisfy an unrelated project description', 
   assert.deepEqual(trivia.map(item => item.name), ['Open Trivia']);
   assert.deepEqual(top('a library for zxqnonexistent'), []);
   assert.deepEqual(top('an API for zxqnonexistent without a key'), []);
+});
+
+test('conversational named searches keep the same project and related-tool decisions', () => {
+  for (const query of ['I need Ant Design', 'can you find Ant Design', 'please show me Ant Design', 'I need an Ant Design component library']) {
+    assert.deepEqual(top(query), ['ant-design'], query);
+  }
+  for (const query of ['Ant Design Vue dashboard', 'Ant Design for a Vue dashboard', 'I need Ant Design for a Vue dashboard']) {
+    assert.equal(searchResources({query}).resources[0]?.name, 'Ant Design Vue', query);
+  }
+  assert.equal(searchResources({query: 'I need Ant Design', category: 'icons'}).total, 0);
+});
+
+test('a named project does not override runtime or access constraints', () => {
+  assert.equal(searchResources({query: 'Ant Design Vue dashboard without Vue'}).total, 0);
+  assert.ok(searchResources({query: 'Ant Design for a Vue dashboard without React'}).resources.some(item => item.name === 'Ant Design Vue'));
+  assert.ok(!top('Ant Design without React').includes('ant-design'));
+  assert.equal(searchResources({query: 'Ant Design Vue no API key'}).total, 0);
+  assert.equal(searchResources({query: 'Ant Design Vue only browser APIs'}).total, 0);
+});
+
+test('website slowness requests rank web diagnostics rather than incidental word matches', () => {
+  const useful = new Set(['DebugBear Speed Test', 'Lighthouse (Chrome)', 'Chrome DevTools']);
+  for (const query of ['why is my website slow', 'find out why my website loads slowly', 'measure website performance']) {
+    const result = searchResources({query, limit: 3});
+    assert.ok(result.resources.length > 0, query);
+    assert.ok(result.resources.every(item => useful.has(item.name)), result.resources.map(item => item.name).join(', '));
+  }
+});
+
+test('a navigation icon request cannot be satisfied by free fonts', () => {
+  const result = searchResources({query: 'free icons for a navbar', limit: 3});
+  assert.ok(result.resources.some(item => item.id === 'lucide'));
+  assert.ok(result.resources.every(item => item.category === 'icons'));
+});
+
+test('loading indicators and animation timing are distinct from website diagnostics', () => {
+  for (const query of [
+    'loading spinner for my website', 'website loading animation',
+    'page loading progress bar', 'slow motion animation for a website',
+    'control animation speed on my website',
+  ]) {
+    const result = searchResources({query, limit: 10});
+    assert.ok(result.resources.length > 0, query);
+    assert.ok(result.resources.every(item => !['DebugBear Speed Test', 'Lighthouse (Chrome)', 'Google PageSpeed Insights API'].includes(item.name)), query);
+  }
+});
+
+test('website loading animations rank web loading UI rather than native rendering tutorials', () => {
+  const webLoaders = new Set(['Loading.io', 'css-loaders', 'PageLoadingEffects', 'SpinKit']);
+  for (const query of ['website loading animation', 'loading animation for my website', 'web page loading animation']) {
+    const result = searchResources({query, limit: 3});
+    assert.equal(result.resources.length, 3, query);
+    assert.ok(result.resources.every(item => webLoaders.has(item.name)),
+      `${query}: ${result.resources.map(item => item.name).join(', ')}`);
+  }
+  assert.equal(searchResources({query: 'website loading animation in React'}).resources[0]?.name, 'svg-loaders-react');
+  assert.ok(!searchResources({query: 'website loading animation without React', limit: 100}).resources
+    .some(item => item.name === 'svg-loaders-react'));
+  assert.equal(searchResources({query: 'website loading animation no API key'}).total, 0);
+});
+
+test('unknown account access is not promoted to verified keyless access', () => {
+  for (const query of ['free weather data, no account', 'weather API no registration', 'weather API without signing up', 'weather API no sign-up']) {
+    const result = searchResources({query});
+    assert.equal(result.total, 0, query);
+    assert.deepEqual(result.filters, {account: 'not-required'}, query);
+  }
+  assert.deepEqual(searchResources({query: 'weather no account and no key'}).filters, {account: 'not-required', apiKey: 'not-required'});
+  assert.ok(searchResources({query: 'weather without an API key'}).total > 0);
 });

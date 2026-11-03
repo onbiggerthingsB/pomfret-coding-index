@@ -15,10 +15,11 @@ import { createMatches } from "./floor/matches";
 import { createOverlays, MOST } from "./floor/overlays";
 import { popScale } from "./floor/pop";
 import { resizeFloorBodies } from "./floor/resize";
-import type { Match, Scene } from "./floor/scene";
+import type { Match, Pop, Scene } from "./floor/scene";
 import { renderSprite } from "./floor/sprite";
 import { createSwaps } from "./floor/swaps";
 import { createTilt, type TiltStatus } from "./floor/tilt";
+import { readMotionPause } from "./useMotionPreference";
 
 export type { Match };
 
@@ -33,6 +34,8 @@ export type FloorApi = {
   add: (src: string) => void;
   /** Pause physical movement while keeping resource selection available. */
   setPaused: (paused: boolean) => void;
+  /** Suspend background work while a blocking panel covers the scene. */
+  setSuspended: (suspended: boolean) => void;
   setTiltEnabled: (enabled: boolean) => void;
   calibrateTilt: () => void;
 };
@@ -104,6 +107,21 @@ export const IconFloor = memo(function IconFloor({ sources, featuredCount, reser
 
     const reducedQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
     let reduced = reducedQuery.matches;
+    pausedRef.current = readMotionPause();
+    let raf = 0;
+    let stopped = false;
+    let suspended = false;
+    let suspendedAt: number | null = document.hidden ? performance.now() : null;
+    let repaintUntil = 0;
+    let dirty = true;
+    function scheduleFrame() {
+      if (!raf && !stopped && !suspended && !document.hidden) raf = requestAnimationFrame(frame);
+    }
+    function requestPaint() {
+      // Allow tooltip dwell and label fades to complete, then let a paused scene sleep.
+      repaintUntil = performance.now() + 500;
+      scheduleFrame();
+    }
     const engine = Matter.Engine.create({ gravity: { x: 0, y: 1, scale: 0.001 } });
     engine.enableSleeping = true; // bodies that stop moving leave the solver: no jitter, and far less CPU
     // These run in each of the three substeps, so a step gets 12 position passes in all (it was 4): hard hits no longer leave icons overlapping.
@@ -116,12 +134,19 @@ export const IconFloor = memo(function IconFloor({ sources, featuredCount, reser
 
     // A cold sprite sheet can take longer than the entire pour. Start only once art can actually be painted.
     let dropAt = Infinity;
+    let suspendedDropAt = Infinity;
+    let suspendedPops = new Set<Pop>();
     const srcs = [...sources];
     const scene: Scene = {
       engine, srcs, images: srcs.map(() => null), tiles: srcs.map((_, i) => (sheet && cells[i] >= 0 ? cells[i] : null)),
       atlas: createAtlas(), sheet, sheetImg: null, bodies: [],
       grown: new Map(), sharp: new Map(), holds: new Map(), pops: new Map(), box: null, scroll: 0,
-      width: 0, height: 0, size: 96, bigSize: 96, midSize: 56, dpr: 1, added: 0, dirty: true, now: performance.now(), animate: !reduced && !pausedRef.current,
+      width: 0, height: 0, size: 96, bigSize: 96, midSize: 56, dpr: 1, added: 0, now: performance.now(), animate: !reduced && !pausedRef.current,
+      get dirty() { return dirty; },
+      set dirty(value) {
+        dirty = value;
+        if (value) requestPaint();
+      },
       retile(i) {
         const tile = scene.tiles[i];
         if (typeof tile === "number") {
@@ -244,7 +269,6 @@ export const IconFloor = memo(function IconFloor({ sources, featuredCount, reser
     let blend = 1;
     let canInterpolate = false;
     const drawnPose = (i: number) => poses.at(i, blend);
-    let raf = 0;
     let frames = 0;
     let last = performance.now();
     let acc = 0;
@@ -280,14 +304,15 @@ export const IconFloor = memo(function IconFloor({ sources, featuredCount, reser
       if (animate === scene.animate) return;
       invalidateGesture();
       scene.animate = animate;
-      setAnimateBeam(animate);
-      tilt.setSuspended(!animate || document.hidden);
+      setAnimateBeam(animate && !suspended && !document.hidden);
+      tilt.setSuspended(!animate || suspended || document.hidden);
       if (!animate) {
         swaps.finish();
         placeRemaining();
         matches.relayout();
       }
       resetClock();
+      requestPaint();
     };
 
     const paint = (i: number, scale: number) => {
@@ -382,9 +407,9 @@ export const IconFloor = memo(function IconFloor({ sources, featuredCount, reser
       stats.stepMs += ((performance.now() - t0) / tick.steps - stats.stepMs) * 0.1;
     };
 
-    const frame = (now: number) => {
-      raf = requestAnimationFrame(frame);
-      if (document.hidden) {
+    function frame(now: number) {
+      raf = 0;
+      if (document.hidden || suspended) {
         canInterpolate = false;
         last = now;
         acc = 0;
@@ -437,8 +462,38 @@ export const IconFloor = memo(function IconFloor({ sources, featuredCount, reser
         if (grown.size) draw();
         else drawSwaps();
       }
-    };
-    raf = requestAnimationFrame(frame);
+      if (scene.animate || now < repaintUntil) scheduleFrame();
+    }
+    requestPaint();
+
+    function syncSuspension() {
+      const sleeping = suspended || document.hidden;
+      tilt.setSuspended(!scene.animate || sleeping);
+      setAnimateBeam(scene.animate && !sleeping);
+      if (sleeping) {
+        if (suspendedAt === null) {
+          suspendedAt = performance.now();
+          suspendedDropAt = dropAt;
+          suspendedPops = new Set(pops.values());
+        }
+        invalidateGesture();
+        cancelAnimationFrame(raf);
+        raf = 0;
+        return;
+      }
+      if (suspendedAt !== null) {
+        const now = performance.now();
+        const elapsed = now - suspendedAt;
+        if (Number.isFinite(dropAt)) dropAt = Number.isFinite(suspendedDropAt) ? dropAt + elapsed : now + 200;
+        // Artwork can finish loading under a panel. New swaps start on return;
+        // existing swaps keep the exact progress and delay they had on suspension.
+        for (const pop of pops.values()) pop.t0 = suspendedPops.has(pop) ? pop.t0 + elapsed : now;
+        suspendedPops.clear();
+        suspendedAt = null;
+      }
+      resetClock();
+      requestPaint();
+    }
 
     apiRef.current = {
       shake(intensity) {
@@ -458,8 +513,8 @@ export const IconFloor = memo(function IconFloor({ sources, featuredCount, reser
         }
         scene.dirty = true;
       },
-      select: (found, getAnchor) => matches.select(found, getAnchor),
-      release: () => matches.release(),
+      select(found, getAnchor) { matches.select(found, getAnchor); requestPaint(); },
+      release() { matches.release(); requestPaint(); },
       add(src) {
         if (srcs.includes(src)) return;
         const i = srcs.push(src) - 1;
@@ -474,6 +529,11 @@ export const IconFloor = memo(function IconFloor({ sources, featuredCount, reser
       setPaused(paused) {
         pausedRef.current = paused;
         syncMotion();
+      },
+      setSuspended(value) {
+        if (value === suspended) return;
+        suspended = value;
+        syncSuspension();
       },
       setTiltEnabled: enabled => tilt.setEnabled(enabled),
       calibrateTilt: () => tilt.calibrate(),
@@ -500,6 +560,7 @@ export const IconFloor = memo(function IconFloor({ sources, featuredCount, reser
       canvas.setPointerCapture(event.pointerId);
     };
     const onPointerMove = (event: PointerEvent) => {
+      if (scene.box && !scene.animate) requestPaint();
       if (!press || press.pointerId !== event.pointerId) return;
       const point = worldPoint(event);
       press.travelled = Math.max(press.travelled, Math.hypot(point.x - press.start.x, point.y - press.start.y));
@@ -578,9 +639,7 @@ export const IconFloor = memo(function IconFloor({ sources, featuredCount, reser
     };
     const onBlur = () => invalidateGesture();
     const onVisibilityChange = () => {
-      tilt.setSuspended(!scene.animate || document.hidden);
-      resetClock();
-      if (document.hidden) invalidateGesture();
+      syncSuspension();
     };
     document.addEventListener("click", onClick, true);
     window.addEventListener("pointerdown", clearOldClick, true);
@@ -598,11 +657,15 @@ export const IconFloor = memo(function IconFloor({ sources, featuredCount, reser
     window.addEventListener("resize", onResize);
     // The wheel scrolls the container when the cursor is over it and there is more than fits.
     const onWheel = (e: WheelEvent) => {
-      if (matches.scrollBy(e.deltaY, e.clientX, e.clientY)) e.preventDefault();
+      if (matches.scrollBy(e.deltaY, e.clientX, e.clientY)) {
+        e.preventDefault();
+        requestPaint();
+      }
     };
     window.addEventListener("wheel", onWheel, { passive: false });
 
     return () => {
+      stopped = true;
       tilt.stop();
       finishGesture(false);
       if (canceledPointerId !== null && canvas.hasPointerCapture(canceledPointerId)) canvas.releasePointerCapture(canceledPointerId);

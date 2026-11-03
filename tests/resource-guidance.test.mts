@@ -105,12 +105,28 @@ test('every reviewed community card resolves to its canonical ID and exposes its
   }
 });
 
-test('catalog imports without a reviewed card do not inherit a checked label', () => {
+test('catalog imports only inherit guidance from a linked, reviewed project repository', () => {
   const unreviewed = getResources().filter(resource => resource.origin === 'community-index' && !Object.hasOwn(communityCards, resource.id));
   assert.ok(unreviewed.length > 0);
   for (const resource of unreviewed) {
-    assert.equal(resource.guidance, undefined, resource.id);
+    if (!resource.projectGuidanceFrom) {
+      assert.equal(resource.guidance, undefined, resource.id);
+      continue;
+    }
+    const source = getResource(resource.projectGuidanceFrom);
+    assert.ok(source && Object.hasOwn(communityCards, source.id), resource.id);
+    assert.equal(new URL(source.url).hostname, 'github.com', resource.id);
+    assert.ok(resource.projectLinks?.some(link => link.url === source.url && link.label === 'GitHub'), resource.id);
+    assert.deepEqual(resource.guidance, parseResourceGuidance(communityCards[source.id].guidance), resource.id);
   }
+});
+
+test('the official Tailwind CSS website retains the checked guidance from its linked source repository', () => {
+  const [website] = searchResources({query: 'Tailwind CSS'}).resources;
+  const repositoryId = 'community-b662278c0d08c19d';
+  assert.equal(website.url, 'https://tailwindcss.com/');
+  assert.equal(website.projectGuidanceFrom, repositoryId);
+  assert.deepEqual(website.guidance, parseResourceGuidance(communityCards[repositoryId].guidance));
 });
 
 test('metadata treats unknown IDs and inherited object keys as missing', () => {

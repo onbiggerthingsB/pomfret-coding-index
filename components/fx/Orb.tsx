@@ -53,7 +53,7 @@ export function Orb({ state, paused }: Props) {
       for (const animation of animations) animation.cancel();
       motion.current = [];
     };
-  }, []);
+  }, [paused]);
 
   useEffect(() => {
     const animations = motion.current;
@@ -79,8 +79,14 @@ export function Orb({ state, paused }: Props) {
   return (
     <span className="search-orb" data-state={state} aria-hidden="true">
       <span className="orb-material">
-        <span className="orb-sheet" ref={lower} style={sheetSize} />
-        <span className="orb-sheet orb-blend" ref={upper} style={sheetSize} />
+        {paused ? (
+          // A single 84px frame instead of the 360-frame sheet while motion is disabled.
+          // eslint-disable-next-line @next/next/no-img-element
+          <img src="/orb/hydrogen-still.webp" alt="" width={84} height={84} style={{ width: "100%", height: "100%" }} />
+        ) : <>
+          <span className="orb-sheet" ref={lower} style={sheetSize} />
+          <span className="orb-sheet orb-blend" ref={upper} style={sheetSize} />
+        </>}
       </span>
       <svg className="orb-progress" viewBox="0 0 44 44" fill="none" focusable="false">
         <circle cx="22" cy="22" r="20.5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeDasharray="29 100" />

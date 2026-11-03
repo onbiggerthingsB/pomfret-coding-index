@@ -1,4 +1,5 @@
 import { getCommunityMetadata } from "./community-metadata.ts";
+import { groupCatalogProjects } from "./catalog-projects.ts";
 import { readRequirements } from "./resource-access.ts";
 import { resourceIconUrl } from "./resource-icon.ts";
 import { readFileSync, statSync } from "node:fs";
@@ -51,6 +52,9 @@ export type Resource = {
   icon: string;
   guidance?: ResourceGuidance;
   requirements?: ResourceRequirements;
+  projectLinks?: { label: string; url: string }[];
+  projectGuidanceFrom?: string;
+  relatedTools?: { id: string; name: string }[];
 };
 
 export type ResourceResult = Resource & { score: number };
@@ -62,7 +66,7 @@ export type ResourceSearch = {
   resources: ResourceResult[];
   indexed: number;
   totalFeatured: number;
-  filters?: { apiKey: "not-required" };
+  filters?: { apiKey?: "not-required"; account?: "not-required" };
 };
 
 type SearchOptions = {
@@ -92,13 +96,16 @@ type Catalog = {
   featured: Resource[];
   byId: Map<string, Resource>;
   byUrl: Map<string, Resource>;
+  alternateOf: Map<string, Resource>;
+  namedProjects: Map<string, Resource>;
+  preferredProjects: Map<string, Resource | null>;
   index: IndexedResource[];
   frequencies: Map<string, number>;
 };
 
 let catalog: Catalog | undefined;
 
-const stopWords = new Set("a am an and anything are as at be by can could create find for from get give help how i in is it looking m me my need of on or our please re searching show something that the to use using want we website with would what which who where when that they them their people let like works work your it s ve does do did new through".split(" "));
+const stopWords = new Set("a am an and anything are as at be by can could create find for from get give help how i in is it looking m me my need of on or our please re searching show something that the to use using want we website with would what which who where when why that they them their people let like works work you your it s ve does do did new through".split(" "));
 const stackTerms = new Set([
   "react", "vue", "svelte", "angular", "solid", "nextjs", "nuxtjs", "tailwind", "bootstrap",
   "javascript", "typescript", "css", "html", "python", "rust", "java", "go", "kotlin", "swift", "php",
@@ -108,6 +115,9 @@ const uiFrameworks = new Set(["react", "vue", "svelte", "angular", "solid"]);
 const resourceTypeWords = new Set(["api", "tool", "resource", "library", "package", "repo"]);
 const accessibilityTerms = new Set(["accessible", "accessibility", "a11y"]);
 const interfaceObjects = new Set(["card", "button", "panel", "menu", "modal", "list", "element"]);
+const webPerformanceTerms = ["web", "website", "browser", "frontend", "pagespeed", "chrome", "javascript", "nextjs", "react"];
+const webInterfaceTerms = ["web", "website", "browser", "frontend", "javascript", "typescript", "css", "html", "dom", "ui", "nextjs", "nuxtjs", ...uiFrameworks];
+const diagnosticTerms = ["audit", "auditing", "testing", "test", "debug", "debugging", "diagnose", "investigate", "profiling", "benchmark", "report", "measure", "measuring", "network", "vitals"];
 const aliases: Record<string, string[]> = {
   component: ["component", "ui", "designsystem"],
   modal: ["modal", "dialog"],
@@ -134,6 +144,7 @@ const aliases: Record<string, string[]> = {
   scrolling: ["scrolling", "scroll"],
   transition: ["transition", "animation"],
   icon: ["icon", "symbol", "pictogram"],
+  navbar: ["navbar", "navigation", "menu"],
   animation: ["animation", "motion", "animate"],
   animate: ["animate", "animation", "motion"],
   animated: ["animated", "animation", "motion"],
@@ -168,6 +179,10 @@ function stem(word: string): string {
 
 function words(value: string): string[] {
   return normalize(value).split(/\s+/).filter(Boolean).map(stem);
+}
+
+function projectPhrase(value: string): string {
+  return value.split(/\s+/).filter(word => !["a", "an", "the", "for"].includes(word)).join(" ");
 }
 
 function webUrl(value: unknown): string | undefined {
@@ -283,13 +298,14 @@ function loadCatalog(): Catalog {
   });
 
   const resources = [...byId.values()];
+  const projectIndex = groupCatalogProjects(resources, byId, normalize);
   // Historical links resolve to the same record without adding results to search.
   const previousIds: Record<string, string> = JSON.parse(readFileSync(aliasFile, "utf8"));
   for (const [oldId, currentId] of Object.entries(previousIds)) {
     const current = byId.get(currentId);
     if (current && !byId.has(oldId)) byId.set(oldId, current);
   }
-  const index = resources.map(resource => ({
+  const index = resources.filter(resource => !projectIndex.alternateOf.has(resource.id)).map(resource => ({
     resource,
     name: normalize(resource.name),
     names: new Set(words(resource.name)),
@@ -306,7 +322,7 @@ function loadCatalog(): Catalog {
     const seen = new Set([...entry.names, ...entry.tags, ...entry.words, ...(entry.guidance ?? [])]);
     for (const term of seen) frequencies.set(term, (frequencies.get(term) ?? 0) + 1);
   }
-  catalog = { signature, resources, featured: resources.filter(item => item.featured), byId, byUrl, index, frequencies };
+  catalog = { signature, resources, featured: resources.filter(item => item.featured), byId, byUrl, index, frequencies, ...projectIndex };
   return catalog;
 }
 
@@ -326,7 +342,7 @@ function mentions(entry: IndexedResource, term: string): boolean {
   return entry.names.has(term) || entry.tags.has(term) || !!entry.frameworks?.has(term);
 }
 
-function tokenScore(entry: IndexedResource, alternatives: string[]): number {
+function tokenScore(entry: IndexedResource, alternatives: string[], allowPrefix = false): number {
   let best = 0;
   for (const [index, term] of alternatives.entries()) {
     let score = 0;
@@ -334,7 +350,7 @@ function tokenScore(entry: IndexedResource, alternatives: string[]): number {
     else if (entry.tags.has(term) || entry.frameworks?.has(term)) score = 12;
     else if (entry.guidance?.has(term)) score = 10;
     else if (entry.words.has(term)) score = 4;
-    else if (term.length >= 3) {
+    else if (allowPrefix && term.length >= 4) {
       for (const set of [entry.names, entry.tags]) {
         for (const word of set) {
           if (word.startsWith(term)) {
@@ -375,12 +391,24 @@ function planSearch(query: string, catalog: Catalog) {
     .replace(exclusionMarker, "exclude").replace(excludedDependency, "exclude");
   const withoutKeyPhrase = constraints.replace(noKeyPhrase, " ");
   const keyless = constraints !== withoutKeyPhrase;
+  const accountless = /\bexclude (?:an? |any )?(?:accounts?|registration|sign ?up|signing up|register(?:ing)?)\b/.test(constraints);
   const commercial = /\bcommercial\b/.test(normalized.replace(/\bnon commercial\b/g, ""));
   const plainJS = /\b(?:plain|vanilla|pure) (?:js|javascript)\b/.test(normalized);
   const nativeApiPhrase = /\b(?:(?:only|native|built in|standard) browser apis?|browser apis? only)\b/g;
   const withoutNativePhrase = withoutKeyPhrase.replace(nativeApiPhrase, " ");
   const nativeApis = withoutNativePhrase !== withoutKeyPhrase;
+  const performanceRequest = normalized
+    .replace(/\bslow(?:ly)? (?:motion|animations?|transitions?)\b/g, "")
+    .replace(/\b(?:animation|motion|playback|transition) speed\b/g, "");
+  const webPerformance = /\b(?:web|website|site|page|browser|frontend)\b/.test(performanceRequest)
+    && /\b(?:slow|slowly|sluggish|speed|performance|(?:load|loading|rendering) time)\b/.test(performanceRequest);
+  const webLoadingVisual = /\b(?:web|website|site|page|browser|frontend)\b/.test(normalized)
+    && /\b(?:loading|loaders?)\b/.test(normalized)
+    && /\b(?:animations?|animated|spinners?|indicators?|progress|skeletons?|loaders?)\b/.test(normalized);
   const framed = withoutNativePhrase
+    .replace(/\bslow motion\b/g, "motion")
+    .replace(/\b(?:control|change|adjust) (?:the )?(animation|motion|playback|transition) speed\b/g, "$1")
+    .replace(/^(?:find out|figure out|help me understand) /, "")
     .replace(/\b(?:plain|vanilla|pure) (?:javascript|js)\b/g, "javascript")
     .replace(/\bjs\b/g, "javascript")
     .replace(/^(?:what|which) (?:tools?|libraries|resources?) (?:can|should|could) (?:i|we) use (?:to|for) /, "")
@@ -415,7 +443,15 @@ function planSearch(query: string, catalog: Catalog) {
       anyOf.push(options);
     } else if (!stopWords.has(raw[i])) terms.add(raw[i]);
   }
-  const taskBoard = /\b(?:columns?|lanes?)\b/.test(framed)
+  if (webPerformance) {
+    for (const term of ["web", "site", "page", "browser", "frontend", "slow", "slowly", "sluggish", "speed", "load", "loading", "measure", "out"]) terms.delete(term);
+    terms.add("performance");
+  } else if (webLoadingVisual) {
+    // The target platform is checked separately; it must not outweigh the
+    // requested loading state with generic website and landing-page matches.
+    for (const term of ["web", "site", "page", "browser", "frontend"]) terms.delete(term);
+  }
+  const taskBoard = terms.has("kanban") || /\b(?:columns?|lanes?)\b/.test(framed)
     && (/\b(?:to ?do|in progress|backlog)\b/.test(framed) && /\b(?:done|completed?|finish(?:ed)?)\b/.test(framed)
       || /\b(?:cards?|tasks?|tickets?)\b/.test(framed) && /\b(?:move|moving|drag|dragging)\b/.test(framed) && /\b(?:between|across)\b/.test(framed));
   if (taskBoard) terms.add("kanban");
@@ -436,14 +472,17 @@ function planSearch(query: string, catalog: Catalog) {
   // A classroom subject can help rank a dashboard or a test without being
   // a requirement of the general-purpose tool that implements it.
   let focus: string[] = [];
-  if (browserTest) focus = ["test", "testing"];
+  if (webPerformance) focus = ["performance"];
+  else if (webLoadingVisual) focus = ["loading", "loader"];
+  else if (terms.has("icon")) focus = ["icon"];
+  else if (browserTest) focus = ["test", "testing"];
   else if (fileUpload) focus = ["file", "upload", "uploader"];
   else if (loginForm) focus = ["form"];
   else if (terms.has("dashboard")) focus = ["dashboard"];
   else if (terms.has("debug") || terms.has("debugging")) focus = ["debug", "debugging"];
   else if (terms.size >= 3) focus = ["scroll", "scrolling", "transition"].filter(term => terms.has(term));
   return {
-    excluded: [...excluded], anyOf, keyless, commercial, plainJS, nativeApis, browserTest, fileUpload, loginForm, interfaceMotion,
+    excluded: [...excluded], anyOf, keyless, accountless, commercial, plainJS, nativeApis, browserTest, fileUpload, loginForm, interfaceMotion, webPerformance, webLoadingVisual,
     contentCount: content.length,
     needsBehavior: /\b(?:that|when)\b/.test(framed) && ["bounce", "drag", "animate"].some(term => terms.has(term)),
     terms: [...terms].map(term => {
@@ -474,23 +513,87 @@ export function searchResources(options: SearchOptions = {}): ResourceSearch {
     && (!options.kind || options.kind === "all" || resource.kind === options.kind);
   const url = webUrl(query) ?? (/^(?:www\.|[a-z0-9.-]+\.[a-z]{2,}\/)/i.test(query) ? webUrl(`https://${query}`) : undefined);
   if (url) {
-    const resource = current.byUrl.get(canonicalUrl(url));
+    const destination = current.byUrl.get(canonicalUrl(url));
+    const primary = destination && current.alternateOf.get(destination.id);
+    const resource = primary && inScope(primary) ? primary : destination;
     const matches = resource && inScope(resource) ? [{ ...resource, score: 1000 }] : [];
     return { ...base, total: matches.length, resources: matches.slice(offset, offset + limit) };
   }
   const normalized = normalize(query);
+  const conversation = normalized.split(/\s+/);
+  while (conversation.length > 1 && stopWords.has(conversation[0])) conversation.shift();
+  const request = conversation.join(" ");
+  // "Motion" is also a discovery category. Keep ordinary topic queries broad.
+  const projectName = request
+    .replace(/^(?:github repo|github|documentation|docs|website|community guide) (?:for |of )?/, "")
+    .replace(/ (?:github repo|github|repository|source code|documentation|docs|official site|website|community guide|component library|components)$/, "");
+  const project = Object.hasOwn(aliases, request) ? undefined : current.namedProjects.get(normalized) ??
+    current.namedProjects.get(request) ?? current.namedProjects.get(projectName) ??
+    (projectName !== request ? current.preferredProjects.get(projectName) : undefined);
+  if (project) {
+    let choices = [project];
+    if (!inScope(project)) {
+      // A format/category filter can ask for a companion tool or a course on the project.
+      const related = new Set(project.relatedTools?.map(tool => tool.id));
+      choices = current.index.filter(entry => inScope(entry.resource)
+        && (related.has(entry.resource.id) || (" " + entry.name + " ").includes(" " + projectName + " ")))
+        .map(entry => entry.resource);
+    }
+    return { ...base, total: choices.length, resources: choices.slice(offset, offset + limit).map(item => ({ ...item, score: 1000 })) };
+  }
   const plan = planSearch(query, current);
+  // Account access has not been reviewed in this catalog. A keyless endpoint does
+  // not establish that it can be used without registering an account.
+  if (plan.accountless) return { ...base, total: 0, resources: [], filters: { account: "not-required", ...(plan.keyless && { apiKey: "not-required" as const }) } };
+  // Once a query starts with a specific project, a word like "design" or "table"
+  // can't by itself qualify an unrelated result. Prefer the longest named variant.
+  const familyNames = new Map<string, Resource | null>();
+  for (const [name, item] of current.namedProjects) {
+    const phrase = projectPhrase(name);
+    if (!familyNames.has(phrase)) familyNames.set(phrase, item);
+    else if (familyNames.get(phrase)?.id !== item.id) familyNames.set(phrase, null);
+  }
+  const familyRequest = projectPhrase(request);
+  let familyPrefix = familyRequest;
+  let family: Resource | undefined;
+  while (familyPrefix.includes(" ") && !family) {
+    familyPrefix = familyPrefix.slice(0, familyPrefix.lastIndexOf(" "));
+    if (!Object.hasOwn(aliases, familyPrefix) && !stackTerms.has(familyPrefix)) family = familyNames.get(familyPrefix) ?? undefined;
+  }
+  const relatedIds = new Set(family?.relatedTools?.map(tool => tool.id));
+  const brandPhrase = " " + familyPrefix + " ";
+  const familyTerms = new Set(words(familyPrefix));
+  const modifiers = family ? plan.terms.map(item => item.term).filter(term => !familyTerms.has(term)) : [];
   const broadQuery = plan.terms.length === 1 && Object.hasOwn(aliases, plan.terms[0].term);
+  const preferred = !broadQuery && current.preferredProjects.get(normalized);
   const matches: ResourceResult[] = [];
 
   for (const entry of current.index) {
     if (!inScope(entry.resource)) continue;
+    // "Loading" can describe native asset rendering too. An explicit website
+    // loading indicator request needs evidence of a web interface implementation.
+    if (plan.webLoadingVisual && !webInterfaceTerms.some(term =>
+      mentions(entry, term) || entry.words.has(term) || entry.guidance?.has(term))) continue;
+    if (plan.webPerformance) {
+      const webContext = webPerformanceTerms.some(term => mentions(entry, term) || entry.words.has(term) || entry.guidance?.has(term));
+      if (!webContext) continue;
+      if (entry.resource.kind === "tool" && !diagnosticTerms.some(term =>
+        mentions(entry, term) || entry.words.has(term) || entry.guidance?.has(term))) continue;
+    }
+    if (family && entry.resource.id !== family.id) {
+      const namesProject = (" " + projectPhrase(entry.name) + " ").includes(brandPhrase) || (" " + projectPhrase(entry.description) + " ").includes(brandPhrase);
+      if (!relatedIds.has(entry.resource.id) && !namesProject) continue;
+      if (modifiers.length && !modifiers.some(term => tokenScore(entry, Object.hasOwn(aliases, term) ? aliases[term] : [term]) >= 4)) continue;
+    }
     if (plan.keyless) {
       const key = entry.resource.requirements?.apiKey;
       if (key !== "not-required" && !(key === "conditional" && !plan.commercial)) continue;
     }
     let score = entry.resource.featured ? (plan.terms.length > 1 ? 32 : 80) : 0;
-    if (query && entry.name === normalized) {
+    if (entry.resource === preferred) {
+      // For topics like React keep courses and tools visible after the project itself.
+      score += 1200;
+    } else if (query && entry.name === normalized) {
       // Names such as "No-Login Web Apps" contain ordinary search operators.
       score += broadQuery ? 60 : 1000;
     } else if (query) {
@@ -506,21 +609,22 @@ export function searchResources(options: SearchOptions = {}): ResourceSearch {
       }
       let eligible = true;
       let matched = 0;
-      let strongAnchor = false;
+      const explicitProject = entry.resource.id === family?.id;
+      let strongAnchor = explicitProject;
       for (const {term, required, alternatives, stack, subject, importance, focus, rareSubject} of plan.terms) {
         if (stack && !mentions(entry, term)) {
           eligible = false;
           break;
         }
-        const weight = tokenScore(entry, alternatives) || (plan.keyless && entry.accessNotes?.has(term) ? 4 : 0);
-        if (required && !weight) {
+        const weight = tokenScore(entry, alternatives, plan.terms.length === 1) || (plan.keyless && entry.accessNotes?.has(term) ? 4 : 0);
+        if (required && !weight && !(explicitProject && focus && !plan.webPerformance)) {
           eligible = false;
           break;
         }
         if (!weight) continue;
         if (!stack) {
           matched++;
-          if (rareSubject && entry.names.has(term)) {
+          if (rareSubject && (entry.names.has(term) || term === "kanban" && weight >= 4)) {
             strongAnchor = true;
             score += entry.resource.category === "components" ? 110 : 100;
           }
@@ -533,6 +637,8 @@ export function searchResources(options: SearchOptions = {}): ResourceSearch {
       // A framework alone cannot satisfy an unknown feature request. A single
       // specific subject (e.g. a chart of soccer scores) can supply a useful tool.
       if (!eligible || (matched < Math.min(2, plan.contentCount) && !strongAnchor)) continue;
+      if (explicitProject) score += 300;
+      if (plan.webPerformance && entry.resource.kind === "tool") score += 120;
       if (entry.name.includes(normalized)) score += broadQuery ? 20 : 45;
       if (entry.description.includes(normalized)) score += 12;
       if (plan.fileUpload && (entry.tags.has("uploader") || entry.names.has("upload"))) score += 20;

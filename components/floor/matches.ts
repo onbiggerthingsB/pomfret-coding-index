@@ -56,7 +56,11 @@ export function createMatches(scene: Scene, overlays: ReturnType<typeof createOv
         sharp.set(i, renderSprite(img, side, scene.dpr));
         scene.dirty = true;
       } else {
-        img.addEventListener("load", () => holds.get(i)?.rest.side === side && wanted.set(i, side), { once: true });
+        img.addEventListener("load", () => {
+          if (holds.get(i)?.rest.side !== side) return;
+          wanted.set(i, side);
+          scene.dirty = true;
+        }, { once: true });
       }
     }
   };

@@ -3,8 +3,10 @@ import { StandaloneResourceActions } from "@/components/ResourceActions";
 import { indexPath, parseIndexLocation } from "@/lib/index-navigation";
 import Link from "next/link";
 import { ResourceAccess } from "@/components/ResourceAccess";
+import { ProjectConnections } from "@/components/ProjectConnections";
 import { notFound } from "next/navigation";
 import { getResource, resourceCategories } from "@/lib/resources";
+import styles from "./reader.module.css";
 
 export const dynamic = "force-dynamic";
 
@@ -27,51 +29,85 @@ export default async function ResourcePage({ params, searchParams }: Props) {
   for (const [key, value] of Object.entries(await searchParams)) {
     if (typeof value === "string") context.set(key, value);
   }
-  const back = indexPath({ ...parseIndexLocation(context.toString()), resource: null });
+  const route = { ...parseIndexLocation(context.toString()), resource: null };
+  const back = indexPath(route);
+
+  const guide = resource.guidance;
 
   return (
-    <main className="fixed inset-0 overflow-y-auto bg-ink px-6 py-10 text-text sm:py-16">
-      <article className="mx-auto max-w-2xl">
-        <Link href={back} className="text-sm text-muted underline-offset-4 hover:text-text hover:underline">{back === "/" ? "Back to the Coding Library" : "Return to your library view"}</Link>
-        <header className="mt-12">
-          <p className="text-sm text-muted">{resourceCategories[resource.category]} · {resource.kind}</p>
-          <h1 className="mt-3 text-3xl font-normal tracking-tight sm:text-4xl" style={{ fontFamily: "var(--font-geist-serif), Georgia, serif" }}>{resource.name}</h1>
-          <p className="mt-6 text-lg leading-8 text-muted">{resource.description}</p>
-        </header>
-        <div className="mt-8 flex flex-wrap gap-3">
-          <a href={resource.url} target="_blank" rel="noopener noreferrer" className="rounded-md bg-text px-5 py-3 text-sm font-medium text-ink">Open resource</a>
-          {resource.agentUrl && <a href={resource.agentUrl} target="_blank" rel="noopener noreferrer" className="rounded-md border border-line-strong px-5 py-3 text-sm">Agent documentation</a>}
-          <a href={`/api/resources?id=${encodeURIComponent(resource.id)}`} className="rounded-md border border-line-strong px-5 py-3 text-sm">Read JSON</a>
-        </div>
-        <StandaloneResourceActions resource={resource} />
-        <ResourceAccess resource={resource} />
-        {resource.guidance && (
-          <section className="mt-12 border-t border-line pt-6" aria-labelledby="reviewed-guidance">
-            <h2 id="reviewed-guidance" className="text-base font-medium">Reviewed guidance</h2>
-            <p className="mt-2 text-sm text-muted">Sources checked {resource.guidance.checkedAt}. Setup level is an editorial estimate, not a runtime compatibility test.</p>
-            <dl className="mt-5 space-y-4 text-sm leading-6">
-              <div><dt className="font-medium">Best for</dt><dd className="text-muted">{resource.guidance.bestFor}</dd></div>
-              <div><dt className="font-medium">Frameworks and formats</dt><dd className="text-muted">{resource.guidance.frameworks.join(", ")}</dd></div>
-              <div><dt className="font-medium">Setup</dt><dd className="capitalize text-muted">{resource.guidance.setup}</dd></div>
-              <div><dt className="font-medium">Before you choose</dt><dd className="text-muted">{resource.guidance.caveat}</dd></div>
-            </dl>
-            <ul className="mt-5 space-y-2">
-              {resource.guidance.sourceUrls.map(url => <li key={url}><a href={url} target="_blank" rel="noopener noreferrer" className="break-all text-sm underline underline-offset-4">{url}</a></li>)}
-            </ul>
+    <main className={styles.reader}>
+      <article className={styles.sheet} aria-labelledby="resource-title">
+        <nav className={styles.navigation} aria-label="Library">
+          <Link href={back}>
+            <span aria-hidden="true">←</span>
+            {back === "/" ? "Back to the Coding Library" : "Return to your library view"}
+          </Link>
+          <span className={styles.collection}>{resource.featured ? "Featured collection" : "Community index"}</span>
+        </nav>
+
+        <div className={styles.spread}>
+          <header className={styles.header}>
+            <div className={styles.identity}>
+              <img src={resource.icon} alt="" width={68} height={68} />
+              <p>{resourceCategories[resource.category]}<span>{resource.kind}</span></p>
+            </div>
+            <h1 id="resource-title">{resource.name}</h1>
+            <p className={styles.description}>{resource.description}</p>
+          </header>
+
+          <section className={styles.actions} aria-label="Resource actions">
+            <a href={resource.url} target="_blank" rel="noopener noreferrer" className={styles.open}>
+              Open {resource.projectLinks?.length ? "website" : "resource"} <span aria-hidden="true">↗</span>
+            </a>
+            <div className={styles.formats}>
+              {resource.agentUrl && <a href={resource.agentUrl} target="_blank" rel="noopener noreferrer">Agent documentation</a>}
+              <a href={`/api/resources?id=${encodeURIComponent(resource.id)}`}>Read JSON</a>
+            </div>
+            <StandaloneResourceActions resource={resource} projectHref={indexPath({ ...route, panel: "project" })} />
+            <ProjectConnections resource={resource} route={route} />
           </section>
-        )}
-        <section className="mt-12 border-t border-line pt-6">
-          <h2 className="text-base font-medium">Useful search terms</h2>
-          <ul className="mt-4 flex flex-wrap gap-2">
-            {resource.tags.map(tag => <li key={tag} className="rounded-md border border-line px-3 py-1.5 text-sm text-muted">{tag}</li>)}
-          </ul>
-        </section>
-        <section className="mt-10 border-t border-line pt-6">
-          <h2 className="text-base font-medium">Where this entry came from</h2>
-          <p className="mt-3 text-sm leading-6 text-muted">{resource.featured ? "Featured in the class collection. Follow the resource's own documentation for current compatibility, pricing and licensing." : "Imported from a community-maintained collection. Review the original source and project before using it."}</p>
-          <a href={resource.sourceUrl} target="_blank" rel="noopener noreferrer" className="mt-4 inline-block max-w-full break-all text-sm underline underline-offset-4">{resource.sourceUrl}</a>
-        </section>
+        </div>
+
+        <div className={styles.spread}>
+          <section className={styles.guidance} aria-labelledby="reviewed-guidance">
+            <h2 id="reviewed-guidance">{guide ? "Reviewed guidance" : "Using this resource"}</h2>
+            {guide ? (
+              <dl className={styles.facts}>
+                <div><dt>Best for</dt><dd>{guide.bestFor}</dd></div>
+                <div><dt>Frameworks and formats</dt><dd>{guide.frameworks.join(", ")}</dd></div>
+                <div><dt>Setup effort</dt><dd><span className={styles.setup}>{guide.setup}</span><small>Editorial estimate</small></dd></div>
+                <div className={styles.caveat}><dt>Before you choose</dt><dd>{guide.caveat}</dd></div>
+              </dl>
+            ) : (
+              <p className={styles.bodyCopy}>This entry has no reviewed setup or compatibility notes yet. Check the original resource for its requirements.</p>
+            )}
+            <div className={styles.access}><ResourceAccess resource={resource} /></div>
+            {resource.tags.length > 0 && <section className={styles.terms} aria-labelledby="search-terms">
+              <h3 id="search-terms">Useful search terms</h3>
+              <ul>{resource.tags.map(tag => <li key={tag}>{tag}</li>)}</ul>
+            </section>}
+          </section>
+
+          <aside className={styles.notes} aria-label="Sources and provenance">
+            {guide && <section aria-labelledby="checked-sources">
+              <h2 id="checked-sources">Sources checked</h2>
+              <time dateTime={guide.checkedAt}>{guide.checkedAt}</time>
+              <ul>{guide.sourceUrls.map(url => <li key={url}><SourceLink url={url} /></li>)}</ul>
+            </section>}
+            <section aria-labelledby="entry-source">
+              <h2 id="entry-source">Where this entry came from</h2>
+              <p>{resource.featured ? "Selected for the class collection. Follow the original documentation for current compatibility, pricing and licensing." : "This resource was listed in a community-maintained collection."}</p>
+              <SourceLink url={resource.sourceUrl} />
+            </section>
+          </aside>
+        </div>
       </article>
     </main>
   );
+}
+
+function SourceLink({ url }: { url: string }) {
+  return <a href={url} target="_blank" rel="noopener noreferrer" className={styles.source}>
+    <span>{url.replace(/^https?:\/\//, "").replace(/\/$/, "")}</span><span aria-hidden="true">↗</span>
+  </a>;
 }

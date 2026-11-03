@@ -3,9 +3,18 @@ import { test } from "node:test";
 import { correctedSearchPath, indexPath, parseIndexLocation } from "../lib/index-navigation.ts";
 
 test("shared filtered and paginated results can be restored with their selected resource", () => {
-  const route = { query: "map & layers", category: "tools", page: 2, resource: "mapcn", panel: "results" as const };
+  const route = { query: "map & layers", category: "tools", kind: "", page: 2, resource: "mapcn", panel: "results" as const };
   assert.deepEqual(parseIndexLocation(indexPath(route).slice(1)), route);
   assert.equal(indexPath({ ...route, resource: null }), "/?q=map+%26+layers&category=tools&page=2&view=results");
+});
+
+test("format filters survive shared links, details and page corrections", () => {
+  const route = { query: "animation", category: "motion", kind: "video", page: 3, panel: "results" as const, resource: "example-video" };
+  assert.deepEqual(parseIndexLocation(indexPath(route).slice(1)), route);
+  const corrected = correctedSearchPath(indexPath(route).slice(1), "animation", "motion", 120, 61, "video");
+  assert.equal(corrected, "/?q=animation&category=motion&kind=video&page=2&view=results&resource=example-video");
+  assert.equal(correctedSearchPath(indexPath(route).slice(1), "animation", "motion", 120, 61, "library"), null);
+  assert.equal(parseIndexLocation("?kind=unrecognized").kind, "");
 });
 
 test("shared URL input cannot turn the resource page's return link into an external redirect", () => {

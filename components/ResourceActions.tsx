@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { buildResourceBrief, PROJECT_LIMIT, SAVED_LIMIT } from "@/lib/project-brief";
+import Link from "next/link";
+import { buildResourceBrief, canonicalResourceId, PROJECT_LIMIT, SAVED_LIMIT } from "@/lib/project-brief";
 import { resourcePath } from "@/lib/index-navigation";
 import type { Resource } from "@/lib/resources";
 import { useLibraryStore } from "./useLibraryStore";
@@ -16,17 +17,19 @@ export function projectPickNotice(name: string, outcome: Awaited<ReturnType<Libr
 
 type Props = {
   resource: Resource; store: LibraryStore; inProject: boolean; saved: boolean;
-  onPick?: (notice: string) => void; showWebsite?: boolean;
+  onPick?: (notice: string, added: boolean) => void; showWebsite?: boolean;
+  onOpenProject?: () => void; projectHref?: string;
 };
 
-export function ResourceActions({ resource, store, inProject, saved, onPick, showWebsite }: Props) {
+export function ResourceActions({ resource, store, inProject, saved, onPick, showWebsite, onOpenProject, projectHref = "/?view=project" }: Props) {
   const [notice, setNotice] = useState("");
   const [fallback, setFallback] = useState("");
 
   async function add() {
-    const message = projectPickNotice(resource.name, await store.select("project", resource, true));
+    const outcome = await store.select("project", resource, true);
+    const message = projectPickNotice(resource.name, outcome);
     setNotice(message);
-    onPick?.(message);
+    onPick?.(message, outcome.changed);
   }
 
   async function bookmark() {
@@ -43,20 +46,23 @@ export function ResourceActions({ resource, store, inProject, saved, onPick, sho
 
   return <>
     <div className="index-detail-actions">
-      <button className="index-primary" onClick={add}>{inProject ? "In your project ✓" : "Add to project +"}</button>
+      <button className="index-primary" onClick={add} disabled={inProject}>{inProject ? "In your project ✓" : "Add to project +"}</button>
+      {inProject && (onOpenProject ? <button className="index-primary" onClick={onOpenProject}>Open project kit ↗</button> : <Link className="index-primary" href={projectHref}>Open project kit ↗</Link>)}
       {showWebsite && <a href={resource.url} target="_blank" rel="noreferrer">Open website ↗</a>}
       <button onClick={bookmark}>{saved ? "Saved ✓" : "Save resource"}</button>
       <button onClick={() => void copy(buildResourceBrief(resource), "Copied. Paste into your agent’s chat.")}>Copy this reference</button>
-      <button onClick={() => void copy(new URL(resourcePath(resource.id), window.location.origin).href, "Resource link copied.")}>Copy link</button>
+      <button onClick={() => void copy(new URL(resourcePath(canonicalResourceId(resource.id)), window.location.origin).href, "Resource link copied.")}>Copy link</button>
     </div>
     <p className="index-copy-status" role="status">{notice}</p>
     {fallback && <textarea className="w-full" readOnly value={fallback} aria-label="Resource text to copy" />}
   </>;
 }
 
-export function StandaloneResourceActions({ resource }: { resource: Resource }) {
+export function StandaloneResourceActions({ resource, projectHref }: { resource: Resource; projectHref?: string }) {
   const { library, store } = useLibraryStore();
+  const id = canonicalResourceId(resource.id);
   return <ResourceActions resource={resource} store={store}
-    inProject={library.project.resources.some(item => item.id === resource.id)}
-    saved={library.saved.some(item => item.id === resource.id)} />;
+    projectHref={projectHref}
+    inProject={library.project.resources.some(item => item.id === id)}
+    saved={library.saved.some(item => item.id === id)} />;
 }

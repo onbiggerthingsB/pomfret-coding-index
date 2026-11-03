@@ -56,3 +56,18 @@ test("shared entries and exports link back to the deployment that created the br
   }
   assert.equal(brief.split(`${origin}/llms.txt`).length - 1, 1);
 });
+
+test("both exports retain grouped links and distinguish related tools from project selections", () => {
+  const origin = "https://coding.preview.example";
+  const repo = "https://github.com/example/library";
+  const grouped: Resource = {
+    ...reviewed, sourceUrl: repo, projectLinks: [{ label: "GitHub", url: repo }],
+    relatedTools: [{ id: "example-mobile", name: "Example Mobile" }],
+  };
+  const project = { goal: "Build a form", stack: "", resources: [grouped] };
+  for (const text of [briefs.buildProjectBrief(project, origin), briefs.buildResourceBrief(grouped, origin)]) {
+    assert.ok(text.includes(`GitHub: ${repo}`));
+    assert.equal(text.split(repo).length - 1, 1);
+    assert.ok(text.includes(`Related tool (Example Mobile): ${origin}/resources/example-mobile`));
+  }
+});

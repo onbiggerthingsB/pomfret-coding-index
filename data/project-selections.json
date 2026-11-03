@@ -1,0 +1,3517 @@
+{
+  "version": 1,
+  "aliases": {
+    "community-a3b6067eebf224ed": "shadcn-ui",
+    "community-abf8970a448d67ae": "base-ui",
+    "community-10656da63b5f44ac": "headless-ui",
+    "community-1f96f885ec39d1c6": "headless-ui",
+    "community-2ee35ac2beedf2e2": "material-ui",
+    "community-49fe478893a17981": "material-ui",
+    "community-50f00630b8aef896": "material-ui",
+    "community-a390a60f1e7c79a6": "mantine",
+    "community-f0a350cc23b11116": "chakra-ui",
+    "community-a24166629bd76570": "ant-design",
+    "community-996c1466a9aa292f": "ant-design",
+    "community-158d0690218c07e6": "flowbite",
+    "community-4be80b797ae1920a": "vuetify",
+    "community-609fcfa40c29a17c": "naive-ui",
+    "community-0d211815debb9431": "element-plus",
+    "community-2365dd82c3ef654b": "melt-ui",
+    "community-4f826eb69fc40d07": "lucide",
+    "community-a207437c904c17c8": "lucide",
+    "community-d25d730a8f8c325a": "heroicons",
+    "community-d0d951d500e0a6ae": "motion",
+    "community-3ddc35f314cc779c": "gsap",
+    "community-11a9984670e2cae4": "three-js",
+    "community-77884e06cdb61b15": "storybook",
+    "community-cfdd8983c87fb16b": "storybook",
+    "community-e8a6ea38f92e425f": "playwright",
+    "community-d505e88fe2c2e4a5": "playwright",
+    "community-9e1c0f60f2cb1e8f": "vitest",
+    "community-e25d5aae975b96db": "excalidraw",
+    "community-71e2421175e6e07f": "community-48b9b013f18a59ac",
+    "community-a631dde94b0a8ffe": "community-2d711e31933d2157",
+    "community-4b5677d926173e77": "community-9cbe205a8df2648d",
+    "community-2813eee78d1c352e": "community-735362ce9672e68f",
+    "community-035adcdfc9bfba07": "community-0f1093f2dd068481",
+    "community-c578e1d091ced0c7": "community-c7a821d203a3becf",
+    "community-140ac6db464b6814": "community-48befb40c58d63ff",
+    "community-de716b2878f50d8b": "community-d526381cdacc7b46",
+    "community-a6b56a61c9be8638": "community-d526381cdacc7b46",
+    "community-875c76942b66539b": "community-43f25d51f07532e3",
+    "community-c4a33f091dcf2b96": "community-7f4a442ee05e87e8",
+    "community-317c183874dc9707": "community-1e23cc4ffa5176b0",
+    "community-52cd6f5e3bc52f48": "community-2039885581849baf",
+    "community-dfc80ee0426fca56": "community-f1ec2932ad28360d",
+    "community-49bef1932ea26168": "community-f1ec2932ad28360d",
+    "community-a4f69ed62e4d531b": "community-36ee3c8cef909614",
+    "community-c0d8a1d22674dd00": "community-1a30a1b1fb91bafa",
+    "community-0dc082de2306e07e": "community-4d72a9fef273d151",
+    "community-04d8ec080f18710f": "community-4d72a9fef273d151",
+    "community-bebec19dda3a76e4": "community-768db728288ffbb5",
+    "community-5a3873f6b258599b": "community-f2bf03de76354bd5",
+    "community-faeb06a934aca77b": "community-6df9102a5a645844",
+    "community-3e168e4f57688773": "community-ce1a0a6df5ef73d0",
+    "community-08e5f30bccab335b": "community-7f4bfbf73fb8c2d1",
+    "community-43a1095be41bd99f": "community-6f3f96f0362a4e9b",
+    "community-960d3e28a4edcd36": "community-c93bcfe4411da9c2",
+    "community-a5d406dab37933d6": "community-be05c4a4ab614ba0",
+    "community-4a38e03683c1af92": "community-81a439d98e364d7b",
+    "community-84863a80fe88b482": "community-aef7c9db81c68ce2",
+    "community-6df9999ebae1cac0": "community-04e5048e271da74d",
+    "community-3e81f2f454491f92": "community-bdf4a2fa9972ecb5",
+    "community-c897ce73fa058062": "community-dcb792d718508bec",
+    "community-79cc9cf198a15cd0": "community-14960ba2a9317f3c",
+    "community-fe6bd5ccb324bb36": "community-fefc2c4a06e18645",
+    "community-53accc858c12ba46": "community-4917fe035ec15a0b",
+    "community-3f5b867fd5b69872": "community-e5d1525f154bc654",
+    "community-8a6ad29aef358346": "community-30f11e9a931e1659",
+    "community-e390eb08d6cbc3fd": "community-d9fa580077e68cf2",
+    "community-b399aaf67c8c753f": "community-d9b299abc81eed4f",
+    "community-d060800cedbc2c89": "community-b20e2b1c7f7c31c9",
+    "community-59d825c2afb1a3f5": "community-4671e41b7df598b3",
+    "community-eeec8e78ec3b3f73": "community-bb42ed50d0915bcf",
+    "community-97340b559d76b4fd": "community-22f9fa264895ca5c",
+    "community-aa8ce284a844f959": "community-659c57d0686bd6c7",
+    "community-479ebef0417a21c6": "community-69ce72d1821a0096",
+    "community-24e9309553f30fef": "community-f9415a0730ad5646",
+    "community-36c47517c793e3a6": "community-f7b7b81d259a6605",
+    "community-b1573965de5736d6": "community-78414a9e632bb993",
+    "community-a2f4aa6060d9ac0a": "community-78414a9e632bb993",
+    "community-af8f354cbd6619a3": "community-c8c1cf8ddca55dec",
+    "community-1629dd9a312943d2": "community-0f0f98a530fb05b8",
+    "community-7d7b4690c44e1ebf": "community-b54b9095c5ce4108",
+    "community-8e773aa72402b28a": "community-f5825c007355d177",
+    "community-23469e505384aa46": "community-382ade5d2b5ca59b",
+    "community-88429133606660d3": "community-5fa998b1ca986708",
+    "community-5bad67f5b1703bf0": "community-dcb1fe42b9a89344",
+    "community-cbb839affe1b092a": "community-a6f418d5a258b951",
+    "community-89c051f2bf73cc62": "community-0765609887a9e861",
+    "community-e6e79c7479a85073": "community-41e2b273a212e5c7",
+    "community-50e925ed62033f35": "community-164811526484ff1f",
+    "community-11dfba5dad6a8e73": "community-172eabcf56d0f2ce",
+    "community-9a0f1e7d5fae5a94": "community-954e7e5beac2067d",
+    "community-71bc413007f9080a": "community-be4d333f6dd68eb2",
+    "community-7ff24d5e59a24574": "community-43d3ef9bd32addf2",
+    "community-cee4c9e540a6b48d": "community-c0c9177b5d802c41",
+    "community-23d29b8407fe959b": "community-5d87a933f41917d9",
+    "community-b662278c0d08c19d": "community-bf2905db04afec23",
+    "community-3bd77bc5c23e181b": "community-bf2905db04afec23",
+    "community-bcb641c059b2a53f": "community-c32f8a9c0d28158f",
+    "community-f1c670e5fd92fce0": "community-4cf0e833d1fbb2a9",
+    "community-a6dc702176bdf834": "community-f3dd7dbd0d2424d5",
+    "community-1c95e679a4e3fa53": "community-4f846901f9ff948b",
+    "community-1970f2aab6a882fb": "community-3c4f23dab56aca93",
+    "community-64f03f0faf36144a": "community-8c68eb73978eb348",
+    "community-2b14193563ce6363": "community-fa47a130b33588a4",
+    "community-7ca2e5348b3737e2": "community-fa47a130b33588a4",
+    "community-778085adaf4e8416": "community-fa47a130b33588a4",
+    "community-fa160eed4184afb7": "community-d59136e2bdd22d83",
+    "community-9711233fc8909dfd": "community-91ce0575a53447f4",
+    "community-26bdc348dc94e4e5": "community-3dc044898a14126a",
+    "community-66b50c5e98692713": "community-5e5731fa5f1eadff",
+    "community-18d5dabd760c3d98": "community-34dcc8b3b08355db"
+  },
+  "projects": {
+    "shadcn-ui": {
+      "id": "shadcn-ui",
+      "name": "shadcn/ui",
+      "url": "https://ui.shadcn.com/",
+      "sourceUrl": "https://ui.shadcn.com/",
+      "description": "Customizable React components and blocks whose source becomes part of your project.",
+      "category": "components",
+      "kind": "library",
+      "tags": [
+        "ui",
+        "react",
+        "tailwind",
+        "components",
+        "forms",
+        "dashboard",
+        "copy paste"
+      ],
+      "agentUrl": "https://ui.shadcn.com/llms.txt",
+      "origin": "curated",
+      "featured": true,
+      "guidance": {
+        "bestFor": "Customizable forms, dashboards and app controls whose component code you can edit.",
+        "frameworks": [
+          "React",
+          "Tailwind CSS"
+        ],
+        "setup": "moderate",
+        "caveat": "You own the copied code and its updates; follow the installation guide for your framework.",
+        "checkedAt": "2026-11-02",
+        "sourceUrls": [
+          "https://ui.shadcn.com/docs/installation",
+          "https://ui.shadcn.com/docs"
+        ]
+      },
+      "icon": "/api/resource-icon/shadcn-ui?v=4",
+      "projectLinks": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/shadcn-ui/ui"
+        }
+      ],
+      "relatedTools": [
+        {
+          "id": "community-3e811907b0bf50c5",
+          "name": "shadcn-vue"
+        },
+        {
+          "id": "community-182c65c98dcd9d4a",
+          "name": "shadcn-svelte"
+        },
+        {
+          "id": "community-3c2d73956bea2a85",
+          "name": "Jpisnice/shadcn-ui-mcp-server"
+        },
+        {
+          "id": "community-87c23deacaceda62",
+          "name": "google-labs-code/shadcn-ui"
+        },
+        {
+          "id": "community-98448162a9b5dfbf",
+          "name": "Shadcn Admin"
+        },
+        {
+          "id": "community-29a7299aa0613394",
+          "name": "Shadcn Templates"
+        },
+        {
+          "id": "community-39f37262af6d7f90",
+          "name": "Shadcn Examples"
+        },
+        {
+          "id": "community-268bcdaffc059b98",
+          "name": "Shadcnui Blocks"
+        },
+        {
+          "id": "community-5b5c3c4432ca0849",
+          "name": "Shadcn studio"
+        },
+        {
+          "id": "community-33734b17b0f5e48d",
+          "name": "AI Shadcn Component Generator"
+        }
+      ]
+    },
+    "base-ui": {
+      "id": "base-ui",
+      "name": "Base UI",
+      "url": "https://base-ui.com/",
+      "sourceUrl": "https://base-ui.com/",
+      "description": "Unstyled React components that supply interaction and accessibility behavior while you choose the appearance.",
+      "category": "components",
+      "kind": "library",
+      "tags": [
+        "ui",
+        "react",
+        "components",
+        "headless",
+        "accessibility",
+        "forms"
+      ],
+      "agentUrl": "https://base-ui.com/llms.txt",
+      "origin": "curated",
+      "featured": true,
+      "guidance": {
+        "bestFor": "Building a custom React design system with unstyled controls.",
+        "frameworks": [
+          "React"
+        ],
+        "setup": "moderate",
+        "caveat": "Compose and style the parts yourself; review portal stacking and backdrop setup.",
+        "checkedAt": "2026-11-02",
+        "sourceUrls": [
+          "https://base-ui.com/react/overview/quick-start"
+        ]
+      },
+      "icon": "/api/resource-icon/base-ui?v=4",
+      "projectLinks": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/mui/base-ui"
+        }
+      ]
+    },
+    "headless-ui": {
+      "id": "headless-ui",
+      "name": "Headless UI",
+      "url": "https://headlessui.com/",
+      "sourceUrl": "https://headlessui.com/",
+      "description": "Unstyled interactive components for React and Vue that pair with your own CSS or Tailwind styles.",
+      "category": "components",
+      "kind": "library",
+      "tags": [
+        "ui",
+        "react",
+        "vue",
+        "tailwind",
+        "components",
+        "headless",
+        "menu",
+        "dialog",
+        "modal",
+        "accessibility"
+      ],
+      "origin": "curated",
+      "featured": true,
+      "guidance": {
+        "bestFor": "Keyboard-friendly menus and accessible modal dialogs with your own visual design.",
+        "frameworks": [
+          "React",
+          "Vue"
+        ],
+        "setup": "moderate",
+        "caveat": "Your app controls when the dialog is open and supplies its title and styles. Use the examples for your framework.",
+        "checkedAt": "2026-11-02",
+        "sourceUrls": [
+          "https://headlessui.com/react/menu",
+          "https://headlessui.com/react/dialog",
+          "https://headlessui.com/v1/vue/dialog"
+        ]
+      },
+      "icon": "/api/resource-icon/headless-ui?v=4",
+      "projectLinks": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/tailwindlabs/headlessui"
+        },
+        {
+          "label": "Legacy website",
+          "url": "https://headlessui.dev/"
+        }
+      ]
+    },
+    "material-ui": {
+      "id": "material-ui",
+      "name": "Material UI",
+      "url": "https://mui.com/",
+      "sourceUrl": "https://mui.com/",
+      "description": "React components implementing Material Design, with examples for forms, navigation and application layouts.",
+      "category": "components",
+      "kind": "library",
+      "tags": [
+        "ui",
+        "react",
+        "components",
+        "material design",
+        "forms",
+        "dashboard"
+      ],
+      "agentUrl": "https://mui.com/material-ui/llms.txt",
+      "origin": "curated",
+      "featured": true,
+      "guidance": {
+        "bestFor": "React dashboards, forms and application screens using Material Design components.",
+        "frameworks": [
+          "React"
+        ],
+        "setup": "moderate",
+        "caveat": "Default setup adds Emotion; check peer dependencies and framework integration before copying examples.",
+        "checkedAt": "2026-11-02",
+        "sourceUrls": [
+          "https://mui.com/material-ui/getting-started/installation/"
+        ]
+      },
+      "icon": "/api/resource-icon/material-ui?v=4",
+      "projectLinks": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/mui/material-ui"
+        },
+        {
+          "label": "Legacy website",
+          "url": "https://material-ui.com/"
+        },
+        {
+          "label": "Community guide",
+          "url": "https://github.com/nadunindunil/awesome-material-ui#readme"
+        }
+      ],
+      "relatedTools": [
+        {
+          "id": "community-eb240fd33e4b0bf3",
+          "name": "MUI X Data grid"
+        },
+        {
+          "id": "community-fed259f6dca914f1",
+          "name": "mui-datatables"
+        },
+        {
+          "id": "base-ui",
+          "name": "Base UI"
+        }
+      ]
+    },
+    "mantine": {
+      "id": "mantine",
+      "name": "Mantine",
+      "url": "https://mantine.dev/",
+      "sourceUrl": "https://mantine.dev/",
+      "description": "A React component and hooks library for forms, overlays, data display and themed applications.",
+      "category": "components",
+      "kind": "library",
+      "tags": [
+        "ui",
+        "react",
+        "components",
+        "hooks",
+        "forms",
+        "themes",
+        "dashboard"
+      ],
+      "agentUrl": "https://mantine.dev/llms.txt",
+      "origin": "curated",
+      "featured": true,
+      "guidance": {
+        "bestFor": "React applications with ready-made controls, hooks and themes.",
+        "frameworks": [
+          "React"
+        ],
+        "setup": "moderate",
+        "caveat": "Follow your framework setup for styles and providers; optional packages require their own installation.",
+        "checkedAt": "2026-11-02",
+        "sourceUrls": [
+          "https://mantine.dev/getting-started/"
+        ]
+      },
+      "icon": "/api/resource-icon/mantine?v=4",
+      "projectLinks": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/mantinedev/mantine"
+        }
+      ]
+    },
+    "chakra-ui": {
+      "id": "chakra-ui",
+      "name": "Chakra UI",
+      "url": "https://chakra-ui.com/",
+      "sourceUrl": "https://chakra-ui.com/",
+      "description": "Composable React components with accessible interactions and a styling system for consistent applications.",
+      "category": "components",
+      "kind": "library",
+      "tags": [
+        "ui",
+        "react",
+        "components",
+        "accessibility",
+        "design system",
+        "theming"
+      ],
+      "agentUrl": "https://chakra-ui.com/llms.txt",
+      "origin": "curated",
+      "featured": true,
+      "guidance": {
+        "bestFor": "Show whether a file upload is still running, has finished or has failed in a React app using a toast tied to the upload request.",
+        "frameworks": [
+          "React",
+          "Chakra UI"
+        ],
+        "setup": "moderate",
+        "caveat": "Mount the Toaster in the app first. Connect the toast to the actual upload promise so it reports success only after the upload finishes.",
+        "checkedAt": "2026-11-02",
+        "sourceUrls": [
+          "https://chakra-ui.com/docs/components/toast"
+        ]
+      },
+      "icon": "/api/resource-icon/chakra-ui?v=4",
+      "projectLinks": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/chakra-ui/chakra-ui"
+        }
+      ],
+      "relatedTools": [
+        {
+          "id": "community-463e187534e60ff2",
+          "name": "Chakra UI Vue"
+        },
+        {
+          "id": "community-2fec359bd48adc85",
+          "name": "Chakra Templates"
+        }
+      ]
+    },
+    "ant-design": {
+      "id": "ant-design",
+      "name": "Ant Design",
+      "url": "https://ant.design/",
+      "sourceUrl": "https://ant.design/",
+      "description": "A React UI system with application components for data-heavy screens, forms and navigation.",
+      "category": "components",
+      "kind": "library",
+      "tags": [
+        "ui",
+        "react",
+        "components",
+        "tables",
+        "forms",
+        "admin",
+        "dashboard"
+      ],
+      "agentUrl": "https://ant.design/llms.txt",
+      "origin": "curated",
+      "featured": true,
+      "guidance": {
+        "bestFor": "Build a React homework dashboard that sorts assignments by due date and filters completed work out of a table.",
+        "frameworks": [
+          "React"
+        ],
+        "setup": "moderate",
+        "caveat": "Give each assignment a stable row key and supply its filter and sort rules. The table cannot infer what counts as completed from your data.",
+        "checkedAt": "2026-11-02",
+        "sourceUrls": [
+          "https://ant.design/components/table/"
+        ]
+      },
+      "icon": "/api/resource-icon/ant-design?v=4",
+      "projectLinks": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/ant-design/ant-design"
+        },
+        {
+          "label": "Community guide",
+          "url": "https://github.com/websemantics/awesome-ant-design#readme"
+        }
+      ],
+      "relatedTools": [
+        {
+          "id": "community-f8f43e49b0d97e16",
+          "name": "Ant Design Charts"
+        },
+        {
+          "id": "community-735362ce9672e68f",
+          "name": "Ant Design Vue"
+        },
+        {
+          "id": "community-e6ca8458e9c714f4",
+          "name": "NG-ZORRO for Angular"
+        },
+        {
+          "id": "community-cd1cf756a3cceed5",
+          "name": "Ant Design for React Native"
+        },
+        {
+          "id": "community-eb59c0a4da328793",
+          "name": "Ant Design Mobile Web"
+        }
+      ]
+    },
+    "flowbite": {
+      "id": "flowbite",
+      "name": "Flowbite",
+      "url": "https://flowbite.com/",
+      "sourceUrl": "https://github.com/themesberg/flowbite",
+      "description": "Tailwind CSS interface components and interactive patterns for building websites and applications.",
+      "category": "components",
+      "kind": "library",
+      "tags": [
+        "ui",
+        "components",
+        "tailwind",
+        "html",
+        "dropdown",
+        "modal",
+        "forms"
+      ],
+      "agentUrl": "https://raw.githubusercontent.com/themesberg/flowbite/main/README.md",
+      "origin": "curated",
+      "featured": true,
+      "guidance": {
+        "bestFor": "Add a dropdown for choosing a project action on a Tailwind site using HTML data attributes.",
+        "frameworks": [
+          "HTML",
+          "Tailwind CSS",
+          "JavaScript"
+        ],
+        "setup": "moderate",
+        "caveat": "The dropdown needs Flowbite's JavaScript. If your app replaces its markup after loading, initialize the new dropdown after it renders.",
+        "checkedAt": "2026-11-02",
+        "sourceUrls": [
+          "https://flowbite.com/docs/components/dropdowns/",
+          "https://flowbite.com/docs/getting-started/javascript/"
+        ]
+      },
+      "icon": "/api/resource-icon/flowbite?v=4",
+      "projectLinks": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/themesberg/flowbite"
+        }
+      ]
+    },
+    "vuetify": {
+      "id": "vuetify",
+      "name": "Vuetify",
+      "url": "https://vuetifyjs.com/",
+      "sourceUrl": "https://github.com/vuetifyjs/vuetify",
+      "description": "A Vue component framework with Material Design styles and responsive application building blocks.",
+      "category": "components",
+      "kind": "library",
+      "tags": [
+        "ui",
+        "components",
+        "vue",
+        "material design",
+        "responsive",
+        "layout"
+      ],
+      "agentUrl": "https://vuetifyjs.com/llms.txt",
+      "origin": "curated",
+      "featured": true,
+      "guidance": {
+        "bestFor": "Show a large assignment archive in a Vue table that fetches one page at a time.",
+        "frameworks": [
+          "Vue"
+        ],
+        "setup": "moderate",
+        "caveat": "The server-side table reports page, sort and search changes. Your API must apply them before returning the rows.",
+        "checkedAt": "2026-11-02",
+        "sourceUrls": [
+          "https://vuetifyjs.com/en/components/data-tables/server-side-tables/",
+          "https://raw.githubusercontent.com/vuetifyjs/vuetify/master/packages/docs/src/pages/en/components/data-tables/server-side-tables.md"
+        ]
+      },
+      "icon": "/api/resource-icon/vuetify?v=4",
+      "projectLinks": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/vuetifyjs/vuetify"
+        }
+      ]
+    },
+    "naive-ui": {
+      "id": "naive-ui",
+      "name": "Naive UI",
+      "url": "https://www.naiveui.com/",
+      "sourceUrl": "https://github.com/tusen-ai/naive-ui",
+      "description": "A TypeScript-based Vue component library with configurable themes and application controls.",
+      "category": "components",
+      "kind": "library",
+      "tags": [
+        "ui",
+        "components",
+        "vue",
+        "typescript",
+        "themes",
+        "forms"
+      ],
+      "agentUrl": "https://www.naiveui.com/llms.txt",
+      "origin": "curated",
+      "featured": true,
+      "guidance": {
+        "bestFor": "Build a paginated Vue sign-up roster where a teacher can select several students at once.",
+        "frameworks": [
+          "Vue 3",
+          "TypeScript"
+        ],
+        "setup": "moderate",
+        "caveat": "Give each row a stable unique key so selections still identify the same student after a page change.",
+        "checkedAt": "2026-11-02",
+        "sourceUrls": [
+          "https://github.com/tusen-ai/naive-ui/blob/main/src/data-table/demos/enUS/select.demo.vue",
+          "https://github.com/tusen-ai/naive-ui"
+        ]
+      },
+      "icon": "/api/resource-icon/naive-ui?v=4",
+      "projectLinks": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/tusen-ai/naive-ui"
+        }
+      ]
+    },
+    "element-plus": {
+      "id": "element-plus",
+      "name": "Element Plus",
+      "url": "https://element-plus.org/",
+      "sourceUrl": "https://element-plus.org/",
+      "description": "Vue interface components and design guidance for building desktop-oriented web applications.",
+      "category": "components",
+      "kind": "library",
+      "tags": [
+        "ui",
+        "components",
+        "vue",
+        "forms",
+        "tables",
+        "admin"
+      ],
+      "agentUrl": "https://element-plus.org/llms.txt",
+      "origin": "curated",
+      "featured": true,
+      "guidance": {
+        "bestFor": "Build a Vue event registration form that validates each field and can reset an unfinished entry.",
+        "frameworks": [
+          "Vue 3"
+        ],
+        "setup": "moderate",
+        "caveat": "For validation and reset to work, each form item’s prop must point to the matching key in the form model.",
+        "checkedAt": "2026-11-02",
+        "sourceUrls": [
+          "https://element-plus.org/en-US/component/form.html"
+        ]
+      },
+      "icon": "/api/resource-icon/element-plus?v=4",
+      "projectLinks": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/element-plus/element-plus"
+        }
+      ]
+    },
+    "melt-ui": {
+      "id": "melt-ui",
+      "name": "Melt UI",
+      "url": "https://melt-ui.com/",
+      "sourceUrl": "https://melt-ui.com/",
+      "description": "Build unstyled Svelte controls such as dialogs, tabs and toggles. The Svelte 5 edition uses the melt package and has its own installation guide.",
+      "category": "components",
+      "kind": "library",
+      "tags": [
+        "ui",
+        "components",
+        "svelte",
+        "headless",
+        "accessibility",
+        "design system"
+      ],
+      "agentUrl": "https://next.melt-ui.com/guides/installation/",
+      "origin": "curated",
+      "featured": true,
+      "guidance": {
+        "bestFor": "Build a Svelte autocomplete picker with custom markup for a student directory.",
+        "frameworks": [
+          "Svelte",
+          "SvelteKit"
+        ],
+        "setup": "moderate",
+        "caveat": "The combobox builder supplies the behaviors and state. You attach them to the input and list and supply the styling.",
+        "checkedAt": "2026-11-02",
+        "sourceUrls": [
+          "https://melt-ui.com/docs/builders/combobox",
+          "https://melt-ui.com/docs/introduction"
+        ]
+      },
+      "icon": "/api/resource-icon/melt-ui?v=4",
+      "projectLinks": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/melt-ui/melt-ui"
+        }
+      ]
+    },
+    "lucide": {
+      "id": "lucide",
+      "name": "Lucide",
+      "url": "https://lucide.dev/",
+      "sourceUrl": "https://lucide.dev/",
+      "description": "Consistent line icons with adjustable size, color and stroke width for web interfaces.",
+      "category": "icons",
+      "kind": "library",
+      "tags": [
+        "icons",
+        "svg",
+        "react",
+        "line icons",
+        "navigation",
+        "assets"
+      ],
+      "agentUrl": "https://lucide.dev/llms.txt",
+      "origin": "curated",
+      "featured": true,
+      "guidance": {
+        "bestFor": "Consistent interface icons with adjustable size, color and stroke.",
+        "frameworks": [
+          "React",
+          "SVG"
+        ],
+        "setup": "low",
+        "caveat": "Import only the icons you use and provide text labels for icon-only actions.",
+        "checkedAt": "2026-11-02",
+        "sourceUrls": [
+          "https://lucide.dev/guide/react"
+        ]
+      },
+      "icon": "/api/resource-icon/lucide?v=4",
+      "projectLinks": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/lucide-icons/lucide"
+        },
+        {
+          "label": "Alternate website",
+          "url": "https://lucide.netlify.app/"
+        }
+      ],
+      "relatedTools": [
+        {
+          "id": "community-a0dbe16efd6463d9",
+          "name": "lucide-motion-vue"
+        }
+      ]
+    },
+    "heroicons": {
+      "id": "heroicons",
+      "name": "Heroicons",
+      "url": "https://heroicons.com/",
+      "sourceUrl": "https://heroicons.com/",
+      "description": "SVG interface icons from Tailwind's creators, available in outline and solid styles.",
+      "category": "icons",
+      "kind": "library",
+      "tags": [
+        "icons",
+        "svg",
+        "tailwind",
+        "outline",
+        "solid",
+        "assets"
+      ],
+      "origin": "curated",
+      "featured": true,
+      "guidance": {
+        "bestFor": "Give a React or Vue toolbar clear icons for search, editing and navigation, with smaller glyphs for dense controls.",
+        "frameworks": [
+          "SVG",
+          "React",
+          "Vue"
+        ],
+        "setup": "low",
+        "caveat": "Use the import path for the intended size. The 16px and 20px sets are solid, while the 24px set also offers outlines.",
+        "checkedAt": "2026-11-02",
+        "sourceUrls": [
+          "https://github.com/tailwindlabs/heroicons"
+        ]
+      },
+      "icon": "/api/resource-icon/heroicons?v=4",
+      "projectLinks": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/tailwindlabs/heroicons"
+        }
+      ]
+    },
+    "motion": {
+      "id": "motion",
+      "name": "Motion",
+      "url": "https://motion.dev/",
+      "sourceUrl": "https://motion.dev/",
+      "description": "Animation tools for React and JavaScript, including gestures, layout transitions and scroll effects.",
+      "category": "motion",
+      "kind": "library",
+      "tags": [
+        "animation",
+        "react",
+        "javascript",
+        "gestures",
+        "transitions",
+        "framer motion"
+      ],
+      "agentUrl": "https://motion.dev/llms.txt",
+      "origin": "curated",
+      "featured": true,
+      "guidance": {
+        "bestFor": "React entrance, exit, layout and gesture animations.",
+        "frameworks": [
+          "React"
+        ],
+        "setup": "moderate",
+        "caveat": "Plan reduced-motion behavior and keyboard equivalents for gesture interactions.",
+        "checkedAt": "2026-11-02",
+        "sourceUrls": [
+          "https://motion.dev/docs/react"
+        ]
+      },
+      "icon": "/api/resource-icon/motion?v=4",
+      "projectLinks": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/motiondivision/motion"
+        }
+      ]
+    },
+    "gsap": {
+      "id": "gsap",
+      "name": "GSAP",
+      "url": "https://gsap.com/",
+      "sourceUrl": "https://gsap.com/",
+      "description": "JavaScript animation tools for sequencing motion, controlling timelines and building scroll-driven effects.",
+      "category": "motion",
+      "kind": "library",
+      "tags": [
+        "animation",
+        "javascript",
+        "timeline",
+        "scroll",
+        "svg",
+        "creative coding"
+      ],
+      "agentUrl": "https://gsap.com/llms.txt",
+      "origin": "curated",
+      "featured": true,
+      "guidance": {
+        "bestFor": "Coordinate a title, illustration and caption so a student can pause or replay the whole introduction with one control.",
+        "frameworks": [
+          "JavaScript",
+          "DOM"
+        ],
+        "setup": "moderate",
+        "caveat": "Put the steps on one timeline and position them there. Separate delays have to be recalculated when an earlier step changes length.",
+        "checkedAt": "2026-11-02",
+        "sourceUrls": [
+          "https://gsap.com/docs/v3/GSAP/Timeline/"
+        ]
+      },
+      "icon": "/api/resource-icon/gsap?v=4",
+      "projectLinks": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/greensock/GSAP"
+        }
+      ]
+    },
+    "three-js": {
+      "id": "three-js",
+      "name": "Three.js",
+      "url": "https://threejs.org/",
+      "sourceUrl": "https://threejs.org/",
+      "description": "A JavaScript 3D library with examples for scenes, materials, lighting and interactive visual experiences.",
+      "category": "motion",
+      "kind": "library",
+      "tags": [
+        "3d",
+        "webgl",
+        "javascript",
+        "animation",
+        "graphics",
+        "creative coding"
+      ],
+      "agentUrl": "https://threejs.org/llms.txt",
+      "origin": "curated",
+      "featured": true,
+      "guidance": {
+        "bestFor": "Interactive 3D scenes and graphics in the browser.",
+        "frameworks": [
+          "JavaScript"
+        ],
+        "setup": "advanced",
+        "caveat": "Scene setup, rendering, asset loading and performance need deliberate work; keep essential content accessible outside the canvas.",
+        "checkedAt": "2026-11-02",
+        "sourceUrls": [
+          "https://github.com/mrdoob/three.js",
+          "https://threejs.org/docs/"
+        ]
+      },
+      "icon": "/api/resource-icon/three-js?v=4",
+      "projectLinks": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/mrdoob/three.js"
+        }
+      ],
+      "relatedTools": [
+        {
+          "id": "community-9352e6a96a5cd5ad",
+          "name": "react-three-fiber"
+        }
+      ]
+    },
+    "storybook": {
+      "id": "storybook",
+      "name": "Storybook",
+      "url": "https://storybook.js.org/",
+      "sourceUrl": "https://storybook.js.org/",
+      "description": "Build, document and test interface components separately from the rest of an application.",
+      "category": "tools",
+      "kind": "tool",
+      "tags": [
+        "tools",
+        "components",
+        "testing",
+        "documentation",
+        "design system",
+        "frontend"
+      ],
+      "agentUrl": "https://storybook.js.org/llms.txt",
+      "origin": "curated",
+      "featured": true,
+      "guidance": {
+        "bestFor": "See a component's empty, loading and populated states side by side without walking through the whole app.",
+        "frameworks": [
+          "UI components",
+          "Storybook"
+        ],
+        "setup": "moderate",
+        "caveat": "You supply each story's props and context. A story with mock data still needs a separate check against the real service.",
+        "checkedAt": "2026-11-02",
+        "sourceUrls": [
+          "https://storybook.js.org/docs/get-started/whats-a-story"
+        ]
+      },
+      "icon": "/api/resource-icon/storybook?v=4",
+      "projectLinks": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/storybookjs/storybook"
+        },
+        {
+          "label": "Community guide",
+          "url": "https://github.com/lauthieb/awesome-storybook#readme"
+        }
+      ],
+      "relatedTools": [
+        {
+          "id": "community-54fc77b129d88d0f",
+          "name": "Storybook MCP add-on"
+        }
+      ]
+    },
+    "playwright": {
+      "id": "playwright",
+      "name": "Playwright",
+      "url": "https://playwright.dev/",
+      "sourceUrl": "https://playwright.dev/",
+      "description": "Browser automation and end-to-end testing for checking real user workflows across browser engines.",
+      "category": "tools",
+      "kind": "tool",
+      "tags": [
+        "tools",
+        "testing",
+        "browser",
+        "automation",
+        "end to end",
+        "agents",
+        "verification"
+      ],
+      "origin": "curated",
+      "featured": true,
+      "guidance": {
+        "bestFor": "Checking complete user journeys in real browser engines.",
+        "frameworks": [
+          "JavaScript",
+          "TypeScript"
+        ],
+        "setup": "moderate",
+        "caveat": "Browser binaries and a running app are needed; assertions still depend on the scenarios you write.",
+        "checkedAt": "2026-11-02",
+        "sourceUrls": [
+          "https://playwright.dev/docs/intro"
+        ]
+      },
+      "icon": "/api/resource-icon/playwright?v=4",
+      "projectLinks": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/microsoft/playwright"
+        },
+        {
+          "label": "Community guide",
+          "url": "https://github.com/mxschmitt/awesome-playwright#readme"
+        }
+      ],
+      "relatedTools": [
+        {
+          "id": "community-ba31bde2dfc28f63",
+          "name": "microsoft/playwright-mcp"
+        },
+        {
+          "id": "community-ec8eeed6bdfe52f3",
+          "name": "playwright-python"
+        }
+      ]
+    },
+    "vitest": {
+      "id": "vitest",
+      "name": "Vitest",
+      "url": "https://vitest.dev/",
+      "sourceUrl": "https://vitest.dev/",
+      "description": "A JavaScript and TypeScript testing framework for fast unit tests and component checks.",
+      "category": "tools",
+      "kind": "tool",
+      "tags": [
+        "tools",
+        "testing",
+        "unit tests",
+        "javascript",
+        "typescript",
+        "vite",
+        "verification"
+      ],
+      "agentUrl": "https://vitest.dev/llms.txt",
+      "origin": "curated",
+      "featured": true,
+      "guidance": {
+        "bestFor": "Fast unit tests for JavaScript and TypeScript logic.",
+        "frameworks": [
+          "JavaScript",
+          "TypeScript",
+          "Vite"
+        ],
+        "setup": "moderate",
+        "caveat": "Check the current Node and Vite requirements; DOM and real-browser tests need additional environment setup.",
+        "checkedAt": "2026-11-02",
+        "sourceUrls": [
+          "https://vitest.dev/guide/"
+        ]
+      },
+      "icon": "/api/resource-icon/vitest?v=4",
+      "projectLinks": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/vitest-dev/vitest"
+        }
+      ]
+    },
+    "excalidraw": {
+      "id": "excalidraw",
+      "name": "Excalidraw",
+      "url": "https://excalidraw.com/",
+      "sourceUrl": "https://github.com/excalidraw/excalidraw",
+      "description": "A hand-drawn-style whiteboard for sketching interface ideas, system diagrams and user flows.",
+      "category": "tools",
+      "kind": "tool",
+      "tags": [
+        "tools",
+        "wireframe",
+        "diagrams",
+        "planning",
+        "whiteboard",
+        "user flows",
+        "ideas"
+      ],
+      "origin": "curated",
+      "featured": true,
+      "guidance": {
+        "bestFor": "Sketch the screens and decisions in a sign-in flow and give the diagram to your coding agent.",
+        "frameworks": [
+          "Whiteboard",
+          "Diagram"
+        ],
+        "setup": "low",
+        "caveat": "An exported image communicates the flow. Keep the editable drawing if you want to rearrange its elements later.",
+        "checkedAt": "2026-11-02",
+        "sourceUrls": [
+          "https://github.com/excalidraw/excalidraw"
+        ]
+      },
+      "icon": "/api/resource-icon/excalidraw?v=4",
+      "projectLinks": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/excalidraw/excalidraw"
+        }
+      ]
+    },
+    "community-48b9b013f18a59ac": {
+      "id": "community-48b9b013f18a59ac",
+      "name": "Agenta",
+      "url": "https://agenta.ai/",
+      "sourceUrl": "https://github.com/awesome-selfhosted/awesome-selfhosted/blob/master/README.md",
+      "description": "LLMOps platform for prompt management, LLM evaluation, and observability. Build, evaluate, and monitor production-grade LLM applications with collaborative prompt engineering. MIT Docker",
+      "category": "tools",
+      "kind": "tool",
+      "tags": [
+        "self-hosted",
+        "applications",
+        "deployment",
+        "software",
+        "generative artificial intelligence (genai)",
+        "llm"
+      ],
+      "origin": "community-index",
+      "featured": false,
+      "icon": "/api/resource-icon/community-48b9b013f18a59ac?v=4",
+      "projectLinks": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/agenta-ai/agenta"
+        }
+      ]
+    },
+    "community-2d711e31933d2157": {
+      "id": "community-2d711e31933d2157",
+      "name": "AgnosticUI",
+      "url": "https://www.agnosticui.com/",
+      "sourceUrl": "https://github.com/vuejs/awesome-vue/blob/master/README.md",
+      "description": "Accessible Vue 3 Component Primitives that also work with React, Svelte, and Angular!",
+      "category": "components",
+      "kind": "library",
+      "tags": [
+        "vue",
+        "frontend",
+        "components",
+        "components & libraries",
+        "frameworks",
+        "responsive",
+        "accessibility",
+        "design",
+        "ui",
+        "ui components & kits",
+        "css",
+        "styling",
+        "frameworks :art:"
+      ],
+      "origin": "community-index",
+      "featured": false,
+      "icon": "/api/resource-icon/community-2d711e31933d2157?v=4",
+      "projectLinks": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/agnosticui/agnosticui"
+        }
+      ]
+    },
+    "community-9cbe205a8df2648d": {
+      "id": "community-9cbe205a8df2648d",
+      "name": "angular",
+      "url": "https://github.com/angular/angular",
+      "sourceUrl": "https://github.com/sorrycc/awesome-javascript/blob/master/README.md",
+      "description": "Use Angular's TypeScript components to build a timetable with shared navigation and editable class details.",
+      "category": "tools",
+      "kind": "library",
+      "tags": [
+        "javascript",
+        "web",
+        "mvc frameworks and libraries",
+        "mobile",
+        "typescript",
+        "built with typescript"
+      ],
+      "origin": "community-index",
+      "featured": false,
+      "guidance": {
+        "bestFor": "A multi-page web app whose components share form data and navigation.",
+        "frameworks": [
+          "Angular",
+          "TypeScript"
+        ],
+        "setup": "moderate",
+        "caveat": "Use the Angular major version already in the project when choosing packages and examples.",
+        "checkedAt": "2026-11-02",
+        "sourceUrls": [
+          "https://github.com/angular/angular"
+        ]
+      },
+      "icon": "/api/resource-icon/community-9cbe205a8df2648d?v=4",
+      "projectLinks": [
+        {
+          "label": "Community guide",
+          "url": "https://github.com/PatrickJS/awesome-angular#readme"
+        }
+      ]
+    },
+    "community-735362ce9672e68f": {
+      "id": "community-735362ce9672e68f",
+      "name": "Ant Design Vue",
+      "url": "https://github.com/vueComponent/ant-design-vue",
+      "sourceUrl": "https://github.com/vuejs/awesome-vue/blob/master/README.md",
+      "description": "Install a set of Vue controls for an inventory table, filters and an item-editing form.",
+      "category": "components",
+      "kind": "library",
+      "tags": [
+        "vue",
+        "frontend",
+        "components",
+        "components & libraries",
+        "frameworks",
+        "responsive"
+      ],
+      "origin": "community-index",
+      "featured": false,
+      "guidance": {
+        "bestFor": "Adding consistent forms and tables to a Vue admin interface.",
+        "frameworks": [
+          "Vue",
+          "Ant Design"
+        ],
+        "setup": "moderate",
+        "caveat": "Use the Vue package and match its major version to the app; examples for Ant Design React use different APIs.",
+        "checkedAt": "2026-11-02",
+        "sourceUrls": [
+          "https://github.com/vueComponent/ant-design-vue"
+        ]
+      },
+      "icon": "/api/resource-icon/community-735362ce9672e68f?v=4",
+      "projectLinks": [
+        {
+          "label": "Documentation",
+          "url": "https://antdv.com/"
+        }
+      ]
+    },
+    "community-0f1093f2dd068481": {
+      "id": "community-0f1093f2dd068481",
+      "name": "astropy",
+      "url": "https://www.astropy.org/",
+      "sourceUrl": "https://github.com/josephmisiti/awesome-machine-learning/blob/master/README.md",
+      "description": "Install Astropy and read a FITS image’s header and data array from Python.",
+      "category": "tools",
+      "kind": "library",
+      "tags": [
+        "machine-learning",
+        "ai",
+        "data",
+        "python",
+        "data analysis",
+        "data visualization"
+      ],
+      "origin": "community-index",
+      "featured": false,
+      "guidance": {
+        "bestFor": "Inspect observation metadata before plotting the corresponding astronomical image.",
+        "frameworks": [
+          "Python",
+          "FITS",
+          "Astronomy"
+        ],
+        "setup": "moderate",
+        "caveat": "A FITS file can contain multiple header/data units. Select the extension holding the image you actually want.",
+        "checkedAt": "2026-11-02",
+        "sourceUrls": [
+          "https://docs.astropy.org/en/stable/io/fits/"
+        ]
+      },
+      "icon": "/api/resource-icon/community-0f1093f2dd068481?v=4",
+      "projectLinks": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/astropy/astropy"
+        }
+      ]
+    },
+    "community-c7a821d203a3becf": {
+      "id": "community-c7a821d203a3becf",
+      "name": "Bencher",
+      "url": "https://bencher.dev/",
+      "sourceUrl": "https://github.com/avelino/awesome-go/blob/main/README.md",
+      "description": "Connect a benchmark suite to Bencher to track whether changes make a hot function slower.",
+      "category": "tools",
+      "kind": "tool",
+      "tags": [
+        "go",
+        "backend",
+        "continuous integration",
+        "performance",
+        "self-hosted",
+        "applications",
+        "deployment",
+        "software",
+        "software development - testing"
+      ],
+      "origin": "community-index",
+      "featured": false,
+      "guidance": {
+        "bestFor": "Compare runs of the same benchmark over commits and inspect possible performance regressions.",
+        "frameworks": [
+          "Benchmark reports",
+          "CI"
+        ],
+        "setup": "moderate",
+        "caveat": "Runner hardware and background load can swamp small differences. Establish a baseline before failing a build over a timing change.",
+        "checkedAt": "2026-11-02",
+        "sourceUrls": [
+          "https://bencher.dev/"
+        ]
+      },
+      "icon": "/api/resource-icon/community-c7a821d203a3becf?v=4",
+      "projectLinks": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/bencherdev/bencher"
+        }
+      ]
+    },
+    "community-48befb40c58d63ff": {
+      "id": "community-48befb40c58d63ff",
+      "name": "Bootstrap Vue",
+      "url": "https://bootstrap-vue.org/",
+      "sourceUrl": "https://github.com/bradtraversy/design-resources-for-developers/blob/master/readme.md",
+      "description": "Use Bootstrap components with Vue",
+      "category": "inspiration",
+      "kind": "gallery",
+      "tags": [
+        "design",
+        "frontend",
+        "ui",
+        "vue ui libraries"
+      ],
+      "origin": "community-index",
+      "featured": false,
+      "icon": "/api/resource-icon/community-48befb40c58d63ff?v=4",
+      "projectLinks": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/bootstrap-vue/bootstrap-vue"
+        }
+      ]
+    },
+    "community-d526381cdacc7b46": {
+      "id": "community-d526381cdacc7b46",
+      "name": "Browserify",
+      "url": "http://browserify.org/",
+      "sourceUrl": "https://github.com/dzharii/awesome-typescript/blob/master/README.md",
+      "description": "CommonJS module bundler. Does not support TypeScript \"out of the box\", but can be applied with Grunt tasks: grunt-ts, grunt-browserify, grunt-contrib-uglify",
+      "category": "tools",
+      "kind": "tool",
+      "tags": [
+        "typescript",
+        "javascript",
+        "module bundlers"
+      ],
+      "origin": "community-index",
+      "featured": false,
+      "icon": "/api/resource-icon/community-d526381cdacc7b46?v=4",
+      "projectLinks": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/browserify/browserify"
+        },
+        {
+          "label": "Community guide",
+          "url": "https://github.com/browserify/awesome-browserify#readme"
+        }
+      ]
+    },
+    "community-43f25d51f07532e3": {
+      "id": "community-43f25d51f07532e3",
+      "name": "Buefy",
+      "url": "https://buefy.org/",
+      "sourceUrl": "https://github.com/bradtraversy/design-resources-for-developers/blob/master/readme.md",
+      "description": "Lightweight UI components based on Bulma",
+      "category": "inspiration",
+      "kind": "gallery",
+      "tags": [
+        "design",
+        "frontend",
+        "ui",
+        "vue ui libraries"
+      ],
+      "origin": "community-index",
+      "featured": false,
+      "icon": "/api/resource-icon/community-43f25d51f07532e3?v=4",
+      "projectLinks": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/buefy/buefy"
+        }
+      ]
+    },
+    "community-7f4a442ee05e87e8": {
+      "id": "community-7f4a442ee05e87e8",
+      "name": "Bytebase",
+      "url": "https://www.bytebase.com/",
+      "sourceUrl": "https://github.com/awesome-selfhosted/awesome-selfhosted/blob/master/README.md",
+      "description": "Use Bytebase to review a database schema change before the migration runs against a shared database.",
+      "category": "tools",
+      "kind": "tool",
+      "tags": [
+        "self-hosted",
+        "applications",
+        "deployment",
+        "software",
+        "database management",
+        "database",
+        "git"
+      ],
+      "origin": "community-index",
+      "featured": false,
+      "guidance": {
+        "bestFor": "Give a teammate a chance to review the SQL that adds a column or changes a table.",
+        "frameworks": [
+          "SQL databases",
+          "Database migrations"
+        ],
+        "setup": "advanced",
+        "caveat": "Connect a development database first. Approval of a migration does not prove that existing application queries will still work.",
+        "checkedAt": "2026-11-02",
+        "sourceUrls": [
+          "https://www.bytebase.com/"
+        ]
+      },
+      "icon": "/api/resource-icon/community-7f4a442ee05e87e8?v=4",
+      "projectLinks": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/bytebase/bytebase"
+        }
+      ]
+    },
+    "community-1e23cc4ffa5176b0": {
+      "id": "community-1e23cc4ffa5176b0",
+      "name": "Chart.js",
+      "url": "https://www.chartjs.org/",
+      "sourceUrl": "https://github.com/bradtraversy/design-resources-for-developers/blob/master/readme.md",
+      "description": "Render a bar or line chart from labeled data in a canvas element using Chart.js.",
+      "category": "inspiration",
+      "kind": "library",
+      "tags": [
+        "design",
+        "frontend",
+        "ui",
+        "javascript chart libraries",
+        "machine-learning",
+        "ai",
+        "data",
+        "javascript",
+        "data analysis",
+        "data visualization"
+      ],
+      "origin": "community-index",
+      "featured": false,
+      "guidance": {
+        "bestFor": "A dashboard with common chart types such as scores by game or attendance by day.",
+        "frameworks": [
+          "JavaScript",
+          "Canvas"
+        ],
+        "setup": "low",
+        "caveat": "Provide an accessible text summary or data table as well as the canvas drawing.",
+        "checkedAt": "2026-11-02",
+        "sourceUrls": [
+          "https://www.chartjs.org/",
+          "https://www.chartjs.org/docs/latest/getting-started/usage.html"
+        ]
+      },
+      "icon": "/api/resource-icon/community-1e23cc4ffa5176b0?v=4",
+      "projectLinks": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/chartjs/Chart.js"
+        }
+      ]
+    },
+    "community-2039885581849baf": {
+      "id": "community-2039885581849baf",
+      "name": "Cypress",
+      "url": "https://www.cypress.io/",
+      "sourceUrl": "https://github.com/sorrycc/awesome-javascript/blob/master/README.md",
+      "description": "Complete end-to-end testing framework for anything that runs in a browser and beyond.",
+      "category": "components",
+      "kind": "tool",
+      "tags": [
+        "javascript",
+        "web",
+        "testing frameworks",
+        "frameworks",
+        "testing",
+        "react",
+        "frontend",
+        "components",
+        "react testing"
+      ],
+      "origin": "community-index",
+      "featured": false,
+      "guidance": {
+        "bestFor": "Rerunning a checkout or login flow whenever the website changes.",
+        "frameworks": [
+          "JavaScript",
+          "TypeScript",
+          "Browser testing"
+        ],
+        "setup": "moderate",
+        "caveat": "Run the app with repeatable test data and controlled test accounts so a failing assertion points to the interface.",
+        "checkedAt": "2026-11-02",
+        "sourceUrls": [
+          "https://github.com/cypress-io/cypress"
+        ]
+      },
+      "icon": "/api/resource-icon/community-2039885581849baf?v=4",
+      "projectLinks": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/cypress-io/cypress"
+        }
+      ],
+      "projectGuidanceFrom": "community-52cd6f5e3bc52f48"
+    },
+    "community-f1ec2932ad28360d": {
+      "id": "community-f1ec2932ad28360d",
+      "name": "Data Driven Documents (D3)",
+      "url": "https://d3js.org/",
+      "sourceUrl": "https://github.com/bradtraversy/design-resources-for-developers/blob/master/readme.md",
+      "description": "Bind complicated and massive data to interactive graphs.",
+      "category": "tools",
+      "kind": "library",
+      "tags": [
+        "design",
+        "frontend",
+        "ui",
+        "javascript chart libraries",
+        "machine-learning",
+        "ai",
+        "data",
+        "javascript",
+        "data analysis",
+        "data visualization",
+        "web"
+      ],
+      "origin": "community-index",
+      "featured": false,
+      "guidance": {
+        "bestFor": "A data story with chart interactions or marks that a preset chart cannot express.",
+        "frameworks": [
+          "JavaScript",
+          "SVG",
+          "DOM"
+        ],
+        "setup": "moderate",
+        "caveat": "You define the scales, marks and updates. Budget time for labels and accessible alternatives.",
+        "checkedAt": "2026-11-02",
+        "sourceUrls": [
+          "https://github.com/d3/d3"
+        ]
+      },
+      "icon": "/api/resource-icon/community-f1ec2932ad28360d?v=4",
+      "projectLinks": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/d3/d3"
+        },
+        {
+          "label": "Community guide",
+          "url": "https://github.com/wbkd/awesome-d3#readme"
+        }
+      ],
+      "projectGuidanceFrom": "community-dfc80ee0426fca56"
+    },
+    "community-36ee3c8cef909614": {
+      "id": "community-36ee3c8cef909614",
+      "name": "dc.js",
+      "url": "https://dc-js.github.io/dc.js/",
+      "sourceUrl": "https://github.com/josephmisiti/awesome-machine-learning/blob/master/README.md",
+      "description": "Explore dc.js in JavaScript / Data Analysis / Data Visualization. Listed by awesome-machine-learning.",
+      "category": "tools",
+      "kind": "tool",
+      "tags": [
+        "machine-learning",
+        "ai",
+        "data",
+        "javascript",
+        "data analysis",
+        "data visualization"
+      ],
+      "origin": "community-index",
+      "featured": false,
+      "icon": "/api/resource-icon/community-36ee3c8cef909614?v=4",
+      "projectLinks": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/dc-js/dc.js"
+        }
+      ]
+    },
+    "community-1a30a1b1fb91bafa": {
+      "id": "community-1a30a1b1fb91bafa",
+      "name": "Deeplearning4j",
+      "url": "https://deeplearning4j.org/",
+      "sourceUrl": "https://github.com/akullpp/awesome-java/blob/master/README.md",
+      "description": "Distributed and multi-threaded deep learning library.",
+      "category": "learning",
+      "kind": "tool",
+      "tags": [
+        "java",
+        "backend",
+        "projects",
+        "machine learning"
+      ],
+      "origin": "community-index",
+      "featured": false,
+      "icon": "/api/resource-icon/community-1a30a1b1fb91bafa?v=4",
+      "projectLinks": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/deeplearning4j/deeplearning4j"
+        }
+      ]
+    },
+    "community-4d72a9fef273d151": {
+      "id": "community-4d72a9fef273d151",
+      "name": "deno",
+      "url": "https://deno.land/",
+      "sourceUrl": "https://github.com/dzharii/awesome-typescript/blob/master/README.md",
+      "description": "A secure runtime for JavaScript and TypeScript",
+      "category": "tools",
+      "kind": "tool",
+      "tags": [
+        "typescript",
+        "javascript",
+        "tools",
+        "security",
+        "rust",
+        "systems",
+        "applications"
+      ],
+      "origin": "community-index",
+      "featured": false,
+      "guidance": {
+        "bestFor": "Sharing a command-line tool written in TypeScript without a separate compile step.",
+        "frameworks": [
+          "Deno",
+          "JavaScript",
+          "TypeScript"
+        ],
+        "setup": "moderate",
+        "caveat": "Deno restricts access to the network and filesystem by default. Grant only what the script needs.",
+        "checkedAt": "2026-11-02",
+        "sourceUrls": [
+          "https://github.com/denoland/deno"
+        ]
+      },
+      "icon": "/api/resource-icon/community-4d72a9fef273d151?v=4",
+      "projectLinks": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/denoland/deno"
+        },
+        {
+          "label": "Community guide",
+          "url": "https://github.com/denolib/awesome-deno#readme"
+        }
+      ],
+      "projectGuidanceFrom": "community-0dc082de2306e07e"
+    },
+    "community-768db728288ffbb5": {
+      "id": "community-768db728288ffbb5",
+      "name": "DrizzleORM",
+      "url": "https://orm.drizzle.team/",
+      "sourceUrl": "https://github.com/dzharii/awesome-typescript/blob/master/README.md",
+      "description": "Lightweight TypeScript ORM, SQL-like library for flexible data access, serverless-ready, with zero dependencies.",
+      "category": "tools",
+      "kind": "tool",
+      "tags": [
+        "typescript",
+        "javascript",
+        "built with typescript",
+        "libraries",
+        "database"
+      ],
+      "origin": "community-index",
+      "featured": false,
+      "icon": "/api/resource-icon/community-768db728288ffbb5?v=4",
+      "projectLinks": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/drizzle-team/drizzle-orm"
+        }
+      ]
+    },
+    "community-f2bf03de76354bd5": {
+      "id": "community-f2bf03de76354bd5",
+      "name": "Easy Rust",
+      "url": "https://dhghomon.github.io/easy_rust/",
+      "sourceUrl": "https://github.com/EbookFoundation/free-programming-books/blob/main/books/free-programming-books-langs.md",
+      "description": "Explore Easy Rust in BY PROGRAMMING LANGUAGE / Rust. Listed by free-programming-books.",
+      "category": "learning",
+      "kind": "documentation",
+      "tags": [
+        "books",
+        "programming",
+        "by programming language",
+        "rust",
+        "pdf"
+      ],
+      "origin": "community-index",
+      "featured": false,
+      "icon": "/api/resource-icon/community-f2bf03de76354bd5?v=4",
+      "projectLinks": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/Dhghomon/easy_rust"
+        }
+      ]
+    },
+    "community-6df9102a5a645844": {
+      "id": "community-6df9102a5a645844",
+      "name": "Framework7",
+      "url": "https://framework7.io/",
+      "sourceUrl": "https://github.com/bradtraversy/design-resources-for-developers/blob/master/readme.md",
+      "description": "Install Framework7 to create a mobile-style interface with pages, navigation and touch controls.",
+      "category": "inspiration",
+      "kind": "library",
+      "tags": [
+        "design",
+        "frontend",
+        "ui",
+        "css frameworks",
+        "mobile"
+      ],
+      "origin": "community-index",
+      "featured": false,
+      "guidance": {
+        "bestFor": "Prototype a tabbed schedule app in the browser and check how it feels on a phone.",
+        "frameworks": [
+          "JavaScript",
+          "React",
+          "Vue",
+          "Svelte",
+          "PWA"
+        ],
+        "setup": "moderate",
+        "caveat": "A browser prototype cannot exercise every native feature. Plan separate packaging and device testing if the project needs an app-store build.",
+        "checkedAt": "2026-11-02",
+        "sourceUrls": [
+          "https://framework7.io/"
+        ]
+      },
+      "icon": "/api/resource-icon/community-6df9102a5a645844?v=4",
+      "projectLinks": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/framework7io/framework7"
+        }
+      ]
+    },
+    "community-ce1a0a6df5ef73d0": {
+      "id": "community-ce1a0a6df5ef73d0",
+      "name": "json2go",
+      "url": "https://m-zajac.github.io/json2go",
+      "sourceUrl": "https://github.com/avelino/awesome-go/blob/main/README.md",
+      "description": "Advanced JSON to Go struct conversion - online tool.",
+      "category": "tools",
+      "kind": "tool",
+      "tags": [
+        "go",
+        "backend",
+        "websites"
+      ],
+      "origin": "community-index",
+      "featured": false,
+      "icon": "/api/resource-icon/community-ce1a0a6df5ef73d0?v=4",
+      "projectLinks": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/m-zajac/json2go"
+        }
+      ]
+    },
+    "community-7f4bfbf73fb8c2d1": {
+      "id": "community-7f4bfbf73fb8c2d1",
+      "name": "Keen UI",
+      "url": "https://josephuspaye.github.io/Keen-UI",
+      "sourceUrl": "https://github.com/bradtraversy/design-resources-for-developers/blob/master/readme.md",
+      "description": "VueUI library with a simple API, inspired by Google's Material Design",
+      "category": "inspiration",
+      "kind": "gallery",
+      "tags": [
+        "design",
+        "frontend",
+        "ui",
+        "vue ui libraries",
+        "api"
+      ],
+      "origin": "community-index",
+      "featured": false,
+      "icon": "/api/resource-icon/community-7f4bfbf73fb8c2d1?v=4",
+      "projectLinks": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/JosephusPaye/Keen-UI"
+        }
+      ]
+    },
+    "community-6f3f96f0362a4e9b": {
+      "id": "community-6f3f96f0362a4e9b",
+      "name": "Keploy",
+      "url": "https://keploy.io/",
+      "sourceUrl": "https://github.com/TheJambo/awesome-testing/blob/master/README.md",
+      "description": "Open-source AI-powered end-to-end testing tool for APIs and microservices that auto-generates test cases and mocks from real traffic.",
+      "category": "learning",
+      "kind": "documentation",
+      "tags": [
+        "testing",
+        "quality",
+        "software",
+        "ui & end-to-end testing",
+        "api"
+      ],
+      "origin": "community-index",
+      "featured": false,
+      "icon": "/api/resource-icon/community-6f3f96f0362a4e9b?v=4",
+      "projectLinks": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/keploy/keploy"
+        }
+      ]
+    },
+    "community-c93bcfe4411da9c2": {
+      "id": "community-c93bcfe4411da9c2",
+      "name": "koel",
+      "url": "https://koel.dev/",
+      "sourceUrl": "https://github.com/awesome-selfhosted/awesome-selfhosted/blob/master/README.md",
+      "description": "Personal music streaming server that works. (, ) MIT PHP",
+      "category": "tools",
+      "kind": "tool",
+      "tags": [
+        "self-hosted",
+        "applications",
+        "deployment",
+        "software",
+        "media streaming - audio streaming",
+        "audio",
+        "video"
+      ],
+      "origin": "community-index",
+      "featured": false,
+      "icon": "/api/resource-icon/community-c93bcfe4411da9c2?v=4",
+      "projectLinks": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/koel/koel"
+        }
+      ]
+    },
+    "community-be05c4a4ab614ba0": {
+      "id": "community-be05c4a4ab614ba0",
+      "name": "Langfuse",
+      "url": "https://langfuse.com/",
+      "sourceUrl": "https://github.com/steven2358/awesome-generative-ai/blob/main/README.md",
+      "description": "Instrument an AI app with Langfuse to inspect the model calls, retrieval and tools behind a single answer.",
+      "category": "tools",
+      "kind": "tool",
+      "tags": [
+        "ai",
+        "generative-ai",
+        "coding",
+        "developer tools",
+        "llm",
+        "self-hosted",
+        "applications",
+        "deployment",
+        "software",
+        "software development - ide & tools",
+        "debugging",
+        "agents"
+      ],
+      "origin": "community-index",
+      "featured": false,
+      "guidance": {
+        "bestFor": "Follow a poor chatbot response back to the search or model step that produced it.",
+        "frameworks": [
+          "LLM tracing",
+          "OpenTelemetry"
+        ],
+        "setup": "moderate",
+        "caveat": "Only instrumented operations appear in a trace. Decide which inputs and outputs you need to record before sending them.",
+        "checkedAt": "2026-11-02",
+        "sourceUrls": [
+          "https://langfuse.com/docs/observability/overview",
+          "https://langfuse.com/"
+        ]
+      },
+      "icon": "/api/resource-icon/community-be05c4a4ab614ba0?v=4",
+      "projectLinks": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/langfuse/langfuse"
+        }
+      ]
+    },
+    "community-81a439d98e364d7b": {
+      "id": "community-81a439d98e364d7b",
+      "name": "Mastering Node",
+      "url": "https://visionmedia.github.io/masteringnode/",
+      "sourceUrl": "https://github.com/sindresorhus/awesome-nodejs/blob/main/readme.md",
+      "description": "Explore Mastering Node in Resources / Books. Listed by awesome-nodejs.",
+      "category": "learning",
+      "kind": "tool",
+      "tags": [
+        "nodejs",
+        "javascript",
+        "backend",
+        "resources",
+        "books"
+      ],
+      "origin": "community-index",
+      "featured": false,
+      "icon": "/api/resource-icon/community-81a439d98e364d7b?v=4",
+      "projectLinks": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/visionmedia/masteringnode"
+        }
+      ]
+    },
+    "community-aef7c9db81c68ce2": {
+      "id": "community-aef7c9db81c68ce2",
+      "name": "matplotlib",
+      "url": "https://matplotlib.org/",
+      "sourceUrl": "https://github.com/josephmisiti/awesome-machine-learning/blob/master/README.md",
+      "description": "Use Python figures and axes to plot data and label the result for a notebook or report.",
+      "category": "tools",
+      "kind": "library",
+      "tags": [
+        "machine-learning",
+        "ai",
+        "data",
+        "python",
+        "data analysis",
+        "data visualization"
+      ],
+      "origin": "community-index",
+      "featured": false,
+      "guidance": {
+        "bestFor": "Compare daily sensor readings with a line chart that names the axes and units.",
+        "frameworks": [
+          "Python",
+          "Matplotlib"
+        ],
+        "setup": "moderate",
+        "caveat": "Keep a handle to each Axes when building multiple plots so labels and settings reach the intended chart.",
+        "checkedAt": "2026-11-02",
+        "sourceUrls": [
+          "https://matplotlib.org/stable/users/explain/quick_start.html"
+        ]
+      },
+      "icon": "/api/resource-icon/community-aef7c9db81c68ce2?v=4",
+      "projectLinks": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/matplotlib/matplotlib"
+        }
+      ]
+    },
+    "community-04e5048e271da74d": {
+      "id": "community-04e5048e271da74d",
+      "name": "milvus",
+      "url": "https://milvus.io/",
+      "sourceUrl": "https://github.com/josephmisiti/awesome-machine-learning/blob/master/README.md",
+      "description": "Milvus is open source vector database for production AI, written in Go and C++, scalable and blazing fast for billions of embedding vectors.",
+      "category": "tools",
+      "kind": "tool",
+      "tags": [
+        "machine-learning",
+        "ai",
+        "data",
+        "tools",
+        "misc",
+        "database",
+        "retrieval"
+      ],
+      "origin": "community-index",
+      "featured": false,
+      "icon": "/api/resource-icon/community-04e5048e271da74d?v=4",
+      "projectLinks": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/milvus-io/milvus"
+        }
+      ]
+    },
+    "community-bdf4a2fa9972ecb5": {
+      "id": "community-bdf4a2fa9972ecb5",
+      "name": "NetworkX",
+      "url": "https://networkx.github.io/",
+      "sourceUrl": "https://github.com/josephmisiti/awesome-machine-learning/blob/master/README.md",
+      "description": "A high-productivity software for complex networks.",
+      "category": "tools",
+      "kind": "tool",
+      "tags": [
+        "machine-learning",
+        "ai",
+        "data",
+        "python",
+        "data analysis",
+        "data visualization"
+      ],
+      "origin": "community-index",
+      "featured": false,
+      "icon": "/api/resource-icon/community-bdf4a2fa9972ecb5?v=4",
+      "projectLinks": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/networkx/networkx"
+        }
+      ]
+    },
+    "community-dcb792d718508bec": {
+      "id": "community-dcb792d718508bec",
+      "name": "Next.js",
+      "url": "https://github.com/vercel/next.js",
+      "sourceUrl": "https://github.com/sindresorhus/awesome-nodejs/blob/main/readme.md",
+      "description": "Use the Next.js App Router to give a portfolio an index and a URL for every project.",
+      "category": "tools",
+      "kind": "tool",
+      "tags": [
+        "nodejs",
+        "javascript",
+        "backend",
+        "packages",
+        "web frameworks",
+        "web",
+        "generators",
+        "react",
+        "frontend",
+        "components",
+        "react frameworks"
+      ],
+      "origin": "community-index",
+      "featured": false,
+      "guidance": {
+        "bestFor": "A React site with shared layouts and nested pages that should open directly from a link.",
+        "frameworks": [
+          "Next.js",
+          "React"
+        ],
+        "setup": "moderate",
+        "caveat": "Keep server and client component boundaries in mind when adding interactions that need browser APIs.",
+        "checkedAt": "2026-11-02",
+        "sourceUrls": [
+          "https://github.com/vercel/next.js",
+          "https://nextjs.org/docs/app/getting-started/layouts-and-pages"
+        ]
+      },
+      "icon": "/api/resource-icon/community-dcb792d718508bec?v=4",
+      "projectLinks": [
+        {
+          "label": "Community guide",
+          "url": "https://github.com/unicodeveloper/awesome-nextjs#readme"
+        }
+      ]
+    },
+    "community-14960ba2a9317f3c": {
+      "id": "community-14960ba2a9317f3c",
+      "name": "NLTK",
+      "url": "https://www.nltk.org/",
+      "sourceUrl": "https://github.com/josephmisiti/awesome-machine-learning/blob/master/README.md",
+      "description": "A leading platform for building Python programs to work with human language data.",
+      "category": "tools",
+      "kind": "tool",
+      "tags": [
+        "machine-learning",
+        "ai",
+        "data",
+        "python",
+        "natural language processing"
+      ],
+      "origin": "community-index",
+      "featured": false,
+      "icon": "/api/resource-icon/community-14960ba2a9317f3c?v=4",
+      "projectLinks": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/nltk/nltk"
+        }
+      ]
+    },
+    "community-fefc2c4a06e18645": {
+      "id": "community-fefc2c4a06e18645",
+      "name": "Numba",
+      "url": "https://numba.pydata.org/",
+      "sourceUrl": "https://github.com/josephmisiti/awesome-machine-learning/blob/master/README.md",
+      "description": "Python JIT (just in time) compiler to LLVM aimed at scientific Python by the developers of Cython and NumPy.",
+      "category": "tools",
+      "kind": "tool",
+      "tags": [
+        "machine-learning",
+        "ai",
+        "data",
+        "python",
+        "data analysis",
+        "data visualization"
+      ],
+      "origin": "community-index",
+      "featured": false,
+      "icon": "/api/resource-icon/community-fefc2c4a06e18645?v=4",
+      "projectLinks": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/numba/numba"
+        }
+      ]
+    },
+    "community-4917fe035ec15a0b": {
+      "id": "community-4917fe035ec15a0b",
+      "name": "NumPy",
+      "url": "https://www.numpy.org/",
+      "sourceUrl": "https://github.com/josephmisiti/awesome-machine-learning/blob/master/README.md",
+      "description": "Use multidimensional Python arrays for calculations on an entire dataset at once.",
+      "category": "tools",
+      "kind": "library",
+      "tags": [
+        "machine-learning",
+        "ai",
+        "data",
+        "python",
+        "data analysis",
+        "data visualization"
+      ],
+      "origin": "community-index",
+      "featured": false,
+      "guidance": {
+        "bestFor": "Normalize columns of sensor readings by subtracting their respective means.",
+        "frameworks": [
+          "Python",
+          "NumPy"
+        ],
+        "setup": "moderate",
+        "caveat": "Check array shapes before relying on broadcasting. Compatible dimensions can align along a different axis than you intended.",
+        "checkedAt": "2026-11-02",
+        "sourceUrls": [
+          "https://numpy.org/doc/stable/user/basics.broadcasting.html",
+          "https://www.numpy.org/"
+        ]
+      },
+      "icon": "/api/resource-icon/community-4917fe035ec15a0b?v=4",
+      "projectLinks": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/numpy/numpy"
+        }
+      ]
+    },
+    "community-e5d1525f154bc654": {
+      "id": "community-e5d1525f154bc654",
+      "name": "nunjucks",
+      "url": "https://mozilla.github.io/nunjucks/",
+      "sourceUrl": "https://github.com/sorrycc/awesome-javascript/blob/master/README.md",
+      "description": "A rich and powerful templating language for JavaScript from Mozilla.",
+      "category": "tools",
+      "kind": "tool",
+      "tags": [
+        "javascript",
+        "web",
+        "templating engines"
+      ],
+      "origin": "community-index",
+      "featured": false,
+      "icon": "/api/resource-icon/community-e5d1525f154bc654?v=4",
+      "projectLinks": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/mozilla/nunjucks"
+        }
+      ]
+    },
+    "community-30f11e9a931e1659": {
+      "id": "community-30f11e9a931e1659",
+      "name": "Ollama",
+      "url": "https://ollama.com/",
+      "sourceUrl": "https://github.com/awesome-selfhosted/awesome-selfhosted/blob/master/README.md",
+      "description": "Run a supported model locally and connect a small app to Ollama's model API.",
+      "category": "tools",
+      "kind": "tool",
+      "tags": [
+        "self-hosted",
+        "applications",
+        "deployment",
+        "software",
+        "generative artificial intelligence (genai)",
+        "llm"
+      ],
+      "origin": "community-index",
+      "featured": false,
+      "guidance": {
+        "bestFor": "Build a text summarizer that sends notes to a model running on your laptop.",
+        "frameworks": [
+          "Local models",
+          "CLI",
+          "HTTP API"
+        ],
+        "setup": "moderate",
+        "caveat": "Choose a local model that fits your machine and download it before the demo. Cloud models follow a different setup.",
+        "checkedAt": "2026-11-02",
+        "sourceUrls": [
+          "https://docs.ollama.com/quickstart",
+          "https://ollama.com/"
+        ]
+      },
+      "icon": "/api/resource-icon/community-30f11e9a931e1659?v=4",
+      "projectLinks": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/ollama/ollama"
+        }
+      ]
+    },
+    "community-d9fa580077e68cf2": {
+      "id": "community-d9fa580077e68cf2",
+      "name": "OpenCV",
+      "url": "https://opencv.org/",
+      "sourceUrl": "https://github.com/josephmisiti/awesome-machine-learning/blob/master/README.md",
+      "description": "Install OpenCV and use its Canny tutorial to outline the edges of objects in a photo.",
+      "category": "tools",
+      "kind": "library",
+      "tags": [
+        "machine-learning",
+        "ai",
+        "data",
+        "c++",
+        "computer vision",
+        "mobile"
+      ],
+      "origin": "community-index",
+      "featured": false,
+      "guidance": {
+        "bestFor": "Compare edge maps for the same object under different lighting before using them in a camera project.",
+        "frameworks": [
+          "Python",
+          "OpenCV",
+          "Computer vision"
+        ],
+        "setup": "moderate",
+        "caveat": "The two thresholds affect which edges survive. Try them on representative images instead of tuning a single photograph.",
+        "checkedAt": "2026-11-02",
+        "sourceUrls": [
+          "https://docs.opencv.org/4.x/da/d22/tutorial_py_canny.html",
+          "https://opencv.org/"
+        ]
+      },
+      "icon": "/api/resource-icon/community-d9fa580077e68cf2?v=4",
+      "projectLinks": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/opencv/opencv"
+        }
+      ]
+    },
+    "community-d9b299abc81eed4f": {
+      "id": "community-d9b299abc81eed4f",
+      "name": "pnpm",
+      "url": "https://pnpm.io/",
+      "sourceUrl": "https://github.com/sindresorhus/awesome-nodejs/blob/main/readme.md",
+      "description": "Disk space efficient package manager.",
+      "category": "tools",
+      "kind": "tool",
+      "tags": [
+        "nodejs",
+        "javascript",
+        "backend",
+        "package manager",
+        "web",
+        "package managers",
+        "npm",
+        "packages",
+        "clients"
+      ],
+      "origin": "community-index",
+      "featured": false,
+      "guidance": {
+        "bestFor": "A team sharing dependencies across several packages with a committed pnpm lockfile.",
+        "frameworks": [
+          "Node.js",
+          "Package manager"
+        ],
+        "setup": "low",
+        "caveat": "Use the package manager and lockfile the repository declares so teammates and CI resolve the same dependencies.",
+        "checkedAt": "2026-11-02",
+        "sourceUrls": [
+          "https://github.com/pnpm/pnpm"
+        ]
+      },
+      "icon": "/api/resource-icon/community-d9b299abc81eed4f?v=4",
+      "projectLinks": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/pnpm/pnpm"
+        }
+      ],
+      "projectGuidanceFrom": "community-b399aaf67c8c753f"
+    },
+    "community-b20e2b1c7f7c31c9": {
+      "id": "community-b20e2b1c7f7c31c9",
+      "name": "PodFetch",
+      "url": "https://samtv12345.github.io/PodFetch",
+      "sourceUrl": "https://github.com/awesome-selfhosted/awesome-selfhosted/blob/master/README.md",
+      "description": "Sleek and efficient podcast downloader. Apache-2.0 Docker/Rust",
+      "category": "tools",
+      "kind": "tool",
+      "tags": [
+        "self-hosted",
+        "applications",
+        "deployment",
+        "software",
+        "media management"
+      ],
+      "origin": "community-index",
+      "featured": false,
+      "icon": "/api/resource-icon/community-b20e2b1c7f7c31c9?v=4",
+      "projectLinks": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/SamTV12345/PodFetch"
+        }
+      ]
+    },
+    "community-4671e41b7df598b3": {
+      "id": "community-4671e41b7df598b3",
+      "name": "PoloDB",
+      "url": "https://www.polodb.org/",
+      "sourceUrl": "https://github.com/rust-unofficial/awesome-rust/blob/main/README.md",
+      "description": "Explore PoloDB in Libraries / Database. Listed by awesome-rust.",
+      "category": "tools",
+      "kind": "tool",
+      "tags": [
+        "rust",
+        "systems",
+        "libraries",
+        "database"
+      ],
+      "origin": "community-index",
+      "featured": false,
+      "icon": "/api/resource-icon/community-4671e41b7df598b3?v=4",
+      "projectLinks": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/PoloDB/PoloDB"
+        }
+      ]
+    },
+    "community-bb42ed50d0915bcf": {
+      "id": "community-bb42ed50d0915bcf",
+      "name": "Progress Bar.js",
+      "url": "https://kimmobrunfeldt.github.io/progressbar.js/",
+      "sourceUrl": "https://github.com/bradtraversy/design-resources-for-developers/blob/master/readme.md",
+      "description": "Responsive and slick progress bars with animated SVG paths.",
+      "category": "motion",
+      "kind": "library",
+      "tags": [
+        "design",
+        "frontend",
+        "ui",
+        "javascript animation libraries",
+        "animation",
+        "responsive"
+      ],
+      "origin": "community-index",
+      "featured": false,
+      "icon": "/api/resource-icon/community-bb42ed50d0915bcf?v=4",
+      "projectLinks": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/kimmobrunfeldt/progressbar.js"
+        }
+      ]
+    },
+    "community-22f9fa264895ca5c": {
+      "id": "community-22f9fa264895ca5c",
+      "name": "Qdrant",
+      "url": "https://qdrant.tech/",
+      "sourceUrl": "https://github.com/josephmisiti/awesome-machine-learning/blob/master/README.md",
+      "description": "Qdrant is open source vector similarity search engine with extended filtering support, written in Rust.",
+      "category": "tools",
+      "kind": "tool",
+      "tags": [
+        "machine-learning",
+        "ai",
+        "data",
+        "tools",
+        "misc",
+        "search"
+      ],
+      "origin": "community-index",
+      "featured": false,
+      "icon": "/api/resource-icon/community-22f9fa264895ca5c?v=4",
+      "projectLinks": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/qdrant/qdrant"
+        }
+      ]
+    },
+    "community-659c57d0686bd6c7": {
+      "id": "community-659c57d0686bd6c7",
+      "name": "QuestDB",
+      "url": "https://questdb.io/",
+      "sourceUrl": "https://github.com/josephmisiti/awesome-machine-learning/blob/master/README.md",
+      "description": "Run a time-series database and use SQL to query sensor readings in timestamp order.",
+      "category": "learning",
+      "kind": "tool",
+      "tags": [
+        "machine-learning",
+        "ai",
+        "data",
+        "c++",
+        "general-purpose machine learning",
+        "database"
+      ],
+      "origin": "community-index",
+      "featured": false,
+      "guidance": {
+        "bestFor": "Chart a greenhouse's temperature history and examine gaps in the measurements.",
+        "frameworks": [
+          "SQL",
+          "Time-series data"
+        ],
+        "setup": "moderate",
+        "caveat": "Choose the designated timestamp based on when the reading happened. It affects storage order and time-based queries.",
+        "checkedAt": "2026-11-02",
+        "sourceUrls": [
+          "https://questdb.com/docs/concepts/designated-timestamp/"
+        ]
+      },
+      "icon": "/api/resource-icon/community-659c57d0686bd6c7?v=4",
+      "projectLinks": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/questdb/questdb"
+        }
+      ]
+    },
+    "community-69ce72d1821a0096": {
+      "id": "community-69ce72d1821a0096",
+      "name": "React Bootstrap",
+      "url": "https://react-bootstrap.github.io/",
+      "sourceUrl": "https://github.com/bradtraversy/design-resources-for-developers/blob/master/readme.md",
+      "description": "Bootstrap rebuilt for React. Include Bootstrap components right in your JavaScript",
+      "category": "inspiration",
+      "kind": "gallery",
+      "tags": [
+        "design",
+        "frontend",
+        "ui",
+        "react ui libraries"
+      ],
+      "origin": "community-index",
+      "featured": false,
+      "icon": "/api/resource-icon/community-69ce72d1821a0096?v=4",
+      "projectLinks": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/react-bootstrap/react-bootstrap"
+        }
+      ]
+    },
+    "community-f9415a0730ad5646": {
+      "id": "community-f9415a0730ad5646",
+      "name": "React Icons",
+      "url": "https://react-icons.github.io/react-icons/",
+      "sourceUrl": "https://github.com/bradtraversy/design-resources-for-developers/blob/master/readme.md",
+      "description": "An Open Source and free Svg Icon Library, it is a collection of your favorite icon libraries like Font Awesome and Material Icons to provide you with a wide range of SVG icons to choose from.",
+      "category": "icons",
+      "kind": "library",
+      "tags": [
+        "design",
+        "frontend",
+        "ui",
+        "icon fonts"
+      ],
+      "origin": "community-index",
+      "featured": false,
+      "icon": "/api/resource-icon/community-f9415a0730ad5646?v=4",
+      "projectLinks": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/react-icons/react-icons"
+        }
+      ]
+    },
+    "community-f7b7b81d259a6605": {
+      "id": "community-f7b7b81d259a6605",
+      "name": "React Native Elements",
+      "url": "https://reactnativeelements.com/",
+      "sourceUrl": "https://github.com/bradtraversy/design-resources-for-developers/blob/master/readme.md",
+      "description": "Cross Platform React Native UI Toolkit that provides an all-in-one UI kit for creating apps in react native.",
+      "category": "inspiration",
+      "kind": "gallery",
+      "tags": [
+        "design",
+        "frontend",
+        "ui",
+        "react native ui libraries",
+        "design-system"
+      ],
+      "origin": "community-index",
+      "featured": false,
+      "icon": "/api/resource-icon/community-f7b7b81d259a6605?v=4",
+      "projectLinks": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/react-native-elements/react-native-elements"
+        }
+      ]
+    },
+    "community-78414a9e632bb993": {
+      "id": "community-78414a9e632bb993",
+      "name": "React Official Website",
+      "url": "https://react.dev/",
+      "sourceUrl": "https://github.com/enaqx/awesome-react/blob/master/README.md",
+      "description": "Explore React Official Website in React / React General Resources. Listed by awesome-react.",
+      "category": "components",
+      "kind": "library",
+      "tags": [
+        "react",
+        "frontend",
+        "components",
+        "react general resources"
+      ],
+      "origin": "community-index",
+      "featured": false,
+      "icon": "/api/resource-icon/community-78414a9e632bb993?v=4",
+      "projectLinks": [
+        {
+          "label": "Legacy website",
+          "url": "https://reactjs.org/"
+        },
+        {
+          "label": "Community guide",
+          "url": "https://github.com/enaqx/awesome-react#readme"
+        }
+      ]
+    },
+    "community-c8c1cf8ddca55dec": {
+      "id": "community-c8c1cf8ddca55dec",
+      "name": "React Toolbox",
+      "url": "http://react-toolbox.io/#/",
+      "sourceUrl": "https://github.com/bradtraversy/design-resources-for-developers/blob/master/readme.md",
+      "description": "Material design UI library for React",
+      "category": "inspiration",
+      "kind": "gallery",
+      "tags": [
+        "design",
+        "frontend",
+        "ui",
+        "react ui libraries"
+      ],
+      "origin": "community-index",
+      "featured": false,
+      "icon": "/api/resource-icon/community-c8c1cf8ddca55dec?v=4",
+      "projectLinks": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/react-toolbox/react-toolbox"
+        }
+      ]
+    },
+    "community-0f0f98a530fb05b8": {
+      "id": "community-0f0f98a530fb05b8",
+      "name": "React Virtualized",
+      "url": "https://bvaughn.github.io/react-virtualized",
+      "sourceUrl": "https://github.com/bradtraversy/design-resources-for-developers/blob/master/readme.md",
+      "description": "UI set for data. Includes tables, lists, sorting, etc.",
+      "category": "inspiration",
+      "kind": "gallery",
+      "tags": [
+        "design",
+        "frontend",
+        "ui",
+        "react ui libraries"
+      ],
+      "origin": "community-index",
+      "featured": false,
+      "icon": "/api/resource-icon/community-0f0f98a530fb05b8?v=4",
+      "projectLinks": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/bvaughn/react-virtualized"
+        }
+      ]
+    },
+    "community-b54b9095c5ce4108": {
+      "id": "community-b54b9095c5ce4108",
+      "name": "Robot Framework",
+      "url": "https://robotframework.org/",
+      "sourceUrl": "https://github.com/TheJambo/awesome-testing/blob/master/README.md",
+      "description": "Write a Robot Framework acceptance test that describes a user journey as a sequence of keywords.",
+      "category": "learning",
+      "kind": "library",
+      "tags": [
+        "testing",
+        "quality",
+        "software",
+        "test automation frameworks",
+        "automation"
+      ],
+      "origin": "community-index",
+      "featured": false,
+      "guidance": {
+        "bestFor": "Turn a repeated task such as signing in and checking a status into a test a teammate can read.",
+        "frameworks": [
+          "Python",
+          "Robot Framework test files"
+        ],
+        "setup": "moderate",
+        "caveat": "Install and configure the library that implements your keywords. Browser automation needs an appropriate browser library and runtime.",
+        "checkedAt": "2026-11-02",
+        "sourceUrls": [
+          "https://robotframework.org/"
+        ]
+      },
+      "icon": "/api/resource-icon/community-b54b9095c5ce4108?v=4",
+      "projectLinks": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/robotframework/robotframework"
+        }
+      ]
+    },
+    "community-f5825c007355d177": {
+      "id": "community-f5825c007355d177",
+      "name": "scikit-learn",
+      "url": "https://scikit-learn.org/",
+      "sourceUrl": "https://github.com/josephmisiti/awesome-machine-learning/blob/master/README.md",
+      "description": "A Python module for machine learning built on top of SciPy.",
+      "category": "learning",
+      "kind": "tool",
+      "tags": [
+        "machine-learning",
+        "ai",
+        "data",
+        "python",
+        "general-purpose machine learning"
+      ],
+      "origin": "community-index",
+      "featured": false,
+      "icon": "/api/resource-icon/community-f5825c007355d177?v=4",
+      "projectLinks": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/scikit-learn/scikit-learn"
+        }
+      ]
+    },
+    "community-382ade5d2b5ca59b": {
+      "id": "community-382ade5d2b5ca59b",
+      "name": "SciPy",
+      "url": "https://www.scipy.org/",
+      "sourceUrl": "https://github.com/josephmisiti/awesome-machine-learning/blob/master/README.md",
+      "description": "Use scipy.signal to filter, convolve or compare data sampled from a sensor or microphone.",
+      "category": "tools",
+      "kind": "library",
+      "tags": [
+        "machine-learning",
+        "ai",
+        "data",
+        "python",
+        "data analysis",
+        "data visualization"
+      ],
+      "origin": "community-index",
+      "featured": false,
+      "guidance": {
+        "bestFor": "Smooth noisy measurements and plot the original and filtered traces together.",
+        "frameworks": [
+          "Python",
+          "NumPy",
+          "Signal processing"
+        ],
+        "setup": "moderate",
+        "caveat": "Set the sampling rate to match the measurement. Filter parameters interpreted at the wrong rate can erase the signal you want to keep.",
+        "checkedAt": "2026-11-02",
+        "sourceUrls": [
+          "https://docs.scipy.org/doc/scipy/tutorial/signal.html"
+        ]
+      },
+      "icon": "/api/resource-icon/community-382ade5d2b5ca59b?v=4",
+      "projectLinks": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/scipy/scipy"
+        }
+      ]
+    },
+    "community-5fa998b1ca986708": {
+      "id": "community-5fa998b1ca986708",
+      "name": "Selenium Boot",
+      "url": "https://seleniumboot.com/",
+      "sourceUrl": "https://github.com/TheJambo/awesome-testing/blob/master/README.md",
+      "description": "Java framework layered on Selenium WebDriver and TestNG. One Maven dependency and one YAML file replace the usual driver-lifecycle, wait, retry and reporting boilerplate, and the raw WebDriver stays accessible.",
+      "category": "learning",
+      "kind": "documentation",
+      "tags": [
+        "testing",
+        "quality",
+        "software",
+        "test automation frameworks",
+        "accessibility",
+        "files"
+      ],
+      "origin": "community-index",
+      "featured": false,
+      "icon": "/api/resource-icon/community-5fa998b1ca986708?v=4",
+      "projectLinks": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/seleniumboot/selenium-boot"
+        }
+      ]
+    },
+    "community-dcb1fe42b9a89344": {
+      "id": "community-dcb1fe42b9a89344",
+      "name": "Sigma.js",
+      "url": "http://sigmajs.org/",
+      "sourceUrl": "https://github.com/josephmisiti/awesome-machine-learning/blob/master/README.md",
+      "description": "Install Sigma.js to draw an interactive network of people, documents or projects in a web page.",
+      "category": "tools",
+      "kind": "library",
+      "tags": [
+        "machine-learning",
+        "ai",
+        "data",
+        "javascript",
+        "data analysis",
+        "data visualization"
+      ],
+      "origin": "community-index",
+      "featured": false,
+      "guidance": {
+        "bestFor": "Explore nodes and their connections, such as which projects depend on the same packages.",
+        "frameworks": [
+          "JavaScript",
+          "WebGL",
+          "Graphology"
+        ],
+        "setup": "moderate",
+        "caveat": "Supply the graph data and a layout for the nodes. The renderer cannot infer meaningful positions from a list of names.",
+        "checkedAt": "2026-11-02",
+        "sourceUrls": [
+          "https://www.sigmajs.org/",
+          "https://github.com/jacomyal/sigma.js"
+        ]
+      },
+      "icon": "/api/resource-icon/community-dcb1fe42b9a89344?v=4",
+      "projectLinks": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/jacomyal/sigma.js"
+        }
+      ]
+    },
+    "community-a6f418d5a258b951": {
+      "id": "community-a6f418d5a258b951",
+      "name": "Slick",
+      "url": "https://kenwheeler.github.io/slick/",
+      "sourceUrl": "https://github.com/bradtraversy/design-resources-for-developers/blob/master/readme.md",
+      "description": "Fully responsive carousel",
+      "category": "motion",
+      "kind": "library",
+      "tags": [
+        "design",
+        "frontend",
+        "ui",
+        "javascript animation libraries",
+        "responsive"
+      ],
+      "origin": "community-index",
+      "featured": false,
+      "icon": "/api/resource-icon/community-a6f418d5a258b951?v=4",
+      "projectLinks": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/kenwheeler/slick"
+        }
+      ]
+    },
+    "community-0765609887a9e861": {
+      "id": "community-0765609887a9e861",
+      "name": "Static Web Server",
+      "url": "https://static-web-server.net/",
+      "sourceUrl": "https://github.com/awesome-selfhosted/awesome-selfhosted/blob/master/README.md",
+      "description": "Cross-platform, high-performance, and asynchronous web server for static file serving. Apache-2.0/MIT Rust/Docker",
+      "category": "tools",
+      "kind": "tool",
+      "tags": [
+        "self-hosted",
+        "applications",
+        "deployment",
+        "software",
+        "web servers",
+        "files",
+        "performance"
+      ],
+      "origin": "community-index",
+      "featured": false,
+      "icon": "/api/resource-icon/community-0765609887a9e861?v=4",
+      "projectLinks": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/static-web-server/static-web-server"
+        }
+      ]
+    },
+    "community-41e2b273a212e5c7": {
+      "id": "community-41e2b273a212e5c7",
+      "name": "storyboard",
+      "url": "http://guigrpa.github.io/storyboard/",
+      "sourceUrl": "https://github.com/sorrycc/awesome-javascript/blob/master/README.md",
+      "description": "Universal logging library + Chrome extension; it lets you see all client and server tasks triggered by a user action in a single place.",
+      "category": "tools",
+      "kind": "tool",
+      "tags": [
+        "javascript",
+        "web",
+        "log"
+      ],
+      "origin": "community-index",
+      "featured": false,
+      "icon": "/api/resource-icon/community-41e2b273a212e5c7?v=4",
+      "projectLinks": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/guigrpa/storyboard"
+        }
+      ]
+    },
+    "community-164811526484ff1f": {
+      "id": "community-164811526484ff1f",
+      "name": "Strapi",
+      "url": "https://strapi.io/",
+      "sourceUrl": "https://github.com/awesome-selfhosted/awesome-selfhosted/blob/master/README.md",
+      "description": "Model content in Strapi and fetch it from automatically generated REST endpoints in a separate frontend.",
+      "category": "tools",
+      "kind": "tool",
+      "tags": [
+        "self-hosted",
+        "applications",
+        "deployment",
+        "software",
+        "content management systems (cms)",
+        "api"
+      ],
+      "origin": "community-index",
+      "featured": false,
+      "guidance": {
+        "bestFor": "Let an editor publish club announcements and have a public website request them by date.",
+        "frameworks": [
+          "TypeScript",
+          "Node.js",
+          "REST API"
+        ],
+        "setup": "moderate",
+        "caveat": "Configure content permissions and request related fields explicitly when needed. A created content type alone does not make every record and relation available.",
+        "checkedAt": "2026-11-02",
+        "sourceUrls": [
+          "https://docs.strapi.io/cms/api/rest"
+        ]
+      },
+      "icon": "/api/resource-icon/community-164811526484ff1f?v=4",
+      "projectLinks": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/strapi/strapi"
+        }
+      ]
+    },
+    "community-172eabcf56d0f2ce": {
+      "id": "community-172eabcf56d0f2ce",
+      "name": "Styled components",
+      "url": "https://styled-components.com/",
+      "sourceUrl": "https://github.com/bradtraversy/design-resources-for-developers/blob/master/readme.md",
+      "description": "Build beautifully UI Components, for your applications & websites.",
+      "category": "components",
+      "kind": "library",
+      "tags": [
+        "design",
+        "frontend",
+        "ui",
+        "ui components & kits"
+      ],
+      "origin": "community-index",
+      "featured": false,
+      "icon": "/api/resource-icon/community-172eabcf56d0f2ce?v=4",
+      "projectLinks": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/styled-components/styled-components"
+        }
+      ]
+    },
+    "community-954e7e5beac2067d": {
+      "id": "community-954e7e5beac2067d",
+      "name": "styledocco",
+      "url": "http://jacobrask.github.io/styledocco/",
+      "sourceUrl": "https://github.com/sorrycc/awesome-javascript/blob/master/README.md",
+      "description": "Explore styledocco in Documentation. Listed by awesome-javascript.",
+      "category": "tools",
+      "kind": "tool",
+      "tags": [
+        "javascript",
+        "web",
+        "documentation"
+      ],
+      "origin": "community-index",
+      "featured": false,
+      "icon": "/api/resource-icon/community-954e7e5beac2067d?v=4",
+      "projectLinks": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/jacobrask/styledocco"
+        }
+      ]
+    },
+    "community-be4d333f6dd68eb2": {
+      "id": "community-be4d333f6dd68eb2",
+      "name": "SurrealDB",
+      "url": "https://surrealdb.com/",
+      "sourceUrl": "https://github.com/rust-unofficial/awesome-rust/blob/main/README.md",
+      "description": "Use SurrealDB graph relations to store records and query connections between them.",
+      "category": "tools",
+      "kind": "tool",
+      "tags": [
+        "rust",
+        "systems",
+        "libraries",
+        "database"
+      ],
+      "origin": "community-index",
+      "featured": false,
+      "guidance": {
+        "bestFor": "Model club members, events and attendance so you can follow links in either direction.",
+        "frameworks": [
+          "SurrealQL",
+          "Graph database"
+        ],
+        "setup": "moderate",
+        "caveat": "Choose a graph relation when the connection needs its own meaning or fields. A simple record link can be sufficient for an ordinary reference.",
+        "checkedAt": "2026-11-02",
+        "sourceUrls": [
+          "https://surrealdb.com/docs/learn/data-models/graph/creating-relations"
+        ]
+      },
+      "icon": "/api/resource-icon/community-be4d333f6dd68eb2?v=4",
+      "projectLinks": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/surrealdb/surrealdb"
+        }
+      ]
+    },
+    "community-43d3ef9bd32addf2": {
+      "id": "community-43d3ef9bd32addf2",
+      "name": "svelte",
+      "url": "https://github.com/sveltejs/svelte",
+      "sourceUrl": "https://github.com/sorrycc/awesome-javascript/blob/master/README.md",
+      "description": "Build a reactive filter component with Svelte and compile it to browser JavaScript.",
+      "category": "tools",
+      "kind": "library",
+      "tags": [
+        "javascript",
+        "web",
+        "mvc frameworks and libraries",
+        "svelte",
+        "frontend",
+        "components",
+        "resources",
+        "official resources",
+        "git"
+      ],
+      "origin": "community-index",
+      "featured": false,
+      "guidance": {
+        "bestFor": "A form or list whose displayed content should update when its state changes.",
+        "frameworks": [
+          "Svelte",
+          "JavaScript",
+          "TypeScript"
+        ],
+        "setup": "moderate",
+        "caveat": "Svelte components need a compatible compiler and build setup. Match syntax to the project's Svelte version.",
+        "checkedAt": "2026-11-02",
+        "sourceUrls": [
+          "https://github.com/sveltejs/svelte"
+        ]
+      },
+      "icon": "/api/resource-icon/community-43d3ef9bd32addf2?v=4",
+      "projectLinks": [
+        {
+          "label": "Community guide",
+          "url": "https://github.com/TheComputerM/awesome-svelte#readme"
+        }
+      ]
+    },
+    "community-c0c9177b5d802c41": {
+      "id": "community-c0c9177b5d802c41",
+      "name": "sweetalert2",
+      "url": "https://sweetalert2.github.io/",
+      "sourceUrl": "https://github.com/bradtraversy/design-resources-for-developers/blob/master/readme.md",
+      "description": "A beautiful, responsive, customizable, accessible replacement for javascript's popup boxes",
+      "category": "components",
+      "kind": "library",
+      "tags": [
+        "design",
+        "frontend",
+        "ui",
+        "ui components & kits",
+        "accessibility",
+        "responsive"
+      ],
+      "origin": "community-index",
+      "featured": false,
+      "icon": "/api/resource-icon/community-c0c9177b5d802c41?v=4",
+      "projectLinks": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/sweetalert2/sweetalert2"
+        }
+      ]
+    },
+    "community-5d87a933f41917d9": {
+      "id": "community-5d87a933f41917d9",
+      "name": "Tacit",
+      "url": "https://yegor256.github.io/tacit/",
+      "sourceUrl": "https://github.com/awesome-css-group/awesome-css/blob/master/README.md",
+      "description": "CSS framework for dummies with zero skills in graphic design.",
+      "category": "components",
+      "kind": "library",
+      "tags": [
+        "css",
+        "styling",
+        "frontend",
+        "frameworks :art:"
+      ],
+      "origin": "community-index",
+      "featured": false,
+      "icon": "/api/resource-icon/community-5d87a933f41917d9?v=4",
+      "projectLinks": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/yegor256/tacit"
+        }
+      ]
+    },
+    "community-bf2905db04afec23": {
+      "id": "community-bf2905db04afec23",
+      "name": "Tailwind CSS",
+      "url": "https://tailwindcss.com/",
+      "sourceUrl": "https://github.com/bradtraversy/design-resources-for-developers/blob/master/readme.md",
+      "description": "Low level, utility-first framework",
+      "category": "components",
+      "kind": "library",
+      "tags": [
+        "design",
+        "frontend",
+        "ui",
+        "css frameworks",
+        "css",
+        "styling",
+        "frameworks :art:"
+      ],
+      "origin": "community-index",
+      "featured": false,
+      "guidance": {
+        "bestFor": "A page where teammates want consistent spacing, colors and responsive breakpoints.",
+        "frameworks": [
+          "Tailwind CSS",
+          "CSS",
+          "HTML"
+        ],
+        "setup": "low",
+        "caveat": "Ensure the build can discover the class names you use, especially when markup is generated.",
+        "checkedAt": "2026-11-02",
+        "sourceUrls": [
+          "https://github.com/tailwindlabs/tailwindcss"
+        ]
+      },
+      "icon": "/api/resource-icon/community-bf2905db04afec23?v=4",
+      "projectLinks": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/tailwindlabs/tailwindcss"
+        },
+        {
+          "label": "Community guide",
+          "url": "https://github.com/aniftyco/awesome-tailwindcss#readme"
+        }
+      ],
+      "projectGuidanceFrom": "community-b662278c0d08c19d",
+      "relatedTools": [
+        {
+          "id": "daisyui",
+          "name": "daisyUI"
+        },
+        {
+          "id": "flowbite",
+          "name": "Flowbite"
+        },
+        {
+          "id": "hyperui",
+          "name": "HyperUI"
+        },
+        {
+          "id": "preline-ui",
+          "name": "Preline UI"
+        }
+      ]
+    },
+    "community-c32f8a9c0d28158f": {
+      "id": "community-c32f8a9c0d28158f",
+      "name": "Tamagui",
+      "url": "https://tamagui.dev/",
+      "sourceUrl": "https://github.com/bradtraversy/design-resources-for-developers/blob/master/readme.md",
+      "description": "Share a set of button styles and form controls between a React website and a React Native app.",
+      "category": "inspiration",
+      "kind": "library",
+      "tags": [
+        "design",
+        "frontend",
+        "ui",
+        "react native ui libraries",
+        "performance",
+        "design-system"
+      ],
+      "origin": "community-index",
+      "featured": false,
+      "guidance": {
+        "bestFor": "A team maintaining the same sign-up flow on phones and the web.",
+        "frameworks": [
+          "React",
+          "React Native",
+          "TypeScript"
+        ],
+        "setup": "moderate",
+        "caveat": "Try one shared screen on each target. Web-only elements in a component still need a native counterpart.",
+        "checkedAt": "2026-11-02",
+        "sourceUrls": [
+          "https://tamagui.dev/",
+          "https://tamagui.dev/ui/intro"
+        ]
+      },
+      "icon": "/api/resource-icon/community-c32f8a9c0d28158f?v=4",
+      "projectLinks": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/tamagui/tamagui"
+        }
+      ]
+    },
+    "community-4cf0e833d1fbb2a9": {
+      "id": "community-4cf0e833d1fbb2a9",
+      "name": "Thumbor",
+      "url": "http://thumbor.org/",
+      "sourceUrl": "https://github.com/awesome-selfhosted/awesome-selfhosted/blob/master/README.md",
+      "description": "Smart imaging service and enables on-demand cropping, resizing, applying filters and optimizing images. MIT Python/Docker",
+      "category": "tools",
+      "kind": "tool",
+      "tags": [
+        "self-hosted",
+        "applications",
+        "deployment",
+        "software",
+        "photo galleries",
+        "images"
+      ],
+      "origin": "community-index",
+      "featured": false,
+      "icon": "/api/resource-icon/community-4cf0e833d1fbb2a9?v=4",
+      "projectLinks": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/thumbor/thumbor"
+        }
+      ]
+    },
+    "community-f3dd7dbd0d2424d5": {
+      "id": "community-f3dd7dbd0d2424d5",
+      "name": "TrailBase",
+      "url": "https://trailbase.io/",
+      "sourceUrl": "https://github.com/awesome-selfhosted/awesome-selfhosted/blob/master/README.md",
+      "description": "Open, sub-millisecond, single-executable FireBase alternative with type-safe REST & realtime APIs, built-in JS/TS runtime, auth & admin UI. (, ) OSL-3.0 Rust/Docker",
+      "category": "tools",
+      "kind": "tool",
+      "tags": [
+        "self-hosted",
+        "applications",
+        "deployment",
+        "software",
+        "software development - low code",
+        "authentication",
+        "api"
+      ],
+      "origin": "community-index",
+      "featured": false,
+      "icon": "/api/resource-icon/community-f3dd7dbd0d2424d5?v=4",
+      "projectLinks": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/trailbaseio/trailbase"
+        }
+      ]
+    },
+    "community-4f846901f9ff948b": {
+      "id": "community-4f846901f9ff948b",
+      "name": "TypeScript",
+      "url": "https://www.typescriptlang.org/",
+      "sourceUrl": "https://github.com/sorrycc/awesome-javascript/blob/master/README.md",
+      "description": "A typed superset of JavaScript that compiles to plain JavaScript.",
+      "category": "tools",
+      "kind": "tool",
+      "tags": [
+        "javascript",
+        "web",
+        "type checkers"
+      ],
+      "origin": "community-index",
+      "featured": false,
+      "icon": "/api/resource-icon/community-4f846901f9ff948b?v=4",
+      "projectLinks": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/Microsoft/TypeScript"
+        }
+      ]
+    },
+    "community-3c4f23dab56aca93": {
+      "id": "community-3c4f23dab56aca93",
+      "name": "Unsloth",
+      "url": "https://unsloth.ai/",
+      "sourceUrl": "https://github.com/steven2358/awesome-generative-ai/blob/main/README.md",
+      "description": "Use Unsloth to run a local language model and experiment with fine-tuning it on example responses.",
+      "category": "tools",
+      "kind": "tool",
+      "tags": [
+        "ai",
+        "generative-ai",
+        "coding",
+        "developer tools",
+        "llm"
+      ],
+      "origin": "community-index",
+      "featured": false,
+      "guidance": {
+        "bestFor": "Compare an existing model with an adapter trained to answer a small, specific set of questions.",
+        "frameworks": [
+          "Local language models",
+          "Python",
+          "LoRA"
+        ],
+        "setup": "advanced",
+        "caveat": "Check the hardware requirements for your chosen model and training method. A model that runs for inference may need more memory for training.",
+        "checkedAt": "2026-11-02",
+        "sourceUrls": [
+          "https://unsloth.ai/"
+        ]
+      },
+      "icon": "/api/resource-icon/community-3c4f23dab56aca93?v=4",
+      "projectLinks": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/unslothai/unsloth"
+        }
+      ]
+    },
+    "community-8c68eb73978eb348": {
+      "id": "community-8c68eb73978eb348",
+      "name": "Vant",
+      "url": "https://youzan.github.io/vant",
+      "sourceUrl": "https://github.com/bradtraversy/design-resources-for-developers/blob/master/readme.md",
+      "description": "Lightweight Mobile UI Components built on Vue.",
+      "category": "inspiration",
+      "kind": "gallery",
+      "tags": [
+        "design",
+        "frontend",
+        "ui",
+        "vue ui libraries",
+        "mobile"
+      ],
+      "origin": "community-index",
+      "featured": false,
+      "icon": "/api/resource-icon/community-8c68eb73978eb348?v=4",
+      "projectLinks": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/youzan/vant"
+        }
+      ]
+    },
+    "community-fa47a130b33588a4": {
+      "id": "community-fa47a130b33588a4",
+      "name": "Vite",
+      "url": "https://vite.dev/",
+      "sourceUrl": "https://github.com/sorrycc/awesome-javascript/blob/master/README.md",
+      "description": "Next Generation Frontend Tooling.",
+      "category": "tools",
+      "kind": "tool",
+      "tags": [
+        "javascript",
+        "web",
+        "bundlers",
+        "nodejs",
+        "backend",
+        "packages",
+        "build tools",
+        "react",
+        "frontend",
+        "components",
+        "react development tools",
+        "vue",
+        "components & libraries",
+        "scaffold"
+      ],
+      "origin": "community-index",
+      "featured": false,
+      "guidance": {
+        "bestFor": "Starting a frontend with quick local updates and an optimized production build.",
+        "frameworks": [
+          "JavaScript",
+          "TypeScript",
+          "Frontend tooling"
+        ],
+        "setup": "low",
+        "caveat": "Check the production build separately from the development server, especially asset paths under your deployment URL.",
+        "checkedAt": "2026-11-02",
+        "sourceUrls": [
+          "https://github.com/vitejs/vite"
+        ]
+      },
+      "icon": "/api/resource-icon/community-fa47a130b33588a4?v=4",
+      "projectLinks": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/vitejs/vite"
+        },
+        {
+          "label": "Legacy website",
+          "url": "https://vitejs.dev/"
+        },
+        {
+          "label": "Community guide",
+          "url": "https://github.com/vitejs/awesome-vite"
+        }
+      ],
+      "projectGuidanceFrom": "community-2b14193563ce6363"
+    },
+    "community-d59136e2bdd22d83": {
+      "id": "community-d59136e2bdd22d83",
+      "name": "Wave UI",
+      "url": "https://antoniandre.github.io/wave-ui/",
+      "sourceUrl": "https://github.com/bradtraversy/design-resources-for-developers/blob/master/readme.md",
+      "description": "A Vue.js UI framework with only the bright side.",
+      "category": "inspiration",
+      "kind": "gallery",
+      "tags": [
+        "design",
+        "frontend",
+        "ui",
+        "vue ui libraries"
+      ],
+      "origin": "community-index",
+      "featured": false,
+      "icon": "/api/resource-icon/community-d59136e2bdd22d83?v=4",
+      "projectLinks": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/antoniandre/wave-ui"
+        }
+      ]
+    },
+    "community-91ce0575a53447f4": {
+      "id": "community-91ce0575a53447f4",
+      "name": "WebdriverI/O",
+      "url": "https://webdriver.io/",
+      "sourceUrl": "https://github.com/sorrycc/awesome-javascript/blob/master/README.md",
+      "description": "Next-gen browser and mobile automation test framework for Node.js",
+      "category": "tools",
+      "kind": "tool",
+      "tags": [
+        "javascript",
+        "web",
+        "testing frameworks",
+        "frameworks",
+        "testing",
+        "mobile",
+        "automation"
+      ],
+      "origin": "community-index",
+      "featured": false,
+      "icon": "/api/resource-icon/community-91ce0575a53447f4?v=4",
+      "projectLinks": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/webdriverio/webdriverio"
+        }
+      ]
+    },
+    "community-3dc044898a14126a": {
+      "id": "community-3dc044898a14126a",
+      "name": "Webpack",
+      "url": "http://webpack.github.io/",
+      "sourceUrl": "https://github.com/dzharii/awesome-typescript/blob/master/README.md",
+      "description": "supports CommonJS and AMD module bundling",
+      "category": "tools",
+      "kind": "tool",
+      "tags": [
+        "typescript",
+        "javascript",
+        "module bundlers",
+        "nodejs",
+        "backend",
+        "packages",
+        "build tools",
+        "web",
+        "bundlers"
+      ],
+      "origin": "community-index",
+      "featured": false,
+      "guidance": {
+        "bestFor": "An existing frontend that already has a webpack config and needs another entry or asset type.",
+        "frameworks": [
+          "JavaScript",
+          "Bundler",
+          "Node.js"
+        ],
+        "setup": "moderate",
+        "caveat": "Loaders and plugins affect different stages. Changing both at once makes a build failure harder to isolate.",
+        "checkedAt": "2026-11-02",
+        "sourceUrls": [
+          "https://github.com/webpack/webpack"
+        ]
+      },
+      "icon": "/api/resource-icon/community-3dc044898a14126a?v=4",
+      "projectLinks": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/webpack/webpack"
+        }
+      ],
+      "projectGuidanceFrom": "community-26bdc348dc94e4e5"
+    },
+    "community-5e5731fa5f1eadff": {
+      "id": "community-5e5731fa5f1eadff",
+      "name": "WireMock",
+      "url": "https://wiremock.org/",
+      "sourceUrl": "https://github.com/akullpp/awesome-java/blob/master/README.md",
+      "description": "Stubs and mocks web services.",
+      "category": "tools",
+      "kind": "tool",
+      "tags": [
+        "java",
+        "backend",
+        "projects",
+        "testing",
+        "mocking"
+      ],
+      "origin": "community-index",
+      "featured": false,
+      "icon": "/api/resource-icon/community-5e5731fa5f1eadff?v=4",
+      "projectLinks": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/wiremock/wiremock"
+        }
+      ]
+    },
+    "community-34dcc8b3b08355db": {
+      "id": "community-34dcc8b3b08355db",
+      "name": "zoom-image",
+      "url": "https://willnguyen1312.github.io/zoom-image/",
+      "sourceUrl": "https://github.com/vuejs/awesome-vue/blob/master/README.md",
+      "description": "A little yet powerful framework agnostic library to zoom image on the web",
+      "category": "components",
+      "kind": "library",
+      "tags": [
+        "vue",
+        "frontend",
+        "components",
+        "components & libraries",
+        "ui components",
+        "miscellaneous",
+        "images"
+      ],
+      "origin": "community-index",
+      "featured": false,
+      "icon": "/api/resource-icon/community-34dcc8b3b08355db?v=4",
+      "projectLinks": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/willnguyen1312/zoom-image"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,35 @@
+.connections {
+  display: grid;
+  gap: 12px;
+  margin-block: 16px;
+  padding-inline-start: 12px;
+  border-inline-start: 1px solid currentColor;
+  color: var(--muted, #a6a6b2);
+}
+
+.connections h3 {
+  color: var(--text, #e4e4eb);
+  font-size: 13px;
+  font-weight: 550;
+}
+
+.connections ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px 14px;
+  margin-top: 3px;
+}
+
+.connections a {
+  display: inline-block;
+  padding-block: 3px;
+  color: var(--aqua, #c9c9d5);
+  font-size: 13px;
+  line-height: 1.55;
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, currentColor 35%, transparent);
+  text-underline-offset: 3px;
+}
+
+.connections a.primary { color: var(--text, #eeeef2); font-weight: 600; }
+.connections a:hover, .connections a:focus-visible { text-decoration-color: currentColor; }

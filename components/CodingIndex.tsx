@@ -12,17 +12,27 @@ import { SearchComposer } from "./SearchComposer";
 import { ProjectTray } from "./ProjectTray";
 import { LaptopTiltControls } from "./LaptopTiltControls";
 import type { TiltStatus } from "./floor/tilt";
-import { buildProjectBrief, PROJECT_LIMIT, readResource } from "@/lib/project-brief";
+import { buildProjectBrief, canonicalResourceId, PROJECT_LIMIT, readResource } from "@/lib/project-brief";
 import { useReviewedLibrary } from "./useReviewedLibrary";
-import { categories, indexPath, pageSize, resourcePath, type Panel } from "@/lib/index-navigation";
+import { categories, indexPath, pageSize, resourceFormats, resourcePath, type Panel } from "@/lib/index-navigation";
 import { correctSearchPage, navigateIndex, useIndexLocation } from "./useIndexLocation";
 import { useLibraryStore } from "./useLibraryStore";
 import { ResourceActions, projectPickNotice } from "./ResourceActions";
+import { ResultLogo } from "./ResultLogo";
+import { ProjectConnections } from "./ProjectConnections";
+import { useMotionPreference } from "./useMotionPreference";
 
-type Result = { resources: Resource[]; total: number; offset: number; filters?: { apiKey: "not-required" } };
+type Result = { resources: Resource[]; total: number; offset: number; filters?: { apiKey?: "not-required"; account?: "not-required" } };
 
 function displayHost(url: string) {
   return new URL(url).hostname.replace(/^www\./, "");
+}
+
+function ConnectionSummary({ resource }: { resource: Resource }) {
+  const details = resource.projectLinks?.map(link => link.label) ?? [];
+  const count = resource.relatedTools?.length ?? 0;
+  if (count) details.push(`${count} related ${count === 1 ? "tool" : "tools"}`);
+  return details.length ? <small>{details.join(" · ")}</small> : null;
 }
 
 export function CodingIndex({ featured, indexed, sources, reserveSources }: {
@@ -30,7 +40,7 @@ export function CodingIndex({ featured, indexed, sources, reserveSources }: {
 }) {
   const [text, setText] = useState("");
   const route = useIndexLocation();
-  const { category, panel } = route;
+  const { category, kind, panel } = route;
   const query = route.query ?? "";
   const [result, setResult] = useState<Result | null>(null);
   const [busy, setBusy] = useState(false);
@@ -39,18 +49,20 @@ export function CodingIndex({ featured, indexed, sources, reserveSources }: {
   const { library, store, available } = useLibraryStore();
   const featuredById = useMemo(() => new Map(featured.map(resource => [resource.id, resource])), [featured]);
   const { project, saved } = useReviewedLibrary(library, featuredById);
-  const selected = route.resource
-    ? featuredById.get(route.resource) ?? result?.resources.find(item => item.id === route.resource)
-      ?? project.resources.find(item => item.id === route.resource) ?? saved.find(item => item.id === route.resource)
-      ?? (fetchedResource?.id === route.resource ? fetchedResource : null)
+  const selectedId = route.resource ? canonicalResourceId(route.resource) : null;
+  const selected = selectedId
+    ? featuredById.get(selectedId) ?? result?.resources.find(item => item.id === selectedId)
+      ?? project.resources.find(item => item.id === selectedId) ?? saved.find(item => item.id === selectedId)
+      ?? (fetchedResource?.id === selectedId ? fetchedResource : null)
     : null;
-  const [paused, setPaused] = useState(false);
+  const [paused, setPaused] = useMotionPreference();
   const [reducedMotion, setReducedMotion] = useState(false);
   const motionPaused = paused || reducedMotion;
   const [copyStatus, setCopyStatus] = useState("");
   const [copyFallback, setCopyFallback] = useState("");
   const [floorVersion, setFloorVersion] = useState(0);
   const [projectNotice, setProjectNotice] = useState("");
+  const [additionSequence, setAdditionSequence] = useState(0);
   const [tiltStatus, setTiltStatus] = useState<TiltStatus>({ state: "off", message: "" });
   const tiltWanted = useRef(false);
   const dropTarget = useRef<HTMLButtonElement>(null);
@@ -63,6 +75,7 @@ export function CodingIndex({ featured, indexed, sources, reserveSources }: {
   const requestedOffset = useRef(0);
   const hadSearch = useRef(false);
   const lastKey = useRef(0);
+  const focusProjectGoal = useRef(false);
   const ready = useCallback(() => setFloorVersion(value => value + 1), []);
   const onTiltStatus = useCallback((status: TiltStatus) => {
     if (status.state === "unavailable") tiltWanted.current = false;
@@ -91,6 +104,7 @@ export function CodingIndex({ featured, indexed, sources, reserveSources }: {
   }, [matches, floorVersion]);
 
   useEffect(() => { floor.current?.setPaused(paused); }, [paused, floorVersion]);
+  useEffect(() => { floor.current?.setSuspended(Boolean(panel || selected)); }, [panel, selected, floorVersion]);
   useEffect(() => { floor.current?.setTiltEnabled(tiltWanted.current); }, [floorVersion]);
 
   useEffect(() => {
@@ -119,9 +133,15 @@ export function CodingIndex({ featured, indexed, sources, reserveSources }: {
     return rect ? { left: rect.left, right: rect.right, top: rect.top, bottom: rect.bottom } : null;
   }, []);
 
+  const announcePick = useCallback((message: string, added: boolean) => {
+    setProjectNotice(message);
+    if (added) setAdditionSequence(count => count + 1);
+  }, []);
+
   const addToProject = useCallback(async (resource: Resource) => {
-    setProjectNotice(projectPickNotice(resource.name, await store.select("project", resource, true)));
-  }, [store]);
+    const outcome = await store.select("project", resource, true);
+    announcePick(projectPickNotice(resource.name, outcome), outcome.changed);
+  }, [store, announcePick]);
 
   async function removeFromProject(resource: Resource) {
     const outcome = await store.select("project", resource, false);
@@ -160,6 +180,13 @@ export function CodingIndex({ featured, indexed, sources, reserveSources }: {
   }, [selected]);
 
   useEffect(() => {
+    if (panel === "project" && !selected && focusProjectGoal.current) {
+      focusProjectGoal.current = false;
+      document.getElementById("project-goal")?.focus();
+    }
+  }, [panel, selected]);
+
+  useEffect(() => {
     if (!route.resource || selected) return;
     const controller = new AbortController();
     const id = route.resource;
@@ -185,7 +212,7 @@ export function CodingIndex({ featured, indexed, sources, reserveSources }: {
     navigateIndex({ resource: resource?.id ?? null }, !resource);
   }, []);
 
-  const fetchResults = useCallback(async (raw: string, filter = "", offset = 0) => {
+  const fetchResults = useCallback(async (raw: string, filter = "", offset = 0, format = "") => {
     const value = raw.trim();
     const id = ++requestId.current;
     abort.current?.abort();
@@ -198,12 +225,12 @@ export function CodingIndex({ featured, indexed, sources, reserveSources }: {
     setText(value);
 
     try {
-      const params = new URLSearchParams({ q: value, category: filter, limit: String(pageSize), offset: String(offset) });
+      const params = new URLSearchParams({ q: value, category: filter, kind: format, limit: String(pageSize), offset: String(offset) });
       const response = await fetch(`/api/resources?${params}`, { signal: controller.signal });
       if (!response.ok) throw new Error("Search could not load. Please try again.");
       const next = await response.json() as Result;
       if (id !== requestId.current || controller.signal.aborted) return;
-      if (correctSearchPage(value, filter, offset, next.total)) return;
+      if (correctSearchPage(value, filter, offset, next.total, format)) return;
       setResult(next);
       setBusy(false);
     } catch {
@@ -215,23 +242,23 @@ export function CodingIndex({ featured, indexed, sources, reserveSources }: {
   }, []);
 
   useEffect(() => {
-    if (route.query !== null || route.category || route.page > 1) {
+    if (route.query !== null || route.category || route.kind || route.page > 1) {
       hadSearch.current = true;
-      void fetchResults(route.query ?? "", route.category, (route.page - 1) * pageSize);
+      void fetchResults(route.query ?? "", route.category, (route.page - 1) * pageSize, route.kind);
     } else if (hadSearch.current) {
       hadSearch.current = false;
       requestId.current++;
       abort.current?.abort();
       setText(""); setResult(null); setBusy(false); setError("");
     }
-  }, [route.query, route.category, route.page, fetchResults]);
+  }, [route.query, route.category, route.kind, route.page, fetchResults]);
 
-  function search(raw: string, filter = "", offset = 0, nextPanel = panel) {
+  function search(raw: string, filter = "", offset = 0, nextPanel = panel, format = kind) {
     const value = raw.trim();
     const page = Math.floor(offset / pageSize) + 1;
-    navigateIndex({ query: value, category: filter, page, panel: nextPanel, resource: null });
-    if (value === route.query && filter === route.category && page === route.page) {
-      void fetchResults(value, filter, offset);
+    navigateIndex({ query: value, category: filter, kind: format, page, panel: nextPanel, resource: null });
+    if (value === route.query && filter === route.category && format === route.kind && page === route.page) {
+      void fetchResults(value, filter, offset, format);
     }
   }
 
@@ -271,12 +298,13 @@ export function CodingIndex({ featured, indexed, sources, reserveSources }: {
 
   const listed = panel === "saved" ? saved : result?.resources || (busy || error ? [] : featured);
   const keyless = result?.filters?.apiKey === "not-required";
-  const emptyMessage = keyless ? "No verified keyless matches." : "No matches. Try a shorter phrase.";
+  const accountFree = result?.filters?.account === "not-required";
+  const emptyMessage = accountFree ? "No verified account-free matches." : keyless ? "No verified keyless matches." : "No matches. Try a shorter phrase.";
   const activeCategory = categories.find(([id]) => id === category)?.[1];
   const actionLabel = error ? "Retry search" : !result ? "" : result.total > 0 ? "View results" : "Browse all";
 
   function browseLibrary() {
-    search("", "", 0, "results");
+    search("", "", 0, "results", "");
   }
 
   function submitSearch(value: string) {
@@ -295,17 +323,17 @@ export function CodingIndex({ featured, indexed, sources, reserveSources }: {
 
     <main className="index-main">
       <div className="index-search" ref={bar}>
-        <SearchComposer value={text} onChange={onType} onSubmit={submitSearch} onClear={() => { navigateIndex({ query: null, category: "", page: 1 }); onType(""); }} actionLabel={actionLabel} busy={busy} paused={motionPaused} />
+        <SearchComposer value={text} onChange={onType} onSubmit={submitSearch} onClear={() => { navigateIndex({ query: null, category: "", kind: "", page: 1 }); onType(""); }} actionLabel={actionLabel} busy={busy} paused={motionPaused} suspended={Boolean(panel || selected)} />
         <div className="index-underbar">
-          <span role="status">{busy ? "Searching the index…" : error || (result?.total === 0 ? emptyMessage : result ? `${result.total.toLocaleString()} ${result.total === 1 ? "resource" : "resources"} found${keyless ? " · Verified keyless access" : ""}` : "Find a tool or reference for your project.")}</span>
+          <span role="status">{busy ? "Searching the index…" : error || (result?.total === 0 ? emptyMessage : result ? `${result.total.toLocaleString()} ${result.total === 1 ? "resource" : "resources"} found${keyless ? " · Verified keyless access" : ""}` : "Find a tool or reference for your project.")}{!busy && !error && Boolean(result?.total) && !panel && <span className="sr-only">. Press Enter again to open the results list.</span>}</span>
           <button onClick={browseLibrary}>{indexed.toLocaleString()} indexed <span aria-hidden="true">↗</span></button>
         </div>
         <div className="index-categories" role="group" aria-label="Filter by category">{categories.map(([id, label]) => <button key={id} aria-pressed={category === id} onClick={() => void search(text, category === id ? "" : id)}>{label}</button>)}</div>
-        {!result && !busy && !error && !text && !category && <div className="index-starters"><span>Try a search</span>{["a homework dashboard with due dates", "microinteractions", "testing"].map(example => <button key={example} onClick={() => void search(example)}>{example}</button>)}</div>}
+        {!result && !busy && !error && !text && !category && !kind && <div className="index-starters"><span>Try a search</span>{["a homework dashboard with due dates", "microinteractions", "testing"].map(example => <button key={example} onClick={() => void search(example)}>{example}</button>)}</div>}
       </div>
     </main>
 
-    <ProjectTray project={project} dropRef={dropTarget} notice={projectNotice} onOpen={() => {setPanel("project"); setCopyStatus(""); setCopyFallback("");}} />
+    <ProjectTray project={project} dropRef={dropTarget} notice={projectNotice} motionPaused={motionPaused} additionSequence={additionSequence} onOpen={() => {setPanel("project"); setCopyStatus(""); setCopyFallback("");}} />
 
     <footer className="index-footer">
       <span>{featured.length} featured resources</span>
@@ -339,8 +367,25 @@ export function CodingIndex({ featured, indexed, sources, reserveSources }: {
           <h2>Human-readable and machine-readable</h2><p>Every resource has an ordinary page with its description, tags and original sources. The API provides the same index as JSON.</p><p className="index-note">The index includes {featured.length} featured resources and references imported from community-maintained collections. Imported destination sites have not all been individually checked.</p><p className="index-note">During local preview, agents need access to this computer’s localhost. A public deployment makes these URLs available remotely.</p>
           <p aria-live="polite">{copyStatus}</p>{copyFallback && <textarea readOnly value={copyFallback} aria-label="Agent prompt to copy" />}
         </div> : <>
-          <div className="index-resource-list">{listed.map(resource => <button className="index-resource-row" key={resource.id} onClick={() => chooseResource(resource)}><img src={resource.icon} alt="" width="40" height="40" loading="lazy"/><span><strong>{resource.name}</strong><span>{resource.description}</span><small>{displayHost(resource.url)} · {resource.kind} · {resource.guidance ? "Guidance checked" : resource.featured ? "Featured" : "Community reference"}{apiKeyLabel(resource) && ` · ${apiKeyLabel(resource)}`}</small>{keyless && resource.requirements?.apiKey === "conditional" && <small>{resource.requirements.note}</small>}</span><span aria-hidden="true">›</span></button>)}</div>
-          {listed.length === 0 && <p className="index-empty">{panel === "saved" ? "Open a resource and save it here for your next project." : busy ? "Searching…" : error || (keyless ? "No resources with verified keyless access matched. Try a different topic or browse all resources." : "No resources matched. Try a shorter phrase or a category.")}</p>}
+          {panel === "results" && <label className="index-format-filter" htmlFor="resource-format">Format
+            <select id="resource-format" value={kind} onChange={event => search(query, category, 0, "results", event.target.value)}>
+              <option value="">All formats</option>{resourceFormats.map(([id, label]) => <option key={id} value={id}>{label}</option>)}
+            </select>
+          </label>}
+          <div className="index-resource-list">{listed.map(resource =>
+            <button className="index-resource-row" key={resource.id} onClick={() => chooseResource(resource)}>
+              <ResultLogo src={resource.icon} paused={motionPaused} />
+              <span>
+                <strong>{resource.name}</strong>
+                <span>{resource.description}</span>
+                <small>{displayHost(resource.url)} · {resource.kind} · {resource.guidance ? "Guidance checked" : resource.featured ? "Featured" : "Community reference"}{apiKeyLabel(resource) && ` · ${apiKeyLabel(resource)}`}</small>
+                <ConnectionSummary resource={resource} />
+                {keyless && resource.requirements?.apiKey === "conditional" && <small>{resource.requirements.note}</small>}
+              </span>
+              <span aria-hidden="true">›</span>
+            </button>
+          )}</div>
+          {listed.length === 0 && <p className="index-empty">{panel === "saved" ? "Open a resource and save it here for your next project." : busy ? "Searching…" : error || (accountFree ? "No resources with verified account-free access matched. An API-key check does not confirm whether signup is required. Try a different constraint or browse all resources." : keyless ? "No resources with verified keyless access matched. Try a different topic or browse all resources." : "No resources matched. Try a shorter phrase or a different format or category.")}</p>}
           {panel === "results" && error && <button className="index-search-recovery" onClick={() => void search(query, category, requestedOffset.current)}>Retry search</button>}
           {panel === "results" && result?.total === 0 && <button className="index-search-recovery" onClick={browseLibrary}>Browse all resources</button>}
           {panel === "results" && result && result.total > 0 && <div className="index-pagination"><button disabled={busy || result.offset === 0} onClick={() => void search(query, category, Math.max(0, result.offset - 60))}>Previous</button><span>{result.offset + 1}–{Math.min(result.offset + result.resources.length, result.total)} of {result.total.toLocaleString()}</span><button disabled={busy || result.offset + result.resources.length >= result.total} onClick={() => void search(query, category, result.offset + 60)}>Next</button></div>}
@@ -352,13 +397,20 @@ export function CodingIndex({ featured, indexed, sources, reserveSources }: {
       {selected && <article>
         <div className="index-detail-top"><img src={selected.icon} alt="" width="64" height="64"/><button className="index-close" aria-label="Close resource" onClick={() => chooseResource(null)}>×</button></div>
         <p className="index-eyebrow">{displayHost(selected.url)} · {selected.category} / {selected.kind}</p><h2 id="resource-detail-heading">{selected.name}</h2><p className="index-description">{selected.description}</p>
+        <ResourceActions key={selected.id} resource={selected} store={store} showWebsite={!selected.projectLinks?.length && !selected.relatedTools?.length}
+          inProject={project.resources.some(item => item.id === selectedId)} saved={saved.some(item => item.id === selectedId)}
+          onPick={announcePick} onOpenProject={() => { focusProjectGoal.current = true; setPanel("project"); }} />
         <div className="index-tags">{selected.tags.map(tag => <span key={tag}>{tag}</span>)}</div>
+        <ProjectConnections resource={selected} route={route} onRelated={id => navigateIndex({ resource: id })} />
         <ResourceAccess resource={selected} />
         {selected.guidance ? <section className="resource-guidance"><p className="guidance-date">Sources checked {selected.guidance.checkedAt}</p><dl><dt>Best for</dt><dd>{selected.guidance.bestFor}</dd><dt>Works with</dt><dd>{selected.guidance.frameworks.join(" · ")}</dd><dt>Setup effort</dt><dd>{selected.guidance.setup} <span>(our estimate)</span></dd><dt>Consider</dt><dd>{selected.guidance.caveat}</dd></dl><div>{selected.guidance.sourceUrls.map((url, index) => <a key={url} href={url} target="_blank" rel="noreferrer">Source {index + 1} ↗</a>)}</div></section> : <p className="index-note">{selected.featured ? "Featured in the class collection. Detailed compatibility guidance has not been checked yet." : "Imported community reference. Check its original documentation before using it."}</p>}
-        <ResourceActions key={selected.id} resource={selected} store={store} showWebsite
-          inProject={project.resources.some(item => item.id === selected.id)} saved={saved.some(item => item.id === selected.id)}
-          onPick={setProjectNotice} />
-        <p className="index-note">Read the original resource for current setup, pricing and licensing.</p><div className="index-detail-links"><a href={selected.sourceUrl} target="_blank" rel="noreferrer">{displayHost(selected.sourceUrl) === "x.com" ? "Discovery post on X" : "Original source"} ↗</a><Link prefetch={false} href={resourcePath(selected.id) + indexPath({ ...route, resource: null }).slice(1)}>Resource page ↗</Link>{selected.agentUrl && <a href={selected.agentUrl} target="_blank" rel="noreferrer">Agent-readable guide ↗</a>}</div>
+        <p className="index-note">Read the original resource for current setup, pricing and licensing.</p>
+        <div className="index-detail-links">
+          {selected.sourceUrl !== selected.url && !selected.projectLinks?.some(link => link.url === selected.sourceUrl) &&
+            <a href={selected.sourceUrl} target="_blank" rel="noreferrer">{displayHost(selected.sourceUrl) === "x.com" ? "Discovery post on X" : "Original source"} ↗</a>}
+          <Link prefetch={false} href={resourcePath(selected.id) + indexPath({ ...route, resource: null }).slice(1)}>Resource page ↗</Link>
+          {selected.agentUrl && <a href={selected.agentUrl} target="_blank" rel="noreferrer">Agent-readable guide ↗</a>}
+        </div>
       </article>}
     </dialog>
   </>;

@@ -1,5 +1,4 @@
-import { canonicalResourceId, emptyProject, parseProject, parseSaved, PROJECT_LIMIT, SAVED_LIMIT } from "./project-brief.ts";
-import { resourceIconUrl } from "./resource-icon.ts";
+import { canonicalResourceId, emptyProject, mergeProjectLinks, parseProject, parseSaved, PROJECT_LIMIT, readResource, SAVED_LIMIT } from "./project-brief.ts";
 import type { Project } from "./project-brief.ts";
 import type { Resource } from "./resources";
 import type { getCommunityMetadata } from "./community-metadata.ts";
@@ -21,7 +20,7 @@ export function resolveLibraryResources(
 ): LibrarySnapshot {
   const resolve = (item: Resource) => {
     const current = featured.get(item.id);
-    if (current) return current;
+    if (current) return mergeProjectLinks(current, item);
     const review = item.origin === "community-index" && communityReview?.(item.id);
     return review ? { ...item, ...review } : item;
   };
@@ -85,23 +84,28 @@ export function createLibraryStore(access: () => StorageAccess, lock: Lock, publ
   }
 
   async function select(collection: Collection, resource: Resource, include: boolean) {
-    const id = canonicalResourceId(resource.id);
-    if (id !== resource.id) resource = { ...resource, id, icon: resourceIconUrl(id) };
+    const valid = readResource(resource);
+    if (!valid) return { full: false, changed: false, persistent: !inMemory.has(collection) };
+    resource = valid;
     const key = keyFor(collection);
     const apply = (storage?: StorageAccess) => {
       const project = storage && collection === "project" ? parseProject(storage.getItem(key)) : state.project;
       const items = collection === "project" ? project.resources : storage ? parseSaved(storage.getItem(key)) : state.saved;
-      const present = items.some(item => item.id === resource.id);
+      const present = items.some(item => canonicalResourceId(item.id) === resource.id);
       const full = include && !present && items.length >= (collection === "project" ? PROJECT_LIMIT : SAVED_LIMIT);
       let next = items;
-      if (!full && include !== present) {
-        next = include ? [...items, resource] : items.filter(item => item.id !== resource.id);
+      const changed = !full && include !== present;
+      if (!full) {
+        if (include) next = present ? items.map(item => canonicalResourceId(item.id) === resource.id ? mergeProjectLinks(resource, item) : item) : [...items, resource];
+        else next = items.filter(item => canonicalResourceId(item.id) !== resource.id);
+        // The locked read normalizes older IDs; write that migration with this
+        // edit so a stale tab cannot reintroduce an alternate as a second pick.
         try { storage?.setItem(key, JSON.stringify(collection === "project" ? { ...project, resources: next } : next)); }
         catch { inMemory.add(collection); }
       }
       state = collection === "project" ? { ...state, project: { ...state.project, resources: next } } : { ...state, saved: next };
       publish(state);
-      return { full, changed: items !== next, persistent: !inMemory.has(collection) };
+      return { full, changed, persistent: !inMemory.has(collection) };
     };
     if (!inMemory.has(collection)) {
       try { return await lock(key, () => apply(access())); }

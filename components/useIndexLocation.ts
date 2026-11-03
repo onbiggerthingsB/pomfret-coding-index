@@ -21,8 +21,8 @@ export function useIndexLocation() {
   return useMemo(() => parseIndexLocation(search), [search]);
 }
 
-export function correctSearchPage(query: string, category: string, offset: number, total: number): boolean {
-  const path = correctedSearchPath(window.location.search, query, category, offset, total);
+export function correctSearchPage(query: string, category: string, offset: number, total: number, kind = ""): boolean {
+  const path = correctedSearchPath(window.location.search, query, category, offset, total, kind);
   if (!path) return false;
   window.history.replaceState({ codingIndexParent: window.history.state?.codingIndexParent }, "", path);
   window.dispatchEvent(new Event(changed));

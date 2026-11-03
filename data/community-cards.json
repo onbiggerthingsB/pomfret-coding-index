@@ -4948,5 +4948,290 @@
         "https://actualbudget.org/"
       ]
     }
+  },
+  "community-199f54a303c3a414": {
+    "name": "React Image Crop",
+    "description": "Let a user crop a profile picture with a resizable selection, fixed aspect ratio, and keyboard controls in React.",
+    "kind": "library",
+    "guidance": {
+      "bestFor": "Adding an accessible avatar crop step before saving a profile picture.",
+      "frameworks": [
+        "React",
+        "TypeScript"
+      ],
+      "setup": "moderate",
+      "caveat": "The crop editor needs an export and storage step in your app; check phone photo orientation before cropping.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://github.com/DominicTobias/react-image-crop"
+      ]
+    }
+  },
+  "community-64420effefa6ff04": {
+    "name": "React Easy Crop",
+    "description": "Add a draggable, zoomable profile picture cropper with rotation and a round avatar preview in React.",
+    "kind": "library",
+    "guidance": {
+      "bestFor": "Letting someone position their face inside a circular profile image before upload.",
+      "frameworks": [
+        "React",
+        "TypeScript"
+      ],
+      "setup": "moderate",
+      "caveat": "Crop callbacks return coordinates; use the export example to produce an image. Give the cropper a positioned parent and avoid scale animations on its dialog.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://github.com/ValentinH/react-easy-crop"
+      ]
+    }
+  },
+  "community-aa2d56a8a61a7278": {
+    "name": "React Dropzone",
+    "description": "Build a drag-and-drop image picker for a profile photo or attachment form, with file acceptance and size checks.",
+    "kind": "library",
+    "guidance": {
+      "bestFor": "Selecting a local image before passing it to a cropper and upload handler.",
+      "frameworks": [
+        "React",
+        "TypeScript"
+      ],
+      "setup": "moderate",
+      "caveat": "This handles file selection, not HTTP upload or image cropping. Connect the accepted files to your own editor and upload request.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://github.com/react-dropzone/react-dropzone"
+      ]
+    }
+  },
+  "community-b79e689c2e7c2468": {
+    "name": "FilePond",
+    "description": "Add a file upload interface with image previews, progress, and optional validation, resize, and crop plugins.",
+    "kind": "library",
+    "guidance": {
+      "bestFor": "Uploading profile pictures or project attachments with visible progress and a preview.",
+      "frameworks": [
+        "JavaScript",
+        "React",
+        "Vue",
+        "Svelte",
+        "Angular"
+      ],
+      "setup": "moderate",
+      "caveat": "Asynchronous uploads need configured server endpoints. Image preview, validation, and transformation features require their corresponding plugins.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://pqina.nl/filepond/docs/",
+        "https://pqina.nl/filepond/docs/api/server/"
+      ]
+    }
+  },
+  "community-5f777abb63ec3a7a": {
+    "name": "Vue Picture Cropper",
+    "description": "Add a Vue 3 image cropping panel for profile pictures using a wrapper around Cropper.js.",
+    "kind": "library",
+    "guidance": {
+      "bestFor": "Cropping an avatar in an existing Vue 3 project.",
+      "frameworks": [
+        "Vue 3",
+        "TypeScript"
+      ],
+      "setup": "moderate",
+      "caveat": "Follow the documented Cropper.js major version when installing the peer dependency; the current installation example uses cropperjs@^1.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://github.com/chengpeiquan/vue-picture-cropper",
+        "https://cropper.chengpeiquan.com/quick-start.html"
+      ]
+    }
+  },
+  "community-ca8a8cfa32ad9678": {
+    "name": "React Native Image Crop Picker",
+    "description": "Choose a photo from the camera or gallery, crop it, and compress it in a React Native iOS or Android app.",
+    "kind": "library",
+    "guidance": {
+      "bestFor": "Adding a profile photo picker to a native mobile app.",
+      "frameworks": [
+        "React Native",
+        "iOS",
+        "Android"
+      ],
+      "setup": "moderate",
+      "caveat": "This is a native mobile dependency, not a browser cropper. Configure platform permissions and match the package version to your React Native architecture.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://github.com/ivpusic/react-native-image-crop-picker"
+      ]
+    }
+  },
+  "community-98c6de16bf137f88": {
+    "name": "Dropzone",
+    "description": "Add drag-and-drop file uploads with image thumbnails and progress bars to a JavaScript website.",
+    "kind": "library",
+    "guidance": {
+      "bestFor": "A plain JavaScript attachment form that uploads files to an existing endpoint.",
+      "frameworks": [
+        "JavaScript",
+        "HTML",
+        "CSS"
+      ],
+      "setup": "moderate",
+      "caveat": "The upload UI still needs a server endpoint that accepts the files; use React Dropzone instead if you only need React file selection hooks.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://github.com/enyo/dropzone"
+      ]
+    }
+  },
+  "community-f40273321ce20f7a": {
+    "name": "Lighthouse (Chrome)",
+    "description": "Audit a slow website for performance, accessibility, and loading issues, then follow the report to investigate specific fixes.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Finding why a website loads slowly before asking an agent to change images, scripts, or styles.",
+      "frameworks": [
+        "Any web stack",
+        "Chrome"
+      ],
+      "setup": "low",
+      "caveat": "The catalog link is the Chrome extension. Chrome recommends its built-in DevTools Lighthouse panel for local or signed-in pages; use the official guide below.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://developer.chrome.com/docs/lighthouse/overview"
+      ]
+    }
+  },
+  "community-f72e37d8046bb30e": {
+    "name": "DebugBear Speed Test",
+    "description": "Investigate a slow website with a page speed report, loading filmstrip, and network request waterfall.",
+    "kind": "tool",
+    "guidance": {
+      "bestFor": "Seeing which images, scripts, or server requests delay a website loading.",
+      "frameworks": [
+        "Any web stack"
+      ],
+      "setup": "low",
+      "caveat": "A synthetic speed test describes its test conditions, not every visitor. Compare equivalent runs and distinguish load measurements from real-user data.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://www.debugbear.com/docs/waterfall",
+        "https://www.debugbear.com/docs/metrics/speed-index"
+      ]
+    }
+  },
+  "community-4b6ef69bbb91a22f": {
+    "name": "Addy Osmani / Performance",
+    "description": "Give an agent a measurement-first workflow to investigate why a website is slow and verify improvements to loading and responsiveness.",
+    "kind": "skills",
+    "guidance": {
+      "bestFor": "Turning a slow website complaint into a measured bottleneck and a before-and-after check.",
+      "frameworks": [
+        "Any web stack",
+        "Chrome DevTools"
+      ],
+      "setup": "moderate",
+      "caveat": "The skill is a workflow, not a profiler. Supply a runnable page and browser measurements; code-only observations remain hypotheses.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://github.com/addyosmani/web-quality-skills/blob/main/skills/performance/SKILL.md"
+      ]
+    }
+  },
+  "community-80d9da837dafae68": {
+    "name": "Addy Osmani / Core Web Vitals",
+    "description": "Guide an agent through slow content loading, delayed clicks, and jumping layouts using LCP, INP, and CLS evidence.",
+    "kind": "skills",
+    "guidance": {
+      "bestFor": "Diagnosing a hero image that appears late, an unresponsive button, or a page that shifts while loading.",
+      "frameworks": [
+        "Any web stack",
+        "Chrome DevTools"
+      ],
+      "setup": "moderate",
+      "caveat": "Keep lab traces separate from real-user metrics. A local improvement does not establish an immediate improvement for production visitors.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://github.com/addyosmani/web-quality-skills/blob/main/skills/core-web-vitals/SKILL.md"
+      ]
+    }
+  },
+  "community-3aeac145af671259": {
+    "name": "Anthropic / Webapp Testing",
+    "description": "Help an agent test a local website with Python Playwright scripts, browser screenshots, and console logs.",
+    "kind": "skills",
+    "guidance": {
+      "bestFor": "Checking that a sign-up form, search, or navigation works in a running browser after an agent changes the app.",
+      "frameworks": [
+        "Python",
+        "Playwright",
+        "Any web stack"
+      ],
+      "setup": "moderate",
+      "caveat": "The workflow needs a running app plus Python Playwright and a browser. Its helper can manage servers, but you must define the interactions and expected results.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://github.com/anthropics/skills/blob/main/skills/webapp-testing/SKILL.md"
+      ]
+    }
+  },
+  "community-58a00da73924083d": {
+    "name": "Anthropic / Frontend Design",
+    "description": "Give an agent a visual design process for choosing typography, color, layout, and motion that fit your website and audience.",
+    "kind": "skills",
+    "guidance": {
+      "bestFor": "Replacing a generic landing page with a deliberate design based on the product, content, and users.",
+      "frameworks": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "Frontend frameworks"
+      ],
+      "setup": "low",
+      "caveat": "This supplies design guidance rather than ready-made components. Give the agent a concrete brief and inspect the rendered result.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://github.com/anthropics/skills/blob/main/skills/frontend-design/SKILL.md"
+      ]
+    }
+  },
+  "community-f3f381153e968b47": {
+    "name": "Vercel / Web Design Guidelines",
+    "description": "Review UI code for accessibility, forms, focus states, motion, and other web interface details with file-and-line findings.",
+    "kind": "skills",
+    "guidance": {
+      "bestFor": "Having an agent audit a page before sharing it, especially keyboard use, form labels, and motion preferences.",
+      "frameworks": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "Frontend frameworks"
+      ],
+      "setup": "low",
+      "caveat": "The skill fetches the current guidelines and needs the files to review. A code review should be followed by keyboard and browser checks.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://github.com/vercel-labs/agent-skills/blob/main/skills/web-design-guidelines/SKILL.md",
+        "https://github.com/vercel-labs/web-interface-guidelines/blob/main/command.md"
+      ]
+    }
+  },
+  "community-5bea86da45f8d2b2": {
+    "name": "Google PageSpeed Insights API",
+    "description": "Learn to request Lighthouse performance reports for a website from JavaScript or the command line, including diagnostics for slow page loads.",
+    "kind": "documentation",
+    "guidance": {
+      "bestFor": "Building a website speed checker or asking an agent to collect repeatable page performance reports.",
+      "frameworks": [
+        "HTTP API",
+        "JavaScript",
+        "Any web stack"
+      ],
+      "setup": "moderate",
+      "caveat": "This entry opens API documentation. For a one-off report use the PageSpeed Insights website; use the separate CrUX APIs for real-user data as Google plans to remove that data from this API.",
+      "checkedAt": "2026-11-02",
+      "sourceUrls": [
+        "https://developers.google.com/speed/docs/insights/v5/get-started",
+        "https://pagespeed.web.dev/"
+      ]
+    }
   }
 }

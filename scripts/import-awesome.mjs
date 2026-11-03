@@ -86,6 +86,25 @@ function cleanText(value) {
   return value.replace(/<[^>]*>/g, " ").replace(/!\[[^\]]*\]\([^)]*\)/g, " ").replace(/\[([^\]]+)\]\([^)]*\)/g, "$1").replace(/[*_`~]/g, "").replace(/&amp;/g, "&").replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/\s+/g, " ").trim();
 }
 
+function sourceDescription(line, link, source) {
+  // Bibliographies use the suffix for authors and file formats, rather than a summary.
+  if (source.repo === "EbookFoundation/free-programming-books") return "";
+  const tail = line.slice(link.index + link[0].length)
+    .replace(/\[([^\]]+)\]\([^)]*\)/g, (match, label) => rejectedNames.test(cleanText(label)) ? "" : match);
+  let candidate;
+  if (line.trimStart().startsWith("|")) {
+    candidate = tail.split(/(?<!\\)\|/)[1] ?? "";
+  } else {
+    candidate = cleanText(tail).match(/(?:^|\s)[—–:-]\s+(.+)/)?.[1] ?? "";
+  }
+  const text = cleanText(candidate).replace(/\(\s*\)|\[\s*\]/g, "")
+    .replace(/^(?:\s*[—–:-]\s*)+/, "").replace(/(?:\s*[—–-]\s*)+$/, "")
+    .replace(/\\\|/g, "|").replace(/\s+/g, " ").trim();
+  if (text.length < 16 || text.split(/\s+/).length < 3 || /^https?:\/\//i.test(text)) return "";
+  // Keep list descriptions compact without cutting a word in half.
+  return text.length <= 320 ? text : text.slice(0, 317).replace(/\s+\S*$/, "") + "…";
+}
+
 function resourceUrl(raw, source) {
   if (raw.startsWith("#") || raw.startsWith("mailto:")) return null;
   let input = raw.replace(/^<|>$/g, "").replace(/\\([()])/g, "$1");
@@ -181,7 +200,7 @@ export function parseResources(markdown, source) {
         id: "community-" + createHash("sha256").update(importIdentity(url).toLowerCase()).digest("hex").slice(0, 16),
         name,
         url,
-        description: `Explore ${name} in ${topic}. Listed by ${source.name}.`.slice(0, 200),
+        description: sourceDescription(line, link, source) || `Explore ${name} in ${topic}. Listed by ${source.name}.`.slice(0, 200),
         category,
         tags: [...new Set([...source.tags, ...topicTags, ...features])].slice(0, 16),
         kind,
@@ -272,7 +291,7 @@ export async function saveCatalog(results, importedAt) {
   const metadata = {
     importedAt,
     count: entries.length,
-    method: "Primary resource links from public source lists, screened for duplicates, unusable destinations and classroom relevance. Descriptions summarize the title and source section.",
+    method: "Primary resource links from public source lists, screened for duplicates, unusable destinations and classroom relevance. Descriptions preserve the source list's short summary when present, falling back to the title and source section. The sourceUrl and source license identify its provenance.",
     verification: "Dated GitHub repository checks and confirmed destination failures are recorded in community-review.json. An included link does not certify availability, software behavior or security.",
     qualityReview: { checkedAt: review.checkedAt, candidates: unique.size, removed },
     sources: results.map(result => result.meta),

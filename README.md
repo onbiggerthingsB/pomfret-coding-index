@@ -34,10 +34,13 @@ The [November 2 catalog review](docs/CATALOG_REVIEW.md) covers all 28,359 origin
 
 The large catalog stays on the server. The browser receives the featured collection and paginated search results. The opening pile loads its logos from one image sheet. All 15 reserve tiles that can rotate into the scene also have reviewed guidance. Other search results can have a logo without reviewed guidance. After changing the roster or artwork, rebuild the sheet with `node --experimental-strip-types scripts/build-floor-sheet.mjs`.
 
+The latest catalog pass retained original source summaries for 21,241 community records and added 15 reviewed resources for uploads, image cropping, performance and agent skills. Imported summaries are not individual compatibility reviews. Search groups a project's website, repository and community guide into one choice while keeping distinct ecosystem tools separate. Old links remain addressable, and saved selections and exported briefs use the same project identities.
+
 To rebuild the community data from its recorded public sources, run the following command. It reads the recorded editorial decisions, fetches the public lists and updates the imported records and source manifest. Reviewed duplicate IDs remain usable through resource pages and the API.
 
 ```sh
 npm run import:resources
+node --experimental-strip-types scripts/project-selections.mts --write
 ```
 
 Rebuild the app after changing the catalog so the homepage's count matches the updated API.
@@ -46,13 +49,15 @@ Rebuild the app after changing the catalog so the homepage's count matches the u
 
 - Press `/` to focus search. Describe a project, such as `a homework dashboard with due dates and a completed filter`, or ask for a specific resource by name, then press Enter.
 - Up to 24 matching icons rise above the search bar with resource names. Click one to see its website, checked guidance when available, source and agent handoff. The text list keeps 60 results per page.
-- After submitting a search, press Tab to reach the results list. It includes descriptions and pagination.
-- Share the browser address to reopen a submitted search, category, results page or selected tile. Back and Forward restore those views. To share just one item, choose **Copy link** in its details. It opens a resource page where anyone can read the sources, save the item or add it to their own project.
+- After submitting a search, press Enter again or choose **View results** to open the text list. Its **Format** filter selects libraries, documentation, galleries, articles, videos, tools or agent skills.
+- Share the browser address to reopen a submitted search, category, format, results page or selected tile. Back and Forward restore those views. To share just one item, choose **Copy link** in its details. It opens a resource page where anyone can read the sources, save the item or add it to their own project.
 - Try `weather API without an API key` for providers with documented keyless access. A result marked **Keyless with conditions** explains when that access applies. Providers that require a key or whose access is unverified are excluded. An empty result means the index has no verified match for that search.
+- Account-free access is a separate requirement. The catalog does not currently verify signup requirements, so requests such as `no account` return no verified matches instead of assuming keyless access means no signup.
 - Open tabs in the same browser share saved resources and project picks.
 - Choose **Copy this reference** to send one card to an agent. For several references, drag icons into **My project** or choose **Add to project**. Supply a goal and any stack or setup constraints, then copy or download the Markdown brief. It includes up to 12 resource-page links, their sources and the index's agent guide. The kit stays in the student's browser. Send the brief itself to share the selection.
 - For agents opens a copyable prompt and the machine-readable entry points.
-- Pause motion freezes the scene. Reduced-motion preferences are supported.
+- **Add to project** appears near the resource title; after adding, **Open project kit** takes you directly to the goal field. Older saved website and repository entries for the same project merge into one slot without losing their links.
+- Pause motion persists across page visits. Reduced-motion preferences are supported. The physics and glow suspend behind dialogs and while the page is hidden; paused views still support resource selection. Reduced motion uses a small static orb image.
 - Laptop tilt connects to an optional local helper on a compatible Apple Silicon MacBook. The helper reads the built-in accelerometer, and the page uses it to change gravity. See [laptop tilt setup](docs/LAPTOP_TILT.md).
 
 Agent endpoints are available relative to the deployed origin.
@@ -77,3 +82,5 @@ GitHub entries can use project artwork from their repository or a linked project
 Run `npm test`, `npm run typecheck` and `npm run build` from the app directory. Tests cover catalog decisions, legacy resource links, search ranking, saved kits, icon handling and tilt calibration. The [classroom demo](docs/CLASSROOM_DEMO.md) includes a peer walkthrough.
 
 The November 2 browser checks covered the search orb, keyboard hints, reduced motion, narrow screens and opening a resource from the results. The owner also confirmed that physical tilt moves the icons toward the lowered side in both directions on their MacBook. Optional tilt uses the foreground helper started with `npm run motion`.
+
+The latest local verification passed all 152 tests and the production build. Browser checks covered the search-to-brief workflow, historical resource IDs, format-filter pagination and return links, goal-field focus, and pause persistence. Layout checks covered 1440×900, 390×844, 375×667, 320×568 and a 390×380 viewport. Short headless-Chrome samples recorded no continuous canvas or solver work while paused or covered; these are not physical-phone performance measurements.

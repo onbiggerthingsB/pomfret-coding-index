@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { parseProject, addResource, buildProjectBrief, loadLibraryState } from "../lib/project-brief.ts";
+import { parseProject, parseSaved, addResource, buildProjectBrief, loadLibraryState } from "../lib/project-brief.ts";
 import type { Resource } from "../lib/resources.ts";
 
 const resource: Resource = { id: "example", name: "Example UI", url: "https://example.com/ui", description: "Components for forms", category: "components", tags: ["react"], kind: "library", sourceUrl: "https://example.com/docs", origin: "curated", featured: true, icon: "/api/resource-icon/example" };
@@ -27,6 +27,19 @@ test("adding the same resource twice preserves one selection", () => {
   const next = addResource(addResource([], resource), resource);
   assert.equal(next.length, 1);
   assert.equal(next[0].id, "example");
+});
+
+test("saved links and project picks keep valid project destinations and internal tool IDs", () => {
+  const repository = { label: "GitHub", url: "https://github.com/example/ui" };
+  const charts = { name: "Example Charts", id: "example-charts" };
+  const entry = { ...resource,
+    projectLinks: [repository, null, { label: "bad", url: "javascript:alert(1)" }, { label: "bad", url: "https://user:secret@example.com/" }],
+    relatedTools: [charts, { name: "bad", id: "../outside" }, { name: "bad", id: "//other.example" }],
+  };
+  for (const restored of [parseProject(JSON.stringify({ resources: [entry] })).resources, parseSaved(JSON.stringify([entry]))]) {
+    assert.deepEqual(restored[0].projectLinks, [repository]);
+    assert.deepEqual(restored[0].relatedTools, [charts]);
+  }
 });
 
 test("a saved project preserves its goal and valid resources but drops malformed entries", () => {

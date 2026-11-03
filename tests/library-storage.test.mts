@@ -6,6 +6,7 @@ import { resourceIconUrl } from "../lib/resource-icon.ts";
 import { getCommunityMetadata } from "../lib/community-metadata.ts";
 import { getLibrarySession } from "../components/useLibraryStore.ts";
 import type { Resource } from "../lib/resources.ts";
+import { getResource } from "../lib/resources.ts";
 
 const item = (id: string): Resource => ({
   id, name: id, description: "A code reference", url: "https://example.org/", sourceUrl: "https://example.org/",
@@ -98,6 +99,24 @@ test("simultaneous selectors in stale tabs keep both picks and respect explicit 
     await Promise.all([second.select(collection, item("ant"), false), first.select(collection, item("headless"), true)]);
     first.refresh();
     assert.deepEqual(picks().map(resource => resource.id).sort(), ["headless", "vitest"]);
+  }
+});
+
+test("concurrent website and repository picks use one slot and either identity removes it", async () => {
+  const primary = getResource("ant-design")!;
+  const alternate = getResource("community-a24166629bd76570")!;
+  const { storage, makeTab } = browser();
+  for (const collection of ["project", "saved"] as const) {
+    const first = makeTab(), second = makeTab();
+    const outcomes = await Promise.all([first.select(collection, alternate, true), second.select(collection, primary, true)]);
+    assert.equal(outcomes.filter(outcome => outcome.changed).length, 1);
+    let state = makeTab().state();
+    assert.deepEqual((collection === "saved" ? state.saved : state.project.resources).map(resource => resource.id), [primary.id]);
+    assert.doesNotMatch(storage.getItem(`coding-index:${collection}`)!, new RegExp(`"id":"${alternate.id}"`));
+    const third = makeTab();
+    await Promise.all([first.select(collection, alternate, false), third.select(collection, item("keep-me"), true)]);
+    state = makeTab().state();
+    assert.deepEqual((collection === "saved" ? state.saved : state.project.resources).map(resource => resource.id), ["keep-me"]);
   }
 });
 

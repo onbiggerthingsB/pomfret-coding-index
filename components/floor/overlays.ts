@@ -41,6 +41,7 @@ export function createOverlays(scene: Scene, els: Elements) {
   };
   const onLeave = () => {
     pointer.x = pointer.y = -1;
+    scene.dirty = true;
   };
   window.addEventListener("pointermove", onPointer, { passive: true });
   document.documentElement.addEventListener("pointerleave", onLeave);

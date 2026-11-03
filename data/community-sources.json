@@ -1,7 +1,7 @@
 {
   "importedAt": "2026-11-02T19:47:53.462Z",
   "count": 27237,
-  "method": "Primary resource links from public source lists, screened for duplicates, unusable destinations and classroom relevance. Descriptions summarize the title and source section.",
+  "method": "Primary resource links from public source lists, screened for duplicates, unusable destinations and classroom relevance. Descriptions preserve the source list's short summary when present, falling back to the title and source section. The sourceUrl and source license identify its provenance.",
   "verification": "Dated GitHub repository checks and confirmed destination failures are recorded in community-review.json. An included link does not certify availability, software behavior or security.",
   "qualityReview": {
     "checkedAt": "2026-11-02",
@@ -724,5 +724,10 @@
         "url": "https://github.com/brillout/awesome-react-components/blob/master/license"
       }
     }
-  ]
+  ],
+  "descriptionRefresh": {
+    "refreshedAt": "2026-11-03T03:54:28.828Z",
+    "enriched": 21241,
+    "sourceRevision": "All 36 cached source documents matched the contentSha256 recorded in this manifest. Existing IDs, ordering, URLs, tags, categories and review metadata were preserved."
+  }
 }

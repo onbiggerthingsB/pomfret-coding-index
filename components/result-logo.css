@@ -1,0 +1,58 @@
+.result-logo {
+  position: relative;
+  display: block;
+  flex: 0 0 40px;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #393940, #202025);
+  box-shadow: inset 0 0 0 1px #ffffff19;
+}
+
+.result-logo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  object-fit: contain;
+  background: #f6f7f9;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .result-logo[data-paused="false"] {
+    --fold: 0px;
+    --curl: 0;
+  }
+
+  .result-logo[data-paused="false"] img {
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--fold)), calc(100% - var(--fold)) 100%, 0 100%);
+    transition: clip-path 220ms cubic-bezier(.22, .7, .25, 1);
+  }
+
+  .result-logo[data-paused="false"]::after {
+    content: "";
+    position: absolute;
+    inset: auto 0 0 auto;
+    width: 14px;
+    height: 14px;
+    border-top-left-radius: 3px;
+    background: linear-gradient(135deg, #fafafa 5%, #dedee3 34%, #95959e 46%, #585860 51%);
+    clip-path: polygon(0 0, 100% 0, 0 100%);
+    transform: scale(var(--curl));
+    transform-origin: bottom right;
+    transition: transform 220ms cubic-bezier(.22, .7, .25, 1);
+    pointer-events: none;
+  }
+
+  .index-resource-row:focus-visible .result-logo[data-paused="false"] {
+    --fold: 14px;
+    --curl: 1;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) and (hover: hover) and (pointer: fine) {
+  .index-resource-row:hover .result-logo[data-paused="false"] {
+    --fold: 14px;
+    --curl: 1;
+  }
+}
